@@ -42,7 +42,7 @@
               <div id="img_here"></div>         
             </div>
         </div>
-
+    <input type="text" name="website_url" value="{{old('website_url')}}" class="form-control newPost newPostBox" placeholder="Website Name" />
         <div class="panel panel-default">
           
             <div class="panel-body">
