@@ -144,7 +144,31 @@
                                     <!-- {{$post->description}} -->
                                 </div>
                             </div><!-- Post Single - Author End -->
+                            
 
+                            <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
+              
+                            <div class="row">
+
+                              <div class="related-posts clearfix">
+
+                                @foreach($related_posts as $related_post)
+
+                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                      
+                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
+                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%;">
+                                      </a>
+
+                                      <h4 style="line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 14px;" >{{$related_post->title}}</a></h4>    
+
+                                  </div>
+
+                                  @endforeach
+
+                              </div>
+                            </div>
+                            
                             
                              <h4 class="relatedText" style="margin-top: 20px;"> From around the web </h4>
               
@@ -154,7 +178,7 @@
 
                                 @foreach($links as $link)
 
-                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 nobottommargin remPadR">
                                       
                                       <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
                                         <img src="{{$link->image}}" alt="{{$link->description}}">
@@ -168,28 +192,6 @@
                               </div>
                             </div>
 
-                            <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
-							
-							              <div class="row">
-
-	                            <div class="related-posts clearfix">
-
-	                            	@foreach($related_posts as $related_post)
-
-	                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
-                                      
-                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
-                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%;">
-                                      </a>
-
-	                                    <h4 style="line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 14px;" >{{$related_post->title}}</a></h4>    
-
-	                                </div>
-
-	                                @endforeach
-
-	                            </div>
-	                          </div>
 
                            
                         		
@@ -197,12 +199,12 @@
               						<h4 class="relatedText" style="margin-top:30px;"> Comments </h4>
                           @if(Auth::check())
               						<form>
-                              <div style=" height: 65px; width: 65px; overflow: hidden; float: left; margin-right: 10px;">
+                              <div class="commentPic">
                                 <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
                               </div>
 
-                              <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..."  style=" width: 90%; margin-left:0;"></textarea>
-                              <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" style="margin-left:0;" disabled="disabled">          
+                              <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..." ></textarea>
+                              <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled">          
                           </form>
                           @else
                           <a href="{{url('login')}}" class="button">Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> or </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Login with facebook</a>
