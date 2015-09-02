@@ -1,0 +1,477 @@
+@extends('home.layout')
+@section('content')
+
+<style>
+  .single-post img{
+    width: auto;
+  }
+  body{
+    background-color: #ececec;
+  }
+  .mainPostWrapper{
+    background-color: #fff;
+  }
+</style>
+
+<div class="singleViewWrapper">
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+ <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+                        <div class="single-post nobottommargin">
+
+                            <!-- Single Post
+                            ============================================= -->
+                            <div class="entry clearfix">
+
+                      
+
+
+                            
+
+                                <!-- Entry Title
+                                ============================================= -->
+                                <div class="entry-title">
+                                    <h2>{{$post->title}}</h2>
+                                </div><!-- .entry-title end -->
+
+                                    <!-- Entry Meta
+                                ============================================= -->
+                                <ul class="entry-meta clearfix">
+                                    <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
+                                    <li>{{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>                                                            
+                                    <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
+                                </ul><!-- .entry-meta end -->
+
+
+                                <div class="si-share noborder">
+                                                                         
+                                      <div>
+
+                                          <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
+                                              <i class="icon-facebook"></i>
+                                              <i class="icon-facebook"></i>
+                                          </a>
+                                          <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
+                                              <i class="icon-twitter"></i>
+                                              <i class="icon-twitter"></i>
+                                          </a>                                            
+                                          <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
+                                              <i class="icon-gplus"></i>
+                                              <i class="icon-gplus"></i>
+                                          </a>                                       
+                                      </div>
+                                  </div><!-- Post Single - Share End -->
+
+
+
+      								<!-- Post Single - Share
+                                    ============================================= -->
+
+                                   <!--   <div id="example3"> <div id="shareme" data-url="http://alllad.com/" data-text="Banter Unite!" data-title="share this page"></div> </div>
+ -->
+                                     <div class="clearfix"></div>                                  
+                                    
+                                <!-- Entry Image
+                                ============================================= -->
+                               <!--  <div class="entry-image">
+                                    <a href="#"><img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt=""></a>
+                                </div> -->
+                                <!-- .entry-image end -->
+
+                                <!-- Entry Content
+                                ============================================= -->
+                                <div class="entry-content notopmargin">
+
+                                    {!! $post->content !!}
+
+                                    <!-- Post Single - Content End -->
+                  
+                                    <div class="clear"></div>
+
+                                    </div>
+                            </div><!-- .entry end -->   
+
+                                    <div class="clear"></div>
+                        
+                        </div>
+                      </div>
+                    </div>
+
+
+                                    <div class="post-navigation clearfix">
+
+                                        <!-- <div class="col_half nobottommargin"> -->
+                                         <span class="readnext"> Read Next </span>
+                                          <a class="link" href="#" style="border-right: 1px solid #ddd;">The New Fashion Trend In Asia, wearing Nothing But...</a>
+
+                                          <div style="float:right; margin: 10px 10px 0 0;">                                        
+                                            <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
+                                            <a href="http://www.facebook.com/share.php?u=http://alllad.com&title=ALLLAD!" class="social-icon si-colored si-borderless si-facebook">
+                                                <i class="icon-facebook"></i>
+                                                <i class="icon-facebook"></i>
+
+                                               <!--  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="link"></div> -->
+
+                                            </a>
+                                            <a href="#" class="social-icon si-colored si-borderless si-twitter">
+                                                <i class="icon-twitter"></i>
+                                                <i class="icon-twitter"></i>
+                                            </a>                                            
+                                            <a href="#" class="social-icon si-colored si-borderless si-gplus">
+                                                <i class="icon-gplus"></i>
+                                                <i class="icon-gplus"></i>
+                                            </a>                                       
+                                        </div>
+
+                                        <!-- </div> -->
+<!-- 
+                                        <div class="col_half col_last tright nobottommargin">
+                                            <a href="#" style="border-left: 1px solid #ddd;">This is an Embedded Audio Post</a>
+                                        </div> -->
+
+                                    </div>
+                      
+                      <div class="singleViewWrapper">  
+                      <div class="postcontent nobottommargin clearfix">
+                        <div class="single-post nobottommargin">
+           
+								  
+							<!-- Post Author Info
+                            ============================================= -->
+                            <div class="panel panel-default authorBox">          
+                                <div class="panel-body">
+                                    <div class="author-image">
+                                        <img src="@if($post->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$post->avatar}} @endif" alt="" class="img-circle">
+                                    </div>
+                                    <h3 class="panel-title">Posted by <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>
+                                    I'm the best writer you know
+                                    <!-- {{$post->description}} -->
+                                </div>
+                            </div><!-- Post Single - Author End -->
+
+                            
+                             <h4 class="relatedText" style="margin-top: 20px;"> From around the web </h4>
+              
+                            <div class="row">
+
+                              <div class="related-posts clearfix">
+
+                                @foreach($links as $link)
+
+                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                      
+                                      <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;height: 108px;">
+                                        <img src="{{$link->image}}" alt="{{$link->description}}">
+                                      </a>
+                                      <h4 style=" line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500; font-size: 14px;">{{$link->description}}</a></h4>                                                                          
+                                      <span> Eveningmailnew.com </span>
+                                  </div>
+
+                                  @endforeach
+
+                              </div>
+                            </div>
+
+                            <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
+							
+							              <div class="row">
+
+	                            <div class="related-posts clearfix">
+
+	                            	@foreach($related_posts as $related_post)
+
+	                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                      
+                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;height: 108px;">
+                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%;">
+                                      </a>
+
+	                                    <h4 style="line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 14px;" >{{$related_post->title}}</a></h4>    
+
+	                                </div>
+
+	                                @endforeach
+
+	                            </div>
+	                          </div>
+
+                           
+                        		
+                       
+              						<h4 class="relatedText" style="margin-top:30px;"> Comments </h4>
+                          @if(Auth::check())
+              						<form>
+                              <div style=" height: 65px; width: 65px; overflow: hidden; float: left; margin-right: 10px;">
+                                <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
+                              </div>
+
+                              <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..."  style=" width: 90%; margin-left:0;"></textarea>
+                              <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" style="margin-left:0;" disabled="disabled">          
+                          </form>
+                          @else
+                          <a href="{{url('login')}}" class="button">Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> or </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Login with facebook</a>
+                          @endif
+                          <div class="cleafix"></div>
+                        
+
+                          <div id="comment_container">
+                            @foreach($comments as $comment)
+                                <div style="overflow:hidden;margin-bottom: 10px; margin-top: 30px;">
+                                  <div style=" height: 65px; width: 65px; overflow: hidden; float: left; margin-right: 10px;">
+                                      <img src="@if($comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$comment->avatar}} @endif" alt="" class="pull-left">
+                                  </div>
+                                  <p class="commenterName">
+                                    {{$comment->name}} 
+                                  </p>
+                                  <p class="commentContent">
+                                    {{$comment->content}}
+                                  </p>
+                                  <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a>         
+                                  <div class="clearfix"></div>
+
+                                  <div id="comment_child{{$comment->id}}">
+                                    @foreach($comment->child_comments as $child_comment)
+                                        <div class="childCommentContainer">
+                                          <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
+                                            <img src="@if($child_comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$child_comment->avatar}} @endif" alt="" class="pull-left">
+                                          </div>
+                                          <p class="commenterName">{{$child_comment->name}}</p>
+                                          <p class="commentContent">{{$child_comment->content}}</p>
+                                          <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a> 
+                                        </div>
+                                    @endforeach
+                                  </div>
+                                  
+                                  <div id="comment_textarea{{$comment->id}}"></div> 
+                                </div>
+                            @endforeach
+                            <div id="ajax_comment"></div>
+                          </div>
+                              
+                          
+
+              </div>
+
+         </div><!-- .postcontent end -->
+</div>      
+
+@include('_common.ajaxTemplate')
+
+<script>
+$(document).ready(function(){
+
+  $('#top_comment').on('keypress',function(){
+    if($('#top_comment').val() == '')
+    {
+      $('#top_submit').attr('disabled','disabled');
+    }
+    else
+    {
+      $('#top_submit').removeAttr('disabled');
+    }
+  });
+
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
+        post_id = '{{$post->id}}',
+        parent = 0;
+
+    $('form').on('submit',function(e){
+
+        e.preventDefault();
+        $('#top_submit').attr('disabled','disabled');
+
+        var $this = $(this),
+            content = $this.find('#top_comment').val(),
+            template_parent_comment = $.trim($("#template_parent_comment").html()),
+            add_parent = '';
+
+        if($('#top_comment').val() != '')
+        {
+          $.ajax({ 
+            type: 'post',
+            url: "{{url('comment/ajax_add_comment')}}",
+            data: {_token: CSRF_TOKEN,'content' : content,'post_id' : post_id, 'parent' : parent }, 
+            success: function(response)
+            {
+
+              $('#top_comment').val('');
+              
+              var parsed = JSON.parse(response);
+              var avatar = 'http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg';
+
+              $.each( parsed, function( index, obj){
+
+                if(obj.avatar != '')
+                {
+                  avatar = obj.avatar;
+                }
+
+                add_parent =  
+                  template_parent_comment.replace(/--avatar--/ig, avatar)
+                  .replace(/--name--/ig, obj.name)
+                  .replace(/--content--/ig, obj.content)
+                  .replace(/--id--/ig, obj.id);
+
+                $('#ajax_comment').append(add_parent);
+
+              });
+
+            }
+          });
+        }
+
+    })
+    // END FOR SUBMIT
+
+    $("#comment_container").on('click','.reply_comment',function(e){
+        e.preventDefault();
+
+        var $this = $(this),
+            parent_id = $this.attr('data-id'),
+            comment_textarea = "#comment_textarea"+parent_id;
+            $(comment_textarea).html('<textarea class="commenTextarea" placeholder="" style="margin-left: 105px;margin-top: 10px;"></textarea><a class="button replyBtn" data-parent-id="'+parent_id+'" style="margin-left: 105px!important;"> Reply </a>');
+    });
+
+    $("#comment_container").on('click','.replyBtn',function(){
+
+        var parent_id = $(this).attr('data-parent-id'),
+            comment_textarea = "#comment_textarea"+parent_id,
+            content = $(comment_textarea).find('textarea').val(),
+            template_child_comment = $.trim($("#template_child_comment").html()),
+            comment_child = "#comment_child"+parent_id;
+
+          $.ajax({ 
+            type: 'post',
+            url: "{{url('comment/ajax_add_comment')}}",
+            data: {_token: CSRF_TOKEN,'content' : content,'post_id' : post_id, 'parent' : parent_id }, 
+            success: function(response)
+            {
+
+              // $('#top_comment').val('');
+              
+              var parsed = JSON.parse(response);
+              var avatar = 'http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg';
+
+              $.each( parsed, function( index, obj){
+
+                if(obj.avatar != '')
+                {
+                  avatar = obj.avatar;
+                }
+
+                add_child =  
+                  template_child_comment.replace(/--avatar--/ig, avatar)
+                  .replace(/--name--/ig, obj.name)
+                  .replace(/--content--/ig, obj.content)
+                  .replace(/--parent_id--/ig, parent_id);
+
+                $(comment_child).append(add_child);
+
+              });
+
+            }
+          });
+
+
+    });
+
+    //END reply comment on click
+
+     // $('#shareme').sharrre({
+     //    share: {
+     //      //googlePlus: true,
+     //      facebook: true,
+     //      twitter: true         
+     //    },
+     //    enableTracking: true,
+     //    buttons: {
+     //      googlePlus: {size: 'tall', annotation:'bubble'},
+     //      facebook: {layout: 'box_count'},
+     //      twitter: {count: 'vertical'}          
+     //    },
+     //    hover: function(api, options){
+     //      $(api.element).find('.buttons').show();
+     //    },
+     //    hide: function(api, options){
+     //      $(api.element).find('.buttons').hide();
+     //    }
+     //  });
+
+
+});
+		// function login() {
+		//   FB.login(function(response) {
+		//       if (response.authResponse) {
+  //       		// connected
+  //       		console.log("FB.login connected");
+  //       		window.location.reload();
+		//       } 
+  //             else {
+		//           // cancelled
+		//           console.log("FB.login cancelled");
+		//       }
+		// },
+		// fbscope);
+		// }
+
+		// window.fbAsyncInit = function() {
+		// FB.init({
+		// appId: '123456789012345',
+
+		// // App ID
+		// channelUrl: '//staging.pdfmyurl.com/facebook.channel.html',
+
+		// // Channel File
+		// status: true,
+
+		// // check login status
+		// cookie: true,
+
+		// // enable cookies to allow the server to access the session
+		// xfbml: true // parse XFBML
+		// });
+
+		// // Additional init code here
+		// FB.getLoginStatus(function(response) {
+		// if (response.status === 'connected') {
+
+		// // connected
+		// console.log("FB.getLoginStatus connected");
+		// sendUserInfo();
+
+		// } else if (response.status === 'not_authorized') {
+
+		// // not_authorized
+		// // User logged into FB but not authorized
+		// console.log("FB.getLoginStatus not_authorized");
+
+		// } else {
+
+		// // not_logged_in
+		// // User not logged into FB
+		// console.log("FB.getLoginStatus not_logged_in");
+		// }
+		// });
+		// };
+
+		// function sendUserInfo() {
+		// FB.api('/me', function(response) {
+
+		// //console.log("my object: %o", response);
+		// var map = new OTMap();
+
+		// //map.put("username!", response.username);
+		// map.put("gender!", response.gender);
+
+		// OTLogService.sendEvent("user logged in", map);
+		// });
+		// }
+
+   
+</script>
+
+
+@endsection
