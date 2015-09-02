@@ -5,6 +5,12 @@
 	width: 100%;
  	height: auto;
 }
+.single-title{
+  padding: 0 20px 20px 20px;
+  -moz-box-shadow: 0 5px 10px -8px #000;
+  -webkit-box-shadow: 0 5px 10px -8px #000;
+  box-shadow: 0 5px 10px -8px #000;
+}
 .author-image img{
 	width: 84px!important;
   	height: 84px!important;
@@ -429,8 +435,7 @@
       }
       .padding40 > .container{
         padding: 5px 0;
-      }
-     
+      }     
       .grid-item{
          padding-bottom: 0;
       }
@@ -460,15 +465,29 @@
         padding: 0!important;
       }
       .homeViewWrapper{
-          padding: 15px 10px!important;
+          padding: 15px 5px!important;
       }
       .singleViewWrapper {
-          padding: 35px 20px!important;
+          padding: 0 20px 35px 20px!important;
+      }
+      .postcontent {
+          padding: 0 30px;
+          /*border-left: 1px solid #ddd;
+          border-right: 1px solid #ddd;*/
+      }
+      .entry-title h2{
+          margin-top: 0;
       }
       .entry-title h2, .post-grid .entry-title h2 {
-          font-size: 45px !important;
-          padding-bottom: 10px;
-      }
+        font-size: 50px !important;
+        line-height: 50px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+      }   
+      .si-share{
+        margin-top: 40px;
+      } 
+
     }
     @media (max-width: 640px){  
       .latestPost:before{
@@ -481,11 +500,14 @@
           padding-top: 20px;
       }
       .grid-item p>a {
-          font-size: 19px!important;
-          line-height: 24px!important;
+         font-size: 22px!important;
+        line-height: 29px!important;       
       }
     }
     @media (max-width: 480px){
+      .postcontent {
+        padding: 0 20px;
+      }
       .container, #header.full-header .container, .container-fullwidth {
           width: auto!important;
       }
@@ -498,17 +520,20 @@
           margin-bottom: 5px;
       }
       .homeViewWrapper{
-          padding: 17px 10px!important;
+          padding: 17px 5px!important;
       }
       .singleViewWrapper{
         padding: 30px 10px!important;
       }
-      .entry-meta{
-        float: none;
-        margin: 20px 0px 0px 5px;
+      .entry-meta {
+          float: none;
+          margin: 10px 0px 0px 0px;
       }
       .entry-meta li{
         font-size: 15px;
+      }
+      .entry-content p{
+          font-size: 15px!important;
       }
       .si-share div {
           float: none;
@@ -517,12 +542,23 @@
       }
       .entry-title h2, .post-grid .entry-title h2 {
           font-size: 40px !important;
-          line-height: 50px;
+          line-height: 43px;
+          margin-top: 0;
+      }
+      .entry-title h2{
+        width: 100%;
+      }
+      .grid-item p>a {
+        font-size: 25px!important;
+        line-height: 30px!important;          
+      }
+      .post-navigation{
+        background-color: #efefef;
       }
     }
     @media (max-width: 414px){
         .popularPost h2 a {
-            font-size: 35px!important;
+            font-size: 33px!important;
         }
         .popularPost h2 {
             line-height: 41px!important;
@@ -534,16 +570,14 @@
     }
     @media (max-width: 375px){
         .homeViewWrapper, .singleViewWrapper {
-            padding: 16px 10px!important;
+            padding: 16px 5px!important;
         }
     }
     @media (max-width: 360px){
-        .entry-title h2, .post-grid .entry-title h2 {
-          font-size: 25px !important;
-        }
         .single-post .entry-title h2, .post-grid .entry-title h2 {
-		    	    font-size: 32px!important;
-            line-height: 39px;
+		    	 font-size: 33px!important;
+            line-height: 35px;
+            margin-top: 0;
         }
          .trendingWrapper p{
             font-size: 13px!important;
@@ -569,11 +603,14 @@
             height: 40px!important;
         }  
         .grid-item p>a {
-            font-size: 20px!important;
-            line-height: 23px!important;
+            font-size: 22px!important;
+            line-height: 25px!important;
         }
         .homeViewWrapper, .singleViewWrapper {
-            padding: 20px 10px!important;
+            padding: 23px 5px!important;
+        }
+        .si-share{
+            margin-top: 30px;
         }
     }
      @media (max-width: 320px){
@@ -584,10 +621,7 @@
         .popularPost h2 {
             line-height: 35px!important;
         }
-        .grid-item p>a{
-            font-size: 17px!important;
-            line-height: 20px!important;
-        }
+
     }
 
 
@@ -613,7 +647,7 @@
   background-color: #ECECEC;  
 }    
 .homeViewWrapper, .singleViewWrapper{
-  padding:10px 25px 50px 25px;
+  padding:10px 30px 50px 30px;
   overflow: hidden;
 }
 .popularPost{
@@ -692,8 +726,8 @@
     /*border-bottom: 3px solid #B70808;*/
 }
 .post-navigation div > a{
-    border-radius: 0;
-    margin-right: 0;
+    border-radius: 50%;
+    margin-right: 3px;    
 }
 .post-navigation .readnext{
     font-family: Oswald;
@@ -705,11 +739,13 @@
     color: #fff;
     padding: 5px 10px;
 }
-
+.grid-item p{
+    font-family: Oswald!important;
+}
 .grid-item p>a{
     color: #fff;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 25px;
+    line-height: 29px;
     display: block;    
     text-shadow: 1px 1px 16px rgba(0, 0, 0, 1);
 }
@@ -764,11 +800,11 @@
   margin-bottom: 5px;
 }
 .related-posts h4 a{
-    color: #000;
     font-weight: 700!important;
-    font-size: 18px!important;
+    font-size: 17px!important;
     font-family: Oswald;
-    line-height: 25px;
+    line-height: 21px;
+
 }
 .related-posts span{
     font-size: 12px;

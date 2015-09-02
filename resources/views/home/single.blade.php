@@ -13,65 +13,59 @@
   }
 </style>
 
-<div class="singleViewWrapper">
+<div class="single-title">
+  <div class="si-share noborder">                                                                        
+      <div>
+          <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
+              <i class="icon-facebook"></i>
+              <i class="icon-facebook"></i>
+          </a>
+          <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
+              <i class="icon-twitter"></i>
+              <i class="icon-twitter"></i>
+          </a>                                            
+          <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
+              <i class="icon-gplus"></i>
+              <i class="icon-gplus"></i>
+          </a>                                       
+      </div>
+  </div><!-- Post Single - Share End -->                        
+
+  <!-- Entry Title
+  ============================================= -->
+  <div class="entry-title">
+      <h2>{{$post->title}}</h2>
+  </div><!-- .entry-title end -->
+
+      <!-- Entry Meta
+  ============================================= -->
+  <ul class="entry-meta clearfix">
+      <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
+      <li>{{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>                                                            
+      <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
+  </ul><!-- .entry-meta end -->
+
+</div>
+
+<div class="clearfix"></div>
+
+<div class="singleViewWrapper" style="padding-bottom:0!important;">
 <meta name="csrf-token" content="{{ csrf_token() }}" />
- <!-- Post Content
-                    ============================================= -->
+ <!-- Post Content -->
+                    
+                    <!-- ============================================= -->
+
+
                     <div class="postcontent nobottommargin clearfix">
 
                         <div class="single-post nobottommargin">
 
                             <!-- Single Post
                             ============================================= -->
-                            <div class="entry clearfix">
+                            <div class="entry clearfix">                                                                                  
 
-                      
-
-
-                            
-
-                                <!-- Entry Title
-                                ============================================= -->
-                                <div class="entry-title">
-                                    <h2>{{$post->title}}</h2>
-                                </div><!-- .entry-title end -->
-
-                                    <!-- Entry Meta
-                                ============================================= -->
-                                <ul class="entry-meta clearfix">
-                                    <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
-                                    <li>{{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>                                                            
-                                    <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
-                                </ul><!-- .entry-meta end -->
-
-
-                                <div class="si-share noborder">
-                                                                         
-                                      <div>
-
-                                          <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
-                                              <i class="icon-facebook"></i>
-                                              <i class="icon-facebook"></i>
-                                          </a>
-                                          <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
-                                              <i class="icon-twitter"></i>
-                                              <i class="icon-twitter"></i>
-                                          </a>                                            
-                                          <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
-                                              <i class="icon-gplus"></i>
-                                              <i class="icon-gplus"></i>
-                                          </a>                                       
-                                      </div>
-                                  </div><!-- Post Single - Share End -->
-
-
-
-      								<!-- Post Single - Share
-                                    ============================================= -->
-
-                                   <!--   <div id="example3"> <div id="shareme" data-url="http://alllad.com/" data-text="Banter Unite!" data-title="share this page"></div> </div>
- -->
-                                     <div class="clearfix"></div>                                  
+      								          <!-- Post Single -->
+                                <div class="clearfix"></div>                                  
                                     
                                 <!-- Entry Image
                                 ============================================= -->
@@ -162,7 +156,7 @@
 
                                   <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
                                       
-                                      <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;height: 108px;">
+                                      <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
                                         <img src="{{$link->image}}" alt="{{$link->description}}">
                                       </a>
                                       <h4 style=" line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500; font-size: 14px;">{{$link->description}}</a></h4>                                                                          
@@ -184,7 +178,7 @@
 
 	                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
                                       
-                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;height: 108px;">
+                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
                                        <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%;">
                                       </a>
 

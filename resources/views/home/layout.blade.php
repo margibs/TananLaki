@@ -11,9 +11,11 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css"> -->
     
     <!--  <link rel="stylesheet" href="{{url('')}}/{{ elixir('css/all.css') }}" type="text/css" />  -->
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />     
 
     <link rel="stylesheet" href="{{ asset('css/font-icons.css') }}" type="text/css" />     
 
@@ -32,7 +34,7 @@
 
     <!-- External JavaScripts
     ============================================= -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
     -->
@@ -303,6 +305,7 @@
 
     <!-- Footer Scripts
     ============================================= -->
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.sharrre.js') }}"></script>
 
@@ -322,12 +325,14 @@
         //   }
         // })
 
-   var $grid = $('.grid').imagesLoaded( function() {
-  // init Isotope after all images have loaded
-  $grid.isotope({
-    // options...
-  });
-});
+        // init Isotope
+        var $grid = $('.grid').isotope({
+          // options...
+        });
+        // layout Isotope after each image loads
+        $grid.imagesLoaded().progress( function() {
+          $grid.isotope('layout');
+        });
                 
         // var $grid = $('.grid').masonry({
 
