@@ -361,6 +361,9 @@
       #content{
         margin-top: 40px!important;
       }
+      #primary-menu ul li{
+        border-top: 1px solid #383838;
+      }
       #primary-menu-trigger i{
         font-size: 30px;
       }

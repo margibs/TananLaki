@@ -34,7 +34,7 @@
 
     <!-- External JavaScripts
     ============================================= -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
     -->
@@ -228,11 +228,11 @@
                           
                           <div style="background-color:#f7f7f7;">
                           <div class="trendingWrapper">
-                                  <a href="#">
-                                      <img src="http://cdn.unilad.co.uk/wp-content/uploads/2015/08/UNILAD-John-hardyHollywood-Life7.jpg" alt="">                                   
+                                  <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend">
+                                      <img src="http://alllad.com/uploads/21902_trending-manchester.jpg" alt="">                                   
                                   </a>
                                   <p>
-                                      <a href="#">  Cara Delevingne Says She Prefers Being Naked To Wearing Clothes </a>
+                                      <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend"> Things We’ve Gathered after Watching Manchester United Play Over the Weekend </a>
                                   </p>
                           </div>                          
                           @foreach($side_bar_posts as $side_bar_post)
@@ -304,8 +304,7 @@
             </div>
 
     <!-- Footer Scripts
-    ============================================= -->
-    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    ============================================= -->    
     <script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.sharrre.js') }}"></script>
 
@@ -327,7 +326,12 @@
 
         // init Isotope
         var $grid = $('.grid').isotope({
-          // options...
+          itemSelector: '.grid-item',
+          percentPosition: true,
+          masonry: {
+            // use outer width of grid-sizer for columnWidth
+            columnWidth: '.grid-sizer'
+          }
         });
         // layout Isotope after each image loads
         $grid.imagesLoaded().progress( function() {
