@@ -84,6 +84,7 @@
 
                             </li>   
                             <li><a href="{{ url('admin/categories') }}"> Category </a></li>
+                            <li><a href="{{ url('admin/links') }}"> Ad Widget </a></li>
                             <li><a href="{{ url('admin/media_gallery') }}"> Gallery </a></li>
                             <li><a href="{{ url('admin/users') }}"> Comments </a></li>
                             <li><a href="{{ url('admin/users') }}"> Users </a></li>

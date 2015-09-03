@@ -1,3 +1,13 @@
+.panel{
+  background-color: #efefef;
+}
+.panel-default{
+  border-color:transparent;
+}
+.postcontent p{
+  font-family: Georgia!important;
+  font-size: 17px;
+}
 .grid-item{
     height: 268px;
 }
@@ -7,6 +17,7 @@
 .single-post img{
 	width: 100%;
  	height: auto;
+ 
 }
 .single-title{
   padding: 20px 40px 40px 40px;
@@ -14,6 +25,10 @@
   -webkit-box-shadow: 0 5px 10px -8px #000;
   box-shadow: 0 5px 10px -8px #000;*/
   border-bottom: 1px solid #E8E8E8;
+}
+
+.entry-content img{
+    margin: 12px 0;
 }
 .author-image img{
 	width: 84px!important;
@@ -82,19 +97,19 @@
 #shareme .facebook {
   margin:0 4px 0 0;
 }
-
-.related-posts img{
-  height: 120px;
-}
 .button:hover{
   cursor: pointer;
 }
 #top_comment{
-  width: 90%; 
+  width: 89%; 
   margin-left:0;
 }
 #top_submit{
   margin-left:0;
+  border-bottom: 3px solid #870606;
+}
+#top_submit:hover{
+  background-color: #D20D0D;
 }
 .commentPic{
   height: 65px; 
@@ -131,10 +146,34 @@
     -moz-animation: cssload-loader-inner 2.3s infinite ease-in;
 }
 
-
-
-
-
+.relatedImgHeight a{
+  height:150px;
+  overflow:hidden;
+}
+.aroundWebPic{
+  height:150px;
+  overflow:hidden;
+}
+.aroundWebWrapper{
+  height: 260px; 
+  overflow: hidden;
+}
+#comment_container p{
+  font-family: Roboto!important;
+}
+.commenterName{
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  color: #8F8B8B !important;
+}
+.commenterName span{
+  font-size: 10px !important;
+  color: rgb(198, 5, 5) !important;
+  margin-left: 5px;
+}
+.commentContent{
+  font-size: 15px !important;
+}
 @keyframes cssload-loader {
   0% {
     transform: rotate(0deg);
@@ -373,6 +412,13 @@
     #top_comment{
       width: 87%;       
     }
+    .relatedImgHeight{
+      height:150px;
+      overflow:hidden;
+    }
+    .aroundWebPic {
+        height: 140px;        
+    }
   }
    @media (max-width: 991px){
       .homeViewWrapper, .singleViewWrapper {
@@ -548,6 +594,9 @@
       #top_comment{
         width: 85%;         
       }
+      .aroundWebWrapper{
+        height: 245px;
+      }
     }
     @media (max-width: 480px){
       .postcontent {
@@ -606,6 +655,7 @@
       #top_comment {
           width: 81%;
       }
+
  
     }
     @media (min-width: 415px) and (max-width: 480px){
@@ -632,18 +682,22 @@
             line-height: 25px!important;
         } 
         .grid-item {
-            height: 236px;
+            height: 252px;
         }
         #top_comment {
             width: 76%;
         }
+        .aroundWebPic {
+            height: 125px;        
+        }
+      
     }
     @media (max-width: 375px){
         .homeViewWrapper, .singleViewWrapper {
             padding: 16px 5px!important;
         }
         .grid-item {
-            height: 212px;
+            height: 230px;
         }
         .commentPic {
             height: 35px;
@@ -651,6 +705,12 @@
         }
         #top_comment {
             width: 84%;
+        }
+        .aroundWebPic {
+            height: 115px;        
+        }
+        .aroundWebWrapper{
+          height: 230px;
         }
     }
     @media (max-width: 360px){
@@ -698,10 +758,16 @@
             margin-top: 0;
         }
         .grid-item {
-            height: 204px;
+            height: 221px;
         }
         #top_comment {
             width: 83%;
+        }
+         .aroundWebPic {
+            height: 105px;        
+        }
+         .aroundWebWrapper{
+          height: 225px;
         }
     }
      @media (max-width: 320px){
@@ -713,10 +779,16 @@
             line-height: 35px!important;
         }
         .grid-item {
-            height: 192px;
+            height: 197px;
         }
         #top_comment {
             width: 82%;
+        }
+        .aroundWebPic {
+            height: 95px;        
+        }
+        .aroundWebWrapper{
+          height: 235px;
         }
     }
 
@@ -886,14 +958,14 @@
     bottom: 400p;
     height: 1px;
     width: 75%;
-    border-bottom: 5px solid #B70808;
+    /*border-bottom: 5px solid #B70808;*/
     overflow: hidden;
 }
 .related-posts{
   margin-bottom: 20px;
 }
 .related-posts h4{
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 .related-posts h4 a{
     font-weight: 700!important;
@@ -901,8 +973,8 @@
     font-family: Roboto;
     line-height: 18px;
 }
-.related-posts span{
-    font-size: 12px;
-    font-family: Roboto;
-    color: #B7B3B3;
+.related-posts span a{
+    font-size: 12px!important;
+    font-family: Roboto!important;
+    color: #B7B3B3!important;
 }

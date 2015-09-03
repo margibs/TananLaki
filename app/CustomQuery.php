@@ -117,7 +117,7 @@ class CustomQuery {
 			->join('users','comments.author_id','=','users.id')
 			->where('comments.post_id','=',$post_id)
 			->where('comments.parent','=',0)
-			->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','users.avatar','users.name')
+			->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','comments.created_at','users.avatar','users.name')
 			->get();
 
         foreach ($comments as $comment) 
@@ -126,7 +126,7 @@ class CustomQuery {
 				DB::table('comments')
 				->join('users','comments.author_id','=','users.id')
 				->where('comments.parent','=',$comment->id)
-				->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','users.avatar','users.name')
+				->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','comments.created_at','users.avatar','users.name')
 				->get();
         }
 

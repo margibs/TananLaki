@@ -155,7 +155,7 @@ class HomeController extends Controller {
             App::abort(404);
         }
 
-        $this->data['links'] = Links::orderBy(DB::raw('RAND()'))->take(4)->get();
+        $this->data['links'] = Links::orderBy(DB::raw('RAND()'))->take(6)->get();
         $this->data['related_posts'] = $this->customQuery->getRelatedPost($this->data['post']->cat_id,$this->data['post']->id,4);
 
         $this->data['user_avatar'] = '';

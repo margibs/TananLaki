@@ -84,7 +84,8 @@
                   
                                     <div class="clear"></div>
 
-                                    </div>
+                                 </div>
+
                             </div><!-- .entry end -->   
 
                                     <div class="clear"></div>
@@ -98,9 +99,9 @@
 
                                         <!-- <div class="col_half nobottommargin"> -->
                                          <span class="readnext"> Read Next </span>
-                                          <a class="link" href="#" style="border-right: 1px solid #ddd;">The New Fashion Trend In Asia, wearing Nothing But...</a>
+                                          <a class="link" href="#" style="border-right: 1px solid #ddd;">The New Fashion Trend In Asia, wearing...</a>
 
-                                          <div style="float:right; margin: 10px 10px 0 0;">                                        
+                                          <div style="float:right; margin: 10px 20px 0 0;">                                        
                                             <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
                                             <a href="http://www.facebook.com/share.php?u=http://alllad.com&title=ALLLAD!" class="social-icon si-colored si-borderless si-facebook">
                                                 <i class="icon-facebook"></i>
@@ -139,8 +140,7 @@
                                     <div class="author-image">
                                         <img src="@if($post->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$post->avatar}} @endif" alt="" class="img-circle">
                                     </div>
-                                    <h3 class="panel-title">Posted by <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>
-                                    I'm the best writer you know
+                                    <h3 class="panel-title">Posted by <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>                              
                                     <!-- {{$post->description}} -->
                                 </div>
                             </div><!-- Post Single - Author End -->
@@ -154,10 +154,10 @@
 
                                 @foreach($related_posts as $related_post)
 
-                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR aroundWebWrapper">
                                       
                                       <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
-                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%;">
+                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
                                       </a>
 
                                       <h4 style="line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 14px;" >{{$related_post->title}}</a></h4>    
@@ -168,7 +168,7 @@
 
                               </div>
                             </div>
-                            
+
                             
                              <h4 class="relatedText" style="margin-top: 20px;"> From around the web </h4>
               
@@ -178,13 +178,15 @@
 
                                 @foreach($links as $link)
 
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 nobottommargin remPadR">
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 nobottommargin remPadR aroundWebWrapper">
                                       
                                       <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
-                                        <img src="{{$link->image}}" alt="{{$link->description}}">
+                                        <div class="aroundWebPic">
+                                          <img src="{{$link->image}}" alt="{{$link->description}}">
+                                        </div>
                                       </a>
-                                      <h4 style=" line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500; font-size: 14px;">{{$link->description}}</a></h4>                                                                          
-                                      <span> Eveningmailnew.com </span>
+                                      <h4 style=" line-height: 20px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          
+                                      <span><a href="{{$link->url}}" target="_blank"> {{ucfirst($link->website_url)}} </a> </span>
                                   </div>
 
                                   @endforeach
@@ -220,6 +222,7 @@
                                   </div>
                                   <p class="commenterName">
                                     {{$comment->name}} 
+                                    <span>  {{$comment->created_at}}  </span>
                                   </p>
                                   <p class="commentContent">
                                     {{$comment->content}}
@@ -233,7 +236,9 @@
                                           <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
                                             <img src="@if($child_comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$child_comment->avatar}} @endif" alt="" class="pull-left">
                                           </div>
-                                          <p class="commenterName">{{$child_comment->name}}</p>
+                                          <p class="commenterName">{{$child_comment->name}}
+                                          <span>  {{$child_comment->created_at}}  </span>
+                                          </p>
                                           <p class="commentContent">{{$child_comment->content}}</p>
                                           <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a> 
                                         </div>
@@ -309,6 +314,7 @@ $(document).ready(function(){
                   template_parent_comment.replace(/--avatar--/ig, avatar)
                   .replace(/--name--/ig, obj.name)
                   .replace(/--content--/ig, obj.content)
+                  .replace(/--created_at--/ig, obj.created_at)
                   .replace(/--id--/ig, obj.id);
 
                 $('#ajax_comment').append(add_parent);
@@ -362,6 +368,7 @@ $(document).ready(function(){
                   template_child_comment.replace(/--avatar--/ig, avatar)
                   .replace(/--name--/ig, obj.name)
                   .replace(/--content--/ig, obj.content)
+                  .replace(/--created_at--/ig, obj.created_at)
                   .replace(/--parent_id--/ig, parent_id);
 
                 $(comment_child).append(add_child);

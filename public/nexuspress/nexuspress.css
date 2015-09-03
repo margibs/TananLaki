@@ -1,3 +1,12 @@
+.side-header #header{
+	width: 235px;
+}
+.side-header #header .container {
+    width: 240px !important;
+}
+.side-header:not(.open-header) #wrapper .container{
+	margin: 0px 20px;
+}
 
 
 /* =============== ADMIN PAGE =============== */
@@ -109,8 +118,7 @@ h3{
 }
 .adminPosts td a{
 	color: #C50A0A;
-    font-weight: 700;
-    text-decoration: underline!important;
+    font-weight: 700;    
 }
 .adminPosts .subTD{
 	font-size: 13px;

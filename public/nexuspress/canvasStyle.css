@@ -1014,9 +1014,9 @@ body.stretched #header.full-header .container {
 	height: 100px;
 	line-height: 100px;
 	padding: 0 15px;
-	color: #444;
+	color: #8D8989;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 17px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	font-family: 'Oswald', sans-serif;
@@ -2247,7 +2247,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 
 .side-header #primary-menu ul li {
 	float: none;
-	margin: 15px 0 0;
+	margin: 10px 0 0;
 }
 
 .side-header #primary-menu ul li:first-child { margin-top: 0; }

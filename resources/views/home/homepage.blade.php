@@ -48,10 +48,10 @@
       </div>
     </div>
   
-    <div class="latestPost">
+<!--     <div class="latestPost">
       <p> Latest Posts </p>
     </div>
-
+ -->
 	<!-- <div class="masonry"> -->
 
 <!--   

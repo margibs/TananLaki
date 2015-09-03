@@ -4823,11 +4823,11 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 	margin: 0;	
 	font-weight: 600;				
 	font-family: Oswald;
-    font-size: 50px;
+    font-size: 40px;
     color: #000;
     margin-bottom: 0;
     clear: both;
-    line-height: 55px;
+    line-height: 45px;
     padding-bottom: 20px;
     /*width: 80%;*/
     margin-top: 20px;
@@ -12394,6 +12394,7 @@ body{
     font-size: 14px;    
 }
 .entry-content p{
+	
     font-weight: 400!important;
     font-size: 16px!important;
     line-height: 1.5em!important;
@@ -12423,7 +12424,8 @@ body{
 }
 .relatedText{
     font-family: Oswald;
-    font-size: 33px;
+    font-size: 25px;
+    font-weight: 600;
     color: #000;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
