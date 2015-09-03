@@ -182,7 +182,7 @@
                                       
                                       <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
                                         <div class="aroundWebPic">
-                                          <img src="{{$link->image}}" alt="{{$link->description}}">
+                                          <img src="{{url('uploads')}}/{{$link->image}}" alt="{{$link->description}}">
                                         </div>
                                       </a>
                                       <h4 style=" line-height: 20px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          

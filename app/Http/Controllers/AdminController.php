@@ -298,8 +298,23 @@ class AdminController extends Controller
         return view('admin.newLink');
     }
 
-    public function addLink(Request $request)
+    public function editLink($id)
     {
+        $data['link'] = Links::find($id);
+        return view('admin.editLink',$data);
+    }
+
+    public function addLink(Request $request,$id = 0)
+    {
+        $redirect = 'admin/new_link';  
+
+        //check if new post or edit post
+        //get redirect
+        if($id != 0)
+        {
+            $redirect = 'admin/new_link/'.$id;
+        }
+
         $validator = Validator::make($request->all(), [
             'url' => 'required',
             'image' => 'required',
@@ -307,12 +322,21 @@ class AdminController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect('admin/new_link')
+            return redirect($redirect)
                         ->withErrors($validator)
                         ->withInput();
         }
 
-        $link = new Links;
+        //check if new post or edit post
+        if($id != 0)
+        {
+            $link = Links::find($id);
+        }
+        else
+        {
+            $link = new Links;
+        }
+
         $link->url = $request->input('url');
         $link->image = $request->input('image');
         $link->description = $request->input('description');
