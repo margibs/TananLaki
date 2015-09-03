@@ -3,7 +3,7 @@
 @section('content')
 
     
-    <h2 class="adminTitle"> Add New Link </h2> 
+    <h2 class="adminTitle"> Edit Link </h2> 
     
     
     <div class="clearfix"></div>
@@ -19,36 +19,40 @@
             </ul>
         </div>
     @endif
-    <form method="POST" action="{{ url('admin/new_link') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ url('admin/new_link') }}/{{$link->id}}" enctype="multipart/form-data">
         {!! csrf_field() !!}
-        <input id="featured_image" type='hidden' name='image' value=''>
-        <input type="text" name="url" value="{{old('url')}}" class="form-control newPost newPostBox" placeholder="Enter URL LINK here" />
+        <input id="featured_image" type='hidden' name='image' value='{{$link->image}}'>
+        <input type="text" name="url" value="{{$link->url}}" class="form-control newPost newPostBox" placeholder="Enter URL LINK here" />
         <br>
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
-          <textarea name="description" id="editor1" rows="10" cols="80">{{old('description')}}</textarea>
+          <textarea name="description" id="editor1" rows="10" cols="80">{{$link->description}}</textarea>
         </div>
     </div>
 
     <div class="col_one_fourth col_last">
-        
-
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title" style="font-family: Lato;font-weight:500!important;">Image </h2>
             </div>
             <div class="panel-body" style="padding-top: 0;">
                 <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a> 
-              <div id="img_here"></div>         
+              <div id="img_here">
+                <img src="{{url('uploads')}}/{{$link->image}}" alt="">
+              </div>         
             </div>
         </div>
-    <input type="text" name="website_url" value="{{old('website_url')}}" class="form-control newPost newPostBox" placeholder="Website Name" />
+    <input type="text" name="website_url" value="{{$link->website_url}}" class="form-control newPost newPostBox" placeholder="Website Name" />
         <div class="panel panel-default">
           
             <div class="panel-body">
                     <div class="controls">
 
             <label class="checkbox" for="published">
-                {!! Form::checkbox('visible', 1) !!}Visible
+                <?php $check_visible = false; ?>
+                @if($link->visible == 1)
+                <?php $check_visible = true; ?>
+                @endif
+                {!! Form::checkbox('visible', 1,$check_visible) !!}Visible
             </label>
          
           </div>
