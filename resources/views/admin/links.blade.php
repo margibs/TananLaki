@@ -13,6 +13,7 @@
 			<td> URL </td>
 			<td> Image </td>
 			<td> Description </td>
+			<td> Website Name </td>
 			<td> Visible </td>
 			<td> Date </td>
 		</thead>
@@ -23,6 +24,7 @@
 				<td> {{$link->url}} </td>
 				<td class="subTD">{{$link->image}}</td> 
 				<td>{{$link->description}}</td>
+				<td>{{$link->website_url}}</td>
 				<td>@if($link->visible == 1) yes @else no @endif</td>
 				<td class="subTD">  {{ date( 'jS F Y', strtotime($link->created_at) ) }}  </td>
 			</tr>

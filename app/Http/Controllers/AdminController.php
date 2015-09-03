@@ -302,7 +302,8 @@ class AdminController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'url' => 'required',
-            'image' => 'required'
+            'image' => 'required',
+            'website_url' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -315,6 +316,7 @@ class AdminController extends Controller
         $link->url = $request->input('url');
         $link->image = $request->input('image');
         $link->description = $request->input('description');
+        $link->website_url = $request->input('website_url');
         $link->visible = $request->input('visible');
         $link->save();
 
