@@ -216,8 +216,8 @@
 
                           <div id="comment_container">
                             @foreach($comments as $comment)
-                                <div style="overflow:hidden;margin-bottom: 10px; margin-top: 30px;">
-                                  <div style=" height: 65px; width: 65px; overflow: hidden; float: left; margin-right: 10px;">
+                                <div style="overflow:hidden;margin-bottom: 10px; margin-top: 50px;clear:both;">
+                                  <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
                                       <img src="@if($comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$comment->avatar}} @endif" alt="" class="pull-left">
                                   </div>
                                   <p class="commenterName">

@@ -8,7 +8,7 @@
     
     <div class="clearfix"></div>
 
-    <div class="col_three_fourth">
+    <div class="col_full">
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">
@@ -21,44 +21,36 @@
     @endif
     <form method="POST" action="{{ url('admin/new_link') }}/{{$link->id}}" enctype="multipart/form-data">
         {!! csrf_field() !!}
-        <input id="featured_image" type='hidden' name='image' value='{{$link->image}}'>
-        <input type="text" name="url" value="{{$link->url}}" class="form-control newPost newPostBox" placeholder="Enter URL LINK here" />
-        <br>
-        <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
-          <textarea name="description" id="editor1" rows="10" cols="80">{{$link->description}}</textarea>
-        </div>
-    </div>
 
-    <div class="col_one_fourth col_last">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title" style="font-family: Lato;font-weight:500!important;">Image </h2>
-            </div>
-            <div class="panel-body" style="padding-top: 0;">
-                <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a> 
-              <div id="img_here">
-                <img src="{{url('uploads')}}/{{$link->image}}" alt="">
-              </div>         
-            </div>
-        </div>
-    <input type="text" name="website_url" value="{{$link->website_url}}" class="form-control newPost newPostBox" placeholder="Website Name" />
-        <div class="panel panel-default">
-          
-            <div class="panel-body">
-                    <div class="controls">
-
-            <label class="checkbox" for="published">
+         <div class="form-group">
+            <label for="exampleInputEmail1"> Image URL </label>
+            <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a> 
+            <div id="img_here">
+              <img src="{{url('uploads')}}/{{$link->image}}" alt="">
+            </div>  
+            <input id="featured_image" type='hidden' name='image' value='{{$link->image}}'>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Ad Link URL </label>
+            <input type="text" class="form-control" name="url" value="{{$link->url}}" id="exampleInputEmail1" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1"> Ad Title </label>
+            <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="" value="{{$link->description}}">
+          </div>          
+          <div class="form-group">
+            <label for="exampleInputPassword1"> Ad URL Caption</label>
+            <input type="text" name="website_url" value="{{old('website_url')}}"  class="form-control newPost" id="exampleInputPassword1" placeholder="">
+          </div>          
+          <label class="checkbox" for="published">
                 <?php $check_visible = false; ?>
                 @if($link->visible == 1)
                 <?php $check_visible = true; ?>
                 @endif
                 {!! Form::checkbox('visible', 1,$check_visible) !!}Visible
             </label>
-         
-          </div>
-              <input type="submit" value="Submit" class="button button-3d">
-            </div>
-        </div>
+          
+        <input type="submit" value="Submit" class="button button-3d">
 </form>
     </div>
 

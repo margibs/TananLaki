@@ -8,7 +8,7 @@
     
     <div class="clearfix"></div>
 
-    <div class="col_three_fourth">
+    <div class="col_full">
 
     @if (count($errors) > 0)
         <div class="alert alert-danger">
