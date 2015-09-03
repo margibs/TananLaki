@@ -5469,8 +5469,7 @@ body:not(.device-touch) .entry-link {
 .childCommentContainer{
 	overflow: hidden;
     margin-left: 30px;
-    margin-top: 10px;
-    border-top: 1px solid #efefef;
+    margin-top: 10px;    
     padding-top: 10px;
 }
 .replyBtn{
@@ -6558,6 +6557,8 @@ body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .co
 	letter-spacing: 1px;
 	border: none;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	border-radius: 2px;
+	border-bottom: 2px solid #900606;
 }
 
 .button:hover, .button:active, .button:visited, .button:focus{

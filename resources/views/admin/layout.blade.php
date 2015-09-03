@@ -77,14 +77,20 @@
                                 <a>Post </a>
 
                                  <ul>
-                                    <li><a href="{{ url('/admin/new_post') }}"><div> <i class="icon-folder"></i> Add New </div></a> </li>
+                                    <li><a href="{{ url('/admin/new_post') }}"><div> <i class="icon-line-square-plus"></i> Add New </div></a> </li>
                                     <li><a href="{{ url('/admin/posts') }}"><div> <i class="icon-paperclip"></i> Posts </div></a> </li> 
                                     <li><a href="{{ url('/admin/drafts') }}"><div> <i class="icon-line-marquee"></i> Drafts </div></a> </li> 
                                 </ul>
 
                             </li>   
                             <li><a href="{{ url('admin/categories') }}"> Category </a></li>
-                            <li><a href="{{ url('admin/links') }}"> Ad Widget </a></li>
+                           <li class=" @if(Request::is('admin/links*')){{'current'}}@endif">
+                                    <a>Widget</a>
+                                     <ul>
+                                        <li><a href="{{ url('/admin/links') }}"><div> <i class="icon-link"></i> All Links </div></a> </li> 
+                                        <li><a href="{{ url('/admin/new_link') }}"><div> <i class="icon-line-square-plus"></i> Add New </div></a> </li>                                    
+                                    </ul>
+                            </li>
                             <li><a href="{{ url('admin/media_gallery') }}"> Gallery </a></li>
                             <li><a href="{{ url('admin/users') }}"> Comments </a></li>
                             <li><a href="{{ url('admin/users') }}"> Users </a></li>

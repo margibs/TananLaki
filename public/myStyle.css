@@ -4,9 +4,9 @@
 .panel-default{
   border-color:transparent;
 }
-.postcontent p{
+.newContent p{
   font-family: Georgia!important;
-  font-size: 17px;
+  font-size: 18px!important;
 }
 .grid-item{
     height: 268px;
@@ -100,6 +100,10 @@
 .button:hover{
   cursor: pointer;
 }
+.replyBtn{
+  border-bottom: 2px solid #CE0C0C;
+  border-radius: 2px;
+}
 #top_comment{
   width: 89%; 
   margin-left:0;
@@ -107,6 +111,7 @@
 #top_submit{
   margin-left:0;
   border-bottom: 3px solid #870606;
+  border-radius: 2px;
 }
 #top_submit:hover{
   background-color: #D20D0D;
@@ -627,7 +632,7 @@
         font-size: 15px;
       }
       .entry-content p{
-          font-size: 15px!important;
+          font-size: 17px!important;
       }
       .si-share div {
           float: none;

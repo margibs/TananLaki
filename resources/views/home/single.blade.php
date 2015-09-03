@@ -76,7 +76,7 @@
 
                                 <!-- Entry Content
                                 ============================================= -->
-                                <div class="entry-content notopmargin">
+                                <div class="entry-content notopmargin newContent">
 
                                     {!! $post->content !!}
 
@@ -334,7 +334,7 @@ $(document).ready(function(){
         var $this = $(this),
             parent_id = $this.attr('data-id'),
             comment_textarea = "#comment_textarea"+parent_id;
-            $(comment_textarea).html('<textarea class="commenTextarea" placeholder="" style="margin-left: 105px;margin-top: 10px;"></textarea><a class="button replyBtn" data-parent-id="'+parent_id+'" style="margin-left: 105px!important;"> Reply </a>');
+            $(comment_textarea).html('<textarea class="commenTextarea" placeholder="" style="margin-left: 88px;margin-top: 10px;"></textarea><a class="button replyBtn" data-parent-id="'+parent_id+'" style="margin-left: 88px!important;"> Reply </a>');
     });
 
     $("#comment_container").on('click','.replyBtn',function(){
