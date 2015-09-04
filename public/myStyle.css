@@ -107,6 +107,9 @@
 #top_comment{
   width: 89%; 
   margin-left:0;
+  -moz-box-shadow: inset 0 0 10px -6px #5A5A5A;
+  -webkit-box-shadow: inset 0 0 10px -6px #5A5A5A;
+  box-shadow: inset 0 0 10px -6px #5A5A5A;
 }
 #top_submit{
   margin-left:0;
@@ -124,6 +127,31 @@
   margin-right: 10px;
 }
 
+.big-outer{
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  float: left;
+  position: relative;
+  top: -1px;
+  border: 1px solid #E5E5E5;    
+}
+.big-inner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(50%,50%);
+  -ms-transform: translate(50%,50%);
+  transform: translate(50%,50%);
+}
+.big-inner img{
+     width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
 /* =============== CSS LOADER ========================== */
 .cssload-loader {
   display: block;
@@ -162,6 +190,9 @@
 .aroundWebWrapper{
   height: 260px; 
   overflow: hidden;
+}
+#comment_container{
+  margin-top: 70px;
 }
 #comment_container p{
   font-family: Roboto!important;
@@ -757,11 +788,7 @@
         .si-share{
             margin-top: 30px;
         }
-        .entry-title h2, .post-grid .entry-title h2 {
-            font-size: 32px !important;
-            line-height: 43px;
-            margin-top: 0;
-        }
+
         .grid-item {
             height: 221px;
         }
@@ -802,9 +829,9 @@
 .mainPostWrapper{
   position:relative;
   z-index:2;
-  -moz-box-shadow: 4px 0 14px -7px #9A8C8C;
-  -webkit-box-shadow: 4px 0 14px -7px #9A8C8C;
-  box-shadow: 4px 0 14px -7px #9A8C8C;
+  -moz-box-shadow: 3px 15px 10px -7px #9A8C8C;
+  -webkit-box-shadow: 3px 15px 10px -7px #9A8C8C;
+  box-shadow: 3px 15px 10px -7px #9A8C8C;
 }
 .padRight0{
   padding-right: 0;
@@ -820,7 +847,7 @@
   background-color: #ECECEC;  
 }    
 .homeViewWrapper, .singleViewWrapper{
-  padding:10px 30px 50px 30px;
+  padding:25px 30px 50px 30px;
   overflow: hidden;
 }
 .popularPost{
@@ -974,7 +1001,7 @@
 }
 .related-posts h4 a{
     font-weight: 700!important;
-    font-size: 15px!important;
+    font-size: 16px!important;
     font-family: Roboto;
     line-height: 18px;
 }

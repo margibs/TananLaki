@@ -4823,11 +4823,11 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 	margin: 0;	
 	font-weight: 600;				
 	font-family: Oswald;
-    font-size: 40px;
+    font-size: 50px;
     color: #000;
     margin-bottom: 0;
     clear: both;
-    line-height: 45px;
+    line-height: 65px;
     padding-bottom: 20px;
     /*width: 80%;*/
     margin-top: 20px;
@@ -5482,7 +5482,7 @@ body:not(.device-touch) .entry-link {
     text-transform: capitalize!important;
 }
 .commenTextarea{
-	border: 1px solid #C0C0C0;
+	border: 1px solid #C5C1C1;
     padding: 10px;
     width: 60%;
     margin-left: 75px;
