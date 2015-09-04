@@ -234,15 +234,16 @@
                                       </p>
                               </div> 
                             @endforeach
-                          </div>    
+                          </div>
+                            
+
+                          <br />                         
                           <div class="socials">
-                            <h3> Like us on Facebook </h3>  
+                            
                             <div class="fb-page" data-href="https://www.facebook.com/allladmag" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
-                            
-                            <h3> Follow us on Twitter </h3>
+                                                       
                             <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
-                            
-                            <h3>  Subscribe to our channel</h3>    
+                                                       
                             <div style="margin:15px;"></div>
                             <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
                             <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
