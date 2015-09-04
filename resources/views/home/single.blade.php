@@ -13,8 +13,8 @@
   }
 </style>
 
-<div class="big-outer">
-  <div class="big-inner">
+<div class="bigOuter">
+  <div class="bigInner">
     <img src="{{ url('uploads') }}/{{ $post->feat_image_url }}" alt="">
   </div>
 </div>
@@ -137,7 +137,7 @@
                                   <div class="author-image">
                                       <img src="@if($post->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$post->avatar}} @endif" alt="" class="img-circle">
                                   </div>
-                                  <h3 class="panel-title">Posted by <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>                              
+                                  <h3 class="panel-title">By <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>                              
                                   <!-- {{$post->description}} -->
                               </div>
                           </div><!-- Post Single - Author End -->
@@ -151,7 +151,7 @@
 
                               @foreach($related_posts as $related_post)
 
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR aroundWebWrapper">
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
                                     
                                     <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
                                      <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
@@ -167,7 +167,7 @@
                           </div>
 
                           
-                          <h4 class="relatedText"> From around the web </h4>
+                          <h4 class="relatedText" style="margin-top: 30px;"> From around the web </h4>
             
                           <div class="row">
 
