@@ -182,7 +182,7 @@
                                         <img src="{{url('uploads')}}/{{$link->image}}" alt="{{$link->description}}">
                                       </div>
                                     </a>
-                                    <h4 style=" line-height: 20px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          
+                                    <h4 style="aroundWebText"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          
                                     <span><a href="{{$link->url}}" target="_blank"> {{ucfirst($link->website_url)}} </a> </span>
                                 </div>
 

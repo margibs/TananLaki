@@ -60,7 +60,8 @@
     // app know the current login status of the person.
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
-    if (response.status === 'connected') {
+    if (response.s
+      tatus === 'connected') {
       // Logged into your app and Facebook.
       testAPI();     
 
@@ -207,13 +208,41 @@
                           </div>
                       </div>
                                           
-                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;">
+                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;margin-top: 10px;">
+
+
+                          <div class="sidebarHead">
+                            <h5 class="sidebarTitle">Trending Articles</h5>
+                          </div>
                           
+                          <div style="background-color:#f7f7f7;">
+                            <div class="trendingWrapper">
+                                    <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend">
+                                        <img src="http://alllad.com/uploads/21902_trending-manchester.jpg" alt="">                                   
+                                    </a>
+                                    <p>
+                                        <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend"> Things We’ve Gathered after Watching Manchester United Play Over the Weekend </a>
+                                    </p>
+                            </div>                          
+                            @foreach($side_bar_posts as $side_bar_post)
+                              <div class="trendingWrapper">
+                                    <!-- <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
+                                        <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
+                                    </a> -->
+                                      <p>
+                                          <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">  {{$side_bar_post->title}}</a>
+                                      </p>
+                              </div> 
+                            @endforeach
+                          </div>    
                           <div class="socials">
+                            <h3> Like us on Facebook </h3>  
                             <div class="fb-page" data-href="https://www.facebook.com/allladmag" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
-                            <br />
+                            
+                            <h3> Follow us on Twitter </h3>
                             <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
-                            <br />                        
+                            
+                            <h3>  Subscribe to our channel</h3>    
                             <div style="margin:15px;"></div>
                             <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
                             <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
@@ -222,30 +251,6 @@
                             <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
                           </div>
 
-                          <div class="sidebarHead">
-                            <h5 class="sidebarTitle">Trending Articles</h5>
-                          </div>
-                          
-                          <div style="background-color:#f7f7f7;">
-                          <div class="trendingWrapper">
-                                  <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend">
-                                      <img src="http://alllad.com/uploads/21902_trending-manchester.jpg" alt="">                                   
-                                  </a>
-                                  <p>
-                                      <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend"> Things We’ve Gathered after Watching Manchester United Play Over the Weekend </a>
-                                  </p>
-                          </div>                          
-                          @foreach($side_bar_posts as $side_bar_post)
-                            <div class="trendingWrapper">
-                                  <!-- <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
-                                      <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
-                                  </a> -->
-                                    <p>
-                                        <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">  {{$side_bar_post->title}}</a>
-                                    </p>
-                            </div> 
-                          @endforeach
-                        </div>
                       </div>
 
                     </div>

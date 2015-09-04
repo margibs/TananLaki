@@ -12406,7 +12406,7 @@ body{
     margin-bottom: 30px!important;
 }
 .entry-meta li:before{
-    content: '|'!important;
+    content: ' '!important;
 }
 .red{
     background-color: #B70808;
@@ -12447,7 +12447,7 @@ body{
 }
 .sidebarTitle{
 	color: #FFF; font-weight: 700; text-transform: uppercase; font-size: 18px; text-align: center; padding: 10px 0; border-top: 2px solid #A70000; background-color: #B70808;
-	margin-top: 25px;
+	margin-top: 0;
 	margin-bottom: 10px;
 }
 .exceprt{

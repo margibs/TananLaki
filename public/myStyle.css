@@ -20,7 +20,11 @@
  
 }
 .single-title{
-  padding: 0px 40px 10px 40px;
+  padding: 0px 40px 30px 40px;
+  background-color:#fff;
+  -moz-box-shadow: 0 -1px 20px -3px #C7C7C7;
+  -webkit-box-shadow: 0 -1px 20px -3px #C7C7C7;
+  box-shadow: 0 -1px 20px -3px #C7C7C7;
   border-bottom: 1px solid #E8E8E8;
   overflow: hidden;
 }
@@ -190,6 +194,12 @@
   height: 240px; 
   overflow: hidden;
 }
+.aroundWebText{
+  line-height: 20px; 
+  font-weight: 600; 
+  font-size: 16px; 
+  margin-top: 8px;
+}
 #comment_container{
   margin-top: 70px;
 }
@@ -204,11 +214,15 @@
 .commenterName span{
   font-size: 10px !important;
   color: rgb(198, 5, 5) !important;
-  margin-left: 5px;
+  float:  right;  
 }
 .commentContent{
   font-size: 15px !important;
 }
+.reply_comment{
+  float:right ;
+}
+
 @keyframes cssload-loader {
   0% {
     transform: rotate(0deg);
@@ -639,8 +653,8 @@
       #top_comment{
         width: 85%;         
       }
-      .aroundWebWrapper{
-        height: 245px;
+      .aroundWebWrapper {
+         height: 220px;
       }
       .si-share {
           margin-top: 20px;
@@ -720,6 +734,9 @@
       .single-title {
           padding: 0px 20px 20px;
       }
+      .aroundWebWrapper {
+         height: 235px;
+      }
     
     }
     @media (min-width: 415px) and (max-width: 480px){
@@ -751,11 +768,14 @@
         #top_comment {
             width: 76%;
         }
-        .aroundWebPic {
-            height: 125px;        
+        .aroundWebWrapper {
+           height: 220px;
         }
         .bigOuter {
             height: 230px;
+        }
+        .aroundWebText{
+          margin-top: 0;
         }
       
     }
@@ -782,10 +802,12 @@
         .bigOuter {
             height: 200px;
         }
-
         .entry-title h2, .post-grid .entry-title h2 {
           font-size: 30px !important;
           line-height: 35px;
+        }
+        .aroundWebWrapper {
+             height: 215px;
         }
     }
     @media (max-width: 360px){
@@ -1021,6 +1043,12 @@
 }
 .socials{
   padding: 10px 15px;
+}
+.socials h3{
+  font-size: 17px;
+  font-family: Oswald;
+  color: #000;
+  margin-bottom: 10px;
 }
 .authorBox:after{
     content: "";
