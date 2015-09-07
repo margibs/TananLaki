@@ -71,10 +71,23 @@ class AdminController extends Controller
 		return view('admin.posts',$data);
 	}
 
-     public function drafts()
+    public function drafts()
     {        
         $data['post_name'] = 'Drafts';
         $data['posts'] = Posts::where('status','=',0)->orderBy('id','DESC')->paginate(15);
+        //Loop post to get its categories
+        foreach ($data['posts'] as $post) 
+        {
+            $post->categories = $this->customQuery->getPostCategories($post->id,true);
+        }
+
+        return view('admin.posts',$data);
+    }
+
+    public function trash()
+    {
+    	$data['post_name'] = 'Drafts';
+        $data['posts'] = Posts::where('status','=',3)->orderBy('id','DESC')->paginate(15);
         //Loop post to get its categories
         foreach ($data['posts'] as $post) 
         {
