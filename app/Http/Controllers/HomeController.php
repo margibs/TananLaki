@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Stevebauman\Location\Facades\Location;
+
 use App;
 use DB;
 use Auth;
@@ -61,44 +63,49 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
+        $location = Location::get();
+        dd($location);
+        // echo 'IP: '.$location->ip.'<br />';
+        // echo 'ISP: '.$location->isp.'<br />';
+        // echo 'Country Name: '.$location->countryName.'<br />';
+        // echo 'Country Code: '.$location->countryCode.'<br />';
+        // $_username = 'nbbulk2014';
 
-        $_username = 'nbbulk2014';
+        // $_apikey = '0wn4xoctsdnlcnnn';
 
-        $_apikey = '0wn4xoctsdnlcnnn';
+        // $_apiurl = 'http://www.copyscape.com/api/?';
 
-        $_apiurl = 'http://www.copyscape.com/api/?';
+        // $content = "When in the course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume the Powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.";
 
-        $content = "When in the course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume the Powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.";
+        // // $apiurl = $_apiurl.'u='.urlencode($_username).'&k='.urlencode($_apikey).'&t='.urlencode($content).'&f=xml';
 
-        // $apiurl = $_apiurl.'u='.urlencode($_username).'&k='.urlencode($_apikey).'&t='.urlencode($content).'&f=xml';
+        // $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=csearch&e='.urlencode('UTF-8').'&x=1&c=5';
 
-        $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=csearch&e='.urlencode('UTF-8').'&x=1&c=5';
+        // //search by text
 
-        //search by text
+        // $curl=curl_init();
 
-        $curl=curl_init();
+        // curl_setopt($curl, CURLOPT_URL, $apiurl);
+        // curl_setopt($curl, CURLOPT_TIMEOUT, 60);
+        // curl_setopt($curl, CURLOPT_POST,1);
+        // curl_setopt($curl, CURLOPT_POSTFIELDS,urlencode($content));
+        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        curl_setopt($curl, CURLOPT_URL, $apiurl);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 60);
-        curl_setopt($curl, CURLOPT_POST,1);
-        curl_setopt($curl, CURLOPT_POSTFIELDS,urlencode($content));
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        // $response=curl_exec($curl);
 
-        $response=curl_exec($curl);
-
-        $sites = simplexml_load_string ($response);
+        // $sites = simplexml_load_string ($response);
 
 
-        if(curl_errno($curl)) //error from the URL
-        {
+        // if(curl_errno($curl)) //error from the URL
+        // {
 
-            return 'Curl Error: ' . curl_error($curl);
+        //     return 'Curl Error: ' . curl_error($curl);
 
-        }
+        // }
 
-        curl_close($curl);
+        // curl_close($curl);
 
-        dd($sites);
+        // dd($sites);
 
         // echo 'Site Count: '.$sites->count;
         // echo '<br>';
@@ -222,7 +229,6 @@ class HomeController extends Controller {
     //SOCIAL LOGIN
     public function socialLogin(Request $request,$category = 0 ,$slug = 0)
     {
-
         if (Auth::check()) return redirect('/');
 
         if($request->has('code'))
@@ -260,6 +266,21 @@ class HomeController extends Controller {
             $url = $category.'/'.$slug;
             Cookie::queue(Cookie::make('redirect_url', $url, 10));
             return Socialite::driver('facebook')->redirect(); 
+        }
+
+    }
+    public function autoLogin(Request $request) 
+    {
+        if(Auth::check())
+        {
+            return 'false';
+        }
+        else
+        {
+            $user_profile = User::where('email','=',$request->input('email'))->first();
+            Auth::login($user_profile, true);
+
+            return 'true';
         }
 
     }

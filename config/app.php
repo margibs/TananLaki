@@ -139,6 +139,7 @@ return [
         Illuminate\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -197,6 +198,7 @@ return [
         'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Twitter'   => Thujohn\Twitter\Facades\Twitter::class,
+        'Location'  => Stevebauman\Location\Facades\Location::class,
     ],
 
 ];

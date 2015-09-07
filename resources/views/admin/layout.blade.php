@@ -92,7 +92,7 @@
                                     </ul>
                             </li>
                             <li><a href="{{ url('admin/media_gallery') }}"> Gallery </a></li>
-                            <li><a href="{{ url('admin/users') }}"> Comments </a></li>
+                            <li><a href="{{ url('admin/comments') }}"> Comments </a></li>
                             <li><a href="{{ url('admin/users') }}"> Users </a></li>
                         </ul>
 
