@@ -27,6 +27,7 @@ Route::group(['middleware' => 'UserCheck'], function()
 
 	Route::get('admin/posts','AdminController@posts');
 	Route::get('admin/drafts','AdminController@drafts');
+	Route::get('admin/trash','AdminController@trash');
 	Route::get('admin/posts/media_file','AdminController@mediaFiles');
 	Route::get('admin/posts/{id}/delete','AdminController@deletePost');
 	Route::get('admin/posts/{id}','AdminController@editPost');
