@@ -3,6 +3,7 @@
 namespace App;
 
 use DB;
+use App\Model\Comments;
 
 class CustomQuery {
 
@@ -131,5 +132,9 @@ class CustomQuery {
         }
 
         return $comments;
+	}
+	public function getCommentsCount($post_id)
+	{
+		return Comments::where('post_id','=',$post_id)->count();
 	}
 }

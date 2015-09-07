@@ -174,6 +174,7 @@ class HomeController extends Controller {
 
         // COMMENTS AND CHILD COMMENT
         $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
+        $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
 
         return view('home.single',$this->data);
     }
