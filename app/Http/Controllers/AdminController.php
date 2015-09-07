@@ -86,7 +86,7 @@ class AdminController extends Controller
 
     public function trash()
     {
-    	$data['post_name'] = 'Drafts';
+    	$data['post_name'] = 'Trash';
         $data['posts'] = Posts::where('status','=',3)->orderBy('id','DESC')->paginate(15);
         //Loop post to get its categories
         foreach ($data['posts'] as $post) 
