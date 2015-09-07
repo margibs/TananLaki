@@ -4820,16 +4820,16 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 .entry-image img { border-radius: 3px; }
 
 .entry-title h2 {
-	margin: 0;	
-	font-weight: 600;				
-	font-family: Oswald;
-    font-size: 40px;
+    margin: 0;
+    font-weight: 600;
+    font-family: Oswald;
+    font-size: 45px;
     color: #000;
     margin-bottom: 0;
     clear: both;
-    line-height: 45px;
+    line-height: 55px;
     padding-bottom: 20px;
-    /*width: 80%;*/
+    /* width: 80%; */
     margin-top: 20px;
 }
 
@@ -5482,7 +5482,7 @@ body:not(.device-touch) .entry-link {
     text-transform: capitalize!important;
 }
 .commenTextarea{
-	border: 1px solid #C0C0C0;
+	border: 1px solid #C5C1C1;
     padding: 10px;
     width: 60%;
     margin-left: 75px;
@@ -6579,7 +6579,7 @@ body:not(.device-touch) .button {
 }
 
 .button:hover {
-	background-color: #444;
+	background-color: rgb(183, 8, 8);
 	color: #FFF;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
@@ -8321,6 +8321,7 @@ body:not(.device-touch) .social-icon i {
 	padding-left: 5px;
 	border-top: 1px solid #EEE;
 	border-bottom: 1px solid #EEE;
+	padding:10px 0;
 	clear: both;
     overflow: hidden;
     margin-top: 20px;
@@ -8341,6 +8342,9 @@ body:not(.device-touch) .social-icon i {
     margin: 0px 2px;
     border-radius: 50%;
     font-size: 15px;	
+    -moz-box-shadow: 0 0 10px -1px #000;
+    -webkit-box-shadow: 0 0 10px -1px #000;
+    box-shadow: 0 0 10px -1px #000;
 }
 
 .si-facebook:hover,
@@ -12402,7 +12406,7 @@ body{
     margin-bottom: 30px!important;
 }
 .entry-meta li:before{
-    content: '|'!important;
+    content: ' '!important;
 }
 .red{
     background-color: #B70808;
@@ -12443,7 +12447,7 @@ body{
 }
 .sidebarTitle{
 	color: #FFF; font-weight: 700; text-transform: uppercase; font-size: 18px; text-align: center; padding: 10px 0; border-top: 2px solid #A70000; background-color: #B70808;
-	margin-top: 25px;
+	margin-top: 0;
 	margin-bottom: 10px;
 }
 .exceprt{

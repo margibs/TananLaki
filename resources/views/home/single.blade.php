@@ -9,196 +9,189 @@
     background-color: #ececec;
   }
   .mainPostWrapper{
-    background-color: #fff;
+    background-color: #fff;    
   }
 </style>
 
-<div class="single-title">
-  <div class="si-share noborder">                                                                        
-      <div>
-          <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
+<div class="bigOuter">
+  <div class="bigInner">
+    <img src="{{ url('uploads') }}/{{ $post->feat_image_url }}" alt="">
+  </div>
+</div>
+
+    <div class="single-title">
+        <div class="si-share noborder">                                                                        
+            <div>
+                <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
+                    <i class="icon-facebook"></i>
+                    <i class="icon-facebook"></i>
+                </a>
+                <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
+                    <i class="icon-twitter"></i>
+                    <i class="icon-twitter"></i>
+                </a>                                            
+                <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
+                    <i class="icon-gplus"></i>
+                    <i class="icon-gplus"></i>
+                </a>                                       
+            </div>
+        </div><!-- Post Single - Share End -->                        
+
+      <!-- Entry Title
+      ============================================= -->
+      <div class="entry-title">
+          <h2>{{$post->title}}</h2>
+      </div><!-- .entry-title end -->
+
+          <!-- Entry Meta
+      ============================================= -->
+      <ul class="entry-meta clearfix">
+          <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
+          <li>{{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>                                                            
+          <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
+      </ul><!-- .entry-meta end -->
+
+    </div>
+
+  <div class="clearfix"></div>
+
+  <div class="singleViewWrapper" style="padding-bottom:0!important;">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <!-- Post Content -->
+
+        <!-- ============================================= -->
+
+
+        <div class="postcontent nobottommargin clearfix">
+
+            <div class="single-post nobottommargin">
+
+                <!-- Single Post
+                ============================================= -->
+                <div class="entry clearfix">                                                                                  
+
+        	          <!-- Post Single -->
+                    <div class="clearfix"></div>                                  
+                        
+                    <!-- Entry Image
+                    ============================================= -->
+                   <!--  <div class="entry-image">
+                        <a href="#"><img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt=""></a>
+                    </div> -->
+                    <!-- .entry-image end -->
+
+                    <!-- Entry Content
+                    ============================================= -->
+                    <div class="entry-content notopmargin newContent">
+
+                        {!! $post->content !!}
+
+                        <!-- Post Single - Content End -->
+
+                        <div class="clear"></div>
+
+                     </div>
+
+                </div><!-- .entry end -->   
+
+                        <div class="clear"></div>
+            
+            </div>
+          </div>
+  </div>
+
+
+  <div class="post-navigation clearfix">
+
+       <span class="readnext"> Read Next </span>
+        <a class="link" href="#" style="border-right: 1px solid #ddd;">The New Fashion Trend In Asia, wearing...</a>
+
+        <div style="float:right; margin: 10px 20px 0 0;">                                        
+          <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
+          <a href="http://www.facebook.com/share.php?u=http://alllad.com&title=ALLLAD!" class="social-icon si-colored si-borderless si-facebook">
               <i class="icon-facebook"></i>
               <i class="icon-facebook"></i>
+
+             <!--  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="link"></div> -->
+
           </a>
-          <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
+          <a href="#" class="social-icon si-colored si-borderless si-twitter">
               <i class="icon-twitter"></i>
               <i class="icon-twitter"></i>
           </a>                                            
-          <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
+          <a href="#" class="social-icon si-colored si-borderless si-gplus">
               <i class="icon-gplus"></i>
               <i class="icon-gplus"></i>
           </a>                                       
       </div>
-  </div><!-- Post Single - Share End -->                        
-
-  <!-- Entry Title
-  ============================================= -->
-  <div class="entry-title">
-      <h2>{{$post->title}}</h2>
-  </div><!-- .entry-title end -->
-
-      <!-- Entry Meta
-  ============================================= -->
-  <ul class="entry-meta clearfix">
-      <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
-      <li>{{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>                                                            
-      <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
-  </ul><!-- .entry-meta end -->
-
-</div>
-
-<div class="clearfix"></div>
-
-<div class="singleViewWrapper" style="padding-bottom:0!important;">
-<meta name="csrf-token" content="{{ csrf_token() }}" />
- <!-- Post Content -->
-                    
-                    <!-- ============================================= -->
-
-
-                    <div class="postcontent nobottommargin clearfix">
-
-                        <div class="single-post nobottommargin">
-
-                            <!-- Single Post
-                            ============================================= -->
-                            <div class="entry clearfix">                                                                                  
-
-      								          <!-- Post Single -->
-                                <div class="clearfix"></div>                                  
-                                    
-                                <!-- Entry Image
-                                ============================================= -->
-                               <!--  <div class="entry-image">
-                                    <a href="#"><img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt=""></a>
-                                </div> -->
-                                <!-- .entry-image end -->
-
-                                <!-- Entry Content
-                                ============================================= -->
-                                <div class="entry-content notopmargin newContent">
-
-                                    {!! $post->content !!}
-
-                                    <!-- Post Single - Content End -->
-                  
-                                    <div class="clear"></div>
-
-                                 </div>
-
-                            </div><!-- .entry end -->   
-
-                                    <div class="clear"></div>
-                        
-                        </div>
-                      </div>
-                    </div>
-
-
-                                    <div class="post-navigation clearfix">
-
-                                        <!-- <div class="col_half nobottommargin"> -->
-                                         <span class="readnext"> Read Next </span>
-                                          <a class="link" href="#" style="border-right: 1px solid #ddd;">The New Fashion Trend In Asia, wearing...</a>
-
-                                          <div style="float:right; margin: 10px 20px 0 0;">                                        
-                                            <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
-                                            <a href="http://www.facebook.com/share.php?u=http://alllad.com&title=ALLLAD!" class="social-icon si-colored si-borderless si-facebook">
-                                                <i class="icon-facebook"></i>
-                                                <i class="icon-facebook"></i>
-
-                                               <!--  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="link"></div> -->
-
-                                            </a>
-                                            <a href="#" class="social-icon si-colored si-borderless si-twitter">
-                                                <i class="icon-twitter"></i>
-                                                <i class="icon-twitter"></i>
-                                            </a>                                            
-                                            <a href="#" class="social-icon si-colored si-borderless si-gplus">
-                                                <i class="icon-gplus"></i>
-                                                <i class="icon-gplus"></i>
-                                            </a>                                       
-                                        </div>
-
-                                        <!-- </div> -->
-<!-- 
-                                        <div class="col_half col_last tright nobottommargin">
-                                            <a href="#" style="border-left: 1px solid #ddd;">This is an Embedded Audio Post</a>
-                                        </div> -->
-
-                                    </div>
+  </div>
                       
-                      <div class="singleViewWrapper">  
+                  <div class="singleViewWrapper">  
                       <div class="postcontent nobottommargin clearfix">
                         <div class="single-post nobottommargin">
            
 								  
-							<!-- Post Author Info
-                            ============================================= -->
-                            <div class="panel panel-default authorBox">          
-                                <div class="panel-body">
-                                    <div class="author-image">
-                                        <img src="@if($post->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$post->avatar}} @endif" alt="" class="img-circle">
-                                    </div>
-                                    <h3 class="panel-title">Posted by <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>                              
-                                    <!-- {{$post->description}} -->
+							             <!-- Post Author Info ============================================= -->
+                          <div class="panel panel-default authorBox">          
+                              <div class="panel-body">
+                                  <div class="author-image">
+                                      <img src="@if($post->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$post->avatar}} @endif" alt="" class="img-circle">
+                                  </div>
+                                  <h3 class="panel-title">By <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>                              
+                                  <!-- {{$post->description}} -->
+                              </div>
+                          </div><!-- Post Single - Author End -->
+                          
+
+                          <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
+            
+                          <div class="row">
+
+                            <div class="related-posts clearfix" style="margin-bottom:0;">
+
+                              @foreach($related_posts as $related_post)
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                    
+                                    <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
+                                     <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
+                                    </a>
+
+                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;" >{{$related_post->title}}</a></h4>    
+
                                 </div>
-                            </div><!-- Post Single - Author End -->
-                            
 
-                            <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
-              
-                            <div class="row">
+                                @endforeach
 
-                              <div class="related-posts clearfix">
-
-                                @foreach($related_posts as $related_post)
-
-                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR aroundWebWrapper">
-                                      
-                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
-                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
-                                      </a>
-
-                                      <h4 style="line-height: 19px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 14px;" >{{$related_post->title}}</a></h4>    
-
-                                  </div>
-
-                                  @endforeach
-
-                              </div>
                             </div>
+                          </div>
 
-                            
-                             <h4 class="relatedText" style="margin-top: 20px;"> From around the web </h4>
-              
-                            <div class="row">
+                          
+                          <h4 class="relatedText" style="margin-top: 30px;"> From around the web </h4>
+            
+                          <div class="row">
 
-                              <div class="related-posts clearfix">
+                            <div class="related-posts clearfix">
 
-                                @foreach($links as $link)
+                              @foreach($links as $link)
 
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 nobottommargin remPadR aroundWebWrapper">
-                                      
-                                      <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
-                                        <div class="aroundWebPic">
-                                          <img src="{{url('uploads')}}/{{$link->image}}" alt="{{$link->description}}">
-                                        </div>
-                                      </a>
-                                      <h4 style=" line-height: 20px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          
-                                      <span><a href="{{$link->url}}" target="_blank"> {{ucfirst($link->website_url)}} </a> </span>
-                                  </div>
+                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 nobottommargin remPadR aroundWebWrapper">
+                                    
+                                    <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
+                                      <div class="aroundWebPic">
+                                        <img src="{{url('uploads')}}/{{$link->image}}" alt="{{$link->description}}">
+                                      </div>
+                                    </a>
+                                    <h4 style="aroundWebText"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          
+                                    <span><a href="{{$link->url}}" target="_blank"> {{ucfirst($link->website_url)}} </a> </span>
+                                </div>
 
-                                  @endforeach
+                                @endforeach
 
-                              </div>
                             </div>
+                          </div>
 
-
-                           
-                        		
-                       
-              						<h4 class="relatedText" style="margin-top:30px;"> Comments </h4>
+              						<h4 class="relatedText" style="margin-top:30px;"> What do you think? </h4>
                           @if(Auth::check())
               						<form>
                               <div class="commentPic">
@@ -250,13 +243,10 @@
                             @endforeach
                             <div id="ajax_comment"></div>
                           </div>
-                              
-                          
+                  </div>
 
-              </div>
-
-         </div><!-- .postcontent end -->
-</div>      
+                           </div><!-- .postcontent end -->
+                  </div>      
 
 @include('_common.ajaxTemplate')
 
