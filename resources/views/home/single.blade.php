@@ -22,18 +22,34 @@
     <div class="single-title">
         <div class="si-share noborder">                                                                        
             <div>
-                <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
+            <div class="fb-share-button"></div>
+       <!--          <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
                     <i class="icon-facebook"></i>
                     <i class="icon-facebook"></i>
-                </a>
-                <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
+                </a> -->
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="allladmag">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <!-- <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
                     <i class="icon-twitter"></i>
                     <i class="icon-twitter"></i>
-                </a>                                            
-                <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
+                </a>  -->                                           
+
+                <!-- Place this tag where you want the share button to render. -->
+<div class="g-plus" data-action="share" data-href="http://alllad.com"></div>
+
+<!-- Place this tag after the last share tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+                <!-- <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
                     <i class="icon-gplus"></i>
                     <i class="icon-gplus"></i>
-                </a>                                       
+                </a>                                        -->
             </div>
         </div><!-- Post Single - Share End -->                        
 

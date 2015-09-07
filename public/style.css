@@ -12394,8 +12394,8 @@ body{
 .entry-meta li, .entry-meta li a{
     font-style: normal;
     font-family: Roboto;
-    font-weight: 500;
-    font-size: 12px;    
+	font-weight: 400;
+	font-size: 14px;   
 }
 .entry-content p{
 	

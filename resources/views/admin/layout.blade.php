@@ -65,7 +65,7 @@
          <div class="externalLinks">
             <ul>                
                 <li><a href="{{ url('/') }}"> <i class="icon-world"></i></a></li>
-                <li><a href="#"> <i class="icon-signout"></i></a></li>                    
+                <li><a href="{{ url('/logout') }}"> <i class="icon-signout"></i></a></li>                    
                 <li> <input id="adminSearch" type="text" placeholder="Search..." />  <a href="" style=
 "
 position: relative;
