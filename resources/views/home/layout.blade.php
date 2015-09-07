@@ -291,7 +291,7 @@
     <!-- Footer Scripts
     ============================================= -->    
     <script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.sharrre.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/jquery.sharrre.js') }}"></script> -->
 
     <script>
        $(document).ready( function() {
@@ -336,12 +336,13 @@
         // $grid.imagesLoaded().progress( function() {
         //   $grid.masonry('layout');
         // });
+        
+
+      
 
       });
 
-    </script>
 
-    <script>
       window.twttr = (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0],
         t = window.twttr || {};

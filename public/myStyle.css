@@ -858,6 +858,9 @@
           line-height: 35px;
           margin-top: 20px;
         }
+        .entry-meta li{
+          font-size: 14px;
+        }
     }
      @media (max-width: 320px){
         .popularPost h2 a {
@@ -885,6 +888,10 @@
         .entry-title h2, .post-grid .entry-title h2{
           font-size: 30px !important;
           line-height: 35px;          
+        }
+        .entry-meta li {
+            font-size: 13px;
+            margin-right: 2px;
         }
     }
 

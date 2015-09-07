@@ -13,43 +13,34 @@
   }
 </style>
 
+<?php
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+?>
+
 <div class="bigOuter">
   <div class="bigInner">
-    <img src="{{ url('uploads') }}/{{ $post->feat_image_url }}" alt="">
+    <img id="featIMG" src="{{ url('uploads') }}/{{ $post->feat_image_url }}" alt="">
   </div>
 </div>
 
     <div class="single-title">
         <div class="si-share noborder">                                                                        
-            <div>
-            <div class="fb-share-button"></div>
-       <!--          <a href="#" class="social-icon si-colored si-borderless si-facebook si-rounded">
+            <div>            
+                <a href="javascript:fbShare('Fb Share', 'Facebook share popup', 520, 350)" class="social-icon si-colored si-borderless si-facebook si-rounded">
                     <i class="icon-facebook"></i>
                     <i class="icon-facebook"></i>
-                </a> -->
-                <a href="https://twitter.com/share" class="twitter-share-button" data-via="allladmag">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                <!-- <a href="#" class="social-icon si-colored si-borderless si-twitter si-rounded">
+                </a>
+                
+
+                <a class="social-icon si-colored si-borderless si-twitter si-rounded"  data-via="allladmag" onclick="javascript:window.open('http://twitter.com/share?url=<?php echo $actual_link ?>&text={{$post->title}}','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                     <i class="icon-twitter"></i>
                     <i class="icon-twitter"></i>
-                </a>  -->                                           
+                </a>                                            
 
-                <!-- Place this tag where you want the share button to render. -->
-<div class="g-plus" data-action="share" data-href="http://alllad.com"></div>
-
-<!-- Place this tag after the last share tag. -->
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-
-                <!-- <a href="#" class="social-icon si-colored si-borderless si-gplus si-rounded">
+                <a class="social-icon si-colored si-borderless si-gplus si-rounded" onclick="javascript:window.open('https://plus.google.com/share?url=<?php echo $actual_link ?>','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                     <i class="icon-gplus"></i>
                     <i class="icon-gplus"></i>
-                </a>                                        -->
+                </a>                                       
             </div>
         </div><!-- Post Single - Share End -->                        
 
@@ -125,21 +116,19 @@
 
         <div style="float:right; margin: 10px 20px 0 0;">                                        
           <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
-          <a href="http://www.facebook.com/share.php?u=http://alllad.com&title=ALLLAD!" class="social-icon si-colored si-borderless si-facebook">
-              <i class="icon-facebook"></i>
-              <i class="icon-facebook"></i>
+           <a href="javascript:fbShare('Fb Share', 'Facebook share popup', 520, 350)" class="social-icon si-colored si-borderless si-facebook si-rounded">
+                <i class="icon-facebook"></i>
+                <i class="icon-facebook"></i>
+            </a>
+            <a class="social-icon si-colored si-borderless si-twitter si-rounded"  data-via="allladmag" onclick="javascript:window.open('http://twitter.com/share?url=<?php echo $actual_link ?>&text={{$post->title}}','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                <i class="icon-twitter"></i>
+                <i class="icon-twitter"></i>
+            </a>                                            
 
-             <!--  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="link"></div> -->
-
-          </a>
-          <a href="#" class="social-icon si-colored si-borderless si-twitter">
-              <i class="icon-twitter"></i>
-              <i class="icon-twitter"></i>
-          </a>                                            
-          <a href="#" class="social-icon si-colored si-borderless si-gplus">
-              <i class="icon-gplus"></i>
-              <i class="icon-gplus"></i>
-          </a>                                       
+            <a class="social-icon si-colored si-borderless si-gplus si-rounded" onclick="javascript:window.open('https://plus.google.com/share?url=<?php echo $actual_link ?>','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                <i class="icon-gplus"></i>
+                <i class="icon-gplus"></i>
+            </a>                                                            
       </div>
   </div>
                       
@@ -270,6 +259,9 @@
 <script>
 $(document).ready(function(){
 
+
+
+
   $('#top_comment').on('keypress',function(){
     if($('#top_comment').val() == '')
     {
@@ -388,6 +380,9 @@ $(document).ready(function(){
 
     });
 
+
+
+
     //END reply comment on click
 
      // $('#shareme').sharrre({
@@ -480,7 +475,14 @@ $(document).ready(function(){
 		// });
 		// }
 
-   
+   function fbShare(title, descr, winWidth, winHeight) {      
+      var url  = window.location.href;
+      var title = $(".entry-title h2").text();
+      var image = $('#featIMG').attr('src');
+      var winTop = (screen.height / 2) - (winHeight / 2);
+      var winLeft = (screen.width / 2) - (winWidth / 2);
+      window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,scrollbars=1,status=0,width=' + winWidth + ',height=' + winHeight);
+    }
 </script>
 
 
