@@ -2,18 +2,20 @@
 
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+	<br />
+	<div id="contentMainWrapper" style="background:transparent;">
+		<div id="fileuploader">Upload</div>
 
-	<div id="fileuploader">Upload</div>
-
-	<div id="media_wrapper">
-		@foreach($media_files as $media_file)
-			<div class="outer">
-				<div class="inner">
-					<img src="{{ url('/uploads') }}/{{$media_file->image_url}}" />
-				</div>                          
-			</div>
-			
-		@endforeach
+		<div id="media_wrapper">
+			@foreach($media_files as $media_file)
+				<div class="outer">
+					<div class="inner">
+						<img src="{{ url('/uploads') }}/{{$media_file->image_url}}" />
+					</div>                          
+				</div>
+				
+			@endforeach
+		</div>
 	</div>
 
 

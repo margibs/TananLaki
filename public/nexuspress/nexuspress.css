@@ -2,20 +2,32 @@
 	background-color: rgba(255, 255, 255, 0.94);
 	overflow: hidden;    
     border-radius: 2px;
+    margin: 0 20px;
+    border-bottom: 1px solid #D4D4D4;
+}
+.dark .table-striped > tbody > tr:nth-child(odd) > td, .dark .table-striped > tbody > tr:nth-child(odd) > th, .table-striped > tbody > tr:nth-child(odd){
+	background-color: rgba(95, 87, 132, 0.05)!important;
 }
 .side-header #header{
 	width: 235px;
+	-moz-box-shadow: 0 0 16px -3px rgba(0, 0, 0, 0.44);
+	-webkit-box-shadow: 0 0 16px -3px rgba(0, 0, 0, 0.44);
+	box-shadow: 0 0 16px -3px rgba(0, 0, 0, 0.44);
 }
 .side-header #header .container {
     width: 240px !important;
 }
 .side-header:not(.open-header) #wrapper .container{
-	margin: 0px 20px;
+	margin: 0;
+	padding: 0;
 }
 .topmostMenu{
 	padding: 8px 0px 8px 20px;
-	background-color: #A20000;
+	background-color: #000;
 	border-bottom: 1px solid #D4D2D2;
+	position: fixed;
+    width: 100%;
+    z-index: 2;
 }
 .topmostMenu .quickList{
 	list-style: outside none none;
@@ -43,13 +55,17 @@
 
 .table > thead > tr > td{
 	padding: 10px 8px!important;
-    font-size: 14px;
-    text-align: center;
-    color: #787474;
-    border-top: 1px solid #F7F7F7!important;
+    font-size: 14px;    
+    color: #787474;    
 }
 .table tr td{
 	border-top: 1px solid #f1f1f1;
+}
+.inlinedList ul li{
+	font-weight: 700
+}
+.inlinedList ul li a i{
+	margin-right: 2px;
 }
 
 /* =============== ADMIN PAGE =============== */
@@ -66,7 +82,7 @@ input[type=text], input[type=email], input[type=password], textarea{
 	border-radius: 2px!important;
 }
 .content-wrap{
-	padding: 30px 0;
+	padding: 0;
 }
 h3{
 	color: #000;
@@ -75,7 +91,25 @@ h3{
     margin: 20px 0 10px 0;	
 }
 .adminTitle{
-	color: #000;
+	color: #D9D4D4;
+    font-size: 35px;
+    padding: 0 20px;
+    margin-top: 56px;
+    overflow: hidden;
+}
+.adminTitle span{
+	float:right;
+	color: #efefef!important;
+}
+.adminTitle a{
+	font-size: 16px;
+    padding: 10px;    
+    position: relative;
+    top: -3px;
+}
+.adminTitle a i{
+    color: #C9C8C8;
+    margin-right: 2px;
 }
 .externalLinks{
 	margin: 3px 0px;
@@ -104,9 +138,21 @@ h3{
 .panel-heading{
 	padding: 5px 15px;
 }
+.panel-title{
+	font-size: 14px;
+	color: #fff;
+    font-weight: 400;
+}
 .panel-default > .panel-heading{
-	border-bottom: 	0;
-	background: transparent;	
+    border-bottom: 0;
+    background: rgba(6, 6, 6, 0.99);
+    padding: 10px;
+    border-radius: 0;	
+}
+.controls{
+	padding: 5px 10px;
+    font-size: 13px;
+    color: #000;
 }
 
 #image_container, #image_list{
@@ -169,17 +215,17 @@ h3{
 	color: #000;
 	font-size: 15px;
     font-weight: 500;
+    padding: 15px 10px!important;
+    border-top: 0!important;
 }
 .adminPosts td a{
     color: #B40707;
-    font-weight: 500;
-    padding-left: 10px;
-    font-size: 14px;
+    font-weight: 700;    
+    font-size: 16px;
 }
 
 .adminPosts .subTD{
-	font-size: 13px;
-	text-align: center;
+	font-size: 13px;	
 }
 
 /* =============== EDIT POST PAGE =============== */
@@ -198,7 +244,7 @@ h3{
     left: 5px;
 }
 .newPostBox{
-	font-size: 25px;
+	font-size: 30px;
     height: auto;
     color: #000;
     border-radius: 0;

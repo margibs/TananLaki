@@ -1041,6 +1041,9 @@ body.stretched #header.full-header .container {
 #primary-menu > ul > li:hover a,
 #primary-menu > ul > li.current a { color: #fff; }
 
+#primary-menu > ul > li:hover a{
+	color: #666;
+}
 #primary-menu > ul > li.sub-menu > a > div { }
 
 #primary-menu ul ul,
@@ -1084,7 +1087,7 @@ body.stretched #header.full-header .container {
 	font-weight: 600;
 	height: 42px !important;
 	line-height: 42px !important;
-	color: #efefef !important;
+	color: #000000 !important;
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 	border: 0 !important;
@@ -1093,6 +1096,10 @@ body.stretched #header.full-header .container {
 	-webkit-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
+}
+
+#primary-menu ul li.current ul a{
+	color: #fff!important;
 }
 
 #primary-menu ul ul li:hover > a {
@@ -2195,10 +2202,10 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 	left: 0;
 	z-index: 10;
 	width: 260px;
-	height: 100%;
-	background-color: #D7D0D0;
+	height: 100%;	
 	border: none;	
 	overflow: hidden;
+	background-color: #E9E9E9;
 }
 
 .side-header #header-wrap {
@@ -2239,7 +2246,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 .side-header #primary-menu ul {
 	float: none;
 	height: auto;
-	padding: 0 5px;
+	padding: 0 7px;
 }
 
 .side-header #primary-menu ul li {
@@ -2247,7 +2254,10 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
     margin: 0;
     padding: 5px 10px;
 }
-
+.side-header #primary-menu ul li.current{
+	background-color: #000;
+	border-radius: 5px;
+}
 .side-header #primary-menu ul li:first-child { margin-top: 0; }
 
 .side-header #primary-menu ul li a {
@@ -2293,7 +2303,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 .side-header #primary-menu ul ul li:first-child { border-top: 0; }
 
 .side-header #primary-menu ul ul a {
-	font-size: 12px;
+	font-size: 13px;
 	height: auto !important;
 	line-height: 24px !important;
 	padding: 2px 0 !important;
@@ -2310,7 +2320,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 .side-header #primary-menu ul > li.sub-menu > a:after {
 	position: absolute;
 	content: '\e7a5';
-	top: 1px;
+	top: 5px;
 	right: 15px;
 	-webkit-transition: transform .2s linear;
 	-o-transition: transform .2s linear;

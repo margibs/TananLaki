@@ -3,17 +3,51 @@
 @section('content')
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <h2 class="adminTitle"> Add New Post </h2> 
+    <h2 class="adminTitle"> </h2> 
     
     
     <div class="clearfix"></div>
 
-    <div class="col_one_fourth">
+    <div class="col_three_fourth" style="padding-left: 20px;">
     
       <form method="POST" action="{{ url('admin/new_post') }}" enctype="multipart/form-data">
- <div class="panel panel-default">
+ 
 
-                           <div class="panel panel-default">
+      @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+  
+        {!! csrf_field() !!}
+        <input id="featured_image" type='hidden' name='feat_image_url' value=''>
+        <input type="text" name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.." />
+        <h3> <i class="icon-line2-eyeglasses"></i>&nbsp; Plagiarism check result: </h3>
+        <div id="copyscape" style="margin-bottom:20px;"></div>
+      
+
+        <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
+          <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+        </div>
+       
+        <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
+        <textarea name="excerpt" id="" class="excerptBox"></textarea>
+
+        
+       
+
+    </div>
+
+    <div class="col_one_fourth col_last" style="padding-right: 20px;">
+
+
+
+                   <div class="panel panel-default">
                       <div class="panel-heading">
                           <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a>  </h2>
                       </div>
@@ -23,6 +57,7 @@
                       </div>
                   </div>
 
+                  <div class="panel panel-default">
                       <div class="panel-heading">
                            <h2 class="panel-title">  Categories </h2>
                       </div>
@@ -70,41 +105,12 @@
                     </div>
                         
                           <!-- <a href="#" class="button"> Publish Now </a> -->
-                        <button id="check_post" class="button button-3d">Check Post</button>
-                        <input id="check_post_submit" type="submit" value="Submit" class="button button-3d" style="display:none;">
+                        <button id="check_post" class="button button-3d"  style="display: block;margin: 0 auto;">Check Post</button>
+                        <input id="check_post_submit" type="submit" value="Submit" class="button button-3d"  style="display: none;margin: 0 auto;">
                       </div>
                   </div>
   
 
-
-    </div>
-
-    <div class="col_three_fourth col_last">
-
-      @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-  
-        {!! csrf_field() !!}
-        <input id="featured_image" type='hidden' name='feat_image_url' value=''>
-        <input type="text" name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.." />
-        <br>
-        <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
-          <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
-        </div>
-       
-        <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
-        <textarea name="excerpt" id="" class="excerptBox"></textarea>
-
-        <h3> <i class="icon-line2-eyeglasses"></i>&nbsp; Plagiarism check result </h3>
-         <div id="copyscape"></div>
 
           </form>
     </div>

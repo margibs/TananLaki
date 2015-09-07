@@ -3,95 +3,16 @@
 @section('content')
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <h2 class="adminTitle"> Edit Post </h2> 
+    <h2 class="adminTitle"> </h2> 
     
     
     <div class="clearfix"></div>
 
-    <div class="col_one_fourth">
+    <div class="col_three_fourth" style="padding-left: 20px;">
   
-    <form method="POST" action="{{ url('admin/new_post') }}/{{$post->id}}" enctype="multipart/form-data">
-  <div class="panel panel-default">
-
-               <div class="panel panel-default">
-            <div class="panel-heading">
-                <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a>   </h2>
-            </div>
-            <div class="panel-body" style="padding-top: 0;">               
-              <div id="img_here">
-                <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
-              </div>         
-            </div>
-        </div>
-
-            <div class="panel-heading">
-                 <h2 class="panel-title">  Categories </h2>
-            </div>
-            <div class="panel-body">
-                <div class="control-group">
-                  <div class="controls">
-                      
-                       @foreach($categories as $category)
-                            
-                            <?php $check = false; ?>
-
-                            @if($category->post_id != null)
-                              <?php $check = true; ?>
-                            @endif
-
-                            {!! Form::checkbox('category_id[]', $category->id,$check) !!}                               
-                            {{ $category->name }}
-                            <br />  
-                        @endforeach
-
-                  </div>
-                </div>
-            </div>
-        </div>
-        
-
-   
-
-                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                          <h2 class="panel-title"> Autopost </h2>
-                      </div>
-                      <div class="panel-body">
-                            <div class="controls">
-                               <label class="checkbox" for="published">
-                                {!! Form::checkbox('shared_fb', 1,$shared_fb_status) !!} <i class="icon-facebook-sign"> </i>  Post on FB <br >
-                                {!! Form::checkbox('shared_twitter', 1,$shared_twitter_status) !!} <i class="icon-twitter-sign"> </i>  Post on Twitter
-                           </div>
-                      </div>
-                  </div>
-
-        <div class="panel panel-default">
-          
-            <div class="panel-body">
-                    <div class="controls">
-
-            <label class="checkbox" for="published">
-                <?php $check_publish = false; ?>
-                @if($post->status == 1)
-                <?php $check_publish = true; ?>
-                @endif
-                {!! Form::checkbox('status', 1,$check_publish) !!}Publish
-               
-                 <span> ( Uncheck to save as draft ) </span>
-            </label>
-         
-          </div>
-              
-                <!-- <a href="#" class="button"> Publish Now </a> -->
-              <input type="submit" value="Update Post" class="button button-3d">
-            </div>
-        </div>
-
-    </div>
-
-    <div class="col_three_fourth col_last">
-
-    @if (count($errors) > 0)
+      <form method="POST" action="{{ url('admin/new_post') }}/{{$post->id}}" enctype="multipart/form-data">
+     
+       @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -112,6 +33,85 @@
         <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
         <textarea name="excerpt" id="" class="excerptBox">{{$post->excerpt}}</textarea>
         
+
+    </div>
+
+    <div class="col_one_fourth col_last" style="padding-right: 20px;">
+
+            <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a>   </h2>
+                  </div>
+                  <div class="panel-body" style="padding-top: 0;">               
+                    <div id="img_here">
+                      <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
+                    </div>         
+                  </div>
+            </div>
+            
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                   <h2 class="panel-title">  Categories </h2>
+              </div>
+               <div class="panel-body">
+                    <div class="control-group">
+                      <div class="controls">
+                          
+                           @foreach($categories as $category)
+                                
+                                <?php $check = false; ?>
+
+                                @if($category->post_id != null)
+                                  <?php $check = true; ?>
+                                @endif
+
+                                {!! Form::checkbox('category_id[]', $category->id,$check) !!}                               
+                                {{ $category->name }}
+                                <br />  
+                            @endforeach
+
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+
+       <div class="panel panel-default">
+          <div class="panel-heading">
+                <h2 class="panel-title"> Autopost </h2>
+            </div>
+            <div class="panel-body">
+                  <div class="controls">
+                     <label class="checkbox" for="published">
+                      {!! Form::checkbox('shared_fb', 1,$shared_fb_status) !!} <i class="icon-facebook-sign"> </i>  Post on FB <br >
+                      {!! Form::checkbox('shared_twitter', 1,$shared_twitter_status) !!} <i class="icon-twitter-sign"> </i>  Post on Twitter
+                 </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+          
+            <div class="panel-body">
+                    <div class="controls">
+
+            <label class="checkbox" for="published">
+                <?php $check_publish = false; ?>
+                @if($post->status == 1)
+                <?php $check_publish = true; ?>
+                @endif
+                {!! Form::checkbox('status', 1,$check_publish) !!}Publish
+               
+                 <span> ( Uncheck to save as draft ) </span>
+            </label>
+         
+          </div>
+              
+                <!-- <a href="#" class="button"> Publish Now </a> -->
+              <input type="submit" value="Update Post" class="button button-3d" style="display: block;margin: 0 auto;">
+            </div>
+        </div>
+
+   
 </form>
     </div>
 

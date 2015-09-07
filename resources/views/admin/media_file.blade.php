@@ -37,29 +37,31 @@
                     
                         <div class="col-xs-12 col-md-12">
                             
-                            <form class="form-inline" method="POST" action="{{ url('admin/media_file_upload') }}" enctype="multipart/form-data">
-                              {!! csrf_field() !!}
-                              <div class="form-group">
-                                <input type="file" name="file" id="fileupload" />
-                              </div>
-                              <div class="form-group">
-                                 <input type="hidden" name="item_label" id="uploadName"  />
-                              </div>
-                              <input type="submit" value="Upload" class="button button3d" />
-                            </form>
-                            
-            				      <div id="image_container">
-                                    @foreach($media_files as $media_file)
-                					         <div class="outer">
-                                          <div class="inner">
-                                            <img src="{{ url('/uploads') }}/{{$media_file->image_url}}" get-this="{{$media_file->image_url}}" />
-                                          </div>                          
-                                    </div>
-                                    @endforeach
-                				  </div>
+                            <div id="contentMainWrapper">
+                                <form class="form-inline" method="POST" action="{{ url('admin/media_file_upload') }}" enctype="multipart/form-data">
+                                  {!! csrf_field() !!}
+                                  <div class="form-group">
+                                    <input type="file" name="file" id="fileupload" />
+                                  </div>
+                                  <div class="form-group">
+                                     <input type="hidden" name="item_label" id="uploadName"  />
+                                  </div>
+                                  <input type="submit" value="Upload" class="button button3d" />
+                                </form>
+                                
+                  				      <div id="image_container">
+                                          @foreach($media_files as $media_file)
+                      					         <div class="outer">
+                                                <div class="inner">
+                                                  <img src="{{ url('/uploads') }}/{{$media_file->image_url}}" get-this="{{$media_file->image_url}}" />
+                                                </div>                          
+                                          </div>
+                                          @endforeach
+                      				  </div>
+                            </div>
 
                                 <!-- <input type="Submit" value="Select" id="image_submit"> -->
-                            </div>
+                        </div>
                             
 
                           

@@ -9,7 +9,7 @@
     <div class="clearfix"></div>
 
     <div class="col_full">
-
+<div id="contentMainWrapper">
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -45,8 +45,9 @@
           </label>
           
           <input type="submit" value="Submit" class="button button-3d">
-
     </div>
+</div>
+
 </form>
     </div>
 
