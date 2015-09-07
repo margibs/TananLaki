@@ -7,6 +7,16 @@
     body{
         background-image: none;
     }
+    .mainPostWrapper{
+        box-shadow: 0 0 0 0;
+        background: transparent;
+        margin-top: 25px;
+    }
+    .acctitle {
+        color: #000;
+        font-weight: 700;
+        font-size: 30px;
+    }
 </style>
 
 
@@ -39,7 +49,7 @@
 
        <div class="col_full nobottommargin">
             <button class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
-            <button class="button button-3d button-black nomargin">Login with Facebook</button>
+            <button class="button button-3d button-black nomargin" class="button">Login with Facebook</button>
            <!--  <a href="#" class="fright">Forgot Password?</a> -->
         </div>
     </form>

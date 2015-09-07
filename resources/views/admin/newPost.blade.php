@@ -2,6 +2,12 @@
 
 @section('content')
 
+<style>
+  .loadmoreajaxloader{
+    display: none;
+  }
+</style>
+
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <h2 class="adminTitle"> </h2> 
     
@@ -28,6 +34,7 @@
         <input id="featured_image" type='hidden' name='feat_image_url' value=''>
         <input type="text" name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.." />
         <h3> <i class="icon-line2-eyeglasses"></i>&nbsp; Plagiarism check result: </h3>
+        <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
         <div id="copyscape" style="margin-bottom:20px;"></div>
       
 
@@ -198,6 +205,8 @@ $(document).ready(function(){
 
     e.preventDefault();
 
+    $("#loadmoreajaxloader").css({'display':'block'});
+
     $.ajax({ 
       type: 'post',
       url: "{{url('admin/ajax_check_content')}}",
@@ -210,6 +219,8 @@ $(document).ready(function(){
           .replace(/--allwordsmatched--/ig, parsed.allwordsmatched)
           .replace(/--allpercentmatched--/ig, parsed.allpercentmatched)
           .replace(/--alltextmatched--/ig, parsed.alltextmatched);
+          $("#loadmoreajaxloader").css({'display':'none'});
+
           $('#copyscape').html(add_parent);
 
           if(parsed.allpercentmatched < 10)
