@@ -3,7 +3,7 @@
 @section('content')
 
 <style>
-  .loadmoreajaxloader{
+  #loadmoreajaxloader{
     display: none;
   }
 </style>
