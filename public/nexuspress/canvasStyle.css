@@ -56,6 +56,8 @@ body {
 	line-height: 1.5;
 	color: #555;
 	font-family: 'Roboto', sans-serif;
+	background-color: #F5F1F1;
+	/*background: #000 radial-gradient(circle, #9C0000, #2F2727) repeat scroll 0% 0%;	*/
 }
 
 a {
@@ -153,7 +155,6 @@ small { font-family: 'Roboto', sans-serif; }
 	float: none;
 	width: 1220px;
 	margin: 0 auto;
-	background-color: #FFF;
 	box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -818,7 +819,7 @@ html[xmlns] .slider-wrap {display: block;}
 
 #header {
 	position: relative;
-	background-color: #FFF;
+	background-color: transparent;
 	border-bottom: 1px solid #F5F5F5;
 }
 
@@ -1014,12 +1015,10 @@ body.stretched #header.full-header .container {
 	height: 100px;
 	line-height: 100px;
 	padding: 0 15px;
-	color: #8D8989;
-	font-weight: bold;
-	font-size: 17px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	font-family: 'Oswald', sans-serif;
+    color: #101010;
+    font-weight: 800;
+    font-size: 15px;	
+	font-family: 'Roboto', sans-serif;
 	-webkit-transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
 	-o-transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
 	transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
@@ -2197,11 +2196,9 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 	z-index: 10;
 	width: 260px;
 	height: 100%;
-	background-color: #FFF;
-	border: none;
-	border-right: 1px solid #EEE;
+	background-color: #D7D0D0;
+	border: none;	
 	overflow: hidden;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.065);
 }
 
 .side-header #header-wrap {
@@ -2213,23 +2210,23 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 
 .side-header #header .container {
 	width: 260px !important;
-	padding: 0 30px !important;
+	padding: 0!important;
 	margin: 0 !important;
 }
 
 .side-header #logo {
 	float: none;
-	margin: 60px 0 40px;
+	margin: 20px 0 40px;
 }
 
 .side-header #logo img { height: auto !important; }
 
 .side-header #logo:not(.nobottomborder):after,
 .side-header #primary-menu:not(.nobottomborder):after {
-	display: block;
+/*	display: block;
 	content: '';
 	width: 20%;
-	border-bottom: 1px solid #201E1E;
+	border-bottom: 1px solid #201E1E;*/
 }
 
 .side-header .center #logo:after { margin: 0 auto; }
@@ -2242,11 +2239,13 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 .side-header #primary-menu ul {
 	float: none;
 	height: auto;
+	padding: 0 5px;
 }
 
 .side-header #primary-menu ul li {
-	float: none;
-	margin: 10px 0 0;
+    float: none;
+    margin: 0;
+    padding: 5px 10px;
 }
 
 .side-header #primary-menu ul li:first-child { margin-top: 0; }
@@ -2254,8 +2253,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 .side-header #primary-menu ul li a {
 	height: 25px;
 	line-height: 25px;
-	padding: 0;
-	text-transform: uppercase;
+	padding: 0;	
 }
 
 .side-header #primary-menu ul li i { line-height: 24px; }
@@ -2289,6 +2287,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 .side-header #primary-menu ul ul li {
 	margin: 0;
 	border: 0;
+	padding:0;
 }
 
 .side-header #primary-menu ul ul li:first-child { border-top: 0; }
@@ -2312,7 +2311,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 	position: absolute;
 	content: '\e7a5';
 	top: 1px;
-	right: 0;
+	right: 15px;
 	-webkit-transition: transform .2s linear;
 	-o-transition: transform .2s linear;
 	transition: transform .2s linear;
@@ -2328,7 +2327,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 }
 
 .side-header:not(.open-header) #wrapper {
-	margin: 0 0 0 260px !important;
+	margin: 0 0 0 234px !important;
 	width: auto !important;
 }
 
@@ -3232,8 +3231,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 #content {
 	position: relative;
-	overflow: hidden;
-	background-color: #FFF;
+	overflow: hidden;	
 }
 
 #content p { line-height: 1.8; }

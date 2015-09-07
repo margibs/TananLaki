@@ -1,3 +1,8 @@
+#contentMainWrapper{
+	background-color: rgba(255, 255, 255, 0.94);
+	overflow: hidden;    
+    border-radius: 2px;
+}
 .side-header #header{
 	width: 235px;
 }
@@ -6,6 +11,45 @@
 }
 .side-header:not(.open-header) #wrapper .container{
 	margin: 0px 20px;
+}
+.topmostMenu{
+	padding: 8px 0px 8px 20px;
+	background-color: #A20000;
+	border-bottom: 1px solid #D4D2D2;
+}
+.topmostMenu .quickList{
+	list-style: outside none none;
+	margin-top: 3px;
+	margin-bottom: 0px;
+}
+.topmostMenu .quickList li a i{
+	margin-right: 3px;
+}
+.topmostMenu .quickList li .dropdown-toggle{
+	color: #FEFEFE;
+	padding: 5px 15px !important;
+	background-color: #8A0000;
+	border-radius: 20px;
+	font-weight: 600;
+	font-size: 13px;
+}
+#adminSearch{
+	background-color: #fff;
+    border: 0;        
+    color: #000;	
+	padding: 5px 10px;
+	border-radius: 30px !important;
+}
+
+.table > thead > tr > td{
+	padding: 10px 8px;
+    font-size: 14px;
+    text-align: center;
+    color: #787474;
+    border-top: 1px solid #F7F7F7;
+}
+.table tr td{
+	border-top: 1px solid #f1f1f1;
 }
 
 /* =============== ADMIN PAGE =============== */
@@ -28,20 +72,31 @@ h3{
 	color: #000;
     font-size: 15px;
     font-weight: 600;
-    margin: 20px 0 10px 0;
-}
-#header-wrap{
-	background-color: #000;
+    margin: 20px 0 10px 0;	
 }
 .adminTitle{
 	color: #000;
 }
-.externalLinks a{
-	color: #B50909;
-    font-size: 10px;
-    margin: 5px;
-    font-weight: 600;
-    text-transform: uppercase;
+.externalLinks{
+	margin: 3px 0px;
+}
+.externalLinks ul{
+	list-style: none;
+	margin-bottom: 0;
+	text-align: right;
+}
+.externalLinks ul li{
+	display: inline-block;
+}
+.externalLinks ul li a{
+	color: #FFF;
+	padding: 5px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.externalLinks ul li a i{
+	margin-right: 5px;
+	color: #D4D1D1;
 }
 .panel{
 	border: none;
@@ -116,11 +171,15 @@ h3{
     font-weight: 500;
 }
 .adminPosts td a{
-	color: #C50A0A;
-    font-weight: 700;    
+    color: #B40707;
+    font-weight: 500;
+    padding-left: 10px;
+    font-size: 14px;
 }
+
 .adminPosts .subTD{
 	font-size: 13px;
+	text-align: center;
 }
 
 /* =============== EDIT POST PAGE =============== */

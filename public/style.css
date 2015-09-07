@@ -12395,8 +12395,7 @@ body{
     font-style: normal;
     font-family: Roboto;
     font-weight: 500;
-    color: #3A3939;
-    font-size: 14px;    
+    font-size: 12px;    
 }
 .entry-content p{
 	
@@ -12410,8 +12409,9 @@ body{
 }
 .red{
     background-color: #B70808;
-    padding: 2px 10px;
+    padding: 5px 15px;
     color: #fff!important;
+    text-transform: uppercase;
 }
 #footer.dark, .dark #footer{
     background-color: #000!important	;

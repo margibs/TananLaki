@@ -45,6 +45,7 @@
 
 <body class="stretched side-header no-transition">
 
+
     <!-- Document Wrapper
     ============================================= -->
     <div id="wrapper" class="clearfix">
@@ -60,11 +61,28 @@
                     <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                     <!-- Logo
-                    ============================================= -->
+                    ============================================= 
+                  
+
                     <div id="logo" class="nobottomborder">
                         <a href="index.html" class="standard-logo" data-dark-logo="{{ asset('images/NB-logo-dark.jpg') }}"><img src="{{ asset('images/NB-logo-dark.jpg') }}" alt=""></a>
                         <a href="index.html" class="retina-logo" data-dark-logo="{{ asset('images/NB-logo-dark.jpg') }}{{ asset('images/NB-logo-dark.jpg') }}"><img src="{{ asset('images/NB-logo-dark.jpg') }}" alt=""></a>
-                    </div><!-- #logo end -->
+                    </div>
+
+                      -->
+                    
+                    <!-- #logo end -->
+
+                   <h2 style=
+"
+color: rgb(255, 255, 255);
+display: block;
+background: #A20000  none repeat scroll 0% 0%;
+text-align: center;
+padding: 4px 0;
+margin-bottom: 0;
+
+"> NexusPress </h2>
 
                     <!-- Primary Navigation
                     ============================================= -->
@@ -74,7 +92,7 @@
                              <li class="
                                  @if(Request::is('admin/posts*')){{'current'}}
                                  @endif">
-                                <a>Post </a>
+                                <a><i class="icon-line-paper-stack"></i> Post </a>
 
                                  <ul>
                                     <li><a href="{{ url('/admin/new_post') }}"><div> <i class="icon-line-square-plus"></i> Add New </div></a> </li>
@@ -83,24 +101,20 @@
                                 </ul>
 
                             </li>   
-                            <li><a href="{{ url('admin/categories') }}"> Category </a></li>
+                            <li><a href="{{ url('admin/categories') }}"> <i class="icon-line-layers"></i> Category </a></li>
                            <li class=" @if(Request::is('admin/links*')){{'current'}}@endif">
-                                    <a>Widget</a>
+                                    <a> <i class="icon-line-layout"></i> Widget</a>
                                      <ul>
                                         <li><a href="{{ url('/admin/links') }}"><div> <i class="icon-link"></i> All Links </div></a> </li> 
                                         <li><a href="{{ url('/admin/new_link') }}"><div> <i class="icon-line-square-plus"></i> Add New </div></a> </li>                                    
                                     </ul>
                             </li>
-                            <li><a href="{{ url('admin/media_gallery') }}"> Gallery </a></li>
-                            <li><a href="{{ url('admin/users') }}"> Comments </a></li>
-                            <li><a href="{{ url('admin/users') }}"> Users </a></li>
+                            <li><a href="{{ url('admin/media_gallery') }}"> <i class="icon-line-image"></i> Gallery </a></li>
+                            <li><a href="{{ url('admin/users') }}"> <i class="icon-line-speech-bubble"></i> Comments </a></li>
+                            <li><a href="{{ url('admin/users') }}"> <i class="icon-line-head"></i> Users </a></li>
                         </ul>
 
-                    </nav><!-- #primary-menu end -->
-
-                    <div class="externalLinks">
-                        <a href="{{ url('/')}}"> View Site </a> | <a href="#"> Logout </a>
-                    </div>
+                    </nav><!-- #primary-menu end -->            
                   
                 </div>
 
@@ -112,12 +126,47 @@
         <!-- Content
         ============================================= -->
         <section id="content">
+            
+            
+  <div class="topmostMenu">
+        <div class="pull-left">
+            <ul class="nav nav-pills quickList">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                Add New <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#"> <i class="icon-line-paper-stack"></i> Post </a></li>
+                    <li><a href="#"> <i class="icon-line-layers"></i> Category </a></li>
+                    <li><a href="#"> <i class="icon-link"></i> Links </a></li>                    
+                </ul>
+            </li>
+        </ul>
+           
+         </div>
+
+         <div class="externalLinks">
+            <ul>                
+                <li><a href="{{ url('/') }}"> <i class="icon-world"></i></a></li>
+                <li><a href="#"> <i class="icon-signout"></i></a></li>                    
+                <li> <input id="adminSearch" type="text" placeholder="Search..." />  <a href="" style=
+"
+position: relative;
+left: -33px;
+font-size: 15px;
+">
+
+<i class="icon-search3"></i>  </a></li>
+
+            </ul> 
+         </div>
+    </div>
 
            <div class="content-wrap">
 
                 <div class="container clearfix">
                     <div class="one_fourth nobottommargin col_last">
-                        
+                       
                         @yield('content')
                 
                     </div>

@@ -20,7 +20,7 @@
  
 }
 .single-title{
-  padding: 0px 40px 30px 40px;
+  padding: 0px 40px 15px 40px;
   background-color:#fff;
   -moz-box-shadow: 0 -1px 20px -3px #C7C7C7;
   -webkit-box-shadow: 0 -1px 20px -3px #C7C7C7;
@@ -697,10 +697,13 @@
           margin: 10px 0px 0px 0px;
       }
       .entry-meta li{
-        font-size: 15px;
+        font-size: 12px;
       }
       .entry-content p{
           font-size: 17px!important;
+      }
+      .single-title {
+        padding: 0px 40px 35px 40px;
       }
       .si-share div {
           float: none;
