@@ -55,7 +55,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
       <ul class="entry-meta clearfix">
           <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
           <li><i class="icon-line2-clock"></i> {{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>     
-          <li><i class="icon-line2-bubble"></i> 120 </li>                                                       
+          <li><i class="icon-line2-bubble"></i> {{ $comment_count }} </li>                                                       
           <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
       </ul><!-- .entry-meta end -->
 

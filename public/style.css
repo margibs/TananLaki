@@ -12411,7 +12411,7 @@ body{
     background-color: #B70808;
     padding: 5px 15px;
     color: #fff!important;
-    font-weight: 700;
+    font-weight: 700!important;
     text-transform: uppercase;
 }
 #footer.dark, .dark #footer{
