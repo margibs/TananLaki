@@ -2231,7 +2231,7 @@ body:not(.device-touch) #page-menu.dots-menu nav li .dots-menu-caption {
 
 .side-header .center #logo:after { margin: 0 auto; }
 
-.side-header #primary-menu { margin-bottom: 30px; }
+.side-header #primary-menu { margin-top: 20px; margin-bottom: 30px; }
 
 .side-header #primary-menu:not(.nobottomborder):after { margin-top: 40px; }
 

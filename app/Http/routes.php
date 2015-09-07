@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('copyscape','HomeController@copyscape');
+Route::get('geo_test','HomeController@copyscape');
 
 Route::group(['middleware' => 'UserCheck'], function()
 {
@@ -62,6 +62,7 @@ Route::get('login', 'Auth\AuthController@getLogin');
 Route::post('login', 'Auth\AuthController@postLogin');
 Route::get('logout', 'Auth\AuthController@getLogout');
 Route::get('login/facebook/{category?}/{slug?}','HomeController@socialLogin');
+Route::post('login/auto_login','HomeController@autoLogin');
 
 // Registration routes...
 Route::get('register', 'Auth\AuthController@getRegister');

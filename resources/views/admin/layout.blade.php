@@ -109,9 +109,11 @@ margin-bottom: 0;
                                         <li><a href="{{ url('/admin/new_link') }}"><div> <i class="icon-line-square-plus"></i> Add New </div></a> </li>                                    
                                     </ul>
                             </li>
+
                             <li><a href="{{ url('admin/media_gallery') }}"> <i class="icon-line-image"></i> Gallery </a></li>
-                            <li><a href="{{ url('admin/users') }}"> <i class="icon-line-speech-bubble"></i> Comments </a></li>
+                            <li><a href="{{ url('admin/comments') }}"> <i class="icon-line-speech-bubble"></i> Comments </a></li>
                             <li><a href="{{ url('admin/users') }}"> <i class="icon-line-head"></i> Users </a></li>
+
                         </ul>
 
                     </nav><!-- #primary-menu end -->            

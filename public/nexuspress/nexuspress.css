@@ -42,11 +42,11 @@
 }
 
 .table > thead > tr > td{
-	padding: 10px 8px;
+	padding: 10px 8px!important;
     font-size: 14px;
     text-align: center;
     color: #787474;
-    border-top: 1px solid #F7F7F7;
+    border-top: 1px solid #F7F7F7!important;
 }
 .table tr td{
 	border-top: 1px solid #f1f1f1;

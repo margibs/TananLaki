@@ -26,6 +26,8 @@ use App\Model\MediaFiles;
 use App\Model\PostCategories;
 use App\Model\Posts;
 use App\Model\SiteSettings;
+use App\Model\Comments;
+
 
 use App\CustomQuery;
 use App\CommonFunctions;
@@ -54,7 +56,7 @@ class AdminController extends Controller
 
         return view('admin.users',$data);
 	}
-
+    
     //POSTS
 	public function posts()
 	{
@@ -418,7 +420,13 @@ class AdminController extends Controller
 
 	public function comments()
 	{
-		return 'COMMENTS!';
+
+		$data['comments'] =
+				DB::table('comments')
+				->join('users','comments.author_id','=','users.id')
+				->paginate(15);
+
+		return view('admin.comments',$data);
 	}
 
     //AJAX
