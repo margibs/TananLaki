@@ -475,7 +475,10 @@ h3{
 	color: #fff;
 }
 
-
+.cke_editable{
+	font-size: 14px!important;    
+    font-family: Roboto!important;
+}
 
 /* =============== POST PAGE =============== */
 .adminPosts td{
