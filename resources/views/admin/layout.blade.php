@@ -45,41 +45,6 @@
 
 <body class="stretched side-header no-transition">
 
- <div class="topmostMenu">
-        <div class="pull-left">
-            <ul class="nav nav-pills quickList">
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                Add New <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#"> <i class="icon-line-paper-stack"></i> Post </a></li>
-                    <li><a href="#"> <i class="icon-line-layers"></i> Category </a></li>
-                    <li><a href="#"> <i class="icon-link"></i> Links </a></li>                    
-                </ul>
-            </li>
-        </ul>
-           
-         </div>
-
-         <div class="externalLinks">
-            <ul>                
-                <li><a href="{{ url('/') }}"> <i class="icon-world"></i></a></li>
-                <li><a href="{{ url('/logout') }}"> <i class="icon-signout"></i></a></li>                    
-                <li> <input id="adminSearch" type="text" placeholder="Search..." />  <a href="" style=
-"
-position: relative;
-left: -33px;
-font-size: 15px;
-">
-
-<i class="icon-search3"></i>  </a></li>
-
-            </ul> 
-         </div>
-    </div>
-
-
     <!-- Document Wrapper
     ============================================= -->
     <div id="wrapper" class="clearfix">
@@ -112,7 +77,7 @@ font-size: 15px;
 "
 color: rgb(255, 255, 255);
 display: block;
-background: #000  none repeat scroll 0% 0%;
+background: #0C0C0C   none repeat scroll 0% 0%;
 text-align: center;
 padding: 4px 0;
 margin-bottom: 0;
@@ -124,7 +89,7 @@ font-family: Oswald;
                     <!-- Primary Navigation
                     ============================================= -->
                     <nav id="primary-menu">
-
+                        <p> Main Menu </p>
                         <ul>
                              <li class="
                                  @if(Request::is('admin/posts*')){{'current'}}
@@ -151,7 +116,7 @@ font-family: Oswald;
 
                             <li class="
                                  @if(Request::is('admin/media_gallery*')){{'current'}}
-                                 @endif"><a href="{{ url('admin/media_gallery') }}"> <i class="icon-line-image"></i> Gallery </a></li>
+                                 @endif"><a href="{{ url('admin/media_gallery') }}"> <i class="icon-line-image"></i> Media Gallery </a></li>
                             <li class="
                                  @if(Request::is('admin/comments*')){{'current'}}
                                  @endif"><a href="{{ url('admin/comments') }}"> <i class="icon-line-speech-bubble"></i> Comments </a></li>
@@ -159,6 +124,15 @@ font-family: Oswald;
                                  @if(Request::is('admin/users*')){{'current'}}
                                  @endif"><a href="{{ url('admin/users') }}"> <i class="icon-line-head"></i> Users </a></li>
 
+                        </ul>
+
+                        <p> Settings </p>
+
+                        <ul>
+                             <li class="
+                                 @if(Request::is('admin/general_settings*')){{'current'}}
+                                 @endif"><a href="{{ url('admin/media_gallery') }}"> <i class="icon-line2-settings"></i> General </a>
+                            </li>
                         </ul>
 
                     </nav><!-- #primary-menu end -->            
@@ -173,12 +147,50 @@ font-family: Oswald;
         <!-- Content
         ============================================= -->
         <section id="content">
-            
-            
- 
+
            <div class="content-wrap">
 
                 <div class="container clearfix">
+
+                    <div class="topmostMenu">
+                        <div class="pull-left">
+                            <ul class="nav nav-pills quickList">
+                                <li><input id="adminSearch" type="text" placeholder="Search..." /></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                    Add New <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#"> <i class="icon-line-paper-stack"></i> Post </a></li>
+                                        <li><a href="#"> <i class="icon-line-layers"></i> Category </a></li>
+                                        <li><a href="#"> <i class="icon-link"></i> Links </a></li>                    
+                                    </ul>
+                                </li>
+                            </ul>
+                           
+                         </div>
+
+                         <div class="externalLinks">
+                            <ul>                
+                                <li><a href="{{ url('/') }}"> <i class="icon-world"></i></a></li>
+                                <li><a href="{{ url('/logout') }}"> <i class="icon-signout"></i></a></li>                                                
+                            </ul> 
+                         </div>
+                         
+                         <div class="pageTitle">  
+                            <h2> @if(Request::is('admin')) Dashboard 
+                                 @elseif (Request::is('admin/posts*')) <i class="icon-line-paper-stack"></i> Posts 
+                                 @elseif (Request::is('admin/new_post*')) <i class="icon-line-paper-stack"></i> Posts 
+                                 @elseif (Request::is('admin/categories*')) <i class="icon-line-layers"></i> Categories 
+                                 @elseif (Request::is('admin/links*')) <i class="icon-line-layout"></i> Widgets                                  
+                                 @elseif (Request::is('admin/new_link*')) <i class="icon-line-layout"></i> Widgets                                  
+                                 @elseif (Request::is('admin/media_gallery*')) <i class="icon-line-image"></i> Media Gallery                                  
+                                 @elseif (Request::is('admin/comments*')) <i class="icon-line-speech-bubble"></i> Comments                                  
+                                 @elseif (Request::is('admin/users*')) <i class="icon-line-head"></i> Users
+                                 @endif </h2>
+                         </div>
+                    </div> 
+
                     <div class="one_fourth nobottommargin col_last">
                        
                         @yield('content')

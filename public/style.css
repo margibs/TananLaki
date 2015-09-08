@@ -4824,13 +4824,12 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
     font-weight: 600;
     font-family: Oswald;
     font-size: 45px;
-    color: #000;
-    margin-bottom: 0;
+    color: #000;    
     clear: both;
     line-height: 55px;
     padding-bottom: 20px;
     /* width: 80%; */
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .entry-title h2 a { color: #000; }
@@ -8324,7 +8323,7 @@ body:not(.device-touch) .social-icon i {
 	padding:10px 0;
 	clear: both;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .si-share span {

@@ -8,45 +8,48 @@
     
     <div class="clearfix"></div>
 
-    <div class="col_full">
-<div id="contentMainWrapper">
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <form method="POST" action="{{ url('admin/new_link') }}" enctype="multipart/form-data">
-        {!! csrf_field() !!}
+    <div class="col_half">
+        <div id="contentMainWrapper" style="padding:20px;">
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form method="POST" action="{{ url('admin/new_link') }}" enctype="multipart/form-data" style="margin-bottom:0;">
+                {!! csrf_field() !!}
 
-          <div class="form-group">
-            <label for="exampleInputEmail1"> Image URL </label>
-            <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a> 
-            <div id="img_here"></div>         
-            <input id="featured_image" type='hidden' name='image' value=''>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1"> Ad Link URL </label>
-            <input type="text" class="form-control" name="url"  value="{{old('url')}}"  id="exampleInputEmail1" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1"> Ad Title </label>
-            <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="">
-          </div>          
-          <div class="form-group">
-            <label for="exampleInputPassword1"> Ad URL Caption</label>
-            <input type="text" name="website_url" value="{{old('website_url')}}"  class="form-control newPost" id="exampleInputPassword1" placeholder="">
-          </div>          
-          <label class="checkbox" for="published">
-                {!! Form::checkbox('visible', 1) !!}Visible
-          </label>
-          
-          <input type="submit" value="Submit" class="button button-3d">
-    </div>
-</div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1"> Image URL </label>
+                    <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a> 
+                    <div id="img_here"></div>         
+                    <input id="featured_image" type='hidden' name='image' value=''>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1"> Ad Link URL </label>
+                    <input type="text" class="form-control" name="url"  value="{{old('url')}}"  id="exampleInputEmail1" placeholder="">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Ad Title </label>
+                    <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="">
+                  </div>          
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Ad URL Caption</label>
+                    <input type="text" name="website_url" value="{{old('website_url')}}"  class="form-control newPost" id="exampleInputPassword1" placeholder="">
+                  </div>                
+                  <select name="" id="" style="padding: 3px 10px;margin-right: 20px;">
+                      <option value=""> Select Country </option>
+                  </select>            
+                 <label class="checkbox" for="published" style="display:inline-block;" class="pull-right" >
+                        {!! Form::checkbox('visible', 1) !!} Make it visible
+                  </label>        
+                  <div class="clearfix"></div>
+                  <input type="submit" value="Submit" class="button button-3d" style="margin-left: 0;">
+            </div>
+        </div>
 
 </form>
     </div>

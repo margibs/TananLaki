@@ -9,7 +9,8 @@
 				<th> Content </th>
 				<th> Name </th>
 				<th> Date </th>
-				<th>Approved</th>
+				<th> Approved</th>
+				<th> Post </th>
 				<th> Action </th>
 			</thead>
 			<tbody>
@@ -25,6 +26,7 @@
 							Approved
 						@endif
 					</td>
+					<td> http://alllad.com/news/expert-reasons-out-why-we-ought-to-have-three-day-long-weekends </td>
 					<td>Delete</td>
 				</tr>
 			@endforeach	

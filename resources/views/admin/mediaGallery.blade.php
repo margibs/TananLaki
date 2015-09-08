@@ -3,7 +3,7 @@
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 	<br />
-	<div id="contentMainWrapper" style="background:transparent;">
+	<div id="contentMainWrapper" style="background:transparent;margin-top: 130px;">
 		<div id="fileuploader">Upload</div>
 
 		<div id="media_wrapper">

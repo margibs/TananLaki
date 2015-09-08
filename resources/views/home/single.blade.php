@@ -112,7 +112,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   <div class="post-navigation clearfix">
 
        <span class="readnext"> Read Next </span>
-        <a class="link" href="#" style="border-right: 1px solid #ddd;">The New Fashion Trend In Asia, wearing...</a>
+        <a class="link" href="#">The New Fashion Trend In Asia, wearing...</a>
 
         <div style="float:right; margin: 10px 20px 0 0;">                                        
           <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
@@ -157,7 +157,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                               @foreach($related_posts as $related_post)
 
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR">
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
                                     
                                     <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
                                      <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">

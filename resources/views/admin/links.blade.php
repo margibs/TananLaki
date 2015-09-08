@@ -4,7 +4,10 @@
 @section('content')
 	
 	
-	<h2 class="adminTitle"> <i class="icon-link"></i> Links <a href="{{ url('admin/new_link') }}" class="button button-3d button-large button-rounded" style="  position: relative; top: -7px; margin-left: 10px;"> Add New <i class="icon-line-circle-plus"></i> </a>  </h2>
+	<h2 class="adminTitle">
+	 <i class="icon-link"></i> Links 	
+	<a href="{{ url('/admin/new_link') }}"> <i class="icon-plus-sign"></i> Add new </a>
+	</h2>
 	<div class="clearfix"></div>
 	   <div id="contentMainWrapper">
               <div class="table-responsive adminPosts">

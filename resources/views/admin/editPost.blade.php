@@ -3,7 +3,7 @@
 @section('content')
 
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <h2 class="adminTitle"> </h2> 
+    <h2 class="adminTitle" style="margin-top:130px;"> </h2> 
     
     
     <div class="clearfix"></div>
