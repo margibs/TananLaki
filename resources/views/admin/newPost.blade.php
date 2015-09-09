@@ -49,8 +49,7 @@
 
                  <label class="checkbox" for="published">
                     {!! Form::checkbox('status', 1) !!}Publish
-                   
-                                  <span>( Uncheck to save as draft ) </span>
+                    <span>( Uncheck to save as draft ) </span>
                 </label>
              
               </div>

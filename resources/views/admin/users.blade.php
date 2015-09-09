@@ -16,9 +16,9 @@
 		<tbody>
 			@foreach($users as $user)
 			<tr>
-				<td>{{$user->name}}</td>
-				<td>{{$user->email}}</td>
-				<td>
+				<td class="subTD">{{$user->name}}</td>
+				<td class="subTD">{{$user->email}}</td>
+				<td class="subTD">
 					@if($user->status == 1)
 					<span style="color:green;">Active</span>
 					@elseif($user->status == 2)
@@ -27,14 +27,14 @@
 					<span style="color:red;">Not Active</span>
 					@endif
 				</td>
-				<td>
+				<td class="subTD">
 					@if($user->banned == 0)
 					<span style="color:green;">Not Banned</span>
 					@else
 					<span style="color:red;">Banned</span>
 					@endif
 				</td>
-				<td>
+				<td class="subTD">
 					@if($user->is_admin == 1)
 					<span style="color:green;">Admin</span>
 					@elseif($user->is_admi == 0)

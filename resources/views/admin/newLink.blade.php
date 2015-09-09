@@ -3,7 +3,7 @@
 @section('content')
 
     
-    <h2 class="adminTitle"> Add New Link </h2> 
+    <h2 class="adminTitle">  </h2> 
     
     
     <div class="clearfix"></div>
@@ -24,7 +24,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputEmail1"> Image URL </label>
-                    <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a> 
+                    <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-plus-sign"></i> </a> 
                     <div id="img_here"></div>         
                     <input id="featured_image" type='hidden' name='image' value=''>
                   </div>
@@ -43,7 +43,7 @@
                   <select name="" id="" style="padding: 3px 10px;margin-right: 20px;">
                       <option value=""> Select Country </option>
                   </select>            
-                 <label class="checkbox" for="published" style="display:inline-block;" class="pull-right" >
+                  <label class="checkbox" for="published" style="display:inline-block;" class="pull-right" >
                         {!! Form::checkbox('visible', 1) !!} Make it visible
                   </label>        
                   <div class="clearfix"></div>
