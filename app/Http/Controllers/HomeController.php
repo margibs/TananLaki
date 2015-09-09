@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Stevebauman\Location\Facades\Location;
 
 use App;
@@ -63,8 +62,17 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
-        $location = Location::get();
-        dd($location);
+
+        //     $post = Posts::with(array('comments'=>function($query){
+        //     $query->where('parent',0);
+        // }))->find(17);
+
+        // foreach ($post->comments as $comment) {
+        //     echo $comment->content.'<br />';
+        // }
+
+        // $location = Location::get();
+        // dd($location);
         // echo 'IP: '.$location->ip.'<br />';
         // echo 'ISP: '.$location->isp.'<br />';
         // echo 'Country Name: '.$location->countryName.'<br />';
