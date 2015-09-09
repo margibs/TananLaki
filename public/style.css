@@ -10442,10 +10442,10 @@ fieldset[disabled] .sm-form-control {
 
 .sm-form-control { height: auto; }
 
-#login-form.form-control, #register-form.form-control { 
-    border-radius: 0;
-    height: auto;
-    font-size: 20px;
+#login-form .form-control, #register-form .form-control { 
+    border-radius: 0!important;
+    height: auto!important;
+    font-size: 20px!important;
 }
 
 .form-control:active,

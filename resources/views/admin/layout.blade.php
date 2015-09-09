@@ -100,6 +100,7 @@ font-family: Oswald;
                                     <li><a href="{{ url('/admin/new_post') }}"><div> <i class="icon-line-square-plus"></i> Add New </div></a> </li>
                                     <li><a href="{{ url('/admin/posts') }}"><div> <i class="icon-paperclip"></i> Posts </div></a> </li> 
                                     <li><a href="{{ url('/admin/drafts') }}"><div> <i class="icon-line-marquee"></i> Drafts </div></a> </li> 
+                                    <li><a href="{{ url('/admin/trash') }}"><div> <i class="icon-trash"></i> Trash </div></a> </li> 
                                 </ul>
 
                             </li>   
@@ -161,9 +162,9 @@ font-family: Oswald;
                                     Add New <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#"> <i class="icon-line-paper-stack"></i> Post </a></li>
-                                        <li><a href="#"> <i class="icon-line-layers"></i> Category </a></li>
-                                        <li><a href="#"> <i class="icon-link"></i> Links </a></li>                    
+                                        <li><a href="{{ url('/admin/new_post') }}"> <i class="icon-line-paper-stack"></i> Post </a></li>
+                                        <li><a href="{{ url('/admin/categories') }}"> <i class="icon-line-layers"></i> Category </a></li>
+                                        <li><a href="{{ url('/admin/new_link') }}"> <i class="icon-link"></i> Links </a></li>                    
                                     </ul>
                                 </li>
                             </ul>
@@ -172,7 +173,7 @@ font-family: Oswald;
 
                          <div class="externalLinks">
                             <ul>                
-                                <li><a href="{{ url('/') }}"> <i class="icon-world"></i></a></li>
+                                <li><a href="{{ url('/') }}" target="_blank"> <i class="icon-world"></i></a></li>
                                 <li><a href="{{ url('/logout') }}"> <i class="icon-signout"></i></a></li>                                                
                             </ul> 
                          </div>
@@ -180,10 +181,12 @@ font-family: Oswald;
                          <div class="pageTitle">  
                             <h2> @if(Request::is('admin')) Dashboard 
                                  @elseif (Request::is('admin/posts*')) <i class="icon-line-paper-stack"></i> Posts 
-                                 @elseif (Request::is('admin/new_post*')) <i class="icon-line-paper-stack"></i> Posts 
+                                 @elseif (Request::is('admin/drafts*')) <i class="icon-line-paper"></i> Drafts 
+                                 @elseif (Request::is('admin/trash*')) <i class="icon-line-trash"></i> Trash 
+                                 @elseif (Request::is('admin/new_post*')) <i class="icon-line-paper-stack"></i> Add New Post
                                  @elseif (Request::is('admin/categories*')) <i class="icon-line-layers"></i> Categories 
                                  @elseif (Request::is('admin/links*')) <i class="icon-line-layout"></i> Widgets                                  
-                                 @elseif (Request::is('admin/new_link*')) <i class="icon-line-layout"></i> Widgets                                  
+                                 @elseif (Request::is('admin/new_link*')) <i class="icon-line-layout"></i> Add New Widget
                                  @elseif (Request::is('admin/media_gallery*')) <i class="icon-line-image"></i> Media Gallery                                  
                                  @elseif (Request::is('admin/comments*')) <i class="icon-line-speech-bubble"></i> Comments                                  
                                  @elseif (Request::is('admin/users*')) <i class="icon-line-head"></i> Users

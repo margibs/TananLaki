@@ -488,6 +488,24 @@ h3{
 	font-size: 14px!important;    
     font-family: Roboto!important;
 }
+.pagination{
+  margin: 20px;
+}
+.pagination > li > a, .pagination > li > span{
+  border:none;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+.pagination > li > a, .pagination > li > span{
+  color: #000000;
+  font-weight: 700;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .pagination > li:last-child > a, .pagination > li:last-child > span{
+  border-radius: 50%;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus{
+  color: #000;
+}
 
 /* =============== POST PAGE =============== */
 .adminPosts td{
@@ -495,18 +513,17 @@ h3{
 	font-size: 15px;
   font-weight: 500;
   padding: 15px 10px!important;
-  border-top: 0!important;
-  text-transform: uppercase;
+  border-top: 0!important; 
 }
 .adminPosts td a{
     color: #B40707;
     font-weight: 700;    
-    font-size: 16px;
-    text-transform: capitalize;
+    font-size: 16px;    
 }
 
 .adminPosts .subTD{
-	font-size: 11px;	
+    font-size: 13px;
+    font-weight: 500;
 }
 
 /* =============== EDIT POST PAGE =============== */

@@ -6,8 +6,8 @@
 		<div class="table-responsive adminPosts">
 		<table class="table table-striped">
 			<thead>			
-				<th> Content </th>
 				<th> Name </th>
+				<th> Content </th>				
 				<th> Date </th>
 				<th> Approved</th>
 				<th> Post </th>
@@ -16,18 +16,18 @@
 			<tbody>
 			@foreach($comments as $comment)
 				<tr>
-					<td>{{$comment->content}}</td>
-					<td>{{$comment->name}}</td>
-					<td>{{$comment->created_at}}</td>
-					<td>
+					<td class="subTD">{{$comment->name}}</td>
+					<td class="subTD">{{$comment->content}}</td>					
+					<td class="subTD">{{$comment->created_at}}</td>
+					<td class="subTD">
 						@if($comment->approved == 0)
-							Not Approved
+							<a href=""><i class="icon-thumbs-down"></i></a>
 						@else
-							Approved
+							<a href=""><i class="icon-thumbs-up"></i></a>
 						@endif
 					</td>
-					<td> http://alllad.com/news/expert-reasons-out-why-we-ought-to-have-three-day-long-weekends </td>
-					<td>Delete</td>
+					<td class="subTD" style="width: 30%;"> <a href="#" style="font-size: 13px;">http://alllad.com/news/expert-reasons-out-why-we-ought-to-have-three-day-long-weekends</a> </td>
+					<td class="subTD"><a href="#"><i class="icon-trash"></i></a></td>
 				</tr>
 			@endforeach	
 			</tbody>
