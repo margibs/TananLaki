@@ -17,6 +17,11 @@
         font-weight: 700;
         font-size: 30px;
     }
+    @media(max-width: 767px){
+        .mainPostWrapper{
+            padding: 10px 20px;
+        }
+    }
 </style>
 
 

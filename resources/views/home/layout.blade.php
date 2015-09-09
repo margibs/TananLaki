@@ -14,16 +14,14 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css"> -->
     
     <!--  <link rel="stylesheet" href="{{url('')}}/{{ elixir('css/all.css') }}" type="text/css" />  -->
-
+  
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />     
-
-    <link rel="stylesheet" href="{{ asset('css/font-icons.css') }}" type="text/css" />     
-
-    <link rel="stylesheet" href="{{ asset('style.css') }}" type="text/css" />     
-    
+    <link rel="stylesheet" href="{{ asset('style.css') }}" type="text/css" />           
+    <link rel="stylesheet" href="{{ asset('css/font-icons.css') }}" type="text/css" />             
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}" type="text/css" />    
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css" /> 
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" />
+
     <link rel="stylesheet" href="{{ asset('myStyle.css') }}" type="text/css" />
 
 
@@ -195,14 +193,14 @@
                           </div>
                           
                           <div style="background-color:#f7f7f7;">
-                            <div class="trendingWrapper">
+                            <!-- <div class="trendingWrapper">
                                     <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend">
                                         <img src="http://alllad.com/uploads/21902_trending-manchester.jpg" alt="">                                   
                                     </a>
                                     <p>
                                         <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend"> Things We’ve Gathered after Watching Manchester United Play Over the Weekend </a>
                                     </p>
-                            </div>                          
+                            </div>   -->                        
                             @foreach($side_bar_posts as $side_bar_post)
                               <div class="trendingWrapper">
                                     <!-- <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
@@ -218,17 +216,25 @@
 
                           <br />                         
                           <div class="socials">
-                            
-                            <div class="fb-page" data-href="https://www.facebook.com/allladmag" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
-                                                       
-                            <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
-                                                       
+                            <div>
+                              <div class="fb-page" data-href="https://www.facebook.com/allladmag" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
+                            </div>                        
+
+                            <div class="wrappers">
+                              <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
+                            </div>                           
+
+
                             <div style="margin:15px;"></div>
                             <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
                             <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
                             <div style="margin:15px;"></div>-->
-                            <script src="https://apis.google.com/js/platform.js"></script>
-                            <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
+                             <div class="wrappers">
+                              <script src="https://apis.google.com/js/platform.js"></script>                          
+                              <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
+                             </div>
+                            </div>
+
                           </div>
 
                       </div>

@@ -8,6 +8,7 @@
 <a href="{{ url('/admin/new_post') }}"> <i class="icon-plus-sign"></i> Add new </a>
 <a href="{{ url('/admin/posts') }}"> <i class="icon-paperclip"></i> Posts </a>
 <a href="{{ url('/admin/drafts') }}"> <i class="icon-line-marquee"></i> Drafts </a>
+<a href="{{ url('/admin/trash') }}"> <i class="icon-line-trash"></i> Trash </a>
 
 <!-- <a href="{{ url('/admin/new_post') }}" class="button button-3d button-large button-rounded" style="  position: relative; top: -7px; margin-left: 10px;"> Add New <i class="icon-line-circle-plus"></i> </a>   -->
 </h2>
@@ -26,7 +27,7 @@
 	<div class="table-responsive adminPosts">
 		<table class="table table-striped">
 			<thead>			
-			
+				<th><input type="checkbox"></th>
 				<th> Title </th>
 				<th> Categories </th>
 				<!-- <td> Comments </td> -->
@@ -36,7 +37,7 @@
 			<tbody>
 			@foreach($posts as $post)
 				<tr>
-					
+					<td><input type="checkbox"></td>
 					<td> <a href="{{url('admin/posts')}}/{{$post->id}}"> {{$post->title}} </a> </td>
 					<td class="subTD">
 					@foreach($post->categories as $category)
