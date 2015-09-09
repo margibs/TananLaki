@@ -23,10 +23,10 @@
 }
 .topmostMenu{	
 	background-color: #fff;
-	border-bottom: 1px solid #D4D2D2;
+	border-bottom: 1px solid #C7C7C7;
 	position: fixed;
-    width: 83%;
-    z-index: 2;
+  width: 83%;
+  z-index: 2;
 }
 .topmostMenu .quickList{
 	list-style: outside none none;
@@ -339,7 +339,7 @@
 	cursor: pointer;
 }
 input[type=text], input[type=email], input[type=password], textarea{
-	border-radius: 0!important;
+	border-radius: 3px!important;
 }
 .btn{
 	background-color: #000!important;
@@ -351,9 +351,9 @@ input[type=text], input[type=email], input[type=password], textarea{
 	padding: 0;
 }
 h3{
-	color: #000;
-    font-size: 15px;
-    font-weight: 600;
+    color: #9C9C9C;
+    font-size: 16px;
+    font-weight: 500;
     margin: 20px 0 10px 0;	
 }
 .adminTitle{
@@ -400,26 +400,35 @@ h3{
 	color: #D4D1D1;
 }
 .panel{
-	border: none;
+	 border-bottom: 1px solid #AFAFAF;
 }
 .panel-heading{
 	padding: 5px 15px;
 }
+
 .panel-title{
-	font-size: 14px;
-	color: #fff;
-    font-weight: 400;
+  font-size: 12px;
+  color: #BB0C0C;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .panel-default > .panel-heading{
-    border-bottom: 0;
-    background: rgba(6, 6, 6, 0.99);
+    border-bottom: 0;    
     padding: 10px;
     border-radius: 0;	
+    background: transparent;
+    text-align: center;
 }
 .controls{
 	padding: 5px 10px;
     font-size: 13px;
     color: #000;
+}
+.controls span{
+    font-size: 13px;
+    display: block;
+    color: #B7B7B7;
+    font-weight: 500;
 }
 
 #image_container, #image_list{
@@ -482,20 +491,22 @@ h3{
 
 /* =============== POST PAGE =============== */
 .adminPosts td{
-	color: #000;
+	color: #A5A5A5;
 	font-size: 15px;
-    font-weight: 500;
-    padding: 15px 10px!important;
-    border-top: 0!important;
+  font-weight: 500;
+  padding: 15px 10px!important;
+  border-top: 0!important;
+  text-transform: uppercase;
 }
 .adminPosts td a{
     color: #B40707;
     font-weight: 700;    
     font-size: 16px;
+    text-transform: capitalize;
 }
 
 .adminPosts .subTD{
-	font-size: 13px;	
+	font-size: 11px;	
 }
 
 /* =============== EDIT POST PAGE =============== */
@@ -506,12 +517,21 @@ h3{
 	border-radius: 2px;
 }
 .panel-body, .panel-heading{
-	padding: 0 0 15px 0;
+	padding: 0;
+}
+.panel-title i{
+  font-size: 17px;
 }
 .featImageButton{
 	position: relative;
     top: 2px;
     left: 5px;
+}
+.control-group{
+    margin-bottom: 10px;
+}
+#img_here{
+  padding: 5px;
 }
 .newPostBox{
 	font-size: 20px;

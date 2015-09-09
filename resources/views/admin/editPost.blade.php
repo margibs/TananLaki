@@ -40,7 +40,7 @@
 
             <div class="panel panel-default">
                   <div class="panel-heading">
-                      <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a>   </h2>
+                      <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-plus-sign"></i> </a>   </h2>
                   </div>
                   <div class="panel-body" style="padding-top: 0;">               
                     <div id="img_here">
@@ -107,7 +107,7 @@
           </div>
               
                 <!-- <a href="#" class="button"> Publish Now </a> -->
-              <input type="submit" value="Update Post" class="button button-3d" style="display: block;margin: 0 auto;">
+              <input type="submit" value="Update Post" class="button button-3d" style="display: block;margin: 0 auto 15px auto;">
             </div>
         </div>
 

@@ -68,7 +68,7 @@
 
                    <div class="panel panel-default">
                       <div class="panel-heading">
-                          <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-line-marquee-plus"></i> </a>  </h2>
+                          <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-plus-sign"></i> </a>  </h2>
                       </div>
                       <div class="panel-body" style="padding-top: 0;">
                             

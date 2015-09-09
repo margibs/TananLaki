@@ -9,7 +9,13 @@
     background-color: #ececec;
   }
   .mainPostWrapper{
-    background-color: #fff;    
+   background-color: #D6D6D6;
+    padding-left: 15px;
+  }
+  @media screen and (max-width: 991px){
+    .mainPostWrapper{
+      padding: 0 5px;
+    }
   }
 </style>
 
@@ -138,21 +144,21 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
            
 								  
 							             <!-- Post Author Info ============================================= -->
-                          <div class="panel panel-default authorBox">          
+                         <!--  <div class="panel panel-default authorBox">          
                               <div class="panel-body">
                                   <div class="author-image">
                                       <img src="@if($post->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$post->avatar}} @endif" alt="" class="img-circle">
                                   </div>
                                   <h3 class="panel-title">By <span><a href="#" style="color: #B70808;">{{$post->name}}</a></span></h3>                              
-                                  <!-- {{$post->description}} -->
+                                  {{$post->description}}
                               </div>
-                          </div><!-- Post Single - Author End -->
+                          </div> -->
+                          <!-- Post Single - Author End -->
                           
 
+                          
                           <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
-            
-                          <div class="row">
-
+                          <div class="row">                        
                             <div class="related-posts clearfix" style="margin-bottom:0;">
 
                               @foreach($related_posts as $related_post)
@@ -172,9 +178,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             </div>
                           </div>
 
-                          
-                          <h4 class="relatedText" style="margin-top: 30px;"> From around the web </h4>
-            
+                          <h4 class="relatedText"> From around the web </h4>
                           <div class="row">
 
                             <div class="related-posts clearfix">
@@ -188,7 +192,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                         <img src="{{url('uploads')}}/{{$link->image}}" alt="{{$link->description}}">
                                       </div>
                                     </a>
-                                    <h4 style="aroundWebText"><a href="{{$link->url}}" target="_blank" style="color: #000; font-weight: 500!important; font-size: 16px!important;">{{$link->description}}</a></h4>                                                                          
+                                    <h4 class="aroundWebText"><a href="{{$link->url}}" target="_blank">{{$link->description}}</a></h4>                                                                          
                                     <span><a href="{{$link->url}}" target="_blank"> {{ucfirst($link->website_url)}} </a> </span>
                                 </div>
 
@@ -197,57 +201,66 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             </div>
                           </div>
 
-              						<h4 class="relatedText" style="margin-top:30px;"> What do you think? </h4>
-                          @if(Auth::check())
-              						<form>
-                              <div class="commentPic">
-                                <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
+              						<h4 class="relatedText"> What do you think? </h4>
+                          
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;">
+                              @if(Auth::check())
+
+                      						<form>
+                                      <div class="commentPic">
+                                        <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
+                                      </div>
+                                      <div class="commentTextbox">
+                                        <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..." ></textarea>
+                                        <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled">          
+                                      </div>
+                                  </form>
+                              @else
+
+                                <a href="{{url('login')}}" class="button">Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> or </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Login with facebook</a>
+                             
+                              @endif
+
+                             <div class="cleafix"></div>
+             
+                              <div id="comment_container">
+                                @foreach($comments as $comment)
+                                    <div style="overflow:hidden;margin-bottom: 10px; margin-top: 50px;clear:both;">
+                                      <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
+                                          <img src="@if($comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$comment->avatar}} @endif" alt="" class="pull-left">
+                                      </div>
+                                      <p class="commenterName">
+                                        {{$comment->name}} 
+                                        <span>  {{$comment->created_at}}  </span>
+                                      </p>
+                                      <p class="commentContent">
+                                        {{$comment->content}}
+                                      </p>
+                                      <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a>         
+                                      <div class="clearfix"></div>
+
+                                      <div id="comment_child{{$comment->id}}">
+                                        @foreach($comment->child_comments as $child_comment)
+                                            <div class="childCommentContainer">
+                                              <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
+                                                <img src="@if($child_comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$child_comment->avatar}} @endif" alt="" class="pull-left">
+                                              </div>
+                                              <p class="commenterName">{{$child_comment->name}}
+                                              <span>  {{$child_comment->created_at}}  </span>
+                                              </p>
+                                              <p class="commentContent">{{$child_comment->content}}</p>
+                                              <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a> 
+                                            </div>
+                                        @endforeach
+                                      </div>
+                                      
+                                      <div id="comment_textarea{{$comment->id}}"></div> 
+                                    </div>
+                                @endforeach
+                                <div id="ajax_comment"></div>
                               </div>
-
-                              <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..." ></textarea>
-                              <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled">          
-                          </form>
-                          @else
-                          <a href="{{url('login')}}" class="button">Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> or </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Login with facebook</a>
-                          @endif
-                          <div class="cleafix"></div>
-                        
-
-                          <div id="comment_container">
-                            @foreach($comments as $comment)
-                                <div style="overflow:hidden;margin-bottom: 10px; margin-top: 50px;clear:both;">
-                                  <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                      <img src="@if($comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$comment->avatar}} @endif" alt="" class="pull-left">
-                                  </div>
-                                  <p class="commenterName">
-                                    {{$comment->name}} 
-                                    <span>  {{$comment->created_at}}  </span>
-                                  </p>
-                                  <p class="commentContent">
-                                    {{$comment->content}}
-                                  </p>
-                                  <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a>         
-                                  <div class="clearfix"></div>
-
-                                  <div id="comment_child{{$comment->id}}">
-                                    @foreach($comment->child_comments as $child_comment)
-                                        <div class="childCommentContainer">
-                                          <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                            <img src="@if($child_comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$child_comment->avatar}} @endif" alt="" class="pull-left">
-                                          </div>
-                                          <p class="commenterName">{{$child_comment->name}}
-                                          <span>  {{$child_comment->created_at}}  </span>
-                                          </p>
-                                          <p class="commentContent">{{$child_comment->content}}</p>
-                                          <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a> 
-                                        </div>
-                                    @endforeach
-                                  </div>
-                                  
-                                  <div id="comment_textarea{{$comment->id}}"></div> 
-                                </div>
-                            @endforeach
-                            <div id="ajax_comment"></div>
+                            </div>
                           </div>
                   </div>
 
