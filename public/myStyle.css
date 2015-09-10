@@ -711,10 +711,7 @@
     }
     .post-navigation div{
       display: none;
-    }
-    #top_comment{
-      width: 87%;       
-    }
+    } 
     .relatedImgHeight{
       height:150px;
       overflow:hidden;
@@ -879,9 +876,6 @@
       .si-share{
         margin-top: 25px;
       } 
-      #top_comment{
-        width: 87%;       
-      }
       .single-title {
         padding: 0px 40px 30px 40px;  
         margin-bottom: 10px;
@@ -907,9 +901,6 @@
       }
       .grid-item {
           height: 195px;
-      }
-      #top_comment{
-        width: 84%;         
       }
       .aroundWebWrapper {
          height: 220px;
@@ -945,9 +936,6 @@
           line-height: 20px;
           margin-top: 5px;
       }
-      #top_comment {
-          width: 83%;
-      }
       .postcontent {
           padding: 0px 15px;
       }
@@ -958,6 +946,9 @@
           bottom: 17px!important;
           width: 95.3%;
           border-bottom: 4px solid #B70808;
+      }
+      .relatedText {
+          margin-top: 0;
       }
   
     }
@@ -1015,9 +1006,6 @@
         background-color: #efefef;
         padding-top: 25px;
       }      
-      #top_comment {
-          width: 81%;
-      }
       .bigOuter {
           height: 250px;
       }
@@ -1059,15 +1047,16 @@
         .popularPost h2 {
             line-height: 41px!important;
         }
-         .grid-item p>a {
+        .grid-item p>a {
             font-size: 22px!important;
             line-height: 25px!important;
         } 
         .grid-item {
             height: 252px;
         }
-        #top_comment {
-            width: 76%;
+        .grid-item:before {
+            bottom: 4px!important;
+            width: 96%;
         }
         .aroundWebWrapper {
            height: 230px;
@@ -1078,9 +1067,6 @@
         .aroundWebText{
           margin-top: 0;
         }
-        .grid-item:before {
-          bottom: 14px!important;
-        }
          
     }
     @media screen and  (max-width: 375px){
@@ -1090,6 +1076,7 @@
         .grid-item {
             height: 230px;
         }
+
         .commentPic {
             height: 35px;
             width: 35px;
@@ -1112,6 +1099,9 @@
         }
         .related-posts h4 a{
             line-height: 18px;
+        }
+        .commentTextbox {
+            margin-left: 45px;
         }
     }
     @media screen and  (max-width: 360px){
@@ -1145,6 +1135,7 @@
         .grid-item {
             height: 221px;
         }
+
         .aroundWebPic {
             height: 105px;        
         }
@@ -1173,6 +1164,7 @@
         }
     }
      @media screen and (max-width: 320px){
+
         .popularPost h2 a {
             font-size: 29px!important;
             width: 80%;
@@ -1182,6 +1174,9 @@
         }
         .grid-item {
             height: 197px;
+        }      
+        .grid-item:before {
+            bottom: 4px!important;
         }
         .aroundWebWrapper {
             height: 180px;

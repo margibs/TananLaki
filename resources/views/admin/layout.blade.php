@@ -155,8 +155,7 @@ font-family: Oswald;
 
                     <div class="topmostMenu">
                         <div class="pull-left">
-                            <ul class="nav nav-pills quickList">
-                                <li><input id="adminSearch" type="text" placeholder="Search..." /></li>
+                            <ul class="nav nav-pills quickList">                               
                                 <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                                     Add New <span class="caret"></span>
@@ -173,8 +172,9 @@ font-family: Oswald;
 
                          <div class="externalLinks">
                             <ul>                
-                                <li><a href="{{ url('/') }}" target="_blank"> <i class="icon-world"></i></a></li>
-                                <li><a href="{{ url('/logout') }}"> <i class="icon-signout"></i></a></li>                                                
+                                <li><input id="adminSearch" type="text" placeholder="Search..." /></li>
+                                <li><a href="{{ url('/') }}" target="_blank" data-tooltip="tooltip" title="Open Site"> <i class="icon-world"></i></a></li>
+                                <li><a href="{{ url('/logout') }}" data-tooltip="tooltip" title="Logout"> <i class="icon-signout"></i></a></li>                                                
                             </ul> 
                          </div>
                          
@@ -187,6 +187,7 @@ font-family: Oswald;
                                  @elseif (Request::is('admin/categories*')) <i class="icon-line-layers"></i> Categories 
                                  @elseif (Request::is('admin/links*')) <i class="icon-line-layout"></i> Widgets                                  
                                  @elseif (Request::is('admin/new_link*')) <i class="icon-line-layout"></i> Add New Widget
+                                 @elseif (Request::is('admin/edit_link*')) <i class="icon-line-layout"></i> Edit Widget
                                  @elseif (Request::is('admin/media_gallery*')) <i class="icon-line-image"></i> Media Gallery                                  
                                  @elseif (Request::is('admin/comments*')) <i class="icon-line-speech-bubble"></i> Comments                                  
                                  @elseif (Request::is('admin/users*')) <i class="icon-line-head"></i> Users

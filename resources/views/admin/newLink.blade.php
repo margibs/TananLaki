@@ -3,7 +3,7 @@
 @section('content')
 
     
-    <h2 class="adminTitle">  </h2> 
+    <h2 class="adminTitle"> New Link </h2> 
     
     
     <div class="clearfix"></div>
