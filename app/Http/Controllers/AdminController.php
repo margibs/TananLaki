@@ -434,12 +434,18 @@ class AdminController extends Controller
 	public function comments()
 	{
 
-		$data['comments'] =
+		$comments =
 				DB::table('comments')
 				->join('users','comments.author_id','=','users.id')
+                ->leftJoin('posts','comments.post_id','=','posts.id')
+                ->join('post_categories','posts.id','=','post_categories.post_id')
+                ->join('categories','post_categories.category_id','=','categories.id')
+                ->select('users.name','comments.content','comments.created_at','comments.approved','posts.slug','posts.id','categories.slug as catslug')
 				->paginate(15);
 
-		return view('admin.comments',$data);
+        // dd($comments);
+
+		return view('admin.comments',compact('comments'));
 	}
 
     //AJAX

@@ -9,7 +9,7 @@
 				<th> Name </th>
 				<th> Content </th>				
 				<th> Date </th>
-				<th> Approved</th>
+				{{-- <th> Approved</th> --}}
 				<th> Post </th>
 				<th> Action </th>
 			</thead>
@@ -19,14 +19,15 @@
 					<td class="subTD">{{$comment->name}}</td>
 					<td class="subTD">{{$comment->content}}</td>					
 					<td class="subTD">{{$comment->created_at}}</td>
-					<td class="subTD">
+{{-- 					<td class="subTD">
 						@if($comment->approved == 0)
 							<a href=""><i class="icon-thumbs-down"></i></a>
 						@else
 							<a href=""><i class="icon-thumbs-up"></i></a>
 						@endif
-					</td>
-					<td class="subTD" style="width: 30%;"> <a href="#" style="font-size: 13px;">http://alllad.com/news/expert-reasons-out-why-we-ought-to-have-three-day-long-weekends</a> </td>
+					</td> --}}
+					<td class="subTD" style="width: 30%;"> 
+					<a href="{{ url('/') }}/{{ $comment->catslug }}/{{ $comment->slug }}" traget="_blank" style="font-size: 13px;">{{ url('/') }}/{{ $comment->catslug }}/{{ $comment->slug }}</a> </td>
 					<td class="subTD"><a href="#"><i class="icon-trash"></i></a></td>
 				</tr>
 			@endforeach	
