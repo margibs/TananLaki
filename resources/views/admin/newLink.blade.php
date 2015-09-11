@@ -231,12 +231,8 @@ var substringMatcher = function(strs) {
 
     // The source of the tags for autocompletion
     var tagsource = [
-        'jquery-libs', 'jquery-multilingual-news',
-        'jquert-typeahead-tagging', 'jquery-multilingual-tags',
-        'jquery-forms-ajaxified', 'jquery-project-template',
-        'jquery-development-fabfile', 'jquery-user-media',
-        'jquery-feedback-form', 'jquery-review', 'jquery-hero-slider',
-        'jquery-document-library', 'jquery-paypal-express-checkout'
+        'United Kingdom', 'Spain',
+        'Philippines'        
     ]
 
 
