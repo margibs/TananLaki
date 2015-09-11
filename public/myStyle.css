@@ -1,6 +1,9 @@
 .showLogin{
   display: none;
 }
+.showLogin a{
+  color: red;
+}
 .panel{
   background-color: #efefef;
 }
@@ -128,6 +131,7 @@
 }
 .commentTextbox{
   margin-left: 75px;
+  margin-bottom: 30px;
 }
 .commentTextbox textarea{
     width: 100%;
@@ -242,9 +246,7 @@
 #top-search .userIMG img{
     border-radius: 50%;
 }
-#comment_container{
-      margin-bottom: 40px;
-}
+
 #comment_container p{
   font-family: Roboto!important;
   margin-left: 60px;
@@ -1152,7 +1154,7 @@
           margin:5px;
           padding: 10px 30px;
       }
-
+e 
     
     }
     @media screen and (min-width: 415px) and (max-width: 480px){
