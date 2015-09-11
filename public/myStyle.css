@@ -283,9 +283,26 @@
    color: #000;
   font-family: Oswald;
 }
- .loginButton .button, .form-horizontal  input[type=submit]{          
-   margin:0;
- }
+.loginButton a{
+  margin: 5px 10px;
+  font-size: 15px;
+  font-family: Roboto;
+  border: 1px solid #B70808;
+  padding: 10px 20px;
+  border-radius: 45px;
+}
+.loginButton a:hover,.loginButton a:active, .loginButton a:focus{
+  cursor: pointer;
+}
+.loginButton{
+    display: block;
+    margin-bottom: 30px;
+}
+.loginButton .button, .form-horizontal  input[type=submit]{          
+ margin:0;
+}
+
+
 @keyframes cssload-loader {
   0% {
     transform: rotate(0deg);
@@ -1151,10 +1168,16 @@
         .commentTextbox {
             margin-left: 45px;
         }
-         .loginButton .button, .form-horizontal  input[type=submit]{
-          width: 100%;
-          margin:5px 0;
+        .loginButton a{
+          padding: 7px 20px;          
+          font-weight: 700;
+          margin-left: 0;
+          margin-right: 0;
+          font-size: 18px;
         }
+         .loginButton a, .form-horizontal  input[type=submit]{
+            display: block;
+        }        
     }
     @media screen and  (max-width: 360px){
         .trendingWrapper p{

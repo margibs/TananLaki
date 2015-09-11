@@ -258,7 +258,11 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                       </div>
                                   
                               @else
-
+                                         <div class="loginButton">
+                                <a href="{{url('login')}}"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"> <i class="icon-facebook"></i> Facebook Login </a>
+                                    </div>
+                             
+                             
                                     <form class="form-horizontal">
                                     
                                     <h2> Leave a comment </h2>
@@ -302,10 +306,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                                     </form>
                                     
-                                    <div class="loginButton">
-                                <a href="{{url('login')}}" class="button"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Facebook Login </a>
-                                    </div>
-                             
+                               
                               @endif
 
                             </div>
