@@ -20,8 +20,14 @@
              </div>
 
              <div class="form-group">                 
-                <input type="checkbox"  name="comment_approve" value="1">
-                <label for="comment_approve">Approved Comments</label> 
+               <!--  <input type="checkbox"  name="comment_approve" value="1">
+                <label for="comment_approve">Approved Comments</label>  -->
+				 <label>Comments needs to be approve first</label>
+                <div class="switch">
+				  <input id="cmn-toggle-1" name="comment_approve" class="cmn-toggle cmn-toggle-round" type="checkbox">
+				  <label for="cmn-toggle-1"></label>
+				</div>
+
                 <div class="clearfix"></div>     
 				<input type="submit" value="Submit" class="button button-3d" style="margin-left: 0;">
              </div>
