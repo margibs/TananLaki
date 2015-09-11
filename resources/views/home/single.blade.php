@@ -211,9 +211,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                         <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
                                       </div>
                                       <div class="commentTextbox">
-                                        <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..." ></textarea>
+                                        <textarea class="top_comment" placeholder="Write comments..." ></textarea>
                                         {{-- <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled"> --}}
-                                        <a class="button replyBtn" id="top_submit"> Post Comment </a>     
+                                        <a class="button replyBtn top_submit"> Post Comment </a>     
                                       </div>
                                   
                               @else
@@ -275,14 +275,14 @@ $(document).ready(function(){
 
 
 
-  $('#top_comment').on('keypress',function(){
-    if($('#top_comment').val() == '')
+  $('.top_comment').on('keypress',function(){
+    if($('.top_comment').val() == '')
     {
-      $('#top_submit').attr('disabled','disabled');
+      $('.top_submit').attr('disabled','disabled');
     }
     else
     {
-      $('#top_submit').removeAttr('disabled');
+      $('.top_submit').removeAttr('disabled');
     }
   });
 
@@ -291,16 +291,16 @@ $(document).ready(function(){
         post_id = '{{$post->id}}',
         parent = 0;
 
-    $('#top_submit').on('click',function(e){
+    $('.top_submit').on('click',function(e){
 
         e.preventDefault();
-        $('#top_submit').attr('disabled','disabled');
+        $('.top_submit').attr('disabled','disabled');
 
         var $this = $(this),
-            content = $('#top_comment').val(),
+            content = $('.top_comment').val(),
             template_parent_comment = $.trim($("#template_parent_comment").html()),
             add_parent = '';
-        if($('#top_comment').val() != '')
+        if($('.top_comment').val() != '')
         {
           $.ajax({ 
             type: 'post',
@@ -309,7 +309,7 @@ $(document).ready(function(){
             success: function(response)
             {
 
-              $('#top_comment').val('');
+              $('.top_comment').val('');
               
               var parsed = JSON.parse(response);
               var avatar = 'http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg';

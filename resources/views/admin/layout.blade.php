@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" />
 
     <link rel="stylesheet" href="{{ asset('css/typeahead.tagging.css') }}" type="text/css" />
+
+    @yield('header_links')
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
@@ -221,6 +223,7 @@ font-family: Oswald;
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="{{ asset('nexuspress/js/functions.js') }}"></script>
+@yield('footer_scripts')
 </body>
 </html>
 

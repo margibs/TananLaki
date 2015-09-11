@@ -119,6 +119,7 @@ class CustomQuery {
 			->where('comments.post_id','=',$post_id)
 			->where('comments.parent','=',0)
 			->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','comments.created_at','users.avatar','users.name')
+			->orderBy('comments.id','ASC')
 			->get();
 
         foreach ($comments as $comment) 

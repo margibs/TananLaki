@@ -27,6 +27,7 @@ use App\Model\PostCategories;
 use App\Model\Posts;
 use App\Model\SiteSettings;
 use App\Model\Comments;
+use App\Model\LinksCountry;
 
 
 use App\CustomQuery;
@@ -315,25 +316,34 @@ class AdminController extends Controller
 
     public function editLink($id)
     {
-        $data['link'] = Links::find($id);
-        return view('admin.editLink',$data);
+        $link = Links::find($id);
+        $country_codes = [];
+        $countries = LinksCountry::where('links_id',$link->id)->get(['country_code']);
+
+        foreach ($countries as $country) {
+            $country_codes[] = $country->country_code;
+        }
+
+        return view('admin.editLink',compact('link','country_codes'));
     }
 
     public function addLink(Request $request,$id = 0)
     {
+        // dd($request->all());
         $redirect = 'admin/new_link';  
 
         //check if new post or edit post
         //get redirect
         if($id != 0)
         {
-            $redirect = 'admin/new_link/'.$id;
+            $redirect = 'admin/edit_link/'.$id;
         }
 
         $validator = Validator::make($request->all(), [
             'url' => 'required',
             'image' => 'required',
-            'website_url' => 'required'
+            'website_url' => 'required',
+            'countries' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -358,6 +368,19 @@ class AdminController extends Controller
         $link->website_url = $request->input('website_url');
         $link->visible = $request->input('visible');
         $link->save();
+
+        LinksCountry::where('links_id','=',$link->id)->delete();
+        if( count( $request->input('countries') ) != 0 )
+        {
+            $data = array();
+
+            for ($i=0; $i < count($request->input('countries')) ; $i++) 
+            { 
+                $data[] = array('links_id' => $link->id,'country_code' => $request->input('countries')[$i],'created_at' => date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s'));
+            }
+
+            LinksCountry::insert($data);
+        }
 
         return redirect('admin/links');
 
