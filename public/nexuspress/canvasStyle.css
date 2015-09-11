@@ -129,7 +129,7 @@ blockquote,
 address,
 table,
 fieldset,
-form { margin-bottom: 30px; }
+form { margin-bottom: 0; }
 
 small { font-family: 'Roboto', sans-serif; }
 

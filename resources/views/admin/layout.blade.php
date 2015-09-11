@@ -197,6 +197,7 @@ font-family: Oswald;
                                  @elseif (Request::is('admin/media_gallery*')) <i class="icon-line-image"></i> Media Gallery                                  
                                  @elseif (Request::is('admin/comments*')) <i class="icon-line-speech-bubble"></i> Comments                                  
                                  @elseif (Request::is('admin/users*')) <i class="icon-line-head"></i> Users
+                                 @elseif (Request::is('admin/settings*')) <i class="icon-line2-settings"></i> General Settings
                                  @endif </h2>
                          </div>
                     </div> 
