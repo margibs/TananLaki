@@ -16,7 +16,7 @@
 		<tbody>
 			@foreach($users as $user)
 			<tr>
-				<td class="subTD">{{$user->name}}</td>
+				<td class="subTD"> {{$user->name}}</td>
 				<td class="subTD">{{$user->email}}</td>
 				<td class="subTD">
 					@if($user->status == 1)
