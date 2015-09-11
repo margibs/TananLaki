@@ -258,19 +258,21 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                       </div>
                                   
                               @else
-                                         <div class="loginButton">
-                                <a href="{{url('login')}}"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"> <i class="icon-facebook"></i> Facebook Login </a>
-                                    </div>
-                             
-                             
+                                        
+
                                     <form class="form-horizontal">
                                     
                                     <h2> Leave a comment </h2>
 
+                                     <div class="loginButton">
+                                <a href="{{url('login')}}"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"> <i class="icon-facebook"></i> Facebook Login </a>
+                                    </div>
+                             
+
                                     <!-- Text input-->
                                     <div class="form-group">
-                                      <label class="col-md-4 control-label" for="name">Name</label>  
-                                      <div class="col-md-4">
+                                      <label class="col-md-2 control-label" for="name">Name</label>  
+                                      <div class="col-md-10">
                                       <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
                                         
                                       </div>
@@ -278,8 +280,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                      <label class="col-md-4 control-label" for="email">Email</label>  
-                                      <div class="col-md-4">
+                                      <label class="col-md-2 control-label" for="email">Email</label>  
+                                      <div class="col-md-10">
                                       <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
                                         
                                       </div>
@@ -287,8 +289,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                      <label class="col-md-4 control-label" for="website">Website</label>  
-                                      <div class="col-md-4">
+                                      <label class="col-md-2 control-label" for="website">Website</label>  
+                                      <div class="col-md-10">
                                       <input id="website" name="website" type="text" placeholder="" class="form-control input-md">
                                         
                                       </div>
@@ -296,13 +298,13 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                                     <!-- Textarea -->
                                     <div class="form-group">
-                                      <label class="col-md-4 control-label" for="comment">Comment</label>
-                                      <div class="col-md-4">                     
+                                      <label class="col-md-2 control-label" for="comment">Comment</label>
+                                      <div class="col-md-10">                     
                                         <textarea class="form-control" id="comment" name="comment"> </textarea>
                                       </div>
                                     </div>
 
-                                    <input type="submit" value="Comment" class="button" />
+                                    <input type="submit" value="Comment" class="button pull-right" />
 
                                     </form>
                                     
