@@ -30,8 +30,9 @@
 }
 .topmostMenu .quickList{
 	list-style: outside none none;
-	margin-top: 3px;
-	margin-bottom: 0px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  margin-left: 20px;
 }
 .topmostMenu .quickList li a i{
 	margin-right: 3px;
@@ -42,7 +43,7 @@
 	border-radius: 20px;
 	font-weight: 600;
 	font-size: 13px;
-	margin-top: 10px;
+
 	text-transform: uppercase;
 }
 .topmostMenu h2{
@@ -59,16 +60,16 @@
     font-size: 20px;
    	margin-right: 2px;
 }
+
 #adminSearch{
 	background-color: #fff;
-    border: 0;        
-    color: #000;
-    padding: 5px 10px;
-    border: 1px solid #E5E2E2;
-    border-radius: 30px !important;
-    margin-right: 10px;
-    margin-left: 20px;
-    margin-top: 7px;
+  border: 0;        
+  color: #000;
+  padding: 5px 10px;
+  border: 1px solid #E5E2E2;
+  border-radius: 30px !important;
+  margin-right: 10px;
+  margin-left: 20px;    
 }
 
 .table > thead > tr > td{
