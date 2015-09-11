@@ -990,6 +990,11 @@
       }
   
     }
+    @media screen and (max-width: 680px){
+      .form-horizontal h2 a{
+        margin-top: 8px;
+      }
+    }  
     @media screen and (max-width: 640px){  
       .bigOuter {    
           height: 300px;
@@ -1147,6 +1152,7 @@
           margin:5px;
           padding: 10px 30px;
       }
+
     
     }
     @media screen and (min-width: 415px) and (max-width: 480px){
@@ -1195,6 +1201,10 @@
             margin:5px;
             padding: 10px 20px;
         }
+         .form-horizontal h2 a{
+          display: block;
+          width: 100%;
+        }
          
     }
     @media screen and  (max-width: 375px){
@@ -1231,13 +1241,7 @@
         .commentTextbox {
             margin-left: 45px;
         }
-        .loginButton a{
-          padding: 7px 20px;          
-          font-weight: 700;
-          margin-left: 0;
-          margin-right: 0;
-          font-size: 18px;
-        }
+
          .loginButton a, .form-horizontal  input[type=submit]{
             display: block;
         }        
