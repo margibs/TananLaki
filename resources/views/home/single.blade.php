@@ -262,11 +262,11 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                                     <form class="form-horizontal">
                                     
-                                    <h2> Leave a comment </h2>
-
+                                    <h2> Leave a comment     <a href="{{url('login')}}"> <i class="icon-lock two"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}" > <i class="icon-facebook"></i> Facebook Login </a> </h2>
+<!-- 
                                      <div class="loginButton">
                                 <a href="{{url('login')}}"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"> <i class="icon-facebook"></i> Facebook Login </a>
-                                    </div>
+                                    </div> -->
                              
 
                                     <!-- Text input-->

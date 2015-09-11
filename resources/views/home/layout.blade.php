@@ -144,16 +144,19 @@
                             @foreach($categories as $category)
                                 <li class="current"><a href="{{url('')}}/{{$category->slug}}" style="line-height: 56px;"><div>{{$category->name}}</div></a></li>
                             @endforeach
+                            <li  class="showLogin"><a href="#"><i class="icon-lock"></i> Login </a></li>
                         </ul>
 
 
                         <!-- Top Search
                         ============================================= -->
                         <div id="top-search">
+                            <a href="#" class="userIMG"> <img src="http://a.disquscdn.com/uploads/users/4514/1915/avatar92.jpg?1433226476" alt=""></a>
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                             <form action="search.html" method="get">
                                 <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
                             </form>
+
                         </div>
                         <!-- #top-search end -->
 

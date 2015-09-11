@@ -1,7 +1,5 @@
-.` {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.showLogin{
+  display: none;
 }
 .panel{
   background-color: #efefef;
@@ -235,7 +233,18 @@
   font-size: 16px; 
   margin-top: 8px;
 }
-
+#top-search .userIMG{
+    float: right;
+    margin-left: 30px;
+    width: 25px;
+    margin-top: -2px;
+}
+#top-search .userIMG img{
+    border-radius: 50%;
+}
+#comment_container{
+      margin-bottom: 40px;
+}
 #comment_container p{
   font-family: Roboto!important;
   margin-left: 60px;
@@ -263,7 +272,11 @@
 }
 .form-horizontal{
   margin-bottom: 10px;
+  overflow: hidden;
+  margin-top: 30px;
 }
+
+
 .form-horizontal .form-group .form-control{
    border-radius: 0!important;
 }
@@ -279,10 +292,30 @@
     font-weight: 500;
 }
 .form-horizontal h2{
-   margin-bottom: 10px;
+   margin-bottom: 30px;
    color: #000;
   font-family: Oswald;
+  overflow: hidden;
 }
+.form-horizontal h2 a{
+     font-size: 13px;
+    float: right;
+    margin-left: 15px;
+    font-family: Roboto;
+    text-transform: uppercase;
+    margin-top: 15px;
+}
+.form-horizontal h2 a i{
+    color: #fff;
+    background-color: #C20808;
+    border-radius: 50%;
+    padding: 5px 8px 3px 8px;
+    font-size: 10px;
+}
+.form-horizontal h2 a i.two{
+    padding: 4px 6px 4px 6px;
+}
+
 .loginButton{
     display: block;
     margin-bottom: 30px;
@@ -295,9 +328,12 @@
   border: 1px solid #B70808;
   padding: 10px 20px;
   border-radius: 45px;
+  transition: background 0.3s ease;
 }
 .loginButton a:hover,.loginButton a:active, .loginButton a:focus{
   cursor: pointer;
+  background-color: #B70808;
+  color: #fff;
 }
 
 .loginButton .button, .form-horizontal  input[type=submit]{          
@@ -757,6 +793,7 @@
   margin-top: 30px;
 }
 
+
 @media (max-width: 1024px){
     .grid-item {
         height: 225px;
@@ -779,12 +816,20 @@
     .aroundWebPic {
         height: 140px;        
     }
+    #top-search .userIMG{
+      display: none;
+    }
   }
    @media screen and (max-width: 991px){
       .homeViewWrapper, .singleViewWrapper {
           padding: 20px 25px 50px 25px!important;            
       }
-
+      #primary-menu ul li.showLogin{
+        display: block;
+      }
+      #primary-menu ul li i{
+         top: -1px;
+      }
       #header{
         z-index: 999;
         position: fixed;
@@ -1148,7 +1193,7 @@
         }
         .loginButton a{
             margin:5px;
-            padding: 10px 30px;
+            padding: 10px 20px;
         }
          
     }
