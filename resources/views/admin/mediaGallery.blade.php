@@ -18,7 +18,7 @@
 		</div>
 	</div>
 
-
+{!! $media_files->render() !!}
 
 <script>
 	$(document).ready(function(){

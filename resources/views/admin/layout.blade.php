@@ -131,8 +131,10 @@ font-family: Oswald;
 
                         <ul>
                              <li class="
-                                 @if(Request::is('admin/general_settings*')){{'current'}}
-                                 @endif"><a href="{{ url('admin/media_gallery') }}"> <i class="icon-line2-settings"></i> General </a>
+                                 @if(Request::is('admin/settings*')) 
+                                    current 
+                                 @endif">
+                                 <a href="{{ url('admin/settings') }}"> <i class="icon-line2-settings"></i> General </a>
                             </li>
                         </ul>
 

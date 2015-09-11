@@ -71,12 +71,13 @@ class HomeController extends Controller {
         //     echo $comment->content.'<br />';
         // }
 
-        // $location = Location::get();
+        $location = Location::get();
         // dd($location);
-        // echo 'IP: '.$location->ip.'<br />';
-        // echo 'ISP: '.$location->isp.'<br />';
-        // echo 'Country Name: '.$location->countryName.'<br />';
-        // echo 'Country Code: '.$location->countryCode.'<br />';
+        echo 'IP: '.$location->ip.'<br />';
+        echo 'ISP: '.$location->isp.'<br />';
+        echo 'Country Name: '.$location->countryName.'<br />';
+        echo 'Country Code: '.$location->countryCode.'<br />';
+        
         // $_username = 'nbbulk2014';
 
         // $_apikey = '0wn4xoctsdnlcnnn';
@@ -125,14 +126,13 @@ class HomeController extends Controller {
         // echo 'Matched Text: '.$sites->alltextmatched;
 
             // DB::enableQueryLog();
-            // DB::table('posts')
-            // ->join('post_categories','posts.id','=','post_categories.post_id')
-            // ->join('categories','categories.id','=','post_categories.category_id')
-            // ->where('posts.status','=',1)
-            // ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
-            // ->orderBy('posts.id','DESC')
-            // ->groupBy('posts.id')
-            // ->paginate(10);
+            //     DB::table('comments')
+            //     ->join('users','comments.author_id','=','users.id')
+            //     ->leftJoin('posts','comments.post_id','=','posts.id')
+            //     ->join('post_categories','posts.id','=','post_categories.post_id')
+            //     ->join('categories','post_categories.category_id','=','categories.id')
+            //     ->select('users.name','comments.content','comments.created_at','comments.approved','posts.slug','posts.id','categories.slug as catslug')
+            //     ->paginate(15);
 
             //     $query = DB::getQueryLog();
             //     $lastQuery = end($query);
@@ -195,21 +195,25 @@ class HomeController extends Controller {
     //COMMENT AJAX
     public function ajax_add_comment(Request $request)
     {
-        $comment = new Comments;
-        $comment->post_id = $request->input('post_id');
-        $comment->author_id = Auth::user()->id;
-        $comment->content = $request->input('content');
-        $comment->parent = $request->input('parent');
-        $comment->save();
+        if(Auth::check())
+        {
+            $comment = new Comments;
+            $comment->post_id = $request->input('post_id');
+            $comment->author_id = Auth::user()->id;
+            $comment->content = $request->input('content');
+            $comment->parent = $request->input('parent');
+            $comment->save();
 
-        $new_parent = 
-            DB::table('comments')
-            ->join('users','comments.author_id','=','users.id')
-            ->where('comments.id','=',$comment->id)
-            ->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','users.avatar','users.name')
-            ->get();
+            $new_parent = 
+                DB::table('comments')
+                ->join('users','comments.author_id','=','users.id')
+                ->where('comments.id','=',$comment->id)
+                ->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','users.avatar','users.name')
+                ->get();
 
-        return json_encode($new_parent);   
+            return json_encode($new_parent);    
+        }
+
     }
 
     public function ajaxGetPage(Request $request)
