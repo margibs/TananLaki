@@ -39,10 +39,10 @@ Route::group(['middleware' => 'UserCheck'], function()
 	Route::post('admin/categories','AdminController@addCategory');
 
 	Route::get('admin/links','AdminController@links');
+
+	Route::post('admin/new_link/{id?}','AdminController@addLink');
 	Route::get('admin/new_link','AdminController@newLink');
 	
-	Route::post('admin/new_link/{id?}','AdminController@addLink');
-
 	Route::get('admin/edit_link/{id}','AdminController@editLink');
 
 	Route::get('admin/comments','AdminController@comments');

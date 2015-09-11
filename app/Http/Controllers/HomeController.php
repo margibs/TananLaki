@@ -208,7 +208,7 @@ class HomeController extends Controller {
                 DB::table('comments')
                 ->join('users','comments.author_id','=','users.id')
                 ->where('comments.id','=',$comment->id)
-                ->select('comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','users.avatar','users.name')
+                ->select('comments.created_at','comments.content','comments.id','comments.parent','comments.post_id','comments.author_id','users.avatar','users.name')
                 ->get();
 
             return json_encode($new_parent);    
