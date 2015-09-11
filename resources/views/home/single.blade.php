@@ -205,28 +205,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           
                           <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;">
-                              @if(Auth::check())
-
-                                      <div class="commentPic">
-                                        <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
-                                      </div>
-                                      <div class="commentTextbox">
-                                        <textarea class="top_comment" placeholder="Write comments..." ></textarea>
-                                        {{-- <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled"> --}}
-                                        <a class="button replyBtn top_submit"> Post Comment </a>     
-                                      </div>
-                                  
-                              @else
-
-                                <a href="{{url('login')}}" class="button">Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> or </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Login with facebook</a>
-                             
-                              @endif
-
-                             <div class="cleafix"></div>
-             
+            
                               <div id="comment_container">
                                 @foreach($comments as $comment)
-                                    <div style="overflow:hidden;margin-bottom: 10px; margin-top: 50px;clear:both;">
+                                    <div style="overflow:hidden;margin-bottom: 10px; margin-top: 20px;clear:both;">
                                       <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
                                           <img src="@if($comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$comment->avatar}} @endif" alt="" class="pull-left">
                                       </div>
@@ -260,6 +242,72 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 @endforeach
                                 <div id="ajax_comment"></div>
                               </div>
+
+
+                              @if(Auth::check())
+
+                                      <div class="commentPic">
+                                        <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
+                                      </div>
+                                      <div class="commentTextbox">
+                                        <textarea class="top_comment" placeholder="Write comments..." ></textarea>
+                                        {{-- <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled"> --}}
+                                        <div class="commentPostButton">
+                                          <a class="button replyBtn top_submit"> <i class="icon-comment2" style="color:#fff;"></i> Post Comment </a>     
+                                        </div>
+                                      </div>
+                                  
+                              @else
+
+                                    <form class="form-horizontal">
+                                    
+                                    <h2> Leave a comment </h2>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="name">Name</label>  
+                                      <div class="col-md-4">
+                                      <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+                                        
+                                      </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="email">Email</label>  
+                                      <div class="col-md-4">
+                                      <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
+                                        
+                                      </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="website">Website</label>  
+                                      <div class="col-md-4">
+                                      <input id="website" name="website" type="text" placeholder="" class="form-control input-md">
+                                        
+                                      </div>
+                                    </div>
+
+                                    <!-- Textarea -->
+                                    <div class="form-group">
+                                      <label class="col-md-4 control-label" for="comment">Comment</label>
+                                      <div class="col-md-4">                     
+                                        <textarea class="form-control" id="comment" name="comment"> </textarea>
+                                      </div>
+                                    </div>
+
+                                    <input type="submit" value="Comment" class="button" />
+
+                                    </form>
+                                    
+                                    <div class="loginButton">
+                                <a href="{{url('login')}}" class="button"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Facebook Login </a>
+                                    </div>
+                             
+                              @endif
+
                             </div>
                           </div>
                   </div>

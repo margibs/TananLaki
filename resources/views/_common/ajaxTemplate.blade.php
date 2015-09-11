@@ -1,5 +1,5 @@
 <script id="template_parent_comment" type="nexus/template">
-	<div style="overflow:hidden;margin-bottom: 10px;margin-top: 30px;">
+	<div style="overflow:hidden;margin-bottom: 10px;margin-top: 20px;">
 		<img src="--avatar--" alt="" class="pull-left" style=" width: 50px; width: 50px; overflow: hidden;  margin-right: 10px;">
 		<p class="commenterName"> --name-- <span> --created_at-- </span></p>
 		<p class="commentContent"> --content-- </p>
