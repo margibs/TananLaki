@@ -9,7 +9,7 @@
     <div class="clearfix"></div>
 
     <div class="col_half">
-        <div id="contentMainWrapper" style="padding:20px;">
+        <div id="contentMainWrapper" style="padding:20px;overflow:initial;">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -40,9 +40,18 @@
                     <label for="exampleInputPassword1"> Ad URL Caption</label>
                     <input type="text" name="website_url" value="{{old('website_url')}}"  class="form-control newPost" id="exampleInputPassword1" placeholder="">
                   </div>                
-                  <select name="" id="" style="padding: 3px 10px;margin-right: 20px;">
+                  <!-- <select name="" id="" style="padding: 3px 10px;margin-right: 20px;">
                       <option value=""> Select Country </option>
-                  </select>            
+                  </select> -->   
+                  <div class="form-group">
+                    <label for="exampleInputPassword1"> Select a country </label>
+                    <div class="form-group">
+
+                      <input id="demo" class="tags-input" value="" placeholder="Type and enter a country">
+
+                    </div>
+                  </div>          
+                  
                   <label class="checkbox" for="published" style="display:inline-block;" class="pull-right" >
                         {!! Form::checkbox('visible', 1) !!} Make it visible
                   </label>        
@@ -174,6 +183,66 @@ $(document).ready(function(){
         console.log(url);
     });
 });
+
+
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+// var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+//   'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+//   'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+//   'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+//   'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+//   'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+//   'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+//   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+//   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+// ];
+
+// $('#the-basics .typeahead').typeahead({
+//   hint: true,
+//   highlight: true,
+//   minLength: 1
+// },
+// {
+//   name: 'states',
+//   source: substringMatcher(states)
+// });
+
+
+    // The source of the tags for autocompletion
+    var tagsource = [
+        'jquery-libs', 'jquery-multilingual-news',
+        'jquert-typeahead-tagging', 'jquery-multilingual-tags',
+        'jquery-forms-ajaxified', 'jquery-project-template',
+        'jquery-development-fabfile', 'jquery-user-media',
+        'jquery-feedback-form', 'jquery-review', 'jquery-hero-slider',
+        'jquery-document-library', 'jquery-paypal-express-checkout'
+    ]
+
+
+    // Turn the input into the tagging input
+    $('#demo').tagging(tagsource);
+
 
 </script>
 @endsection

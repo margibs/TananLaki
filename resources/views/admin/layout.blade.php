@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css" />
 
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" />
+
+    <link rel="stylesheet" href="{{ asset('css/typeahead.tagging.css') }}" type="text/css" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
@@ -34,6 +36,8 @@
     <script type="text/javascript" src="{{ asset('nexuspress/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.uploadfile.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('nexuspress/js/plugins.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/typeahead.bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/typeahead.tagging.js') }}"></script>    
 
     <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 

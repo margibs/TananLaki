@@ -829,7 +829,7 @@
          padding-bottom: 0;
       }
       .grid-item .details{
-        bottom: 20px!important;
+        bottom: 10px!important;
       }
       .grid-item:before{
         bottom: 10px!important;
@@ -1129,8 +1129,8 @@
             height: 40px!important;
         }  
         .grid-item p>a {
-            font-size: 22px!important;
-            line-height: 25px!important;
+            font-size: 20px!important;
+          line-height: 23px!important;
         }        
         .grid-item {
             height: 221px;
@@ -1203,7 +1203,7 @@
         }
         .bigOuter:before{
             border-bottom: 4px solid #b70808;
-            bottom: 7px;
+            bottom: 2px;
         }
         .related-posts h4 a {
             line-height: 16px;
