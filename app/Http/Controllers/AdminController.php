@@ -47,7 +47,7 @@ class AdminController extends Controller
 
     public function adminSettings()
     {
-        return 'watermelon';
+        return view('admin.adminSettings');
     }
 
 	public function users()
@@ -366,9 +366,8 @@ class AdminController extends Controller
 
     public function mediaGallery()
     {
-        $data['media_files'] = MediaFiles::orderBy('id','DESC')->paginate(10);
-
-        return view('admin.mediaGallery',$data);
+        $media_files = MediaFiles::orderBy('id','DESC')->paginate(20);
+        return view('admin.mediaGallery',compact('media_files'));
     }
 	public function mediaFiles()
 	{

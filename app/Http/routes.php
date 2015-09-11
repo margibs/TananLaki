@@ -20,7 +20,7 @@ Route::group(['middleware' => 'UserCheck'], function()
 	Route::get('admin/media_file','AdminController@mediaFiles');
 	Route::post('admin/media_file_upload', 'AdminController@media_file_upload');
 	Route::get('admin/users','AdminController@users');
-
+	
 	Route::get('admin/media_gallery','AdminController@mediaGallery');
 	
 	Route::get('admin/settings','AdminController@adminSettings');
@@ -51,12 +51,9 @@ Route::group(['middleware' => 'UserCheck'], function()
 	Route::post('admin/ajax_delete_image','AdminController@ajaxDeleteImage');
 	Route::post('admin/ajax_upload_image','AdminController@ajaxUploadImage');
 	Route::post('admin/ajax_check_content','AdminController@ajaxCheckContent');
-
-	Route::post('comment/ajax_add_comment','HomeController@ajax_add_comment');
-
 });
 
-
+Route::post('comment/ajax_add_comment','HomeController@ajax_add_comment');
 
 // Authentication routes...
 Route::get('login', 'Auth\AuthController@getLogin');

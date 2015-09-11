@@ -124,9 +124,10 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
+
                     <div id="fileuploader">Upload</div>
-                    <div id="image_list">
-                    </div>
+                    <div id="image_list"></div>
+                    
                   </div>
                 </div>
                 <div class="modal-footer">

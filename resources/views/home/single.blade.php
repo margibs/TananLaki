@@ -207,15 +207,15 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;">
                               @if(Auth::check())
 
-                      						<form>
                                       <div class="commentPic">
                                         <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
                                       </div>
                                       <div class="commentTextbox">
                                         <textarea id="top_comment"  class="commenTextarea" placeholder="Write comments..." ></textarea>
-                                        <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled">          
+                                        {{-- <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled"> --}}
+                                        <a class="button replyBtn" id="top_submit"> Post Comment </a>     
                                       </div>
-                                  </form>
+                                  
                               @else
 
                                 <a href="{{url('login')}}" class="button">Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> or </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"  class="button"> <i class="icon-facebook"></i> Login with facebook</a>
@@ -291,16 +291,15 @@ $(document).ready(function(){
         post_id = '{{$post->id}}',
         parent = 0;
 
-    $('form').on('submit',function(e){
+    $('#top_submit').on('click',function(e){
 
         e.preventDefault();
         $('#top_submit').attr('disabled','disabled');
 
         var $this = $(this),
-            content = $this.find('#top_comment').val(),
+            content = $('#top_comment').val(),
             template_parent_comment = $.trim($("#template_parent_comment").html()),
             add_parent = '';
-
         if($('#top_comment').val() != '')
         {
           $.ajax({ 
