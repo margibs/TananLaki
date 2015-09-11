@@ -5472,8 +5472,7 @@ body:not(.device-touch) .entry-link {
     padding-top: 15px;
     border-top: 1px solid #F1F1F1;
 }
-.replyBtn{
-    margin-left: 88px!important;
+.replyBtn{    
     height: auto!important;
     padding: 0 10px!important;
     font-size: 13px!important;

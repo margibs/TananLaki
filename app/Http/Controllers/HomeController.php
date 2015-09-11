@@ -54,7 +54,7 @@ class HomeController extends Controller {
     public function index()
     {
         $this->data['current_category_id'] = 0;
-        $this->data['trending'] = $this->commonFunctions->getTrendingAticle(14);
+        $this->data['trending'] = $this->commonFunctions->getTrendingAticle(17);
         $this->data['posts'] = $this->customQuery->getPosts();
 
         return view('home.homepage',$this->data);
@@ -151,7 +151,7 @@ class HomeController extends Controller {
             App::abort(404);
         }
 
-        $this->data['trending'] = $this->commonFunctions->getTrendingAticle(14);
+        $this->data['trending'] = $this->commonFunctions->getTrendingAticle(17);
         $this->data['posts'] = $this->customQuery->getPosts(0,$check_slug->id);
         $this->data['current_category_id'] = $check_slug->id;
         
