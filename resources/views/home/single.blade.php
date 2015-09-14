@@ -1,6 +1,13 @@
 @extends('home.layout')
 @section('content')
 
+
+<?php
+$url =  "//$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+$escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+?>
+
 <style>
   .single-post img{
     width: auto;
@@ -61,7 +68,10 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
       <ul class="entry-meta clearfix">
           <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red">{{$post->cat_name}}</a></li>
           <li><i class="icon-line2-clock"></i> {{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>     
-          <li><i class="icon-line2-bubble"></i> {{ $comment_count }} </li>                                                       
+          <li><i class="icon-line2-bubble"></i> {{-- $comment_count --}} 
+                <span class="fb-comments-count" data-href="<?php echo $actual_link ?>">0</span>      
+           </li>                                                       
+
           <!-- <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>          -->
       </ul><!-- .entry-meta end -->
 
@@ -202,8 +212,17 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           </div>
 
               						<h4 class="relatedText"> What do you think? </h4>
+
+                          <div id="mydiv">
+                          <div></div>
+                          </div>
+                          <script>
+                          var mydiv = document.getElementById("mydiv");  
+                          mydiv.innerHTML = "<fb:comments href='" + document.location.href + "' num_posts='10' width='739'></fb:comments>";  
+                          FB.XFBML.parse(mydiv);  
+                          </script>
                           
-                          <div class="row">
+                         <!--  <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;">
             
                               <div id="comment_container">
@@ -242,9 +261,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                 @endforeach
                                 <div id="ajax_comment"></div>
                               </div>
+ -->
 
-
-                              @if(Auth::check())
+                              <!-- @if(Auth::check())
 
                                       <div class="commentPic">
                                         <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
@@ -257,12 +276,12 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                                         </div>
                                       </div>
                                   
-                              @else
+                              @else -->
                                         
 
-                                    <form class="form-horizontal">
+                               <!--      <form class="form-horizontal">
                                     
-                                    <h2> Leave a comment     <a href="{{url('login')}}"> <i class="icon-lock two"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}" > <i class="icon-facebook"></i> Facebook Login </a> </h2>
+                                    <h2> Leave a comment     <a href="{{url('login')}}"> <i class="icon-lock two"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}" > <i class="icon-facebook"></i> Facebook Login </a> </h2> -->
 <!-- 
                                      <div class="loginButton">
                                 <a href="{{url('login')}}"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"> <i class="icon-facebook"></i> Facebook Login </a>
@@ -270,34 +289,34 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                              
 
                                     <!-- Text input-->
-                                    <div class="form-group">
+                                   <!--  <div class="form-group">
                                       <label class="col-md-2 control-label" for="name">Name</label>  
                                       <div class="col-md-10">
                                       <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
                                         
                                       </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Text input-->
-                                    <div class="form-group">
+                                   <!--  <div class="form-group">
                                       <label class="col-md-2 control-label" for="email">Email</label>  
                                       <div class="col-md-10">
                                       <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
                                         
                                       </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Text input-->
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                       <label class="col-md-2 control-label" for="website">Website</label>  
                                       <div class="col-md-10">
                                       <input id="website" name="website" type="text" placeholder="" class="form-control input-md">
                                         
                                       </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Textarea -->
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                       <label class="col-md-2 control-label" for="comment">Comment</label>
                                       <div class="col-md-10">                     
                                         <textarea class="form-control" id="comment" name="comment"> </textarea>
@@ -306,13 +325,13 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                                     <input type="submit" value="Comment" class="button pull-right" />
 
-                                    </form>
+                                    </form> -->
                                     
-                               
+                             <!--   
                               @endif
 
                             </div>
-                          </div>
+                          </div> -->
                   </div>
 
                            </div><!-- .postcontent end -->

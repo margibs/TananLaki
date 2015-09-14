@@ -153,11 +153,6 @@
                         <div id="top-search">
 
 
-                              @if(Auth::check())
-                                  <a href="#" class="userIMG"> <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt=""></a>                                                                     
-                              @else
-                                  <a href="#" class="userIMG"> <img src="http://a.disquscdn.com/uploads/users/4514/1915/avatar92.jpg?1433226476" alt=""></a>
-                              @endif
 
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                             <form action="{{url('search')}}" method="get">
@@ -197,20 +192,28 @@
                                           
                       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;margin-top: 10px;">
 
-
                           <div class="sidebarHead">
                             <h5 class="sidebarTitle">Trending Articles</h5>
                           </div>
                           
-                          <div style="background-color:#f7f7f7;">
-                            <!-- <div class="trendingWrapper">
-                                    <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend">
-                                        <img src="http://alllad.com/uploads/21902_trending-manchester.jpg" alt="">                                   
+                          <div style="background-color:#f7f7f7;">                
+                            @foreach($side_bar_posts as $side_bar_post)
+                              <div class="trendingWrapper">
+                                    <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
+                                        <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
                                     </a>
-                                    <p>
-                                        <a href="http://alllad.com/football/things-weve-gathered-after-watching-manchester-united-play-over-the-weekend"> Things We’ve Gathered after Watching Manchester United Play Over the Weekend </a>
-                                    </p>
-                            </div>   -->                        
+                                      <p>
+                                          <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">  {{$side_bar_post->title}}</a>
+                                      </p>
+                              </div> 
+                            @endforeach
+                          </div>
+
+                          <div class="sidebarHead">
+                            <h5 class="sidebarTitle">Latest Articles</h5>
+                          </div>
+                          
+                          <div style="background-color:#f7f7f7;">                            
                             @foreach($side_bar_posts as $side_bar_post)
                               <div class="trendingWrapper">
                                     <!-- <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
@@ -233,9 +236,7 @@
                             <div class="wrappers">
                               <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                             </div>                           
-
-
-                            <div style="margin:15px;"></div>
+                          
                             <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
                             <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
                             <div style="margin:15px;"></div>-->
