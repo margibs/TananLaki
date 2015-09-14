@@ -400,6 +400,38 @@ input.cmn-toggle-round:checked + label:after {
   }
 }
 
+/* =============== COMMENTS ================= */
+.commentsSubLinks ul{  
+    margin-left: 15px;
+    margin-top: 60px;
+    margin-bottom: 15px;    
+}
+.commentsSubLinks ul li a{
+    color: #757575;
+    font-weight: 500;
+    font-size: 14px;    
+    padding: 3px 10px;
+    border-radius: 20px;    
+    transition: background 0.2s ease-out;
+}
+.commentsSubLinks ul li{
+  padding-right: 0;
+}
+.commentsSubLinks ul li a i{
+    color: #A8A0A0;
+    margin-right: 2px;
+}
+.commentsSubLinks ul li a.active{
+    background-color: #9C0404;
+    color: #FFF;
+}
+.commentsSubLinks ul li a.active i{
+    color: #fff;
+}
+.commentsSubLinks ul li a:hover, .commentsSubLinks ul li a:active, .commentsSubLinks ul li a:focus{
+    background-color: #CACACA;
+    color: #fff;
+}
 /* =============== ADMIN PAGE =============== */
 .sub-menu:hover{
 	cursor: pointer;
@@ -575,7 +607,7 @@ h3{
 
 /* =============== POST PAGE =============== */
 .adminPosts td{
-	color: #A5A5A5;
+	color: #6D6D6D;
 	font-size: 15px;
   font-weight: 500;
   padding: 15px 10px!important;
@@ -588,8 +620,8 @@ h3{
 }
 
 .adminPosts .subTD{
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
 }
 
 /* =============== EDIT POST PAGE =============== */

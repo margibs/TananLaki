@@ -47,11 +47,11 @@
                         @endif
 
                         <h2 style="    
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 20px;
-    margin-top: 19px;"> <i class="icon-plus-sign"></i> Add New</h2>
+    margin-top: 0;;"> <i class="icon-plus-sign"></i> Add New</h2>
 
-                        <form class="form-inline" method="POST" action="{{ url('admin/categories') }}">
+                        <form class="form-inline" method="POST" action="{{ url('admin/categories') }}" style="margin-bottom: 10px;">
                            {!! csrf_field() !!}  
                           <div class="form-group">                            
                             <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="Add Category...">

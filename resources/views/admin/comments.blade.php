@@ -2,11 +2,20 @@
 
 @section('content')
 <h2 class="adminTitle"> <i class="icon-line-speech-bubble"></i> Comments </h2> 
+	<div class="commentsSubLinks">
+		<ul class="list-inline">
+			<li> <a href="" class="active"> <i class="icon-comments"></i> All </a> </li>
+			<li> <a href=""> <i class="icon-line2-like"></i> Approved</a>  </li>
+			<li> <a href=""> <i class="icon-line2-dislike"></i> Unapproved</a>  </li>
+			<li> <a href=""> <i class="icon-trash"></i> Trash</a>  </li>
+		</ul>
+	</div>		
 <div id="contentMainWrapper">
+
 		<div class="table-responsive adminPosts">
 		<table class="table table-striped">
 			<thead>			
-				<th> Name </th>
+				<th style="width: 10%;"> Name </th>
 				<th> Content </th>				
 				<th> Date </th>
 				{{-- <th> Approved</th> --}}
