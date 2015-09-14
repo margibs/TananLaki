@@ -7,36 +7,6 @@
 
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <!-- -------------------- ORIG POPULAR POST ----------------- -->
-    <!-- <div id="posts" class="small-thumbs popularPosts">
-
-      <div class="entry clearfix">
-          <div class="entry-image" style="width: 340px">
-              <a href="{{url('')}}/@if($trending->name != ''){{strtolower($trending->name)}}@else{{strtolower($trending->categories2->name)}}@endif/{{$trending->slug}}">
-              <img class="image_fade" src="{{url('uploads')}}/{{$trending->feat_image_url}}" alt="Standard Post with Image"></a>
-          </div>
-          <div class="entry-c">
-            <ul class="entry-meta clearfix">
-                  <li>
-                    <a href="#" class="categorySpan">
-                      TODAY'S TRENDING
-                    </a>
-                  </li>                                   
-              </ul>
-              <div class="clearfix"></div>
-              <div class="entry-title">
-                  <h2><a href="{{url('')}}/@if($trending->name != ''){{strtolower($trending->name)}}@else{{strtolower($trending->categories2->name)}}@endif/{{$trending->slug}}"> {{$trending->title}} </a></h2>
-              </div>         
-              <div class="entry-content">
-                  <p> {{ $trending->excerpt }} </p>                                        
-              </div>
-          </div>
-      </div>
-
-    </div>
-     -->
-    
-
     <!-- -------------------- NEW POPULAR POST ------------------ -->
   <div class="popularPost">
       <a href="http://alllad.com/news/the-worlds-richest-djs"></a>
@@ -112,6 +82,8 @@
         template_for_list = $.trim($("#template_for_list").html()),
         page = 1,
         current_category_id = {{$current_category_id}};
+        query_string = '{{$query_string}}';
+        
 
     $(window).scroll(function(){
 
@@ -123,7 +95,7 @@
           $.ajax({ 
             type: 'post',
             url: "{{url('home/ajax_get_page')}}",
-            data: {_token: CSRF_TOKEN,'page' : page,'current_category_id' : current_category_id}, 
+            data: {_token: CSRF_TOKEN,'page' : page,'current_category_id' : current_category_id,'query_string' : query_string}, 
             success: function(response)
             {
 

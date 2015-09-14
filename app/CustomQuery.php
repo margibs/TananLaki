@@ -48,8 +48,9 @@ class CustomQuery {
      * @param Int $paginate
      * @param Bool $with_category
      */
-	public function getPosts($page = 0,$id = null)
+	public function getPosts($page = 0,$id = null,$q = '')
 	{
+
 		if($id != null)
 		{
 			//Done optimized
@@ -66,17 +67,50 @@ class CustomQuery {
 		        ->get();
 		}
 		//For Review
+
+		if($q == '')
+		{
+			return 
+				DB::table('posts')
+		        ->join('post_categories','posts.id','=','post_categories.post_id')
+		        ->join('categories','categories.id','=','post_categories.category_id')
+		        ->where('posts.status','=',1)
+		        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+		        ->orderBy('posts.id','DESC')
+		        ->groupBy('posts.id')
+		        ->take($this->per_page)
+		        ->offset($page*$this->per_page)
+		        ->get();
+		}
+
 		return 
 			DB::table('posts')
 	        ->join('post_categories','posts.id','=','post_categories.post_id')
 	        ->join('categories','categories.id','=','post_categories.category_id')
 	        ->where('posts.status','=',1)
+	        ->where('posts.slug', 'LIKE', '%'.$q.'%')
 	        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
 	        ->orderBy('posts.id','DESC')
 	        ->groupBy('posts.id')
 	        ->take($this->per_page)
 	        ->offset($page*$this->per_page)
 	        ->get();
+	}
+
+	public function getSearchPost($page = 0,$q = '')
+	{
+		return 
+			DB::table('posts')
+	        ->join('post_categories','posts.id','=','post_categories.post_id')
+	        ->join('categories','categories.id','=','post_categories.category_id')
+	        ->where('posts.status','=',1)
+	        ->where('posts.slug', 'LIKE', '%'.$q.'%')
+	        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+	        ->orderBy('posts.id','DESC')
+	        ->groupBy('posts.id')
+	        ->take($this->per_page)
+	        ->offset($page*$this->per_page)
+	        ->get();	
 	}
 
 	// SINGLE POST

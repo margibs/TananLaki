@@ -54,8 +54,17 @@ class HomeController extends Controller {
     public function index()
     {
         $this->data['current_category_id'] = 0;
-        $this->data['trending'] = $this->commonFunctions->getTrendingAticle(17);
+        $this->data['query_string'] = '';
         $this->data['posts'] = $this->customQuery->getPosts();
+
+        return view('home.homepage',$this->data);
+    }
+
+    public function searchBlog(Request $request)
+    {
+        $this->data['current_category_id'] = 0;
+        $this->data['posts'] = $this->customQuery->getPosts(0,null,$request->get('q'));
+        $this->data['query_string'] = $request->get('q');
 
         return view('home.homepage',$this->data);
     }
@@ -72,7 +81,7 @@ class HomeController extends Controller {
         // }
 
         $location = Location::get();
-        // dd($location);
+        dd($location);
         echo 'IP: '.$location->ip.'<br />';
         echo 'ISP: '.$location->isp.'<br />';
         echo 'Country Name: '.$location->countryName.'<br />';
@@ -150,8 +159,7 @@ class HomeController extends Controller {
         {
             App::abort(404);
         }
-
-        $this->data['trending'] = $this->commonFunctions->getTrendingAticle(17);
+        $this->data['query_string'] = '';
         $this->data['posts'] = $this->customQuery->getPosts(0,$check_slug->id);
         $this->data['current_category_id'] = $check_slug->id;
         
@@ -170,7 +178,16 @@ class HomeController extends Controller {
             App::abort(404);
         }
 
-        $this->data['links'] = Links::orderBy(DB::raw('RAND()'))->take(6)->get();
+        $ip_country_code = Location::get()->isoCode;
+
+        // $this->data['links'] = Links::orderBy(DB::raw('RAND()'))->take(6)->get();
+        $this->data['links'] = DB::table('links_countries')
+            ->join('links','links_countries.links_id','=','links.id')
+            ->where('links_countries.country_code',$ip_country_code)
+            ->orderBy(DB::raw('RAND()'))
+            ->take(6)
+            ->get();
+            
         $this->data['related_posts'] = $this->customQuery->getRelatedPost($this->data['post']->cat_id,$this->data['post']->id,4);
 
         $this->data['user_avatar'] = '';
@@ -221,6 +238,10 @@ class HomeController extends Controller {
         if($request->input('current_category_id') == 0)
         {
             $getPage = $this->customQuery->getPosts($request->input('page'));
+        }
+        elseif($request->input('query_string') != '')
+        {
+            $getPage = $this->customQuery->getPosts($request->input('page'),null,$request->input('query_string'));
         }
         else
         {
