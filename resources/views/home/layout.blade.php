@@ -153,11 +153,6 @@
                         <div id="top-search">
 
 
-                              @if(Auth::check())
-                                  <a href="#" class="userIMG"> <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt=""></a>                                                                     
-                              @else
-                                  <a href="#" class="userIMG"> <img src="http://a.disquscdn.com/uploads/users/4514/1915/avatar92.jpg?1433226476" alt=""></a>
-                              @endif
 
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                             <form action="search.html" method="get">
@@ -199,7 +194,7 @@
 
 
                           <div class="sidebarHead">
-                            <h5 class="sidebarTitle">Trending Articles</h5>
+                            <h5 class="sidebarTitle">Latest Articles</h5>
                           </div>
                           
                           <div style="background-color:#f7f7f7;">
@@ -233,9 +228,7 @@
                             <div class="wrappers">
                               <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                             </div>                           
-
-
-                            <div style="margin:15px;"></div>
+                          
                             <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
                             <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
                             <div style="margin:15px;"></div>-->
