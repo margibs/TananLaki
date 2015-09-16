@@ -190,24 +190,7 @@
                           </div>
                       </div>
                                           
-                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;margin-top: 10px;">
-
-                          <div class="sidebarHead">
-                            <h5 class="sidebarTitle">Trending Articles</h5>
-                          </div>
-                          
-                          <div style="background-color:#f7f7f7;margin-bottom: 30px;">                
-                            @foreach($side_bar_posts as $side_bar_post)
-                              <div class="trendingWrapper">
-                                    <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
-                                        <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
-                                    </a>
-                                      <p>
-                                          <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">  {{$side_bar_post->title}}</a>
-                                      </p>
-                              </div> 
-                            @endforeach
-                          </div>
+                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;margin-top: 10px;">            
 
                           <div class="sidebarHead">
                             <h5 class="sidebarTitle">Latest Articles</h5>

@@ -12374,17 +12374,16 @@ body{
     /*background-color: #F5F5F5;*/
 }
 .trendingWrapper{    
-    overflow: hidden;    
-    border-bottom: 1px solid #DEDCDC;
+    overflow: hidden;        
 }
 .trendingWrapper p{
-	font-size: 15px!important;
+	font-size: 18px!important;
     font-family: Oswald!important;
     font-weight: 700!Important;
-    line-height: 22px!important;
-    padding: 0 10px;
+    line-height: 25px!important;
+    padding: 10px;
     margin: 10px 15px 0 15px!important;
-    /*border-bottom: 2px solid #B70808;*/
+    border-bottom: 2px solid #B70808;
 }
 .trendingWrapper p a{
 	color: #101010;

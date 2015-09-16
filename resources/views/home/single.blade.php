@@ -133,7 +133,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
       @else
        <span class="readnext"> Current post </span>
       @endif
-        <div style="float:right; margin: 10px 20px 0 0;">                                        
+        <div style="float:right; margin: 6px 20px 0 0;">                                        
           <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
            <a href="javascript:fbShare('Fb Share', 'Facebook share popup', 520, 350)" class="social-icon si-colored si-borderless si-facebook si-rounded">
                 <i class="icon-facebook"></i>
