@@ -28,16 +28,11 @@
 
   </div>
   
+  {!! $posts->appends(Request::only('q'))->render() !!}
   </div>
   <!-- #posts end -->
 
 
-
-@foreach ($users as $user) 
-	{{$user->name}}
-@endforeach
-
-{!! $users->appends(Request::only('q'))->render() !!}
 
 
 </div>

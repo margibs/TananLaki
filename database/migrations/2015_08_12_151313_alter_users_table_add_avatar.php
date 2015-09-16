@@ -25,7 +25,7 @@ class AlterUsersTableAddAvatar extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('feat_image_url');
+            $table->dropColumn('avatar');
         });
     }
 }

@@ -82,7 +82,7 @@ class CustomQuery {
 		        ->offset($page*$this->per_page)
 		        ->get();
 		}
-		dd($q);
+
 		return 
 			DB::table('posts')
 	        ->join('post_categories','posts.id','=','post_categories.post_id')
@@ -97,7 +97,7 @@ class CustomQuery {
 	        ->get();
 	}
 
-	public function getSearchPost($page = 0,$q = '')
+	public function getSearchPost($q = '',$page)
 	{
 		return 
 			DB::table('posts')
@@ -108,9 +108,7 @@ class CustomQuery {
 	        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
 	        ->orderBy('posts.id','DESC')
 	        ->groupBy('posts.id')
-	        ->take($this->per_page)
-	        ->offset($page*$this->per_page)
-	        ->get();	
+	        ->paginate($page);	
 	}
 
 	// SINGLE POST
@@ -127,6 +125,20 @@ class CustomQuery {
 			->where('posts.status','=',1)
 			->where('categories.slug','=',$category_slug)
 			->select('posts.id','posts.title','posts.created_at','posts.feat_image_url','posts.content','posts.author_id','users.name','users.avatar','users.description','categories.name as cat_name','categories.slug as cat_slug','categories.id as cat_id')
+			->first();
+	}
+
+	public function getPostNext($post_id,$category_slug)
+	{
+		//DONE
+		return 
+			DB::table('posts')
+			->join('post_categories','posts.id','=','post_categories.post_id')
+			->join('categories','categories.id','=','post_categories.category_id')
+			->where('posts.id','>',$post_id)
+			->where('posts.status','=',1)
+			->where('categories.slug','=',$category_slug)
+			->select('posts.slug','posts.title','categories.slug as cat_slug')
 			->first();
 	}
 

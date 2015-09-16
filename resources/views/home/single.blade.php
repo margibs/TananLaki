@@ -126,10 +126,13 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
   <div class="post-navigation clearfix">
-
+      
+      @if($next_post != null)
        <span class="readnext"> Read Next </span>
-        <a class="link" href="#">The New Fashion Trend In Asia, wearing...</a>
-
+       <a class="link" href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}">{{ $next_post->title }}</a>
+      @else
+       <span class="readnext"> Current post </span>
+      @endif
         <div style="float:right; margin: 10px 20px 0 0;">                                        
           <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
            <a href="javascript:fbShare('Fb Share', 'Facebook share popup', 520, 350)" class="social-icon si-colored si-borderless si-facebook si-rounded">

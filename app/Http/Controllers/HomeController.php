@@ -41,7 +41,7 @@ class HomeController extends Controller {
 
         $this->data['categories'] = Categories::where('id','!=',6)->get();
 
-        $this->data['side_bar_posts'] = Posts::orderBy('id','DESC')->take(5)->get();
+        $this->data['side_bar_posts'] = Posts::where('status',1)->orderBy('id','DESC')->take(5)->get();
 
         foreach ($this->data['side_bar_posts'] as $post) 
         {
@@ -62,11 +62,9 @@ class HomeController extends Controller {
 
     public function searchBlog(Request $request)
     {
-        $this->data['current_category_id'] = 0;
-        $this->data['posts'] = $this->customQuery->getPosts(0,null,$request->get('q'));
-        $this->data['query_string'] = $request->get('q');
 
-        return view('home.homepage',$this->data);
+        $this->data['posts'] = $this->customQuery->getSearchPost($request->get('q'),15);
+        return view('home.search',$this->data);
     }
 
     public function copyscape()
@@ -177,6 +175,8 @@ class HomeController extends Controller {
         {
             App::abort(404);
         }
+
+        $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
 
         $ip_country_code = Location::get()->isoCode;
 
