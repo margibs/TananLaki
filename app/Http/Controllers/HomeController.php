@@ -93,11 +93,11 @@ class HomeController extends Controller {
 
         // $content = "When in the course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume the Powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.";
 
-        // // $apiurl = $_apiurl.'u='.urlencode($_username).'&k='.urlencode($_apikey).'&t='.urlencode($content).'&f=xml';
+        // $apiurl = $_apiurl.'u='.urlencode($_username).'&k='.urlencode($_apikey).'&t='.urlencode($content).'&f=xml';
 
         // $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=csearch&e='.urlencode('UTF-8').'&x=1&c=5';
-
-        // //search by text
+        // $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=balance&f=html';
+        //search by text
 
         // $curl=curl_init();
 
@@ -105,6 +105,13 @@ class HomeController extends Controller {
         // curl_setopt($curl, CURLOPT_TIMEOUT, 60);
         // curl_setopt($curl, CURLOPT_POST,1);
         // curl_setopt($curl, CURLOPT_POSTFIELDS,urlencode($content));
+        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        // curl_setopt ($curl, CURLOPT_URL, $apiurl);
+        // curl_setopt ($curl, CURLOPT_HEADER, 1);
+
+        // curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+        // curl_setopt($curl, CURLOPT_TIMEOUT,60);
         // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         // $response=curl_exec($curl);
@@ -120,8 +127,11 @@ class HomeController extends Controller {
         // }
 
         // curl_close($curl);
-
-        // dd($sites);
+        
+        // $ar = explode("\r\n\r\n", $response, 2);
+        // echo 'VALUE: '.$ar[1][59].'<br />';
+        // echo 'Total: '.$ar[1][75];
+        // echo $ar[1];
 
         // echo 'Site Count: '.$sites->count;
         // echo '<br>';
