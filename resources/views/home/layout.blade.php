@@ -5,6 +5,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="AllLad" />
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
     <!-- Stylesheets
     ============================================= -->
@@ -212,11 +213,13 @@
 
                           <br />                         
                           <div class="socials">
-                            <div>
+                            <div class="wrappers">
+                              <h2> Like Us on facebook! </h2>
                               <div class="fb-page" data-href="https://www.facebook.com/allladmag" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
                             </div>                        
 
                             <div class="wrappers">
+                            <h2> Follow Us! </h2>
                               <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                             </div>                           
                           
@@ -224,6 +227,7 @@
                             <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
                             <div style="margin:15px;"></div>-->
                              <div class="wrappers">
+                             <h2> Subscribe to Us! </h2>
                               <script src="https://apis.google.com/js/platform.js"></script>                          
                               <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
                              </div>

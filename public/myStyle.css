@@ -768,6 +768,13 @@
 .socials .wrappers{
     padding: 15px 10px 8px 10px;        
 }
+.socials .wrappers h2{
+   font-size: 20px;
+    font-weight: 700;
+    color: #B70808;
+    text-transform: uppercase;
+    font-family: OSwald;
+}
 .authorBox:after{
     content: "";
     position: absolute;
