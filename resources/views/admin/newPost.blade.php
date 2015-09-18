@@ -44,6 +44,7 @@
          <h3> <i class="icon-line2-eyeglasses"></i>&nbsp; Plagiarism check result: </h3>
         <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
         <div id="copyscape" style="margin-bottom:20px;"></div>
+        <div id="copyscape_balance">{!! $copyscape_balance !!}</div>
       
         <div class="controls">
 

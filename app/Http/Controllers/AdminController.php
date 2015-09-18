@@ -100,6 +100,21 @@ class AdminController extends Controller
 
     public function newPost()
     {
+        $_apiurl = 'http://www.copyscape.com/api/?';
+        $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=balance&f=html';
+        $curl=curl_init();
+        curl_setopt ($curl, CURLOPT_URL, $apiurl);
+        curl_setopt ($curl, CURLOPT_HEADER, 1);
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($curl, CURLOPT_TIMEOUT,60);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $response=curl_exec($curl);
+        curl_close($curl);
+        $ar = explode("\r\n\r\n", $response, 2);
+
+        $data['copyscape_balance'] = $ar[1];
 
         $data['categories'] = Categories::all();
         return view('admin.newPost',$data);
@@ -660,8 +675,6 @@ class AdminController extends Controller
         $_apiurl = 'http://www.copyscape.com/api/?';
 
         $content = $request->input('content');
-
-        // $content = "When in the course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume the Powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.";
 
         $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=csearch&e='.urlencode('UTF-8').'&c=5';
 
