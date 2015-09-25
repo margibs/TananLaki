@@ -9,12 +9,12 @@
 
     <!-- -------------------- NEW POPULAR POST ------------------ -->
   <div class="popularPost">
-      <a href="http://alllad.com/news/the-worlds-richest-djs"></a>
-      <img class="popularFeatBig" src="{{url('uploads')}}/11913_djharis.jpg" alt="">
-      <img class="popularFeatSmall" src="{{url('uploads')}}/57006_djharis.jpg" alt="">
+      <a href="http://alllad.com/gaming/newly-unveiled-info-on-star-wars-battlefronts-drop-zone-mode"></a>
+      <img class="popularFeatBig" src="{{url('uploads')}}/71284_starwars.jpg" alt="">
+      <img class="popularFeatSmall" src="{{url('uploads')}}/21349_starwarssm.jpg" alt="">
       <div class="details">
         <span class="catergory"><a href="#"> Today's Trending </a></span>
-        <h2 class="title"> <a href="http://alllad.com/news/the-worlds-richest-djs"> The World’s Richest DJs </a> </h2>
+        <h2 class="title"> <a href="http://alllad.com/gaming/newly-unveiled-info-on-star-wars-battlefronts-drop-zone-mode"> Star Wars Battlefront’s “Drop Zone” Mode </a> </h2>
       </div>
     </div>
   

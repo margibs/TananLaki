@@ -12382,8 +12382,9 @@ body{
     font-weight: 700!Important;
     line-height: 25px!important;
     padding: 10px;
-    margin: 10px 15px 0 15px!important;
+    margin: 3px 15px 0px 15px!important;
     border-bottom: 2px solid #B70808;
+    border-top: 2px solid transparent;
 }
 .trendingWrapper p a{
 	color: #101010;
