@@ -194,6 +194,7 @@ class HomeController extends Controller {
         $this->data['links'] = DB::table('links_countries')
             ->join('links','links_countries.links_id','=','links.id')
             ->where('links_countries.country_code',$ip_country_code)
+            ->where('visible','=',1)
             ->orderBy(DB::raw('RAND()'))
             ->take(6)
             ->get();

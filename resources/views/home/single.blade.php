@@ -1,4 +1,9 @@
 @extends('home.layout')
+
+@section('fb_og')
+  <meta property="og:image" content="{{ url('uploads') }}/{{ $post->feat_image_url }}"/>
+@endsection
+
 @section('content')
 
 

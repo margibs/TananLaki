@@ -50,46 +50,37 @@ class CustomQuery {
      */
 	public function getPosts($page = 0,$id = null,$q = '')
 	{
+		$query = DB::table('posts')
+				->join('users','users.id','=','posts.author_id')
+		        ->join('post_categories','posts.id','=','post_categories.post_id')
+		        ->join('categories','categories.id','=','post_categories.category_id')
+		        ->select('users.name as user_name','users.id as user_id','posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+		        ->where('posts.status','=',1);
 
 		if($id != null)
 		{
 			//Done optimized
 			return 
-				DB::table('posts')
-		        ->join('post_categories','posts.id','=','post_categories.post_id')
-		        ->join('categories','categories.id','=','post_categories.category_id')
-		        ->where('posts.status','=',1)	
-		        ->where('post_categories.category_id','=',$id)
-		        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+				$query->where('post_categories.category_id','=',$id)
 		        ->orderBy('posts.id','DESC')
 		        ->take($this->per_page)
 		        ->offset($page*$this->per_page)
 		        ->get();
 		}
-		//For Review
+		// For Review
 
 		if($q == '')
 		{
 			return 
-				DB::table('posts')
-		        ->join('post_categories','posts.id','=','post_categories.post_id')
-		        ->join('categories','categories.id','=','post_categories.category_id')
-		        ->where('posts.status','=',1)
-		        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+				$query->take($this->per_page)
+		        ->offset($page*$this->per_page)
 		        ->orderBy('posts.id','DESC')
 		        ->groupBy('posts.id')
-		        ->take($this->per_page)
-		        ->offset($page*$this->per_page)
 		        ->get();
 		}
 
 		return 
-			DB::table('posts')
-	        ->join('post_categories','posts.id','=','post_categories.post_id')
-	        ->join('categories','categories.id','=','post_categories.category_id')
-	        ->where('posts.status','=',1)
-	        ->where('posts.title', 'LIKE', '%'.$q.'%')
-	        ->select('posts.slug','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+			$query->where('posts.title', 'LIKE', '%'.$q.'%')
 	        ->orderBy('posts.id','DESC')
 	        ->groupBy('posts.id')
 	        ->take($this->per_page)

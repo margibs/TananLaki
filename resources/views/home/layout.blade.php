@@ -6,6 +6,8 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="AllLad" />
 
+    @yield('fb_og')
+
     <!-- Stylesheets
     ============================================= -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
