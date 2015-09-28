@@ -1,7 +1,10 @@
 @extends('home.layout')
 
 @section('fb_og')
+<meta property="og:type" content="website">
   <meta property="og:image" content="{{ url('uploads') }}/{{ $post->feat_image_url }}"/>
+  <link rel="image_src" href="{{ url('uploads') }}/{{ $post->feat_image_url }}"/>
+  <meta property="og:title" content="{{$post->title}}" />
 @endsection
 
 @section('content')
@@ -349,8 +352,14 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 <script>
 $(document).ready(function(){
+  var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
+google_ads+= '<';
+google_ads+= '/script>';
+google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});';
+google_ads+= '<';
+google_ads+= '/script>';
 
-
+  $('.newContent p:nth-child(1)').after(google_ads);
 
 
   $('.top_comment').on('keypress',function(){
@@ -566,6 +575,7 @@ $(document).ready(function(){
 		// }
 
    function fbShare(title, descr, winWidth, winHeight) {      
+
       var url  = window.location.href;
       var title = $(".entry-title h2").text();
       var image = $('#featIMG').attr('src');
