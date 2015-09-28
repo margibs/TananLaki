@@ -720,8 +720,8 @@
 }
 .grid-item p>a{
     color: #fff;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 25px;
     display: block;    
     text-shadow: 1px 1px 16px rgba(0, 0, 0, 1);
 }
