@@ -7,6 +7,8 @@
     <meta name="author" content="AllLad" />
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
+    @yield('fb_og')
+
     <!-- Stylesheets
     ============================================= -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
