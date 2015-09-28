@@ -211,7 +211,19 @@
                               </div> 
                             @endforeach
                           </div>
-                            
+                          
+                          <div>
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- Sidebar -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-7471386204506681"
+                                 data-ad-slot="5139619653"
+                                 data-ad-format="auto"></ins>
+                            <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                          </div>
 
                           <br />                         
                           <div class="socials">
