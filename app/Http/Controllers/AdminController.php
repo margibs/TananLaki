@@ -231,7 +231,11 @@ class AdminController extends Controller
                 $img = Image::make('uploads/'.$feat_image_url);
 
                 // now you are able to resize the instance
-                $img->resize(753, 438);
+                // $img->resize(753, 438);
+                // add callback functionality to retain maximal original image size
+                $img->fit(753, 438, function ($constraint) {
+                    $constraint->upsize();
+                });
 
                 // finally we save the image as a new file
                 $img->save('uploads/fiu_'.$feat_image_url);
