@@ -200,27 +200,26 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           </div>
 
                           <h4 class="relatedText"> From around the web </h4>
-                          <div class="row">
-
-                            <div class="related-posts clearfix">
-
-                              @foreach($links as $link)
-
-                                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 nobottommargin remPadR aroundWebWrapper">
-                                    
-                                    <a href="{{$link->url}}" target="_blank" style="display:block; overflow: hidden;">
-                                      <div class="aroundWebPic">
-                                        <img src="{{url('uploads')}}/{{$link->image}}" alt="{{$link->description}}">
-                                      </div>
-                                    </a>
-                                    <h4 class="aroundWebText"><a href="{{$link->url}}" target="_blank">{{$link->description}}</a></h4>                                                                          
-                                    <span><a href="{{$link->url}}" target="_blank"> {{ucfirst($link->website_url)}} </a> </span>
-                                </div>
-
-                                @endforeach
-
-                            </div>
-                          </div>
+                          <div id="contentclick24950"></div>
+                          <script type="text/javascript">
+                              (function() {
+                                  var data =
+                                  {
+                                      pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
+                                  };
+                            if (typeof widgetCheck24950 === 'undefined')   {
+                                  var u="";
+                                  for(var key in data){u+=key+"="+data[key]+"&"}
+                                  u=u.substring(0,u.length-1);    
+                                  var a = document.createElement("script");
+                                  a.type= 'text/javascript';
+                                  a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                  a.async = true;   
+                                  document.getElementById("contentclick24950").appendChild(a);
+                            window.widgetCheck24950 = "set";
+                            }
+                              })();   
+                          </script>
 
               						<h4 class="relatedText"> What do you think? </h4>
 
