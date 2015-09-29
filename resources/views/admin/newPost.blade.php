@@ -72,10 +72,42 @@
                           <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-plus-sign"></i> </a>  </h2>
                       </div>
                       <div class="panel-body" style="padding-top: 0;">
+
+
+                      <div id="img_here"></div>   
+
+
+                      <div style="text-align:center;  margin: 15px 0;">
+                      <span style="
+    font-size: 11px;
+    display: block;
+    color: #BBBBBB;
+    margin-bottom: 7px;"> Image fixed dimension </span>
+                        <input type="text" style="
+    width: 40%;
+    border-radius: 0!important;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+    font-weight: 600;
+    text-align: center;
+    color: #060606;" value="735">
+                        <span> x </span>
+                        <input type="text" style="
+    width: 40%;
+    border-radius: 0!important;
+    border: 1px solid #ddd;
+    padding: 0 5px;
+    font-weight: 600;
+    text-align: center;
+    color: #060606;" value="468">
+                      </div>
                             
-                        <div id="img_here"></div>         
                       </div>
                   </div>
+
+
+
+
 
                   <div class="panel panel-default">
                       <div class="panel-heading">
