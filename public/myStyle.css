@@ -720,7 +720,7 @@
 }
 .grid-item p>a{
     color: #fff;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 25px;
     display: block;    
     text-shadow: 1px 1px 16px rgba(0, 0, 0, 1);
@@ -731,8 +731,15 @@
 
 .grid-item .details{
     position: absolute;
-    bottom: 40px;
-    margin: 0 20px;
+    bottom: 35px;
+    padding: 0 20px;
+    margin: 0 7px;
+    background: transparent;
+    background: -moz-linear-gradient(rgba(255, 255, 255, 0)  0%,rgba(0, 0, 0, 0.7) 90%);
+    background: -webkit-linear-gradient(rgba(255, 255, 255, 0)  0%,rgba(0, 0, 0, 0.7) 90%);
+    background: -o-linear-gradient(rgba(255, 255, 255, 0)  0%,rgba(0, 0, 0, 0.7) 90%);
+    background: -ms-linear-gradient(rgba(255, 255, 255, 0)  0%,rgba(0, 0, 0, 0.7) 90%);
+    background: linear-gradient(rgba(255, 255, 255, 0)  0%,rgba(0, 0, 0, 0.7) 90%);
 }
 .grid-item:before{
     content: "";
