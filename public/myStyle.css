@@ -971,9 +971,9 @@
       .grid-item:before{
         bottom: 5px!important;
       }
-      .grid-item p>a{
-          font-size: 25px!important;
-          line-height: 30px!important;
+      .grid-item p>a {
+          font-size: 21px!important;
+          line-height: 27px!important;
       }
       .popularFeatBig{
         display: none;
