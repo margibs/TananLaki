@@ -731,7 +731,7 @@
 
 .grid-item .details{
     position: absolute;
-    bottom: 35px;
+    bottom: 33px;
     padding: 0 20px;
     margin: 0 7px;
     background: transparent;
@@ -745,7 +745,7 @@
     content: "";
     position: absolute;
     left: 7px;  
-    bottom: 30px;
+    bottom: 28px;
     height: 1px;
     width: 95%;
     border-bottom: 5px solid #B70808;
@@ -966,7 +966,7 @@
          padding-bottom: 0;
       }
       .grid-item .details{
-        bottom: 10px!important;
+        bottom: 8px!important;
       }
       .grid-item:before{
         bottom: 10px!important;
@@ -1025,6 +1025,16 @@
     @media screen and (max-width: 680px){
       .form-horizontal h2 a{
         margin-top: 8px;
+      }
+      .grid-item:before {
+          bottom: 25px!important;
+      }
+      .grid-item .details {
+          bottom: 30px!important;
+      }
+      .grid-item p>a {
+          font-size: 21px!important;
+          line-height: 26px!important;
       }
     }  
     @media screen and (max-width: 640px){  
@@ -1095,12 +1105,23 @@
       .loginButton {       
           margin-top: 30px;
       }
+      .grid-item .details {
+          bottom: 21px!important;
+      }
+      .grid-item p>a {
+          font-size: 20px!important;
+          line-height: 25px!important;
+      }
     }
-
+    
     @media screen and (max-width: 504px){ 
         .loginButton {
             margin-top: 25px;
         }
+        .grid-item p>a {
+          font-size: 17px!important;
+          line-height: 24px!important;
+      }
     }
     @media screen and (max-width: 480px){
       .postcontent {
@@ -1184,7 +1205,6 @@
           margin:5px;
           padding: 10px 30px;
       }
-e 
     
     }
     @media screen and (min-width: 415px) and (max-width: 480px){
@@ -1196,7 +1216,7 @@ e
             bottom: 0px!important;
         }
         .grid-item .details {
-            bottom: 10px!important;
+            bottom: 4px!important;
         }
     }
     @media screen and  (max-width: 414px){
