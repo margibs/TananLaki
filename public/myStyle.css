@@ -966,10 +966,10 @@
          padding-bottom: 0;
       }
       .grid-item .details{
-        bottom: 8px!important;
+        bottom: 10px!important;
       }
       .grid-item:before{
-        bottom: 10px!important;
+        bottom: 5px!important;
       }
       .grid-item p>a{
           font-size: 25px!important;
@@ -1070,7 +1070,18 @@
           margin-top: 5px;
       }        
     }
-
+    @media screen and (max-width: 603px){
+      .grid-item .details {
+          bottom: 16px!important;
+      }
+      .grid-item:before {
+          bottom: 11px!important;
+      }
+      .grid-item p>a {
+          font-size: 19px!important;
+          line-height: 25px!important;
+      }
+    }
     @media screen and (max-width: 600px){  
       .si-share {
           margin-top: 20px;
