@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Stevebauman\Location\Facades\Location;
+use Intervention\Image\Facades\Image;
 
 use App;
 use DB;
@@ -69,6 +70,19 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
+        $image_url = 'fiu_47094_49425161_p0.png';
+
+        $rest = substr($image_url, 0,4);
+
+        echo $rest == 'fiu_' ? 'watermelon' : 'dili need to resized';
+        // open an image file
+        $img = Image::make('uploads/'.$image_url);
+
+        // now you are able to resize the instance
+        $img->resize(753, 438);
+
+        // finally we save the image as a new file
+        $img->save('uploads/fiu_'.$image_url);
 
         //     $post = Posts::with(array('comments'=>function($query){
         //     $query->where('parent',0);
@@ -78,12 +92,12 @@ class HomeController extends Controller {
         //     echo $comment->content.'<br />';
         // }
 
-        $location = Location::get();
-        dd($location);
-        echo 'IP: '.$location->ip.'<br />';
-        echo 'ISP: '.$location->isp.'<br />';
-        echo 'Country Name: '.$location->countryName.'<br />';
-        echo 'Country Code: '.$location->countryCode.'<br />';
+        // $location = Location::get();
+        // dd($location);
+        // echo 'IP: '.$location->ip.'<br />';
+        // echo 'ISP: '.$location->isp.'<br />';
+        // echo 'Country Name: '.$location->countryName.'<br />';
+        // echo 'Country Code: '.$location->countryCode.'<br />';
         
         // $_username = 'nbbulk2014';
 

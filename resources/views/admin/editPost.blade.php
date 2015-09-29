@@ -23,7 +23,8 @@
     @endif
 
         {!! csrf_field() !!}
-        <input id="featured_image" type='hidden' name='feat_image_url' value=''>
+        <input id="featured_image" type='hidden' name='feat_image_url' value='{{$post->feat_image_url}}'>
+        <input type="hidden" id="widget_image_url" name="widget_image_url" value="{{$post->yt_image}}">
         <input type="text" name="title" class="form-control newPost newPostBox" value="{{$post->title}}" placeholder="Enter Title Here.." />
         <br>
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
@@ -47,6 +48,18 @@
                       <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
                     </div>         
                   </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title" style="display: block;margin: 0 0 15px 0;text-align: center;"> Image after video play <a href="#" id="load_media_files2" class="featImageButton"> <i class="icon-plus-sign"></i> </a>  </h2>
+                </div>
+                <div class="panel-body" style="padding-top: 0;">
+                      
+                  <div id="img_here2">
+                    <img src="{{url('uploads')}}/{{$post->yt_image}}" alt="">
+                  </div>         
+                </div>
             </div>
             
             <div class="panel panel-default">
@@ -181,9 +194,11 @@
 $(document).ready(function(){
 
   var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
-      template_for_media_file = $.trim($("#template_for_media_file").html());
+      template_for_media_file = $.trim($("#template_for_media_file").html()),
+      load_file = 0;
 
   $('#load_media_files').on('click',function(){
+    load_file = 1;
     $('#image_list').html('');
       $.ajax({ 
         type: 'get',
@@ -199,6 +214,32 @@ $(document).ready(function(){
               var add_parent = 
               template_for_media_file.replace(/--image_url--/ig, obj.image_url)
               .replace(/--id--/ig, obj.id);
+
+              $('#image_list').append(add_parent);
+
+          });
+
+        }
+      });
+
+    $('#myModal').modal('show');
+  });
+
+  $('#load_media_files2').on('click',function(){
+      load_file = 2;
+    $('#image_list').html('');
+      $.ajax({ 
+        type: 'get',
+        url: "{{url('admin/ajax_get_media_file')}}",
+        success: function(response)
+        {
+          var parsed = JSON.parse(response);
+
+            $.each( parsed, function( index, obj){
+
+              var add_parent = 
+                template_for_media_file.replace(/--image_url--/ig, obj.image_url)
+                .replace(/--id--/ig, obj.id);
 
               $('#image_list').append(add_parent);
 
@@ -258,9 +299,18 @@ $(document).ready(function(){
   // Hide modal if "Okay" is pressed
     $('#myModal #save_changes_modal').click(function() {
         $('#myModal').modal('hide');
-        $('#img_here').html("<img src='{{ url('uploads') }}/"+url+"'>");
-        $('#featured_image').attr('value',url);
-        console.log(url);
+        if(load_file == 1)
+        {
+          $('#img_here').html("<img src='{{ url('uploads') }}/"+url+"'>");
+          $('#featured_image').attr('value',url);
+        }
+        else if(load_file == 2)
+        {
+          $('#img_here2').html("<img src='{{ url('uploads') }}/"+url+"'>");
+          $('#widget_image_url').attr('value',url);
+        }
+        
+        load_file = 0;
     });
 });
 

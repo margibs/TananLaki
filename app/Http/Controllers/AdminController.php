@@ -17,6 +17,7 @@ use File;
 
 use Facebook\Facebook;
 use Thujohn\Twitter\Facades\Twitter;
+use Intervention\Image\Facades\Image;
 
 use App\User;
 
@@ -152,6 +153,7 @@ class AdminController extends Controller
 
 	public function addPost(Request $request,$id = 0)
 	{
+        // dd($request->all());
         $redirect = 'admin/new_post';  
 
         //check if new post or edit post
@@ -219,7 +221,33 @@ class AdminController extends Controller
 		
         if($request->input('feat_image_url') != '')
         {
-          $post->feat_image_url = $request->input('feat_image_url');  
+            // $post->feat_image_url = $request->input('feat_image_url'); 
+            $feat_image_url =  $request->input('feat_image_url');
+            $check_fiu = substr($feat_image_url, 0,4);
+
+            if($check_fiu != 'fiu_')
+            {
+                // open an image file
+                $img = Image::make('uploads/'.$feat_image_url);
+
+                // now you are able to resize the instance
+                $img->resize(753, 438);
+
+                // finally we save the image as a new file
+                $img->save('uploads/fiu_'.$feat_image_url);
+
+                $post->feat_image_url = 'fiu_'.$feat_image_url;
+
+            }
+            else
+            {
+                $post->feat_image_url = $feat_image_url;
+            }
+        }
+
+        if($request->input('widget_image_url') != '')
+        {
+            $post->yt_image = $request->input('widget_image_url');  
         }
 
 		$post->save();

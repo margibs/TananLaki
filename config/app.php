@@ -140,6 +140,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -199,6 +200,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Twitter'   => Thujohn\Twitter\Facades\Twitter::class,
         'Location'  => Stevebauman\Location\Facades\Location::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
     ],
 
 ];
