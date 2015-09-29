@@ -1237,6 +1237,9 @@
             bottom: 4px!important;
             width: 96%;
         }
+        .grid-item .details {
+            bottom: 8px!important;
+        }
         .aroundWebWrapper {
            height: 230px;
         }
