@@ -4829,7 +4829,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
     line-height: 55px;
     padding-bottom: 20px;
     /* width: 80%; */
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .entry-title h2 a { color: #000; }
@@ -12376,18 +12376,24 @@ body{
 .trendingWrapper{    
     overflow: hidden;        
 }
+.trendingWrapper a{
+	display: block;
+	overflow: hidden;
+}
 .trendingWrapper p{
-	font-size: 18px!important;
+	font-size: 17px!important;
     font-family: Oswald!important;
-    font-weight: 700!Important;
-    line-height: 25px!important;
+    font-weight: 500!Important;
+    line-height: 20px!important;
     padding: 10px;
     margin: 3px 15px 0px 15px!important;
     border-bottom: 2px solid #B70808;
     border-top: 2px solid transparent;
+    color: #000!important;
 }
 .trendingWrapper p a{
 	color: #101010;
+	font-size: 15px;
 }
 .trendingWrapper img{
 	float: left;
@@ -12458,9 +12464,17 @@ body{
     box-shadow: 0 0 10px -3px #A2A2A2;*/
 }
 .sidebarTitle{
-	color: #FFF; font-weight: 700; text-transform: uppercase; font-size: 18px; text-align: center; padding: 10px 0; border-top: 2px solid #A70000; background-color: #B70808;
+	color: #FFF; 
+	font-weight: 700; 
+	text-transform: uppercase; 
+	font-size: 18px; 
+	text-align: center; 
+	padding: 10px 0; 
+	border-top: 2px solid #A70000; 
+	background-color: #B70808;
 	margin-top: 0;
-	margin-bottom: 10px;
+	margin-left: -15px;
+    width: 111.5%;
 }
 .exceprt{
 	font-size: 13px!important;

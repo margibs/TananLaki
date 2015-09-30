@@ -163,7 +163,7 @@
   float: left;
   position: relative;
   top: -1px;
-  margin-bottom: -85px;
+  /*margin-bottom: -85px;*/
   /*border-bottom: 5px solid rgb(229, 229, 229);*/
 }
 .bigOuter:before{
@@ -607,7 +607,7 @@
   background-color: #ECECEC;  
 }    
 .homeViewWrapper, .singleViewWrapper{
-  padding:25px 30px 50px 30px;
+  padding:0 30px 50px 30px;
   overflow: hidden;
 }
 .homeViewWrapper{
@@ -755,7 +755,7 @@
 .sidebarTitle{
   margin-bottom: 0!important;
 }
-.sidebarHead:after{
+/*.sidebarHead:after{
   content: "";
   position: absolute;
   left: 0;
@@ -763,9 +763,10 @@
   height: 1px;
   width: 90%;
   border-bottom: 3px solid #900808;
-}
+}*/
 .socials{
-  padding: 10px 15px;
+  padding: 0 15px;
+  margin-bottom: 10px;
 }
 .socials h3{
   font-size: 17px;
@@ -1187,7 +1188,8 @@
       }
       .post-navigation{
         background-color: #efefef;
-        padding-top: 25px;
+        padding-top: 5px;
+        padding-bottom: 5px;
       }      
       .bigOuter {
           height: 250px;
@@ -1216,6 +1218,13 @@
       .loginButton a{
           margin:5px;
           padding: 10px 30px;
+      }
+      .popularPost h2 {
+          line-height: 45px!important;
+      }
+      .popularPost h2 a {
+          font-size: 33px!important;
+          width: auto;
       }
     
     }
@@ -1271,6 +1280,9 @@
          .form-horizontal h2 a{
           display: block;
           width: 100%;
+        }
+        .post-navigation .link{
+            width: 325px;
         }
          
     }
@@ -1370,6 +1382,12 @@
         }
         .postcontent {
             padding: 0 10px;
+        }
+        .popularPost h2 {
+            line-height: 35px!important;
+        }
+        .popularPost h2 a {
+            font-size: 27px!important;
         }
     }
      @media screen and (max-width: 320px){

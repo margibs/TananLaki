@@ -45,25 +45,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 </div>
 
     <div class="single-title">
-        <div class="si-share noborder">                                                                        
-            <div>            
-                <a href="javascript:fbShare('Fb Share', 'Facebook share popup', 520, 350)" class="social-icon si-colored si-borderless si-facebook si-rounded">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                </a>
-                
-
-                <a class="social-icon si-colored si-borderless si-twitter si-rounded"  data-via="allladmag" onclick="javascript:window.open('http://twitter.com/share?url=<?php echo $actual_link ?>&text={{$post->title}}','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                </a>                                            
-
-                <a class="social-icon si-colored si-borderless si-gplus si-rounded" onclick="javascript:window.open('https://plus.google.com/share?url=<?php echo $actual_link ?>','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                    <i class="icon-gplus"></i>
-                    <i class="icon-gplus"></i>
-                </a>                                       
-            </div>
-        </div><!-- Post Single - Share End -->                        
 
       <!-- Entry Title
       ============================================= -->
@@ -87,7 +68,34 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   <div class="clearfix"></div>
 
+  
+
+
   <div class="singleViewWrapper" style="padding-bottom:0!important;">
+
+  <div class="social-sharing" data-permalink="<?php echo $actual_link ?>">
+      <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+      <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
+        <span class="icon icon-facebook" aria-hidden="true"></span>
+        <span class="share-title">Share</span>
+        <span class="share-count">0</span>
+      </a>
+
+      <!-- https://dev.twitter.com/docs/intents -->
+      <a target="_blank" href="http://twitter.com/share?url=<?php echo $actual_link ?>&amp;text={{$post->title}}&amp;" class="share-twitter">
+        <span class="icon icon-twitter" aria-hidden="true"></span>
+        <span class="share-title">Tweet</span>
+        <span class="share-count">0</span>
+      </a>
+
+      <!-- https://developers.google.com/+/web/share/ -->
+      <!-- <a target="_blank" href="http://plus.google.com/share?url=<?php echo $actual_link ?>" class="share-google"> -->
+        <!-- Cannot get Google+ share count with JS yet -->
+        <!-- <span class="icon icon-google" aria-hidden="true"></span>
+        <span class="share-count">+1</span>
+      </a> -->
+  </div>
+  
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Post Content -->
 

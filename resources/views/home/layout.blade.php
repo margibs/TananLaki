@@ -20,12 +20,15 @@
   
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />     
     <link rel="stylesheet" href="{{ asset('style.css') }}" type="text/css" />           
+    <link rel="stylesheet" href="{{ asset('css/social-buttons.css') }}" type="text/css" /> 
     <link rel="stylesheet" href="{{ asset('css/font-icons.css') }}" type="text/css" />             
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}" type="text/css" />    
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css" /> 
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" type="text/css" />
 
+
     <link rel="stylesheet" href="{{ asset('myStyle.css') }}" type="text/css" />
+
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -193,60 +196,60 @@
                           </div>
                       </div>
                                           
-                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;margin-top: 10px;">            
+                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;">            
                           
+                                    <div class="socials">
+                                        <div class="wrappers">
+                                          <h2> Like Us on facebook! </h2>
+                                          <div class="fb-page" data-href="https://www.facebook.com/AllLad-716294001804336" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
+                                        </div>                        
 
-                          <div style="margin-bottom:5px;">
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- Sidebar -->
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-7471386204506681"
-                                 data-ad-slot="5139619653"
-                                 data-ad-format="auto"></ins>
-                            <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                          </div>
+                                        <div class="wrappers">
+                                        <h2> Follow us on Twitter! </h2>
+                                          <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
+                                        </div>                           
+                                      
+                                        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
+                                        <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
+                                        <div style="margin:15px;"></div>-->
+                                         <div class="wrappers">
+                                         <h2> Subscribe to Our TV Channel </h2>
+                                          <script src="https://apis.google.com/js/platform.js"></script>                          
+                                          <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
+                                    </div>
 
-                          <div class="sidebarHead">
-                            <h5 class="sidebarTitle">Latest Articles</h5>
-                          </div>
+                                    <div style="margin-bottom:20px;margin-top: 20px;">
+                                      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                      <!-- Sidebar -->
+                                      <ins class="adsbygoogle"
+                                           style="display:block"
+                                           data-ad-client="ca-pub-7471386204506681"
+                                           data-ad-slot="5139619653"
+                                           data-ad-format="auto"></ins>
+                                      <script>
+                                      (adsbygoogle = window.adsbygoogle || []).push({});
+                                      </script>
+                                    </div>
+
+                                    <div class="sidebarHead">
+                                      <h5 class="sidebarTitle"> You've Missed </h5>
+                                    </div>
                           
-                          <div style="background-color:#f7f7f7;">                            
-                            @foreach($side_bar_posts as $side_bar_post)
-                              <div class="trendingWrapper">
-                                    <!-- <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
-                                        <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
-                                    </a> -->
-                                      <p>
-                                          <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">  {{$side_bar_post->title}}</a>
-                                      </p>
-                              </div> 
-                            @endforeach
-                          </div>
-                        
+                                    <div style="background-color:#f7f7f7;">                            
+                                      @foreach($side_bar_posts as $side_bar_post)
+                                        <div class="trendingWrapper">
+                                              <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
+                                                  <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
+                                             
+                                                <p>
+                                                   {{$side_bar_post->title}}
+                                                </p>
 
-                          <br />                         
-                          <div class="socials">
-                            <div class="wrappers">
-                              <h2> Like Us on facebook! </h2>
-                              <div class="fb-page" data-href="https://www.facebook.com/allladmag" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
-                            </div>                        
-
-                            <div class="wrappers">
-                            <h2> Follow Us! </h2>
-                              <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
-                            </div>                           
-                          
-                            <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
-                            <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
-                            <div style="margin:15px;"></div>-->
-                             <div class="wrappers">
-                             <h2> Subscribe to Us! </h2>
-                              <script src="https://apis.google.com/js/platform.js"></script>                          
-                              <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
-                             </div>
+                                              </a> 
+                                        </div> 
+                                      @endforeach
+                                    </div>
+                      
                             </div>
 
                           </div>
@@ -282,7 +285,7 @@
 
                     <div class="col_half col_last tright">
                         <div class="fright clearfix">
-                            <a href="https://www.facebook.com/allladmag" class="social-icon si-small si-borderless si-facebook" target="_blank">
+                            <a href="https://www.facebook.com/AllLad-716294001804336" class="social-icon si-small si-borderless si-facebook" target="_blank">
                                 <i class="icon-facebook"></i>
                                 <i class="icon-facebook"></i>
                             </a>
@@ -311,7 +314,7 @@
     <!-- Footer Scripts
     ============================================= -->    
     <script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
-    <!-- <script type="text/javascript" src="{{ asset('js/jquery.sharrre.js') }}"></script> -->
+    <script type="text/javascript" src="{{ asset('js/social-buttons.js') }}"></script>
 
     <script>
        $(document).ready( function() {

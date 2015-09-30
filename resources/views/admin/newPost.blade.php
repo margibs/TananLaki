@@ -77,7 +77,7 @@
                       <div id="img_here"></div>   
 
 
-                      <div style="text-align:center;  margin: 15px 0;">
+<!--                       <div style="text-align:center;  margin: 15px 0;">
                       <span style="
     font-size: 11px;
     display: block;
@@ -100,7 +100,7 @@
     font-weight: 600;
     text-align: center;
     color: #060606;" value="468">
-                      </div>
+                      </div> -->
                             
                       </div>
                   </div>
