@@ -33,11 +33,14 @@
         {!! csrf_field() !!}
         <input id="featured_image" type='hidden' name='feat_image_url' value=''>
         <input type="hidden" id="widget_image_url" name="widget_image_url" value="">
-        <input type="text" name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.."  style="margin-bottom: 20px;" />
+        <input type="text" name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.."  style="margin-bottom: 20px;" />               
        
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
           <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
         </div>
+
+        <h3> <i class="icon-line-flag"></i> Custom Introduction </h3>
+        <textarea name="" id="" class="excerptBox" style="height: 80px;"></textarea>
        
         <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
         <textarea name="excerpt" id="" class="excerptBox"></textarea>
@@ -57,8 +60,8 @@
               </div>
         
           <!-- <a href="#" class="button"> Publish Now </a> -->
-        <button id="check_post" class="button button-3d"  style="display: block;">Check Post</button>
-        <input id="check_post_submit" type="submit" value="Submit" class="button button-3d"  style="display: none;">
+        <button id="check_post" class="button button-3d"  style="display: none;">Check Post</button>
+        <input id="check_post_submit" type="submit" value="Submit" class="button button-3d">
        
 
     </div>
