@@ -141,6 +141,7 @@ class CustomQuery {
 			->join('categories','post_categories.category_id','=','categories.id')
 			->where('post_categories.category_id','=',$category_id)
 			->where('posts.id','!=',$post_id)
+			->where('posts.status','=',1)
 			->select('posts.feat_image_url','posts.title','posts.content','posts.slug','categories.slug as cat_slug')
 			->orderBy(DB::raw('RAND()'))
 			->take($take)

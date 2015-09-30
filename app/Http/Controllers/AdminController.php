@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 
 use Illuminate\Support\Str;
 
@@ -166,7 +167,8 @@ class AdminController extends Controller
         //Validate input
 		$validator = Validator::make($request->all(), [
             'title' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'feat_image_url' => 'required'
         ]);
 
     	if ($validator->fails()) 
@@ -441,7 +443,7 @@ class AdminController extends Controller
     }
 	public function mediaFiles()
 	{
-        $data['media_files'] = MediaFiles::orderBy('id','DESC')->take(10)->get();
+        $data['media_files'] = MediaFiles::orderBy('id','DESC')->take(30)->get();
 		return view('admin.media_file',$data);
 	}
 
@@ -520,7 +522,7 @@ class AdminController extends Controller
     //AJAX
     public function ajaxGetMediaFile()
     {
-        return json_encode(MediaFiles::orderBy('id','DESC')->take(10)->get());
+        return json_encode(MediaFiles::orderBy('id','DESC')->take(30)->get());
     }
 
     public function ajaxDeleteImage(Request $request)
@@ -590,18 +592,19 @@ class AdminController extends Controller
     {
         
         $config = array();
-        $config['app_id'] = '1477336432588187';
-        $config['app_secret'] = 'c5b66416be056c880147ae77d88f1aad';
+        $config['app_id'] = '907091149365288';
+        $config['app_secret'] = 'b6b39fef2d5b628efbaed0b40b0c055e';
         // $config['fileUpload'] = false; // optional
          
         $fb = new Facebook($config);
 
         try {
           // Returns a `Facebook\FacebookResponse` object
-          $response = $fb->post('/600041156765457/feed', $linkData, 'CAAUZCoTFHNZAsBAH7dKZCNBgu25ZCdBIaFfSIwlmzvMqLZBjOA64FucuoHNR7YkwKgAMZC5mJwXJWfdDZAF9lOCAQIR9MkkHK4qW3175tsv3KrvJQWO7vlkBdUFMJ93f0HZBYrIGSUo8D7kCWZBnk0f2wWIhsdvuHLLZBsuM72Q5tQa3fwCbRtJTL2eZAVoemET6dAZD');
+          //716294001804336 new alllad
+          $response = $fb->post('/716294001804336/feed', $linkData, 'CAAM4ZCp28oCgBANzKJR8dwpeJd2yy7oZBhZBqvNqBx5tmuOTlC8z8I4B1r5PP8lRcRyXkrVBMEoAsdDZCZBkzMo1PJl15jRyDeml0xZBwXZAdCZBSvyQSzhZCWuIstdql9Cd9zJe05yuusbTqn44fdhpimtYryZCavV7aecsPZBLCxrvH7o1t9Kce7X');
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
           echo 'Graph returned an error: ' . $e->getMessage();
-          exit;
+          exitg;
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
           echo 'Facebook SDK returned an error: ' . $e->getMessage();
           exit;
