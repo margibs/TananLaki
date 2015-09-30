@@ -41,8 +41,8 @@ return [
         'redirect' => 'http://alllad.com/githubcallback',
     ],
     'facebook' => [
-        'client_id' => '809770709118677',
-        'client_secret' => 'c71b3a283a45677bd2fdb708d5ab1952',
+        'client_id' => '907091149365288',
+        'client_secret' => 'b6b39fef2d5b628efbaed0b40b0c055e',
         'redirect' => 'http://alllad.com/login/facebook',
     ],
 
