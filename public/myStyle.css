@@ -3,6 +3,8 @@
     padding-right: 1px;
     margin-bottom: 15px;
     overflow: hidden;
+    height: 228px;
+    min-height: 228px;
 }
 .showLogin{
   display: none;

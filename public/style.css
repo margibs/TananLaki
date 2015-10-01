@@ -12390,6 +12390,7 @@ body{
     border-bottom: 2px solid #B70808;
     border-top: 2px solid transparent;
     color: #000!important;
+    min-height: 80px;
 }
 .trendingWrapper p a{
 	color: #101010;
@@ -12413,12 +12414,11 @@ body{
 	font-weight: 400;
 	font-size: 14px;   
 }
-.entry-content p{
-	
+.entry-content p{	
     font-weight: 400!important;
     font-size: 16px!important;
     line-height: 1.5em!important;
-    margin-bottom: 30px!important;
+    margin-bottom: 20px!important;
 }
 .entry-meta li:before{
     content: ' '!important;
