@@ -32,26 +32,26 @@
    <!-- Posts
   ============================================= -->
   <div id="posts" class="small-thumbs">
-  <div class="grid">
-    <div class="grid-sizer"></div>    
 
-
-
-    @foreach($posts as $post)
-
-      <div class="grid-item">             
+<div class="row">
+<div style="padding:20px 15px 0 0;overflow:hidden;">
+ @foreach($posts as $post)
+    
+      <div class="col-md-6">
+        <div style="position:relative;">
           <div class="details">
             <span class="categorySpan">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="color:#fff;">  {{$post->name}} </a></span> &nbsp; <span class="dateSpan"> </span>      
             <p> <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}"> {{$post->title}} </a> </p>          
           </div>
-          <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
+           <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
              <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
-          </a>      
+          </a>  
+        </div>
       </div>
 
     @endforeach 
-
-  </div>
+</div>
+</div>
 
   <div id="postswrapper"></div>
   <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
