@@ -19,14 +19,18 @@
   background: #B70808;
 
   font-size: 20px;
-    padding: 15px;    
-    color: #fff;
-    font-family: Oswald;
-    float: right;
+  padding: 15px;    
+  color: #fff;
+  font-family: Oswald;
+  float: right;
 
-        border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-    transition:background 0.2s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  transition:background 0.2s ease;
 }
 .arrow_box:hover{
   cursor: pointer;
@@ -77,9 +81,30 @@
   <div class="single-title">
 
       <div class="entry-title">
-           <h2 style="padding-bottom:0;margin-top: 20px;">  I can't tell who is happier
-           <p style="margin-bottom:10px!important;"> Imagine sneaking up behind her and grabbing her tits like that. </p>
+           <h2 style="padding-bottom:0;margin-top: 20px;">  I can't tell who is happier         
            </h2>
+
+           <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 10px 0 0 0;">
+                        <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                        <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
+                          <span class="icon icon-facebook" aria-hidden="true"></span>
+                          <span class="share-title">Share</span>
+                          
+                        </a>
+
+                        <!-- https://dev.twitter.com/docs/intents -->
+                        <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
+                          <span class="icon icon-twitter" aria-hidden="true"></span>
+                          <span class="share-title">Tweet</span>
+                          
+                        </a>
+
+                        <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
+                        <i class="icon-line2-bubble"></i>  
+                            <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
+                        </a>
+            </div>
+
       </div>
 
     </div>
@@ -100,29 +125,9 @@
                         
                           <div class="entry-title">
         
-                              <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 5px 0 15px 0;">
-                                            <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
-                                              <span class="icon icon-facebook" aria-hidden="true"></span>
-                                              <span class="share-title">Share</span>
-                                              
-                                            </a>
-
-                                            <!-- https://dev.twitter.com/docs/intents -->
-                                            <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
-                                              <span class="icon icon-twitter" aria-hidden="true"></span>
-                                              <span class="share-title">Tweet</span>
-                                              
-                                            </a>
-
-                                            <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
-                                            <i class="icon-line2-bubble"></i>  
-                                                <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
-                                            </a>
-                                </div>
-
                                 <div style="text-align:center;">
                                 <img src="http://img-9gag-fun.9cache.com/photo/aYw1NPO_460s.jpg" alt="">
+                                <p style="margin-bottom:10px!important;"> Imagine sneaking up behind her and grabbing her tits like that. </p>
                                 </div>
 
                               <!-- 
