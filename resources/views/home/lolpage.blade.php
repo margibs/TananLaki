@@ -131,13 +131,19 @@
                                 <p style="margin-bottom:10px!important;"> {{$post->introduction}} </p>
 
                                 </div>
-
+      
+                               @if($next_post != null)
                                 <div class="nextPost">
                                      <div class="arrow_box">
-                                          <a href=""><span> Next </span> 10 things you may have done in your life</a>
+                                          
+                                              <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }}</a>
+                                          
+                                            
+                                      
+
                                     </div>
                                 </div>
-                                                    
+                                @endif          
 
                                 <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 15px 0;">
                                       <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
