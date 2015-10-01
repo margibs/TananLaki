@@ -168,7 +168,8 @@ class AdminController extends Controller
 		$validator = Validator::make($request->all(), [
             'title' => 'required',
             'content' => 'required',
-            'feat_image_url' => 'required'
+            'feat_image_url' => 'required',
+            'introduction' => 'required'
         ]);
 
     	if ($validator->fails()) 
@@ -193,6 +194,7 @@ class AdminController extends Controller
         $post->excerpt = $request->input('excerpt');
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+        $post->introduction = $request->input('introduction');
 
         $post->status = 0;
         $post_fb_now = false;

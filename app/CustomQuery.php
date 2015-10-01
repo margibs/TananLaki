@@ -115,7 +115,7 @@ class CustomQuery {
 			->where('posts.slug','=',$slug)
 			->where('posts.status','=',1)
 			->where('categories.slug','=',$category_slug)
-			->select('posts.id','posts.title','posts.created_at','posts.feat_image_url','posts.content','posts.author_id','users.name','users.avatar','users.description','categories.name as cat_name','categories.slug as cat_slug','categories.id as cat_id')
+			->select('posts.introduction','posts.id','posts.title','posts.created_at','posts.feat_image_url','posts.content','posts.author_id','users.name','users.avatar','users.description','categories.name as cat_name','categories.slug as cat_slug','categories.id as cat_id')
 			->first();
 	}
 

@@ -49,7 +49,7 @@ class HomeController extends Controller {
             $post->categories2 = $this->customQuery->getPostCategories($post->id,false);
         }
 
-        $customQuery->per_page = 15;
+        $customQuery->per_page = 16;
     }
 
     public function index()
