@@ -40,7 +40,7 @@ class HomeController extends Controller {
         $this->customQuery = $customQuery;
         $this->commonFunctions = $commonFunctions;
 
-        $this->data['categories'] = Categories::where('id','!=',6)->where('id','!=',4)->get();
+        $this->data['categories'] = Categories::where('id','!=',6)->where('id','!=',4)->where('id','!=',2)->get();
 
         $this->data['side_bar_posts'] = Posts::where('status',1)->orderBy('id','DESC')->take(5)->get();
 

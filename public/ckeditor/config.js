@@ -13,7 +13,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
 		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		{ name: 'links' },
-		{ name: 'insert', groups: ['Image', 'Youtube'] },
+		{ name: 'insert', groups: ['Image', 'Youtube','oembed'] },
 		{ name: 'forms' },
 		{ name: 'tools' },
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
@@ -29,6 +29,10 @@ CKEDITOR.editorConfig = function( config ) {
 	// not needed in the Standard(s) toolbar.
 	config.removeButtons = 'Underline,Subscript,Superscript';
 	config.scayt_autoStartup = true;
+	config.allowedContent = true;
+	// config.basicEntities = false;
+	// config.htmlEncodeOutput = false;
+	// config.entities = false;
 
 	// Set the most common block elements.
 	config.format_tags = 'p;h1;h2;h3;pre';
@@ -37,7 +41,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
 	//Plugins
-	config.extraPlugins = 'youtube,popup,filebrowser,justify,lineutils,dialogui,dialog,clipboard,widget,image2';
+	config.extraPlugins = 'oembed,youtube,popup,filebrowser,justify,lineutils,dialogui,dialog,clipboard,widget,image2';
 
 	//Youtube
 	config.youtube_width = '640';
@@ -45,4 +49,8 @@ CKEDITOR.editorConfig = function( config ) {
 	config.youtube_related = true;
 	config.youtube_older = false;
 	config.youtube_privacy = false;
+
+	//oembed
+	config.oembed_maxWidth = '560';
+	config.oembed_maxHeight = '315';
 };
