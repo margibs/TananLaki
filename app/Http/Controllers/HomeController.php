@@ -234,6 +234,11 @@ class HomeController extends Controller {
         return view('home.author',$this->data);
     }
 
+    public function lolpage()
+    {
+        return view('home.lolpage',$this->data);
+    }
+
     //COMMENT AJAX
     public function ajax_add_comment(Request $request)
     {
