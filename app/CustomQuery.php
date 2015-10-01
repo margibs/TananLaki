@@ -73,7 +73,8 @@ class CustomQuery {
 		if($q == '')
 		{
 			return 
-				$query->take($this->per_page)
+				$query->where('categories.id','!=',7)
+				->take($this->per_page)
 		        ->offset($page*$this->per_page)
 		        ->orderBy('posts.id','DESC')
 		        ->groupBy('posts.id')
@@ -81,7 +82,8 @@ class CustomQuery {
 		}
 
 		return 
-			$query->where('posts.title', 'LIKE', '%'.$q.'%')
+			$query->where('categories.id','!=',7)
+			->where('posts.title', 'LIKE', '%'.$q.'%')
 	        ->orderBy('posts.id','DESC')
 	        ->groupBy('posts.id')
 	        ->take($this->per_page)

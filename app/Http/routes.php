@@ -74,6 +74,5 @@ Route::post('register', 'Auth\AuthController@postRegister');
 Route::post('home/ajax_get_page','HomeController@ajaxGetPage');
 Route::get('/','HomeController@index');
 Route::get('/author','HomeController@author');
-Route::get('/lolpage','HomeController@lolpage');
 Route::get('/{category}','HomeController@category');
 Route::get('/{category}/{slug}','HomeController@single');
