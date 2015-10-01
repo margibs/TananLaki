@@ -135,7 +135,12 @@
 
                                   <div class="nextPost">
                                        <div class="arrow_box">
-                                            <a href=""><span> Next </span> 10 things you may have done in your life</a>
+                                             @if($next_post != null)
+                                                <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }}</a>
+                                              @else
+                                               <span class="readnext"> Current post </span>
+                                              @endif
+
                                       </div>
                                   </div>
                                                       
