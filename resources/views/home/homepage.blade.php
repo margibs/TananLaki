@@ -12,7 +12,7 @@
       <a href="http://alllad.com/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"></a>
       <img class="popularFeatBig" src="http://alllad.com/uploads/71259_ar.jpg" alt="">
       <img class="popularFeatSmall" src="http://alllad.com/uploads/50665_ar2.jpg" alt="">
-      <div class="details">
+      <div class="details" style="border:none;">
         <span class="catergory"><a href="#"> Today's Trending </a></span>
         <h2 class="title"> <a href="http://alllad.com/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"> Enraged Driver Challenges Motorist to A Bare Knuckle Boxing Match
  </a> </h2>
@@ -32,9 +32,9 @@
    <!-- Posts
   ============================================= -->
   <div id="posts" class="small-thumbs">
-
-<div class="row">
 <div style="padding:20px 15px 0 0;overflow:hidden;">
+<div class="row">
+
  @foreach($posts as $post)
     
       <div class="col-md-6">
@@ -63,17 +63,17 @@
 </div>
 
 <script id="template_for_list" type="nexus/template">
-      <div class="col-md-6">
-        <div style="position:relative;">
-          <div class="details">
-            <span class="categorySpan">  <a href="{{ url('') }}/--cat_slug--" style="color:#fff;">  --name-- </a></span> &nbsp; <span class="dateSpan"> </span>      
-            <p> <a href="{{ url('') }}/--cat_slug--/--slug--"> --title-- </a> </p>          
-          </div>
-           <a href="{{ url('') }}/--cat_slug--/--slug--">
-             <img src="{{url('uploads')}}/--feat_image_url--" alt="">
-          </a>  
+  <div class="col-md-6">
+      <div style="position:relative;">
+        <div class="details">
+          <span class="categorySpan">  <a href="{{ url('') }}/--cat_slug--" style="color:#fff;">  --name-- </a></span> &nbsp; <span class="dateSpan"> </span>      
+          <p> <a href="{{ url('') }}/--cat_slug--/--slug--"> --title-- </a> </p>          
         </div>
+         <a href="{{ url('') }}/--cat_slug--/--slug--">
+           <img src="{{url('uploads')}}/--feat_image_url--" alt="">
+        </a>  
       </div>
+  </div>
 </script>
 
 <script>
