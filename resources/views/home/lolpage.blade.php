@@ -4,11 +4,11 @@
 
 
 <style>
+.single-title{
+  padding-bottom: 10px;
+}
   .single-post img{
     width: auto;
-  }
-  body{
-    background-color: #ececec;
   }
   .nextPost{
         text-align: right;
@@ -74,115 +74,100 @@
 </style>
 
 
+  <div class="single-title">
+
+      <div class="entry-title">
+           <h2 style="padding-bottom:0;margin-top: 20px;">  I can't tell who is happier
+           <p style="margin-bottom:10px!important;"> Imagine sneaking up behind her and grabbing her tits like that. </p>
+           </h2>
+      </div>
+
+    </div>
 
   <div class="singleViewWrapper" style="padding-bottom:0!important;">
   
         <meta name="csrf-token" content="ZMHnRoC655h03IBwA0VMiZZqdmNGOU8JkoQELOgu">
-        <!-- Post Content -->
-
-        <!-- ============================================= -->
-
 
         <div class="postcontent nobottommargin clearfix">
-
+           
             <div class="single-post nobottommargin">
 
                 <!-- Single Post
                 ============================================= -->
                 <div class="entry clearfix">                                                                                  
 
-                    <!-- Post Single -->
-                    <div class="clearfix"></div>                                  
-                        
-                    <!-- Entry Image
-                    ============================================= -->
-
-                    <!-- Entry Content
-                    ============================================= -->
                     <div class="entry-content notopmargin newContent">                       
                         
- <div class="entry-title">
-          <h2 style="padding-bottom:0;margin-top: 20px;">  I can't tell who is happier
-           <p style="margin-bottom:10px!important;"> Imagine sneaking up behind her and grabbing her tits like that. </p>
-           </h2>
-              <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 15px 0;">
-      <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-      <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
-        <span class="icon icon-facebook" aria-hidden="true"></span>
-        <span class="share-title">Share</span>
+                          <div class="entry-title">
         
-      </a>
+                              <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 5px 0 15px 0;">
+                                            <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
+                                              <span class="icon icon-facebook" aria-hidden="true"></span>
+                                              <span class="share-title">Share</span>
+                                              
+                                            </a>
 
-      <!-- https://dev.twitter.com/docs/intents -->
-      <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
-        <span class="icon icon-twitter" aria-hidden="true"></span>
-        <span class="share-title">Tweet</span>
-        
-      </a>
+                                            <!-- https://dev.twitter.com/docs/intents -->
+                                            <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
+                                              <span class="icon icon-twitter" aria-hidden="true"></span>
+                                              <span class="share-title">Tweet</span>
+                                              
+                                            </a>
 
-        <a style="color: #6C6868;
-    font-weight: 300;
-    font-size: 17px;
-    position: relative;
-    top: 4px;">  <i class="icon-line2-bubble"></i>  
-                <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
-                </a>
-      
-  </div>
+                                            <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
+                                            <i class="icon-line2-bubble"></i>  
+                                                <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
+                                            </a>
+                                </div>
 
-<div style="text-align:center;">
-<img src="http://img-9gag-fun.9cache.com/photo/aYw1NPO_460s.jpg" alt="">
-</div>
+                                <div style="text-align:center;">
+                                <img src="http://img-9gag-fun.9cache.com/photo/aYw1NPO_460s.jpg" alt="">
+                                </div>
 
-<!-- 
- <video preload="auto" poster="http://img-9gag-fun.9cache.com/photo/aGR2Zx7_460s.jpg" style="min-height:391.37055837563px;width: 600px;;display:block;margin:0 auto;" width="600" loop="" muted="" autoplay="autoplay">
-                          <source src="http://img-9gag-fun.9cache.com/photo/aGR2Zx7_460sv.mp4" type="video/mp4">
-                          <source src="http://img-9gag-fun.9cache.com/photo/aGR2Zx7_460svwm.webm" type="video/webm">
-                          <div class="badge-item-animated-img"></div>
-                      </video> -->
+                              <!-- 
+                               <video preload="auto" poster="http://img-9gag-fun.9cache.com/photo/aGR2Zx7_460s.jpg" style="min-height:391.37055837563px;width: 600px;;display:block;margin:0 auto;" width="600" loop="" muted="" autoplay="autoplay">
+                                                        <source src="http://img-9gag-fun.9cache.com/photo/aGR2Zx7_460sv.mp4" type="video/mp4">
+                                                        <source src="http://img-9gag-fun.9cache.com/photo/aGR2Zx7_460svwm.webm" type="video/webm">
+                                                        <div class="badge-item-animated-img"></div>
+                                                    </video> -->
 
 
-  <div class="nextPost">
-  <div class="arrow_box">
-            <a href=""><span> Next </span> 10 things you may have done in your life</a>
-          </div>
-  </div>
-                      
+                                  <div class="nextPost">
+                                       <div class="arrow_box">
+                                            <a href=""><span> Next </span> 10 things you may have done in your life</a>
+                                      </div>
+                                  </div>
+                                                      
 
-                      <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 15px 0;">
-      <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-      <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
-        <span class="icon icon-facebook" aria-hidden="true"></span>
-        <span class="share-title">Share</span>
-        
-      </a>
+                                <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 15px 0;">
+                                      <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                                      <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
+                                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                                        <span class="share-title">Share</span>
+                                        
+                                      </a>
 
-      <!-- https://dev.twitter.com/docs/intents -->
-      <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
-        <span class="icon icon-twitter" aria-hidden="true"></span>
-        <span class="share-title">Tweet</span>
-        
-      </a>
+                                      <!-- https://dev.twitter.com/docs/intents -->
+                                      <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
+                                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                                        <span class="share-title">Tweet</span>
+                                        
+                                      </a>
 
-      
-  </div>
+                                      
+                                  </div>
 
          
            
-      </div><!-- .entry-title end -->
-                        
-
-                     
-
-             
-
+                            </div><!-- .entry-title end -->
+  
                      </div>
 
                 </div><!-- .entry end -->   
 
-                        <div class="clear"></div>
-            
             </div>
+
           </div>
   </div>
 
@@ -190,9 +175,6 @@
                   <div class="singleViewWrapper">  
                       <div class="postcontent nobottommargin clearfix">
                         <div class="single-post nobottommargin">
-           
-                                
-
                           
                           <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
                           <div class="row">                        
@@ -236,25 +218,25 @@
                           </div>
 
                           <h4 class="relatedText"> From around the web </h4>
-                          <div id="contentclick24950"><script type="text/javascript" src="https://api.contentclick.co.uk/pub_serve.php?pub_id=8270&amp;w_id=24950&amp;pw=f3bd01bc302bca&amp;cbust=1443696592066" async=""></script></div>
-                          <script type="text/javascript">
-                              (function() {
-                                  var data =
-                                  {
-                                      pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
-                                  };
-                            if (typeof widgetCheck24950 === 'undefined')   {
-                                  var u="";
-                                  for(var key in data){u+=key+"="+data[key]+"&"}
-                                  u=u.substring(0,u.length-1);    
-                                  var a = document.createElement("script");
-                                  a.type= 'text/javascript';
-                                  a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
-                                  a.async = true;   
-                                  document.getElementById("contentclick24950").appendChild(a);
-                            window.widgetCheck24950 = "set";
-                            }
-                              })();   
+                            <div id="contentclick24950"><script type="text/javascript" src="https://api.contentclick.co.uk/pub_serve.php?pub_id=8270&amp;w_id=24950&amp;pw=f3bd01bc302bca&amp;cbust=1443696592066" async=""></script></div>
+                            <script type="text/javascript">
+                                (function() {
+                                    var data =
+                                    {
+                                        pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
+                                    };
+                              if (typeof widgetCheck24950 === 'undefined')   {
+                                    var u="";
+                                    for(var key in data){u+=key+"="+data[key]+"&"}
+                                    u=u.substring(0,u.length-1);    
+                                    var a = document.createElement("script");
+                                    a.type= 'text/javascript';
+                                    a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                    a.async = true;   
+                                    document.getElementById("contentclick24950").appendChild(a);
+                              window.widgetCheck24950 = "set";
+                              }
+                                })();   
                           </script>
 
                           <h4 class="relatedText"> What do you think? </h4>
@@ -265,114 +247,11 @@
                           mydiv.innerHTML = "<fb:comments href='" + document.location.href + "' num_posts='10' width='739'></fb:comments>";  
                           FB.XFBML.parse(mydiv);  
                           </script>
-                          
-                         <!--  <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;">
-            
-                              <div id="comment_container">
-                                                                    <div style="overflow:hidden;margin-bottom: 10px; margin-top: 20px;clear:both;">
-                                      <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                          <img src="http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg " alt="" class="pull-left">
-                                      </div>
-                                      <p class="commenterName">
-                                        Rumar Gibs 
-                                        <span>  2015-09-09 08:26:29  </span>
-                                      </p>
-                                      <p class="commentContent">
-                                         You are totally right, the so called &quot;haters&quot; make this people even more famous. A few years ago a lot of girls I know were really in love with Justin Bieber. They used to post songs or photos on facebook, but I hardly noticed those posts and I didn&#039;t even remember the name of that guy they loved so much. Then, when the &quot;hating on Bieber&quot; started, 90% of my home page was filled with posts about how much he was gay, stupid or ugly. Everyday there were news about him, obviously accompanied by the &quot;Ahaaha Bieber gay lulz so ugly just a kid ahahah little girl lollol why so famous? Idk&quot; comments
-
-                                      </p>
-                                      <a href="#" class="reply_comment" data-id="79" style="font-size: 12px; font-weight: 700;" >reply</a>         
-                                      <div class="clearfix"></div>
-
-                                      <div id="comment_child79">
-                                                                                    <div class="childCommentContainer">
-                                              <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                                <img src="http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg " alt="" class="pull-left">
-                                              </div>
-                                              <p class="commenterName">Rumar Gibs
-                                              <span>  2015-09-09 08:29:31  </span>
-                                              </p>
-                                              <p class="commentContent"> She is not a human being but a &quot;She&#039;s a product of marketing&quot;</p>
-                                              <a href="#" class="reply_comment" data-id="79" style="font-size: 12px; font-weight: 700;" >reply</a> 
-                                            </div>
-                                                                                    <div class="childCommentContainer">
-                                              <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                                <img src="http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg " alt="" class="pull-left">
-                                              </div>
-                                              <p class="commenterName">Rumar Gibs
-                                              <span>  2015-09-09 08:33:53  </span>
-                                              </p>
-                                              <p class="commentContent">But she was already famous and rich before she started acting that way. I do think it is a stunt, though, so she doesn&#039;t get put on the back burner like her dad.</p>
-                                              <a href="#" class="reply_comment" data-id="79" style="font-size: 12px; font-weight: 700;" >reply</a> 
-                                            </div>
-                                                                              </div>
-                                      
-                                      <div id="comment_textarea79"></div> 
-                                    </div>
-                                                                <div id="ajax_comment"></div>
-                              </div>
- -->
-
-                              <!--  -->
-                                        
-
-                               <!--      <form class="form-horizontal">
-                                    
-                                    <h2> Leave a comment     <a href="http://localhost/alllad/public/login"> <i class="icon-lock two"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="http://localhost/alllad/public/login/facebook/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" > <i class="icon-facebook"></i> Facebook Login </a> </h2> -->
-<!-- 
-                                     <div class="loginButton">
-                                <a href="http://localhost/alllad/public/login"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="http://localhost/alllad/public/login/facebook/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes"> <i class="icon-facebook"></i> Facebook Login </a>
-                                    </div> -->
-                             
-
-                                    <!-- Text input-->
-                                   <!--  <div class="form-group">
-                                      <label class="col-md-2 control-label" for="name">Name</label>  
-                                      <div class="col-md-10">
-                                      <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
-                                        
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Text input-->
-                                   <!--  <div class="form-group">
-                                      <label class="col-md-2 control-label" for="email">Email</label>  
-                                      <div class="col-md-10">
-                                      <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
-                                        
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Text input-->
-                                    <!-- <div class="form-group">
-                                      <label class="col-md-2 control-label" for="website">Website</label>  
-                                      <div class="col-md-10">
-                                      <input id="website" name="website" type="text" placeholder="" class="form-control input-md">
-                                        
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Textarea -->
-                                    <!-- <div class="form-group">
-                                      <label class="col-md-2 control-label" for="comment">Comment</label>
-                                      <div class="col-md-10">                     
-                                        <textarea class="form-control" id="comment" name="comment"> </textarea>
-                                      </div>
-                                    </div>
-
-                                    <input type="submit" value="Comment" class="button pull-right" />
-
-                                    </form> -->
-                                    
-                             <!--   
-                              
-                            </div>
-                          </div> -->
+                                               
                   </div>
 
-                           </div><!-- .postcontent end -->
-                  </div>      
+             </div><!-- .postcontent end -->
+    </div>      
 
 <script id="template_parent_comment" type="nexus/template">
   <div style="overflow:hidden;margin-bottom: 10px;margin-top: 20px;">
