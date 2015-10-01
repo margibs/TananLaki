@@ -40,7 +40,7 @@
       <div class="col-md-6">
         <div style="position:relative;">
           <div class="details">
-            <span class="categorySpan">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="color:#fff;">  {{$post->name}} </a></span> &nbsp; <span class="dateSpan"> </span>      
+            <span class="categorySpan">  <a href="{{url('')}}/{{$post->cat_slug}}" style="color:#fff;">  {{$post->name}} </a></span> &nbsp; <span class="dateSpan"> </span>      
             <p> <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}"> {{$post->title}} </a> </p>          
           </div>
            <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
@@ -50,10 +50,11 @@
       </div>
 
     @endforeach 
+    <div id="postswrapper"></div>
 </div>
 </div>
 
-  <div id="postswrapper"></div>
+  
   <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
 
   </div>
@@ -62,22 +63,17 @@
 </div>
 
 <script id="template_for_list" type="nexus/template">
-
-
-<div class="col-md-6">
-    <div style="position:relative;">
-      <div class="details">
-        <span class="categorySpan">  <a href="{{ url('') }}/--cat_slug--" style="color:#fff;">  --name-- </a></span> &nbsp; <span class="dateSpan"> </span>      
-        <p> <a href="{{ url('') }}/--cat_slug--/--slug--"> --title-- </a> </p>          
+  <div class="col-md-6">
+      <div style="position:relative;">
+        <div class="details">
+          <span class="categorySpan">  <a href="{{ url('') }}/--cat_slug--" style="color:#fff;">  --name-- </a></span> &nbsp; <span class="dateSpan"> </span>      
+          <p> <a href="{{ url('') }}/--cat_slug--/--slug--"> --title-- </a> </p>          
+        </div>
+         <a href="{{ url('') }}/--cat_slug--/--slug--">
+           <img src="{{url('uploads')}}/--feat_image_url--" alt="">
+        </a>  
       </div>
-       <a href="{{ url('') }}/--cat_slug--/--slug--">
-         <img src="{{url('uploads')}}/--feat_image_url--" alt="">
-      </a>  
-    </div>
-</div>
-  
-
-</div>
+  </div>
 </script>
 
 <script>
@@ -121,10 +117,10 @@
                     .replace(/--name--/ig, obj.name)
                     .replace(/--created_at--/ig, obj.created_at)
                     .replace(/--excerpt--/ig, obj.excerpt);
-
-                  $(".grid").append(pages);
-                  $(".grid").isotope('reloadItems');
-                  $(".grid").isotope({sortBy: null, sortAscending: true});  
+                  $("#postswrapper").append(pages);
+                  // $(".grid").append(pages);
+                  // $(".grid").isotope('reloadItems');
+                  // $(".grid").isotope({sortBy: null, sortAscending: true});  
         //             $(".grid").isotope('insert', pages);
     				// $(".grid").isotope();
 
