@@ -9,12 +9,13 @@
 
     <!-- -------------------- NEW POPULAR POST ------------------ -->
   <div class="popularPost">
-      <a href="http://alllad.com/gaming/newly-unveiled-info-on-star-wars-battlefronts-drop-zone-mode"></a>
-      <img class="popularFeatBig" src="{{url('uploads')}}/71284_starwars.jpg" alt="">
-      <img class="popularFeatSmall" src="{{url('uploads')}}/21349_starwarssm.jpg" alt="">
+      <a href="http://alllad.com/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"></a>
+      <img class="popularFeatBig" src="http://alllad.com/uploads/71259_ar.jpg" alt="">
+      <img class="popularFeatSmall" src="http://alllad.com/uploads/50665_ar2.jpg" alt="">
       <div class="details">
         <span class="catergory"><a href="#"> Today's Trending </a></span>
-        <h2 class="title"> <a href="http://alllad.com/gaming/newly-unveiled-info-on-star-wars-battlefronts-drop-zone-mode"> Star Wars Battlefront’s “Drop Zone” Mode </a> </h2>
+        <h2 class="title"> <a href="http://alllad.com/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"> Enraged Driver Challenges Motorist to A Bare Knuckle Boxing Match
+ </a> </h2>
       </div>
     </div>
   
@@ -31,26 +32,26 @@
    <!-- Posts
   ============================================= -->
   <div id="posts" class="small-thumbs">
-  <div class="grid">
-    <div class="grid-sizer"></div>    
 
-
-
-    @foreach($posts as $post)
-
-      <div class="grid-item">             
+<div class="row">
+<div style="padding:20px 15px 0 0;overflow:hidden;">
+ @foreach($posts as $post)
+    
+      <div class="col-md-6">
+        <div style="position:relative;">
           <div class="details">
             <span class="categorySpan">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="color:#fff;">  {{$post->name}} </a></span> &nbsp; <span class="dateSpan"> </span>      
             <p> <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}"> {{$post->title}} </a> </p>          
           </div>
-          <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
+           <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
              <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
-          </a>      
+          </a>  
+        </div>
       </div>
 
     @endforeach 
-
-  </div>
+</div>
+</div>
 
   <div id="postswrapper"></div>
   <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
