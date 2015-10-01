@@ -30,6 +30,9 @@
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
           <textarea name="content" id="editor1" rows="10" cols="80">{!! $post->content !!}</textarea>
         </div>
+
+        <h3> <i class="icon-line-flag"></i> Custom Introduction </h3>
+        <textarea name="introduction" id="" class="excerptBox" style="height: 80px;">{{$post->introduction}}</textarea>
         
         <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
         <textarea name="excerpt" id="" class="excerptBox">{{$post->excerpt}}</textarea>

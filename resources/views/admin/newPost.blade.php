@@ -31,21 +31,21 @@
 
   
         {!! csrf_field() !!}
-        <input id="featured_image" type='hidden' name='feat_image_url' value=''>
-        <input type="hidden" id="widget_image_url" name="widget_image_url" value="">
-        <input type="text" name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.."  style="margin-bottom: 20px;" />               
+        <input id="featured_image" type='hidden' name='feat_image_url' value="{{ old('feat_image_url') }}">
+        <input type="hidden" id="widget_image_url" name="widget_image_url" value="{{ old('widget_image_url') }}">
+        <input type="text" value="{{ old('title') }}"name="title" class="form-control newPost newPostBox" placeholder="Enter Title Here.."  style="margin-bottom: 20px;" />               
        
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
-          <textarea name="content" id="editor1" rows="10" cols="80"></textarea>
+          <textarea name="content" id="editor1" rows="10" cols="80">{{ old('content') }}</textarea>
         </div>
 
         <h3> <i class="icon-line-flag"></i> Custom Introduction </h3>
-        <textarea name="" id="" class="excerptBox" style="height: 80px;"></textarea>
+        <textarea name="introduction" id="" class="excerptBox" style="height: 80px;">{{ old('introduction') }}</textarea>
        
         <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
-        <textarea name="excerpt" id="" class="excerptBox"></textarea>
+        <textarea name="excerpt" id="" class="excerptBox">{{ old('excerpt') }}</textarea>
         
-         <h3> <i class="icon-line2-eyeglasses"></i>&nbsp; Plagiarism check result: </h3>
+        <h3> <i class="icon-line2-eyeglasses"></i>&nbsp; Plagiarism check result: </h3>
         <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
         <div id="copyscape" style="margin-bottom:20px;"></div>
         <div id="copyscape_balance">{!! $copyscape_balance !!}</div>
@@ -77,7 +77,11 @@
                       <div class="panel-body" style="padding-top: 0;">
 
 
-                      <div id="img_here"></div>   
+                      <div id="img_here">
+                        @if(old('feat_image_url'))
+                        <img src="{{url('uploads')}}/{{old('feat_image_url')}}" alt="">
+                        @endif
+                      </div>   
 
 
 <!--                       <div style="text-align:center;  margin: 15px 0;">
@@ -118,7 +122,11 @@
                       </div>
                       <div class="panel-body" style="padding-top: 0;">
                             
-                        <div id="img_here2"></div>         
+                        <div id="img_here2">
+                          @if(old('widget_image_url'))
+                          <img src="{{url('uploads')}}/{{old('widget_image_url')}}" alt="">
+                          @endif
+                        </div>         
                       </div>
                   </div>
 
