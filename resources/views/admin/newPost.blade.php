@@ -157,8 +157,8 @@
                       <div class="panel-body">
                           <div class="controls">
                             <label class="checkbox" for="published">
-                            {!! Form::checkbox('shared_fb', 1) !!} <i class="icon-facebook-sign"> </i> Post on FB <br >
-                            {!! Form::checkbox('shared_twitter', 1) !!} <i class="icon-twitter-sign"> </i>  Post on Twitter
+                            {!! Form::checkbox('shared_fb', 1,true) !!} <i class="icon-facebook-sign"> </i> Post on FB <br >
+                            {!! Form::checkbox('shared_twitter', 1,true) !!} <i class="icon-twitter-sign"> </i>  Post on Twitter
                           </div>
                       </div>
 

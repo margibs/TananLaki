@@ -14,6 +14,10 @@ class CreatePostsPollsTable extends Migration
     {
         Schema::create('posts_polls', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('author_id');
+            $table->bigInteger('posts_id');
+            $table->string('ip_add');
+            $table->string('poll_answer');
             $table->timestamps();
         });
     }
