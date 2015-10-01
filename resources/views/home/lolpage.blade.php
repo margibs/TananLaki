@@ -77,8 +77,8 @@
   <div class="single-title">
 
       <div class="entry-title">
-           <h2 style="padding-bottom:0;margin-top: 20px;">  I can't tell who is happier
-           <p style="margin-bottom:10px!important;"> Imagine sneaking up behind her and grabbing her tits like that. </p>
+           <h2 style="padding-bottom:0;margin-top: 20px;">  {{$post->title}}
+           <p style="margin-bottom:10px!important;"> {{$post->introduction}} </p>
            </h2>
       </div>
 
@@ -122,7 +122,7 @@
                                 </div>
 
                                 <div style="text-align:center;">
-                                <img src="http://img-9gag-fun.9cache.com/photo/aYw1NPO_460s.jpg" alt="">
+                                {!! $post->content !!}
                                 </div>
 
                               <!-- 
@@ -175,7 +175,10 @@
                   <div class="singleViewWrapper">  
                       <div class="postcontent nobottommargin clearfix">
                         <div class="single-post nobottommargin">
-                          
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
                           <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
                           <div class="row">                        
                             <div class="related-posts clearfix" style="margin-bottom:0;">
@@ -274,17 +277,18 @@
     <p class="commentContent">--content--</p>
     <a href="#" class="reply_comment" data-id="--parent_id--" style="font-size: 12px; font-weight: 700;" >reply</a> 
   </div>
-</script><script>
+</script>
+<script>
 $(document).ready(function(){
-  var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
-google_ads+= '<';
-google_ads+= '/script>';
-google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});';
-google_ads+= '<';
-google_ads+= '/script>';
+//   var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
+// google_ads+= '<';
+// google_ads+= '/script>';
+// google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});';
+// google_ads+= '<';
+// google_ads+= '/script>';
 
   // $('.newContent p:nth-child(1)').after(google_ads);
-  $('.newContent').find("p:first").after(google_ads);
+  // $('.newContent').find("p:first").after(google_ads);
 
 
   $('.top_comment').on('keypress',function(){
