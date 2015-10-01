@@ -188,6 +188,11 @@ class HomeController extends Controller {
         return view('home.homepage',$this->data);
     }
 
+    public function lolpage()
+    {
+        return view('home.lolpage',$this->data);
+    }
+
     public function single($category,$slug)
     {
         $this->data['category'] = $category;
@@ -226,17 +231,20 @@ class HomeController extends Controller {
         $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
         $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
 
-        return view('home.single',$this->data);
+        if($category == 'lol')
+        {
+           return view('home.lolpage',$this->data);
+        }
+        else
+        {
+            return view('home.single',$this->data);  
+        }
+        
     }
 
     public function author()
     {
         return view('home.author',$this->data);
-    }
-
-    public function lolpage()
-    {
-        return view('home.lolpage',$this->data);
     }
 
     //COMMENT AJAX
