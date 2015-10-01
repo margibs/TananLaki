@@ -234,9 +234,21 @@ $(document).ready(function(){
       load_file = 0;
 
   $(document).on('click','#check_post',function(e){
+    
     // check_post_submit
-    var content = $('iframe').contents().find("body").html(),
-    content = content.replace(/(<([^>]+)>)/ig,"");
+    var content = $('iframe').contents().find("body").html();
+    
+    console.log('check_post');
+    console.log(content);
+
+    var content2 = $(content);
+    $('blockquote').html('');
+
+    content2 = content2.html();
+
+    content2 = content2.replace(/(<([^>]+)>)/ig,"");
+
+    console.log(content2);
 
     $('#check_post').attr('disabled','disabled');
 
@@ -247,7 +259,7 @@ $(document).ready(function(){
     $.ajax({ 
       type: 'post',
       url: "{{url('admin/ajax_check_content')}}",
-      data: {_token: CSRF_TOKEN,'content' : content }, 
+      data: {_token: CSRF_TOKEN,'content' : content2 }, 
       success: function(response)
       {
         var parsed = JSON.parse(response);

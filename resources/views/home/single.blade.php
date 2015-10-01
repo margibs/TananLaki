@@ -348,7 +348,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                   </div>      
 
 @include('_common.ajaxTemplate')
-
 <script>
 $(document).ready(function(){
   var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
@@ -358,7 +357,8 @@ google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-
 google_ads+= '<';
 google_ads+= '/script>';
 
-  $('.newContent p:nth-child(1)').after(google_ads);
+  // $('.newContent p:nth-child(1)').after(google_ads);
+  $('.newContent').find("p:first").after(google_ads);
 
 
   $('.top_comment').on('keypress',function(){
