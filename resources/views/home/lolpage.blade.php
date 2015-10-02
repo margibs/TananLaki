@@ -4,9 +4,9 @@
 
 
 <style>
-.single-title{
-  padding-bottom: 10px;
-}
+  .single-title{
+    padding-bottom: 10px;
+  }
   .single-post img{
     width: auto;
   }
@@ -23,8 +23,7 @@
   color: #fff;
   font-family: Oswald;
   float: right;
-
-  overflow: hidden;
+  
   white-space: nowrap;
   text-overflow: ellipsis;
 
@@ -67,8 +66,11 @@
 }
 
   .mainPostWrapper{
-   background-color: #D6D6D6;
-    padding-left: 15px;
+    background-color: #ececec;
+    padding: 0 0 0 15px;
+  }
+  body{
+    background-color: #ececec;
   }
   @media  screen and (max-width: 991px){
     .mainPostWrapper{
@@ -228,27 +230,7 @@
                             </div>
                           </div>
 
-                          <h4 class="relatedText"> From around the web </h4>
-                            <div id="contentclick24950"><script type="text/javascript" src="https://api.contentclick.co.uk/pub_serve.php?pub_id=8270&amp;w_id=24950&amp;pw=f3bd01bc302bca&amp;cbust=1443696592066" async=""></script></div>
-                            <script type="text/javascript">
-                                (function() {
-                                    var data =
-                                    {
-                                        pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
-                                    };
-                              if (typeof widgetCheck24950 === 'undefined')   {
-                                    var u="";
-                                    for(var key in data){u+=key+"="+data[key]+"&"}
-                                    u=u.substring(0,u.length-1);    
-                                    var a = document.createElement("script");
-                                    a.type= 'text/javascript';
-                                    a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
-                                    a.async = true;   
-                                    document.getElementById("contentclick24950").appendChild(a);
-                              window.widgetCheck24950 = "set";
-                              }
-                                })();   
-                          </script>
+                    
 
                           <h4 class="relatedText"> What do you think? </h4>
 

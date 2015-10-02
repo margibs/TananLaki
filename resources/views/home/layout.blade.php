@@ -191,13 +191,13 @@
 
                     <div class="row">
 
-                      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 padRight0">                    
+                      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 padRight0">                    
                          <div class="mainPostWrapper">
                             @yield('content')
                           </div>
                       </div>
                                           
-                      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;">            
+                      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 padLeft0 padRight0" style="background-color: #F7F7F7;">            
                           
                                     <div class="socials">
                                         <div class="wrappers">
@@ -220,16 +220,18 @@
                                     </div>
 
                                     <div style="margin-bottom:20px;margin-top: 20px;">
-                                      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                      <!-- Sidebar -->
-                                      <ins class="adsbygoogle"
-                                           style="display:block"
-                                           data-ad-client="ca-pub-7471386204506681"
-                                           data-ad-slot="5139619653"
-                                           data-ad-format="auto"></ins>
-                                      <script>
-                                      (adsbygoogle = window.adsbygoogle || []).push({});
-                                      </script>
+                                      
+
+                                      <script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":160,"height":600,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
                                     </div>
 
                                     <div class="sidebarHead">

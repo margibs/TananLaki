@@ -3,8 +3,8 @@
     padding-right: 1px;
     margin-bottom: 15px;
     overflow: hidden;
-    height: 228px;
-    min-height: 228px;
+/*    height: 228px;
+    min-height: 228px;*/
 }
 .showLogin{
   display: none;
@@ -974,9 +974,7 @@
       .mainPostWrapper{
         box-shadow: 0 0 0 0;
       }
-      .padRight0{
-        padding-right: 15px!important;
-      }
+     
       .padLeft0{
         padding-left: 15px!important;
       }
@@ -1042,7 +1040,9 @@
       .authorBox{
         margin-top: 20px;
       }
-  
+      .col-md-6{
+        width: 100%;
+      }
     }
     @media screen and (max-width: 680px){
       .form-horizontal h2 a{

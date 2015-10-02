@@ -2,8 +2,8 @@
 @section('content')
 
 <style>
-	.mainPostWrapper{
-   background-color: #D6D6D6;
+  .mainPostWrapper{
+    background-color: #ececec;
     padding: 0 0 0 15px;
   }
   body{
@@ -28,18 +28,23 @@
 
       <div class="entry-title">
 
-           <h2 style="padding-bottom:10px;border-bottom: 3px solid #B70808;margin-top: 20px;font-size: 30px;margin-bottom: 10px;line-height: 40px;">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">{{$post->title}} </a></h2>
+           <h2 style="
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DADADA;
+    margin-top: 20px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-family: Roboto;
+               ">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">{{$post->title}} </a> </h2>
+
+       
 
       </div>
 
       <div class="clearfix"></div>
 
-      <div class="singleViewWrapper" style="padding-bottom:0!important;">
-
-        <!-- Post Content -->
-
-        <!-- ============================================= -->
-
+      <div class="singleViewWrapper" style="padding-bottom:0!important;">      
 
         <div class="postcontent nobottommargin clearfix">
 
