@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Stevebauman\Location\Facades\Location;
 use Intervention\Image\Facades\Image;
+use Jenssegers\Agent\Agent;
 
 use App;
 use DB;
@@ -203,6 +204,9 @@ class HomeController extends Controller {
 
     public function single($category,$slug)
     {
+        $agent = new Agent();
+
+        $this->data['is_mobile'] = $agent->isMobile();
         $this->data['category'] = $category;
         $this->data['slug'] = $slug;
 

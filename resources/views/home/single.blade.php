@@ -125,8 +125,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="entry-content notopmargin newContent">
                         
                         <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
-                        
-                        <script type="text/javascript">
+@if(!$is_mobile)                  
+<script type="text/javascript">
   ( function() {
     if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
     var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":728,"height":90,"sid":"Chitika Default"};
@@ -136,6 +136,18 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 }());
 </script>
 <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+@else
+<script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":550,"height":250,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+@endif
 
                         {!! $post->content !!}
 
