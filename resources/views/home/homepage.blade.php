@@ -2,6 +2,65 @@
 @extends('home.layout')
 
 @section('content')
+
+<style>
+    .allpost{
+      padding:15px 15px 0 0;
+      overflow:hidden;
+    }    
+
+    @media screen and (max-width: 1211px){
+      .popularPost h2 a{
+        font-size: 23px;
+        margin: 5px;
+        font-weight: 500;
+      }
+      .popularPost .catergory a{
+        margin-left: 0;
+      }
+    }
+    @media screen and (max-width: 768px){
+      .popularPost h2 a {
+          font-size: 38px!important;
+          line-height: 43px;
+          width: 100%;
+      }
+      .homeViewWrapper{
+        padding: 0!important;
+      }
+      .padRight0 {
+          padding-right: auto;
+      }
+      #posts .details p a{
+        font-size: 27px;
+      }
+    }
+    @media screen and (max-width: 540px){
+      .popularPost h2 a {
+          font-size: 30px!important;
+          line-height: 40px;        
+      }
+      .popularPost h2 {  
+        margin-bottom: 15px;
+    }
+    @media screen and (max-width: 414px){
+        .popularPost h2 a {
+            font-size: 27px!important;
+            line-height: 35px;
+        }
+    }
+    @media screen and (max-width: 360px){
+        .popularPost h2 a {
+            font-size: 22px!important;
+            line-height: 30px;
+        }
+        #posts .details p a {
+            font-size: 22px;
+        }
+    }
+
+  }
+</style>
 <div class="homeViewWrapper">
 
 
@@ -32,7 +91,7 @@
    <!-- Posts
   ============================================= -->
   <div id="posts" class="small-thumbs">
-<div style="padding:20px 15px 0 0;overflow:hidden;">
+<div class="allpost">
 <div class="row">
 
  @foreach($posts as $post)

@@ -6,13 +6,14 @@
 <style>
   .single-title{
     padding-bottom: 10px;
+    border-bottom: none!important;
   }
   .single-post img{
     width: auto;
   }
   .nextPost{
         text-align: right;
-    margin-top: 30px;
+    margin-top: 50px;
   }
   .arrow_box {
   position: relative;
@@ -23,7 +24,7 @@
   color: #fff;
   font-family: Oswald;
   float: right;
-  
+  width: 400px;
   white-space: nowrap;
   text-overflow: ellipsis;
 
@@ -67,7 +68,7 @@
 
   .mainPostWrapper{
     background-color: #ececec;
-    padding: 0 0 0 15px;
+    padding: 0;
   }
   body{
     background-color: #ececec;
@@ -84,7 +85,9 @@
 
       <div class="entry-title">
 
-           <h2 style="padding-bottom:0;margin-top: 20px;">  {{$post->title}} </h2>
+           <h2 style="padding-bottom:0;margin-top: 20px;    font-family: Roboto;
+    font-size: 30px;
+    line-height: 35px;">  {{$post->title}} </h2>
 
            <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 10px 0 0 0;">
                         <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
@@ -189,42 +192,24 @@
 </script>
 <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 
-                          <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
+                          <h4 class="relatedText" style="margin-top: 20px;">  More Fun </h4>
                           <div class="row">                        
                             <div class="related-posts clearfix" style="margin-bottom:0;">
 
                               
+                               @foreach($related_posts as $related_post)
+
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
                                     
-                                    <a href="http://localhost/alllad/public/news/these-are-the-five-details-you-shouldnt-give-to-facebook" style="display:block; overflow: hidden;">
-                                     <img src="http://localhost/alllad/public/uploads/49053_fb.jpg" alt="Blog Single" style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
+                                    <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
+                                     <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
                                     </a>
 
-                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="http://localhost/alllad/public/news/these-are-the-five-details-you-shouldnt-give-to-facebook" style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;">These Are The Five Details You Shouldn’t Give To Facebook</a></h4>    
+                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;" >{{$related_post->title}}</a></h4>    
 
                                 </div>
 
-                                
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
-                                    
-                                    <a href="http://localhost/alllad/public/news/apple-expected-to-unveil-new-iphones-at-september-event" style="display:block; overflow: hidden;">
-                                     <img src="http://localhost/alllad/public/uploads/96166_watch.jpg" alt="Blog Single" style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
-                                    </a>
-
-                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="http://localhost/alllad/public/news/apple-expected-to-unveil-new-iphones-at-september-event" style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;">Apple expected to unveil new iPhones at September event</a></h4>    
-
-                                </div>
-
-                                
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
-                                    
-                                    <a href="http://localhost/alllad/public/news/worst-boxer-in-britain-wins-his-first-fight-in-almost-a-decade" style="display:block; overflow: hidden;">
-                                     <img src="http://localhost/alllad/public/uploads/fiu_16902_tin_lyza.jpg" alt="Blog Single" style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
-                                    </a>
-
-                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="http://localhost/alllad/public/news/worst-boxer-in-britain-wins-his-first-fight-in-almost-a-decade" style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;">Worst Boxer in Britain Wins His First Fight in Almost a Decade</a></h4>    
-
-                                </div>
+                                @endforeach
 
                                 
                             </div>
