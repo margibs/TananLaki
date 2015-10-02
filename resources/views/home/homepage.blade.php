@@ -37,7 +37,7 @@
 
  @foreach($posts as $post)
     
-      <div class="col-md-6">
+      <div class="col-xs-12 col-sm-6 col-md-6">
         <div style="position:relative;">
           <div class="details">
             <span class="categorySpan">  <a href="{{url('')}}/{{$post->cat_slug}}" style="color:#fff;">  {{$post->name}} </a></span> &nbsp; <span class="dateSpan"> </span>      

@@ -4,9 +4,9 @@
 
 
 <style>
-.single-title{
-  padding-bottom: 10px;
-}
+  .single-title{
+    padding-bottom: 10px;
+  }
   .single-post img{
     width: auto;
   }
@@ -23,8 +23,7 @@
   color: #fff;
   font-family: Oswald;
   float: right;
-
-  overflow: hidden;
+  
   white-space: nowrap;
   text-overflow: ellipsis;
 
