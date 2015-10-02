@@ -30,9 +30,9 @@ CKEDITOR.editorConfig = function( config ) {
 	config.removeButtons = 'Underline,Subscript,Superscript';
 	config.scayt_autoStartup = true;
 	config.allowedContent = true;
-	// config.basicEntities = false;
-	// config.htmlEncodeOutput = false;
-	// config.entities = false;
+	config.basicEntities = false;
+	config.htmlEncodeOutput = false;
+	config.entities = false;
 
 	// Set the most common block elements.
 	config.format_tags = 'p;h1;h2;h3;pre';
