@@ -25,7 +25,6 @@
     line-height: 22px;
     text-decoration: none;
     font-weight: normal;
-    padding: 5px 10px;
     margin-right: 5px; }
     .social-sharing a:hover {
       color: #fff; }
@@ -93,7 +92,7 @@
   line-height: 20px;
   color: #333;
   border-radius: 0 2px 2px 0;
-  border: 1px solid #ececec;
+  border: 1px solid #D6D5D5;
   opacity: 0;
   -webkit-transition: opacity 0.2s ease-in;
   -moz-transition: opacity 0.2s ease-in;

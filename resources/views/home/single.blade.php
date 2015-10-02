@@ -10,6 +10,7 @@
 @section('content')
 
 
+
 <?php
 $url =  "//$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
@@ -20,6 +21,56 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
   .single-post img{
     width: auto;
   }
+    .arrow_box {
+  position: relative;
+  background: #B70808;
+
+  font-size: 20px;
+  padding: 15px;    
+  color: #fff;
+  font-family: Oswald;
+  float: right;
+  width: 400px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  transition:background 0.2s ease;
+}
+.arrow_box:hover{
+  cursor: pointer;
+}
+ .arrow_box a{
+  color: #fff;
+ }
+.arrow_box span{
+    border-right: 1px solid #E27272;
+    margin-right: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: Roboto;
+    font-weight: 700;
+    color: #D26D6D;
+    position: relative;
+
+    top: -2px;
+}
+.arrow_box:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(136, 183, 213, 0);
+  border-left-color: #B70808;
+  border-width: 30px;
+  margin-top: -30px;
+}
   body{
     background-color: #ececec;
   }
@@ -156,23 +207,56 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <div class="clear"></div>
 
                      </div>
+                    
+                    @if($next_post != null)
+                     <div class="nextPost">
+                         <div class="arrow_box">                                          
+                              <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }}</a>                                                                                                                            
+                        </div>
+                    </div>
+                    @endif
+
+                    <div class="social-sharing" data-permalink="<?php echo $actual_link ?>">
+                      <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                      <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
+                        <span class="icon icon-facebook" aria-hidden="true"></span>
+                        <span class="share-title">Share</span>
+                        <span class="share-count">0</span>
+                      </a>
+
+                      <!-- https://dev.twitter.com/docs/intents -->
+                      <a target="_blank" href="http://twitter.com/share?url=<?php echo $actual_link ?>&amp;text={{$post->title}}&amp;" class="share-twitter">
+                        <span class="icon icon-twitter" aria-hidden="true"></span>
+                        <span class="share-title">Tweet</span>
+                        <span class="share-count">0</span>
+                      </a>
+
+                      <!-- https://developers.google.com/+/web/share/ -->
+                      <!-- <a target="_blank" href="http://plus.google.com/share?url=<?php echo $actual_link ?>" class="share-google"> -->
+                        <!-- Cannot get Google+ share count with JS yet -->
+                        <!-- <span class="icon icon-google" aria-hidden="true"></span>
+                        <span class="share-count">+1</span>
+                      </a> -->
+                  </div>
+
+                    <div class="clearfix"></div>
+
 
                 </div><!-- .entry end -->   
-
-                        <div class="clear"></div>
-            
+                 
             </div>
           </div>
   </div>
 
 
-  <div class="post-navigation clearfix">
+
+ <!--  <div class="post-navigation clearfix">
       
       @if($next_post != null)
        <span class="readnext"> Read Next </span>
        <a class="link" href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}">{{ $next_post->title }}</a>
       @else
-       <span class="readnext"> Current post </span>
+     <span class="readnext"> Current post </span>
       @endif
         <div style="float:right; margin: 6px 20px 0 0;">                                        
           <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
@@ -190,7 +274,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <i class="icon-gplus"></i>
             </a>                                                            
       </div>
-  </div>
+  </div> -->
                       
                   <div class="singleViewWrapper">  
                       <div class="postcontent nobottommargin clearfix">
