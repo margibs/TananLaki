@@ -38,7 +38,26 @@
     font-family: Roboto;
                ">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">{{$post->title}} </a> </h2>
 
-       
+       <div class="social-sharing" data-permalink="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="padding: 10px 0 0 0;">
+                        <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                        <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" class="share-facebook">
+                          <span class="icon icon-facebook" aria-hidden="true"></span>
+                          <span class="share-title">Share</span>
+                          
+                        </a>
+
+                        <!-- https://dev.twitter.com/docs/intents -->
+                        <a target="_blank" href="http://twitter.com/share?url={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}text={{$post->title}}" class="share-twitter">
+                          <span class="icon icon-twitter" aria-hidden="true"></span>
+                          <span class="share-title">Tweet</span>
+                          
+                        </a>
+
+                        <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
+                        <i class="icon-line2-bubble"></i>  
+                            <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
+                        </a>
+            </div>
 
       </div>
 
@@ -61,7 +80,7 @@
                     ============================================= -->
                     <div class="entry-content notopmargin newContent" style="text-align:center;">
                         {!! $post->content !!}
-                        <!-- Post Single - Content End -->
+                        <p style="margin-bottom:10px!important;"> {{$post->introduction}} </p>
                         <div class="clear"></div>
 
                      </div>
@@ -74,26 +93,7 @@
           </div>
   </div>
 
-<div class="social-sharing" data-permalink="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="padding: 10px 0 0 0;">
-                        <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                        <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" class="share-facebook">
-                          <span class="icon icon-facebook" aria-hidden="true"></span>
-                          <span class="share-title">Share</span>
-                          
-                        </a>
 
-                        <!-- https://dev.twitter.com/docs/intents -->
-                        <a target="_blank" href="http://twitter.com/share?url={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}text={{$post->title}}" class="share-twitter">
-                          <span class="icon icon-twitter" aria-hidden="true"></span>
-                          <span class="share-title">Tweet</span>
-                          
-                        </a>
-
-                        <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
-                        <i class="icon-line2-bubble"></i>  
-                            <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
-                        </a>
-            </div>
 
 </div>
 @endforeach 
