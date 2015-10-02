@@ -23,9 +23,7 @@
 }
 </style>
 
-
-
-
+     @foreach($posts as $post)
  <div class="single-title">
 
       <div class="entry-title">
@@ -38,65 +36,66 @@
     margin-bottom: 10px;
     line-height: 30px;
     font-family: Roboto;
-               ">  Simpsons fans after they heard that season 30 will be the Simpsons' last season </h2>
+               ">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">{{$post->title}} </a> </h2>
+
+       
 
       </div>
 
       <div class="clearfix"></div>
 
-      <div class="singleViewWrapper" style="padding-bottom:0!important;">
-  
-		        <meta name="csrf-token" content="{{ csrf_token() }}" />
-		        
+      <div class="singleViewWrapper" style="padding-bottom:0!important;">      
 
-		        <div class="postcontent nobottommargin clearfix">
+        <div class="postcontent nobottommargin clearfix">
 
-		            <div class="single-post nobottommargin">
+            <div class="single-post nobottommargin">
 
-		                <!-- Single Post
-		                ============================================= -->
-		                <div class="entry clearfix">                                                                                  
+                <!-- Single Post
+                ============================================= -->
+                <div class="entry clearfix">                                                                                  
 
-		                    <div class="entry-content notopmargin newContent" style="text-align:center;">
-		                       <br />
-		                       <video preload="auto" poster="http://img-9gag-fun.9cache.com/photo/aMQXX7P_460s.jpg" loop="" muted="" autoplay="autoplay">
-						                <source src="http://img-9gag-fun.9cache.com/photo/aMQXX7P_460sv.mp4" type="video/mp4">
-						                <source src="http://img-9gag-fun.9cache.com/photo/aMQXX7P_460svwm.webm" type="video/webm">
-						                <div class="badge-item-animated-img"></div>
-						            </video>
+        	          <!-- Post Single -->
+                    <div class="clearfix"></div>                                                                      
 
-		                     </div>
+                    <!-- Entry Content
+                    ============================================= -->
+                    <div class="entry-content notopmargin newContent" style="text-align:center;">
+                        {!! $post->content !!}
+                        <!-- Post Single - Content End -->
+                        <div class="clear"></div>
 
-		                </div><!-- .entry end -->   
+                     </div>
 
-		                <div class="clear"></div>
-		            
-		            </div>
-		          </div>
-		  </div>
+                </div><!-- .entry end -->   
 
-							<div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 10px 0 0 0;">
-							            <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-							            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" class="share-facebook">
-							              <span class="icon icon-facebook" aria-hidden="true"></span>
-							              <span class="share-title">Share</span>
-							              
-							            </a>
+                        <div class="clear"></div>
+            
+            </div>
+          </div>
+  </div>
 
-							            <!-- https://dev.twitter.com/docs/intents -->
-							            <a target="_blank" href="http://twitter.com/share?url=http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes&amp;text=Cara Delevingne Says She Prefers Being Naked To Wearing Clothes&amp;" class="share-twitter">
-							              <span class="icon icon-twitter" aria-hidden="true"></span>
-							              <span class="share-title">Tweet</span>
-							              
-							            </a>
+<div class="social-sharing" data-permalink="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="padding: 10px 0 0 0;">
+                        <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                        <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" class="share-facebook">
+                          <span class="icon icon-facebook" aria-hidden="true"></span>
+                          <span class="share-title">Share</span>
+                          
+                        </a>
 
-							            <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
-							            <i class="icon-line2-bubble"></i>  
-							                <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
-							            </a>
-							</div>
+                        <!-- https://dev.twitter.com/docs/intents -->
+                        <a target="_blank" href="http://twitter.com/share?url={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}text={{$post->title}}" class="share-twitter">
+                          <span class="icon icon-twitter" aria-hidden="true"></span>
+                          <span class="share-title">Tweet</span>
+                          
+                        </a>
+
+                        <a style="color: #6C6868; font-weight: 300; font-size: 17px; position: relative; top: 4px;">  
+                        <i class="icon-line2-bubble"></i>  
+                            <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> Comments </span>      
+                        </a>
+            </div>
 
 </div>
-
+@endforeach 
 
 @endsection
