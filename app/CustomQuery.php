@@ -129,7 +129,7 @@ class CustomQuery {
 			DB::table('posts')
 			->join('post_categories','posts.id','=','post_categories.post_id')
 			->join('categories','categories.id','=','post_categories.category_id')
-			->where('posts.id','>',$post_id)
+			->where('posts.id','<',$post_id)
 			->where('posts.status','=',1)
 			->where('categories.slug','=',$category_slug)
 			->select('posts.slug','posts.title','categories.slug as cat_slug')
