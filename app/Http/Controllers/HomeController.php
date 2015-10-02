@@ -185,7 +185,15 @@ class HomeController extends Controller {
         $this->data['posts'] = $this->customQuery->getPosts(0,$check_slug->id);
         $this->data['current_category_id'] = $check_slug->id;
         
-        return view('home.homepage',$this->data);
+        if($category == 'lol')
+        {
+            return view('home.lol',$this->data);
+        }
+        else
+        {
+           return view('home.homepage',$this->data); 
+        }
+        
     }
 
     public function lolpage()

@@ -73,28 +73,28 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   <div class="singleViewWrapper" style="padding-bottom:0!important;">
 
-  <div class="social-sharing" data-permalink="<?php echo $actual_link ?>">
-      <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-      <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
-        <span class="icon icon-facebook" aria-hidden="true"></span>
-        <span class="share-title">Share</span>
-        <span class="share-count">0</span>
-      </a>
+        <div class="social-sharing" data-permalink="<?php echo $actual_link ?>">
+            <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+            <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
+              <span class="icon icon-facebook" aria-hidden="true"></span>
+              <span class="share-title">Share</span>
+              <span class="share-count">0</span>
+            </a>
 
-      <!-- https://dev.twitter.com/docs/intents -->
-      <a target="_blank" href="http://twitter.com/share?url=<?php echo $actual_link ?>&amp;text={{$post->title}}&amp;" class="share-twitter">
-        <span class="icon icon-twitter" aria-hidden="true"></span>
-        <span class="share-title">Tweet</span>
-        <span class="share-count">0</span>
-      </a>
+            <!-- https://dev.twitter.com/docs/intents -->
+            <a target="_blank" href="http://twitter.com/share?url=<?php echo $actual_link ?>&amp;text={{$post->title}}&amp;" class="share-twitter">
+              <span class="icon icon-twitter" aria-hidden="true"></span>
+              <span class="share-title">Tweet</span>
+              <span class="share-count">0</span>
+            </a>
 
-      <!-- https://developers.google.com/+/web/share/ -->
-      <!-- <a target="_blank" href="http://plus.google.com/share?url=<?php echo $actual_link ?>" class="share-google"> -->
-        <!-- Cannot get Google+ share count with JS yet -->
-        <!-- <span class="icon icon-google" aria-hidden="true"></span>
-        <span class="share-count">+1</span>
-      </a> -->
-  </div>
+            <!-- https://developers.google.com/+/web/share/ -->
+            <!-- <a target="_blank" href="http://plus.google.com/share?url=<?php echo $actual_link ?>" class="share-google"> -->
+              <!-- Cannot get Google+ share count with JS yet -->
+              <!-- <span class="icon icon-google" aria-hidden="true"></span>
+              <span class="share-count">+1</span>
+            </a> -->
+        </div>
   
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Post Content -->
@@ -123,7 +123,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <!-- Entry Content
                     ============================================= -->
                     <div class="entry-content notopmargin newContent">
-
+                        
+                        <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
                         {!! $post->content !!}
 
                         <!-- Post Single - Content End -->

@@ -40,11 +40,12 @@
     ============================================= -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
-    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>    
     <script type="text/javascript" src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.1/isotope.pkgd.min.js"></script>
+    -->
+    
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Document Title

@@ -3,6 +3,8 @@
     padding-right: 1px;
     margin-bottom: 15px;
     overflow: hidden;
+    height: 228px;
+    min-height: 228px;
 }
 .showLogin{
   display: none;
@@ -750,7 +752,7 @@
     width: 96.5%
 }
 .details{
-  padding: 0 15px;
+  padding: 5px 15px;
   margin: 0;
   bottom:0;
   border-bottom: 5px solid #B70808;
@@ -758,7 +760,7 @@
 }
 .details p a{
   color: #fff;
-  font-size: 20px;
+  font-size: 21px;
 }
 .grid-item:before{
     content: "";

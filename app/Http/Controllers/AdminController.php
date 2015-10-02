@@ -456,7 +456,7 @@ class AdminController extends Controller
         $file = array('file' => $request->file('file'),'item_label' => $request->input('item_label'));
         // setting up rules
         //$rules = array('file' => 'required','file' => 'mimes:jpeg,png,bmp'); //mimes:jpeg,bmp,png and for max size max:10000
-        $rules = array('file' => 'required|mimes:jpeg,png,bmp','item_label' => 'required'); 
+        $rules = array('file' => 'required|mimes:jpeg,png,bmp,gif,GIF,PNG,JPEG,JPG','item_label' => 'required'); 
         // doing the validation, passing post data, rules and the messages
         $validator = Validator::make($file, $rules);
 
@@ -542,7 +542,7 @@ class AdminController extends Controller
         $file = array('file' => $request->file('myfile'));
         // setting up rules
         //$rules = array('file' => 'required','file' => 'mimes:jpeg,png,bmp'); //mimes:jpeg,bmp,png and for max size max:10000
-        $rules = array('file' => 'required|mimes:jpeg,png,bmp'); 
+        $rules = array('file' => 'required|mimes:jpeg,png,bmp,gif,GIF,PNG,JPEG,JPG'); 
         // doing the validation, passing post data, rules and the messages
         $validator = Validator::make($file, $rules);
 
