@@ -125,6 +125,18 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="entry-content notopmargin newContent">
                         
                         <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
+                        
+                        <script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":728,"height":90,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+
                         {!! $post->content !!}
 
                         <!-- Post Single - Content End -->
@@ -359,15 +371,15 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 @include('_common.ajaxTemplate')
 <script>
 $(document).ready(function(){
-  var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
-google_ads+= '<';
-google_ads+= '/script>';
-google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});';
-google_ads+= '<';
-google_ads+= '/script>';
+//   var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
+// google_ads+= '<';
+// google_ads+= '/script>';
+// google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});';
+// google_ads+= '<';
+// google_ads+= '/script>';
 
   // $('.newContent p:nth-child(1)').after(google_ads);
-  $('.newContent').find("p:first").after(google_ads);
+  // $('.newContent').find("p:first").after(google_ads);
 
 
   $('.top_comment').on('keypress',function(){
