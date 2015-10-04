@@ -146,7 +146,8 @@ class CustomQuery {
 			->where('posts.id','!=',$post_id)
 			->where('posts.status','=',1)
 			->select('posts.feat_image_url','posts.title','posts.content','posts.slug','categories.slug as cat_slug')
-			->orderBy(DB::raw('RAND()'))
+			// ->orderBy(DB::raw('RAND()'))
+			->orderBy('posts.id','DESC')
 			->take($take)
 			->get();
 	}
