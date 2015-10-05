@@ -68,7 +68,6 @@
 <div id="fb-root"></div>
 
 <script>
-
   // Load the SDK asynchronously
   (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -100,8 +99,6 @@
       
     });
   };
-
-
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
@@ -251,13 +248,11 @@
                                     <div style="background-color:#f7f7f7;">                            
                                       @foreach($side_bar_posts as $side_bar_post)
                                         <div class="trendingWrapper">
-                                              <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
-                                                  <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
-                                             
+                                              <a href="{{url('')}}/{{strtolower($side_bar_post->cat_slug)}}/{{$side_bar_post->slug}}">
+                                                  <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">              
                                                 <p>
                                                    {{$side_bar_post->title}}
                                                 </p>
-
                                               </a> 
                                         </div> 
                                       @endforeach

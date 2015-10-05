@@ -267,8 +267,14 @@ class AdminController extends Controller
             $data = array();
 
             for ($i=0; $i < count($request->input('category_id')) ; $i++) 
-            { 
+            {
                 $data[] = array('post_id' => $post->id,'category_id' => $request->input('category_id')[$i],'created_at' => date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s'));
+
+                if($request->input('category_id')[$i] == 7 )
+                {
+                    $post_fb_now = false;
+                    $post_twitter_now = false;
+                }
             }
 
             PostCategories::insert($data);
