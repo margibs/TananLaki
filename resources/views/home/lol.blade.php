@@ -1,5 +1,5 @@
 @extends('home.layout')
-@section('content')
+@section('lol_content')
 
 <style>
   .mainPostWrapper{

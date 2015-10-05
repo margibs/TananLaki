@@ -201,9 +201,16 @@
                 <div class="container clearfix">
 
                     <div class="row">
+                      
 
-                      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 padRight0">                    
-                         <div class="mainPostWrapper">
+                      <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-md-offset-1 col-lg-offset-1 padRight0">                    
+                          <div class="mainPostWrapper">
+                            @yield('lol_content')
+                          </div>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 padRight0">                    
+                          <div class="mainPostWrapper">
                             @yield('content')
                           </div>
                       </div>
@@ -347,18 +354,18 @@
         // })
 
         // init Isotope
-        var $grid = $('.grid').isotope({
-          itemSelector: '.grid-item',
-          percentPosition: true,
-          masonry: {
-            // use outer width of grid-sizer for columnWidth
-            columnWidth: '.grid-sizer'
-          }
-        });
-        // layout Isotope after each image loads
-        $grid.imagesLoaded().progress( function() {
-          $grid.isotope('layout');
-        });
+        // var $grid = $('.grid').isotope({
+        //   itemSelector: '.grid-item',
+        //   percentPosition: true,
+        //   masonry: {
+        //     // use outer width of grid-sizer for columnWidth
+        //     columnWidth: '.grid-sizer'
+        //   }
+        // });
+        // // layout Isotope after each image loads
+        // $grid.imagesLoaded().progress( function() {
+        //   $grid.isotope('layout');
+        // });
                 
         // var $grid = $('.grid').masonry({
 

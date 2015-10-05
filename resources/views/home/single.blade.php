@@ -21,7 +21,7 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
   .single-post img{
     width: auto;
   }
-    .arrow_box {
+  .arrow_box {
   position: relative;
   background: #B70808;
 
@@ -30,7 +30,7 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
   color: #fff;
   font-family: Oswald;
   float: right;
-  width: 400px;
+  max-width: 400px;
   white-space: nowrap;
   text-overflow: ellipsis;
 
