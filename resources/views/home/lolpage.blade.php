@@ -7,6 +7,9 @@
   #defaultBlogView{
     display: none;
   }
+  .sidebarTitle{
+        width: 105%;
+  }
   .single-title{
     padding-bottom: 10px;
     border-bottom: none!important;
@@ -21,13 +24,13 @@
   .arrow_box {
   position: relative;
   background: #B70808;
-
+  margin-right: 30px;
   font-size: 20px;
   padding: 15px;    
   color: #fff;
   font-family: Oswald;
   float: right;
-  width: 400px;
+  max-width: 400px;
   white-space: nowrap;
   text-overflow: ellipsis;
 
@@ -76,9 +79,22 @@
   body{
     background-color: #ececec;
   }
+  .entry-title h2{
+       padding-bottom:0;margin-top: 20px;    font-family: Roboto;
+      font-size: 30px;
+      line-height: 35px;
+    }
   @media  screen and (max-width: 991px){
     .mainPostWrapper{
       padding: 0 5px;
+    }
+    .postcontent{
+      width: 98%!important;
+    }
+    .entry-title h2{
+        margin-top: 45px;
+        margin-bottom: 5px;
+        font-size: 40px !important;
     }
   }
 </style>
@@ -88,9 +104,7 @@
 
       <div class="entry-title">
 
-           <h2 style="padding-bottom:0;margin-top: 20px;    font-family: Roboto;
-    font-size: 30px;
-    line-height: 35px;">  {{$post->title}} </h2>
+           <h2>  {{$post->title}} </h2>
 
            <div class="social-sharing" data-permalink="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" style="padding: 10px 0 0 0;">
                         <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
@@ -123,7 +137,7 @@
 
         <div class="postcontent nobottommargin clearfix" style="width: 100%; margin: 0;">
            
-            <div class="single-post nobottommargin">
+            <div class="single-post nobottommargin" style="padding: 0;">
 
                 <!-- Single Post
                 ============================================= -->
@@ -137,7 +151,6 @@
 
                                  {!! $post->content !!} 
                                 <p style="margin-bottom:10px!important;"> {{$post->introduction}} </p>
-
                                 </div>
       
                                @if($next_post != null)
@@ -181,19 +194,9 @@
 
                       
                   <div class="singleViewWrapper">  
-                      <div class="postcontent nobottommargin clearfix">
-                        <div class="single-post nobottommargin">
+                      <div class="postcontent nobottommargin clearfix"  style="width: 100%; margin: 0;">
+                        <div class="single-post nobottommargin" style="padding:0;">
 
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":728,"height":90,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 
                           <h4 class="relatedText" style="margin-top: 20px;">  More Fun </h4>
                           <div class="row">                        

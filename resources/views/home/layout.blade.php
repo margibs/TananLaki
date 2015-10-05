@@ -50,18 +50,6 @@
     ============================================= -->
     <title> ALLLAD </title>
 
-
-
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-57877931-12', 'auto');
-  ga('send', 'pageview');
-
-</script>
   
 </head>
 
@@ -231,45 +219,57 @@
                                         <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
                                         <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
                                         <div style="margin:15px;"></div>-->
-                                         <div class="wrappers">
-                                         <h2> Subscribe to Our TV Channel </h2>
-                                          <script src="https://apis.google.com/js/platform.js"></script>                          
-                                          <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
+                                         
                                     </div>
-
-                                    <div style="margin-bottom:20px;margin-top: 20px;">
-                                      
-
-                                      <script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":160,"height":600,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-                                    </div>
+                                                                
 
                                     <div class="sidebarHead">
                                       <h5 class="sidebarTitle"> You've Missed </h5>
                                     </div>
                           
-                                    <div style="background-color:#f7f7f7;">                            
+                                    <div style="background-color:#f7f7f7;padding-bottom: 10px;">                            
                                       @foreach($side_bar_posts as $side_bar_post)
                                         <div class="trendingWrapper">
-                                              <a href="{{url('')}}/@if($side_bar_post->name != ''){{strtolower($side_bar_post->name)}}@else{{strtolower($side_bar_post->categories2->name)}}@endif/{{$side_bar_post->slug}}">
-                                                  <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">                                   
-                                             
+                                              <a href="{{url('')}}/{{strtolower($side_bar_post->cat_slug)}}/{{$side_bar_post->slug}}">
+                                                  <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">              
                                                 <p>
                                                    {{$side_bar_post->title}}
                                                 </p>
-
                                               </a> 
                                         </div> 
                                       @endforeach
                                     </div>
+
+                                    <br />
+ 
+                                    <!-- This div is used to indicate the original position of the scrollable fixed div. -->
+                                    <div class="scroller_anchor"></div>
+                                     
+                                    <!-- This div will be displayed as fixed bar at the top of the page, when user scrolls -->
+                                    <div class="scroller">                                       
+                                        <div id="contentclick25571"></div>
+                                        <script type="text/javascript">
+                                            (function() {
+                                                var data =
+                                                {
+                                                    pub_id: "8270",w_id: "25571",pw: "531edb2f13f216", cbust: (new Date()).getTime()
+                                                };
+                                         if (typeof widgetCheck25571 === 'undefined')   {
+                                                var u="";
+                                                for(var key in data){u+=key+"="+data[key]+"&"}
+                                                u=u.substring(0,u.length-1);  
+                                                var a = document.createElement("script");
+                                                a.type= 'text/javascript';
+                                                a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                                a.async = true;  
+                                                document.getElementById("contentclick25571").appendChild(a);
+                                         window.widgetCheck25571 = "set";
+                                         }
+                                            })();  
+                                        </script>
+                                    </div>                                    
+                        
+
                       
                             </div>
 

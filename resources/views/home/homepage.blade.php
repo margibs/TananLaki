@@ -8,6 +8,13 @@
       padding:15px 15px 0 0;
       overflow:hidden;
     }    
+    .initImage{
+      width:391px;
+      height:224px;
+      overflow:hidden;
+    }
+
+    
 
     @media screen and (max-width: 1211px){
       .popularPost h2 a{
@@ -18,6 +25,12 @@
       .popularPost .catergory a{
         margin-left: 0;
       }
+    }
+     @media screen and (max-width: 1200px){
+          .initImage{
+            width: 100%;
+            height: auto;
+          }
     }
     @media screen and (max-width: 768px){
       .popularPost h2 a {
@@ -103,7 +116,7 @@
             <p> <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}"> {{$post->title}} </a> </p>          
           </div>
            <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
-             <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
+             <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="" class="initImage">
           </a>  
         </div>
       </div>

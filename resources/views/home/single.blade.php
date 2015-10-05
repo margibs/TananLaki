@@ -24,7 +24,7 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
   .arrow_box {
   position: relative;
   background: #B70808;
-
+  margin-right: 30px;
   font-size: 20px;
   padding: 15px;    
   color: #fff;
@@ -187,27 +187,9 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         
                         <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
 @if(!$is_mobile)                  
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":728,"height":90,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+<script src="//go.padstm.com/?id=411724"></script>
 @else
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"Nexusbond","width":550,"height":250,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+<script src="//go.padstm.com/?id=411724"></script>
 @endif
 
                         {!! $post->content !!}
@@ -226,7 +208,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     </div>
                     @endif
 
-                    <div class="social-sharing" data-permalink="<?php echo $actual_link ?>">
+                    <div class="social-sharing socialsharebottom" data-permalink="<?php echo $actual_link ?>">
                       <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
                       <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
                         <span class="icon icon-facebook" aria-hidden="true"></span>
@@ -303,7 +285,27 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           </div> -->
                           <!-- Post Single - Author End -->
                           
-
+                        <h4 class="relatedText"> From around the web </h4>
+                          <div id="contentclick24950"></div>
+                          <script type="text/javascript">
+                              (function() {
+                                  var data =
+                                  {
+                                      pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
+                                  };
+                            if (typeof widgetCheck24950 === 'undefined')   {
+                                  var u="";
+                                  for(var key in data){u+=key+"="+data[key]+"&"}
+                                  u=u.substring(0,u.length-1);    
+                                  var a = document.createElement("script");
+                                  a.type= 'text/javascript';
+                                  a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                  a.async = true;   
+                                  document.getElementById("contentclick24950").appendChild(a);
+                            window.widgetCheck24950 = "set";
+                            }
+                              })();   
+                          </script>
                           
                           <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
                           <div class="row">                        
@@ -326,27 +328,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             </div>
                           </div>
 
-                          <h4 class="relatedText"> From around the web </h4>
-                          <div id="contentclick24950"></div>
-                          <script type="text/javascript">
-                              (function() {
-                                  var data =
-                                  {
-                                      pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
-                                  };
-                            if (typeof widgetCheck24950 === 'undefined')   {
-                                  var u="";
-                                  for(var key in data){u+=key+"="+data[key]+"&"}
-                                  u=u.substring(0,u.length-1);    
-                                  var a = document.createElement("script");
-                                  a.type= 'text/javascript';
-                                  a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
-                                  a.async = true;   
-                                  document.getElementById("contentclick24950").appendChild(a);
-                            window.widgetCheck24950 = "set";
-                            }
-                              })();   
-                          </script>
+                          
 
               						<h4 class="relatedText"> What do you think? </h4>
 
