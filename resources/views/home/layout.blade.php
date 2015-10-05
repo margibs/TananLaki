@@ -208,7 +208,7 @@
                           </div>
                       </div>
 
-                      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 padRight0">                    
+                      <div id="defaultBlogView" class="col-xs-12 col-sm-12 col-md-9 col-lg-9 padRight0">                    
                           <div class="mainPostWrapper">
                             @yield('content')
                           </div>
