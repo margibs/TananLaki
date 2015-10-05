@@ -43,6 +43,16 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
 }
  .arrow_box a{
   color: #fff;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+ }
+ .arrow_box img{
+    float: right;
+    margin-top: -47px;
+    position: relative;
+    z-index: 2;
+    top: 7px;
  }
 .arrow_box span{
     border-right: 1px solid #E27272;
@@ -211,7 +221,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     @if($next_post != null)
                      <div class="nextPost">
                          <div class="arrow_box">                                          
-                              <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }}</a>                                                                                                                            
+                              <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }} <img src="{{ asset('images/elipssis.jpg') }}" alt="" />  </a>                                                                                                                           
                         </div>
                     </div>
                     @endif

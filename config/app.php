@@ -141,7 +141,7 @@ return [
         Thujohn\Twitter\TwitterServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Jenssegers\Agent\AgentServiceProvider::class,
+     
         /*
          * Application Service Providers...
          */
@@ -202,7 +202,7 @@ return [
         'Twitter'   => Thujohn\Twitter\Facades\Twitter::class,
         'Location'  => Stevebauman\Location\Facades\Location::class,
         'Image'     => Intervention\Image\Facades\Image::class,
-        'Agent'     => Jenssegers\Agent\Facades\Agent::class,
+      
     ],
 
 ];
