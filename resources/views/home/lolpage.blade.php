@@ -1,9 +1,12 @@
 @extends('home.layout')
-@section('content')
+@section('lol_content')
                          
 
 
 <style>
+  #defaultBlogView{
+    display: none;
+  }
   .single-title{
     padding-bottom: 10px;
     border-bottom: none!important;
@@ -118,7 +121,7 @@
   
         <meta name="csrf-token" content="ZMHnRoC655h03IBwA0VMiZZqdmNGOU8JkoQELOgu">
 
-        <div class="postcontent nobottommargin clearfix">
+        <div class="postcontent nobottommargin clearfix" style="width: 100%; margin: 0;">
            
             <div class="single-post nobottommargin">
 
