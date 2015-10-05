@@ -5,6 +5,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="AllLad" />
+    <meta name="propeller" content="18cbecba5946cbcf8014a1a9c091968e" />
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
     @yield('fb_og')
@@ -50,8 +51,6 @@
     ============================================= -->
     <title> ALLLAD </title>
 
-
-
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -69,6 +68,16 @@
 <div id="fb-root"></div>
 
 <script>
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
   window.fbAsyncInit = function() {
 
     FB.init({
@@ -90,19 +99,9 @@
       }
       
     });
-
   };
 
 
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
@@ -228,13 +227,6 @@
                                           <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                                         </div>                           
                                       
-                                        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
-                                        <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
-                                        <div style="margin:15px;"></div>-->
-                                         <div class="wrappers">
-                                         <h2> Subscribe to Our TV Channel </h2>
-                                          <script src="https://apis.google.com/js/platform.js"></script>                          
-                                          <div class="g-ytsubscribe" data-channelid="UCMt-_Kfo450vmpFeHJt3tIw" data-layout="full" data-count="default"></div>
                                     </div>
 
                                     <div style="margin-bottom:20px;margin-top: 20px;">

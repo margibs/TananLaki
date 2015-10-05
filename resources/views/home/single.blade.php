@@ -302,29 +302,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                               </div>
                           </div> -->
                           <!-- Post Single - Author End -->
-                          
-
-                          
-                          <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
-                          <div class="row">                        
-                            <div class="related-posts clearfix" style="margin-bottom:0;">
-
-                              @foreach($related_posts as $related_post)
-
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
-                                    
-                                    <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
-                                     <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
-                                    </a>
-
-                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;" >{{$related_post->title}}</a></h4>    
-
-                                </div>
-
-                                @endforeach
-
-                            </div>
-                          </div>
 
                           <h4 class="relatedText"> From around the web </h4>
                           <div id="contentclick24950"></div>
@@ -347,6 +324,27 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             }
                               })();   
                           </script>
+
+                          <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
+                          <div class="row">                        
+                            <div class="related-posts clearfix" style="margin-bottom:0;">
+
+                              @foreach($related_posts as $related_post)
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
+                                    
+                                    <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
+                                     <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
+                                    </a>
+
+                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;" >{{$related_post->title}}</a></h4>    
+
+                                </div>
+
+                                @endforeach
+
+                            </div>
+                          </div>
 
               						<h4 class="relatedText"> What do you think? </h4>
 
