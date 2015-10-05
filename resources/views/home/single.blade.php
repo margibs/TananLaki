@@ -352,9 +352,11 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           <div></div>
                           </div>
                           <script>
-                          var mydiv = document.getElementById("mydiv");  
-                          mydiv.innerHTML = "<fb:comments href='" + document.location.href + "' num_posts='10' width='739'></fb:comments>";  
-                          FB.XFBML.parse(mydiv);  
+                          $(document).ready(function(){
+                            var mydiv = document.getElementById("mydiv");  
+                            mydiv.innerHTML = "<fb:comments href='" + document.location.href + "' num_posts='10' width='739'></fb:comments>";  
+                            FB.XFBML.parse(mydiv);  
+                          });
                           </script>
                           
                          <!--  <div class="row">
