@@ -2,6 +2,9 @@
 @section('lol_content')
 
 <style>
+  #defaultBlogView{
+    display: none;
+  }
   .mainPostWrapper{
     background-color: #ececec;
     padding: 0;
