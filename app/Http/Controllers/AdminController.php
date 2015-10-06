@@ -64,9 +64,9 @@ class AdminController extends Controller
 	public function posts()
 	{
         $data['post_name'] = 'Posts';
-		$data['posts'] = Posts::where('status','=',1)->orderBy('id','DESC')->paginate(15);
+		$data['posts'] = Posts::where('status','=',1)->orderBy('created_at','DESC')->paginate(15);
         //Loop post to get its categories
-		foreach ($data['posts'] as $post) 
+		foreach ($data['posts'] as $post)
         {
             $post->categories = $this->customQuery->getPostCategories($post->id,true);
 		}
@@ -183,6 +183,12 @@ class AdminController extends Controller
         if($id != 0)
         {
             $post = Posts::find($id);
+
+            if($post->status == 0 AND $request->input('status') == 1)
+            {
+                $post->created_at = date('Y-m-d H:i:s');
+            }
+
         }
         else
         {
@@ -191,6 +197,7 @@ class AdminController extends Controller
             $post->author_id = Auth::user()->id;
         }
         
+
         $post->excerpt = $request->input('excerpt');
         $post->title = $request->input('title');
         $post->content = $request->input('content');

@@ -50,7 +50,8 @@ class HomeController extends Controller {
             ->where('posts.status',1)
             ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
             ->orderBy('posts.id','DESC')
-            ->take(10)
+            ->groupBy('posts.id')
+            ->take(4)
             ->get();
         
         $customQuery->per_page = 16;
