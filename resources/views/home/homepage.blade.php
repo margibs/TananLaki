@@ -9,7 +9,7 @@
       overflow:hidden;
     }    
     .initImage{
-      width:391px;
+      width:395px;
       height:224px;
       overflow:hidden;
     }
@@ -127,7 +127,7 @@
 </div>
 
   
-  <div id="loadmoreajaxloader"> <span class="cssload-loader"><span class="cssload-loader-inner"></span></span>  </div>
+  <div id="loadmoreajaxloader"> <div class="spinner"></div> </div>
 
   </div>
   <!-- #posts end -->
@@ -142,7 +142,7 @@
           <p> <a href="{{ url('') }}/--cat_slug--/--slug--"> --title-- </a> </p>          
         </div>
          <a href="{{ url('') }}/--cat_slug--/--slug--">
-           <img src="{{url('uploads')}}/--feat_image_url--" alt="">
+           <img src="{{url('uploads')}}/--feat_image_url--" alt="" class="initImage">
         </a>  
       </div>
   </div>

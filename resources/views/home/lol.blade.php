@@ -11,6 +11,7 @@
   .mainPostWrapper{
     background-color: #ececec;
     padding: 0;
+    box-shadow: none; 
   }
   body{
     background-color: #ececec;
@@ -28,7 +29,7 @@
         -moz-box-shadow: 0 -1px 20px -3px #C7C7C7;
         -webkit-box-shadow: 0 -1px 20px -3px #C7C7C7;
         box-shadow: 0 -1px 20px -3px #C7C7C7; 
-        border-bottom: none!important;
+         border: 1px solid #E5E5E5!important ;
         overflow: hidden;
   }
   .postcontent {
@@ -51,13 +52,17 @@
     max-width: 100%;
     height: auto;
   }
+  #loadmoreajaxloader {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
 </style>
 
-     @foreach($posts as $post)
+@foreach($posts as $post)
  <div class="single-title" style="padding:0;">
 
       <div class="entry-title">
-
            <h2 style="
                 padding-bottom: 0;
                 margin-top: 20px;
@@ -121,7 +126,6 @@
           </div>
   </div>
 
-
 <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" target="_blank" style="
     text-align: center;
     display: block;
@@ -133,44 +137,163 @@
     border-top: 1px solid #DEDEDE;
     font-weight: 700;
     "> <i class="icon-line2-bubble"></i>  
-                                    <!-- <span class="fb-comments-count fb_comments_count_zero" data-href="http://localhost/alllad/public/news/cara-delevingne-says-she-prefers-being-naked-to-wearing-clothes" fb-xfbml-state="rendered"><span class="fb_comments_count">0</span> --> </span> View Comments </a>
-
-
+</span> View Comments </a>
 </div>
-@endforeach 
+@endforeach
+<div id="postswrapper"></div>
+<div id="loadmoreajaxloader"> <div class="spinner"></div>  </div>
 
+<script id="template_for_list" type="nexus/template">
+<div class="single-title" style="padding:0;">
+  <div class="entry-title" style=" padding: 10px 60px; ">
+        <h2 style="
+            padding-bottom: 0;
+            margin-top: 20px;
+            font-size: 24px;
+            margin-bottom: 0;
+            line-height: 30px;
+            font-family: Roboto;
+           "><a href="{{ url('') }}/--cat_slug--/--slug--">--title--</a> </h2>
+
+           <div class="social-sharing" data-permalink="{{ url('') }}/--cat_slug--/--slug--" style="padding: 10px 0 0 0;">                      
+                            <a target="_blank" href="http://www.facebook.com/sharer.php?u={{ url('') }}/--cat_slug--/--slug--" class="share-facebook">
+                              <span class="icon icon-facebook" aria-hidden="true"></span>
+                              <span class="share-title">Share</span>
+                              
+                            </a>
+
+                            <!-- https://dev.twitter.com/docs/intents -->
+                            <a target="_blank" href="http://twitter.com/share?url={{ url('') }}/--cat_slug--/--slug--text=--title--&text=" class="share-twitter">
+                              <span class="icon icon-twitter" aria-hidden="true"></span>
+                              <span class="share-title">Tweet</span>
+                              
+                            </a>
+
+                          
+            </div>
+
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="singleViewWrapper" style="padding:0!important;">      
+
+    <div class="postcontent nobottommargin clearfix">
+
+        <div class="single-post nobottommargin">
+
+            <!-- Single Post
+            ============================================= -->
+            <div class="entry clearfix">                                                                                  
+
+                <!-- Post Single -->
+                <div class="clearfix"></div>                                                                      
+
+                <!-- Entry Content
+                ============================================= -->
+                <div class="entry-content notopmargin newContent" style="text-align:center;    width: 80%;
+margin: 0 auto;">
+                    <a href="{{ url('') }}/--cat_slug--/--slug--">--content--</a>
+                    <p style="margin-bottom:10px!important;margin-bottom: 10px!important;
+font-family: Roboto!important;
+font-size: 16px!important;"> --introduction-- </p>
+                    <div class="clear"></div>
+
+                 </div>
+
+            </div><!-- .entry end -->   
+
+                    <div class="clear"></div>
+        
+        </div>
+      </div>
+</div>
+
+<a href="{{ url('') }}/--cat_slug--/--slug--" target="_blank" style="
+text-align: center;
+display: block;
+padding: 10px 15px;
+font-size: 16px;
+margin: 15px auto 0 auto;
+color: #B70808;
+background-color: #F3F3F3;
+border-top: 1px solid #DEDEDE;
+font-weight: 700;
+"> <i class="icon-line2-bubble"></i>  
+</span> View Comments </a>
+</div>
+</script>
 
 <script>
   $(document).ready(function(){
-    // This function will be executed when the user scrolls the page.
-    $(window).scroll(function(e) {
-        // Get the position of the location where the scroller starts.
-        var scroller_anchor = $(".scroller_anchor").offset().top;
-        
-        // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top 
-        if ($(this).scrollTop() >= scroller_anchor && $('.scroller').css('position') != 'fixed') 
-        {    // Change the CSS of the scroller to hilight it and fix it at the top of the screen.
-            $('.scroller').css({                              
-                'position': 'fixed',
-                'top': '0px'
-            });
-            // Changing the height of the scroller anchor to that of scroller so that there is no change in the overall height of the page.
-            $('.scroller_anchor').css('height', '50px');
-        } 
-        else if ($(this).scrollTop() < scroller_anchor && $('.scroller').css('position') != 'relative') 
-        {    // If the user has scrolled back to the location above the scroller anchor place it back into the content.
-            
-            // Change the height of the scroller anchor to 0 and now we will be adding the scroller back to the content.
-            $('.scroller_anchor').css('height', '0px');
-            
-            // Change the CSS and put it back to its original position.
-            $('.scroller').css({                          
-                'position': 'relative'
-            });
-        }
-    });
-});
 
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
+        template_for_list = $.trim($("#template_for_list").html()),
+        page = 1,
+        current_category_id = {{$current_category_id}};
+        query_string = '{{$query_string}}';
+        
+
+    $(window).scroll(function(){
+
+        if($(window).scrollTop() == $(document).height() - $(window).height())
+        {
+
+          $('div#loadmoreajaxloader').show();
+
+          $.ajax({ 
+            type: 'post',
+            url: "{{url('home/ajax_get_page')}}",
+            data: {_token: CSRF_TOKEN,'page' : page,'current_category_id' : current_category_id,'query_string' : query_string}, 
+            success: function(response)
+            {
+
+              if(response != 'false')
+              {
+
+                var parsed = JSON.parse(response);
+                var pages = '';
+          
+
+                $.each( parsed, function( index, obj){
+       
+                  pages =  
+                    template_for_list.replace(/--cat_slug--/ig, obj.cat_slug)
+                    .replace(/--slug--/ig, obj.slug)
+                    .replace(/--feat_image_url--/ig, obj.feat_image_url)
+                    .replace(/--title--/ig, obj.title)
+                    .replace(/--name--/ig, obj.name)
+                    .replace(/--created_at--/ig, obj.created_at)
+                    .replace(/--excerpt--/ig, obj.excerpt)
+                    .replace(/--content--/ig, obj.content)
+                    .replace(/--introduction--/ig, obj.introduction);
+                  $("#postswrapper").append(pages);
+                  // $(".grid").append(pages);
+                  // $(".grid").isotope('reloadItems');
+                  // $(".grid").isotope({sortBy: null, sortAscending: true});  
+        //             $(".grid").isotope('insert', pages);
+            // $(".grid").isotope();
+
+                });
+                  $('div#loadmoreajaxloader').hide();
+              }
+              else
+              {
+                $('div#loadmoreajaxloader').html('<center style="font-family: Roboto; font-size: 20px; color: #000; font-weight: 700;">No more posts to show.</center>');  
+              }
+
+            }
+          });
+
+          page++;
+
+        }
+
+    });
+
+
+  });
 </script>
+
 
 @endsection

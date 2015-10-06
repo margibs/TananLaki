@@ -227,6 +227,37 @@
     -moz-animation: cssload-loader-inner 2.3s infinite ease-in;
 }
 
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+  background-color: #333;
+
+  border-radius: 100%;  
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+
 .relatedImgHeight a{
   height:150px;
   overflow:hidden;
@@ -595,11 +626,12 @@
 
 /* ====================== NEW HOMEPAGE ============================= */
  .scroller_anchor{height:0px; margin:0; padding:0;}
-.scroller{ margin:10px 0 10px 10px; z-index:100; text-align:center; width:283px;}
+.scroller{ margin:10px 0 10px 10px; z-index:100; text-align:center; width:255px;}
 
 .mainPostWrapper{
   position:relative;
   z-index:2;
+  top: -1px;
   -moz-box-shadow: 3px -15px 15px -7px #545454;
   -webkit-box-shadow: 3px -15px 15px -7px #545454;
   box-shadow: 3px -15px 15px -7px #545454;
@@ -949,6 +981,19 @@
       .bigOuter{
         width: 100%;
       }
+      .social-sharing{
+        display: block;
+        clear: both;        
+      }
+      .socialsharebottom{
+        padding-left: 0;
+      }
+      .arrow_box{
+          float: none!important;
+      }
+      .nextPost{
+        text-align: left; 
+      }
       body{
           background-image: none;
       }  
@@ -964,6 +1009,9 @@
       }      
       .entry-content{
         margin-top: 10px;
+      }
+      .entry-title h2{
+        font-size: 40px!important;
       }
       .marginTop15{
          margin-top: 15px;      
@@ -1062,16 +1110,7 @@
       }
     }  
     @media screen and (max-width: 640px){  
-      .social-sharing{
-        display: block;
-        clear: both;        
-      }
-      .socialsharebottom{
-        padding-left: 0;
-      }
-      .arrow_box{
-          float: none!important;
-      }
+      
       .bigOuter {    
           height: 300px;
       }
@@ -1475,8 +1514,7 @@
             margin-right: 0px!important;
         }
         .bigOuter:before{
-            border-bottom: 4px solid #b70808;
-            bottom: 2px;
+            border-bottom: 4px solid #b70808;            
         }
         .related-posts h4 a {
             line-height: 16px;

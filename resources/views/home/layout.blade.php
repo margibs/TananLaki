@@ -5,6 +5,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="AllLad" />
+    <meta name="propeller" content="18cbecba5946cbcf8014a1a9c091968e" />
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
 
     @yield('fb_og')
@@ -50,6 +51,18 @@
     ============================================= -->
     <title> ALLLAD </title>
 
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57877931-12', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
   
 </head>
 
@@ -57,6 +70,15 @@
 <div id="fb-root"></div>
 
 <script>
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
   window.fbAsyncInit = function() {
 
     FB.init({
@@ -78,19 +100,7 @@
       }
       
     });
-
   };
-
-
-
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
@@ -215,17 +225,11 @@
                                         <h2> Follow us on Twitter! </h2>
                                           <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                                         </div>                           
-                                      
-                                        <!--<script src="https://apis.google.com/js/platform.js" async defer></script>
-                                        <div class="g-follow" data-href="https://plus.google.com/103370989220278330207" data-height="24" data-annotation="bubble" data-rel="author"></div>
-                                        <div style="margin:15px;"></div>-->
-                                         
-                                    </div>
-                                                                
+                                                        
 
-                                    <div class="sidebarHead">
-                                      <h5 class="sidebarTitle"> You've Missed </h5>
-                                    </div>
+                                        <div class="sidebarHead">
+                                          <h5 class="sidebarTitle"> You've Missed </h5>
+                                        </div>
                           
                                     <div style="background-color:#f7f7f7;padding-bottom: 10px;">                            
                                       @foreach($side_bar_posts as $side_bar_post)
@@ -339,6 +343,36 @@
 
     <script>
        $(document).ready( function() {
+
+        // This function will be executed when the user scrolls the page.
+        $(window).scroll(function(e) {
+            // Get the position of the location where the scroller starts.
+            var scroller_anchor = $(".scroller_anchor").offset().top;
+            
+            // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top 
+            if ($(this).scrollTop() >= scroller_anchor && $('.scroller').css('position') != 'fixed') 
+            {    // Change the CSS of the scroller to hilight it and fix it at the top of the screen.
+                $('.scroller').css({                              
+                    'position': 'fixed',
+                    'top': '0px',              
+                    'margin-top': '60px'
+                });
+                // Changing the height of the scroller anchor to that of scroller so that there is no change in the overall height of the page.
+                $('.scroller_anchor').css('height', '50px');
+            } 
+            else if ($(this).scrollTop() < scroller_anchor && $('.scroller').css('position') != 'relative') 
+            {    // If the user has scrolled back to the location above the scroller anchor place it back into the content.
+                
+                // Change the height of the scroller anchor to 0 and now we will be adding the scroller back to the content.
+                $('.scroller_anchor').css('height', '0px');
+                
+                // Change the CSS and put it back to its original position.
+                $('.scroller').css({                          
+                    'position': 'relative'
+                });
+            }
+        });
+
 
         // $('.grid').isotope({
         //   layoutMode : 'masonry'

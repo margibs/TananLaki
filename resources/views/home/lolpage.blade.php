@@ -71,7 +71,10 @@
   border-width: 30px;
   margin-top: -30px;
 }
-
+ img, video{
+    max-width: 100%;
+    height: auto;
+  }
   .mainPostWrapper{
     background-color: #ececec;
     padding: 0;
@@ -84,17 +87,20 @@
       font-size: 30px;
       line-height: 35px;
     }
-  @media  screen and (max-width: 991px){
-    .mainPostWrapper{
-      padding: 0 5px;
-    }
+  @media  screen and (max-width: 991px){ 
     .postcontent{
       width: 98%!important;
     }
     .entry-title h2{
         margin-top: 45px;
         margin-bottom: 5px;
-        font-size: 40px !important;
+        font-size: 30px !important;
+    }
+    .padRight0 {
+      padding-right: 15px;
+    }
+    .singleViewWrapper{
+      padding-top:  0;
     }
   }
 </style>

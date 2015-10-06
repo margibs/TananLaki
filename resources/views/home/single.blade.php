@@ -90,7 +90,7 @@ $escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
   }
   @media screen and (max-width: 991px){
     .mainPostWrapper{
-      padding: 0 5px;
+      padding: 0;
     }
   }
 </style>
@@ -284,51 +284,50 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                               </div>
                           </div> -->
                           <!-- Post Single - Author End -->
+
                           
                         <h4 class="relatedText"> From around the web </h4>
-                          <div id="contentclick24950"></div>
-                          <script type="text/javascript">
-                              (function() {
-                                  var data =
-                                  {
-                                      pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
-                                  };
-                            if (typeof widgetCheck24950 === 'undefined')   {
-                                  var u="";
-                                  for(var key in data){u+=key+"="+data[key]+"&"}
-                                  u=u.substring(0,u.length-1);    
-                                  var a = document.createElement("script");
-                                  a.type= 'text/javascript';
-                                  a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
-                                  a.async = true;   
-                                  document.getElementById("contentclick24950").appendChild(a);
-                            window.widgetCheck24950 = "set";
-                            }
-                              })();   
-                          </script>
+                            <div id="contentclick24950"></div>
+                            <script type="text/javascript">
+                                (function() {
+                                    var data =
+                                    {
+                                        pub_id: "8270",w_id: "24950",pw: "f3bd01bc302bca", cbust: (new Date()).getTime()
+                                    };
+                              if (typeof widgetCheck24950 === 'undefined')   {
+                                    var u="";
+                                    for(var key in data){u+=key+"="+data[key]+"&"}
+                                    u=u.substring(0,u.length-1);    
+                                    var a = document.createElement("script");
+                                    a.type= 'text/javascript';
+                                    a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                    a.async = true;   
+                                    document.getElementById("contentclick24950").appendChild(a);
+                              window.widgetCheck24950 = "set";
+                              }
+                                })();   
+                            </script>
                           
-                          <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
-                          <div class="row">                        
-                            <div class="related-posts clearfix" style="margin-bottom:0;">
+                            <h4 class="relatedText" style="margin-top: 20px;">Related Posts</h4>
+                            <div class="row">                        
+                              <div class="related-posts clearfix" style="margin-bottom:0;">
 
-                              @foreach($related_posts as $related_post)
+                                @foreach($related_posts as $related_post)
 
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
-                                    
-                                    <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
-                                     <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
-                                    </a>
+                                  <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 nobottommargin remPadR relateWrapper">
+                                      
+                                      <a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}" style="display:block; overflow: hidden;">
+                                       <img src="{{url('uploads')}}/{{$related_post->feat_image_url}}" alt="Blog Single"  style="width:100%; border-bottom: 3px solid rgb(183, 8, 8);">
+                                      </a>
 
-                                    <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;" >{{$related_post->title}}</a></h4>    
+                                      <h4 style="line-height: 22px; font-weight: 600; font-size: 16px; margin-top: 8px;"><a href="{{url('')}}/{{$related_post->cat_slug}}/{{$related_post->slug}}"  style="color: #000; font-weight: 500; font-size: 17px !important; font-family: Oswald;" >{{$related_post->title}}</a></h4>    
 
-                                </div>
+                                  </div>
 
-                                @endforeach
+                                  @endforeach
 
+                              </div>
                             </div>
-                          </div>
-
-                          
 
               						<h4 class="relatedText"> What do you think? </h4>
 
@@ -336,9 +335,11 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           <div></div>
                           </div>
                           <script>
-                          var mydiv = document.getElementById("mydiv");  
-                          mydiv.innerHTML = "<fb:comments href='" + document.location.href + "' num_posts='10' width='739'></fb:comments>";  
-                          FB.XFBML.parse(mydiv);  
+                          $(document).ready(function(){
+                            var mydiv = document.getElementById("mydiv");  
+                            mydiv.innerHTML = "<fb:comments href='" + document.location.href + "' num_posts='10' width='739'></fb:comments>";  
+                            FB.XFBML.parse(mydiv);  
+                          });
                           </script>
                           
                          <!--  <div class="row">
