@@ -52,7 +52,7 @@ class HomeController extends Controller {
             ->where('posts.status',1)
             ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
             ->orderBy('posts.id','DESC')
-            ->take(10)
+            ->take(4)
             ->get();
         
         // foreach ($this->data['side_bar_posts'] as $post)
