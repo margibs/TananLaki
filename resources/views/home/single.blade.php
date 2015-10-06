@@ -148,21 +148,12 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
               <span class="share-title">Tweet</span>
               <span class="share-count">0</span>
             </a>
-
-            <!-- https://developers.google.com/+/web/share/ -->
-            <!-- <a target="_blank" href="http://plus.google.com/share?url=<?php echo $actual_link ?>" class="share-google"> -->
-              <!-- Cannot get Google+ share count with JS yet -->
-              <!-- <span class="icon icon-google" aria-hidden="true"></span>
-              <span class="share-count">+1</span>
-            </a> -->
         </div>
   
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- Post Content -->
 
         <!-- ============================================= -->
-
-
         <div class="postcontent nobottommargin clearfix">
 
             <div class="single-post nobottommargin">
@@ -186,7 +177,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="entry-content notopmargin newContent">
                         
                         <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
-
+                        
                         {!! $post->content !!}
 
                         <!-- Post Single - Content End -->
@@ -217,52 +208,14 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                         <span class="share-title">Tweet</span>
                         <span class="share-count">0</span>
                       </a>
-
-                      <!-- https://developers.google.com/+/web/share/ -->
-                      <!-- <a target="_blank" href="http://plus.google.com/share?url=<?php echo $actual_link ?>" class="share-google"> -->
-                        <!-- Cannot get Google+ share count with JS yet -->
-                        <!-- <span class="icon icon-google" aria-hidden="true"></span>
-                        <span class="share-count">+1</span>
-                      </a> -->
                   </div>
 
                     <div class="clearfix"></div>
-
-
                 </div><!-- .entry end -->   
-                 
             </div>
           </div>
   </div>
 
-
-
- <!--  <div class="post-navigation clearfix">
-      
-      @if($next_post != null)
-       <span class="readnext"> Read Next </span>
-       <a class="link" href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}">{{ $next_post->title }}</a>
-      @else
-     <span class="readnext"> Current post </span>
-      @endif
-        <div style="float:right; margin: 6px 20px 0 0;">                                        
-          <span style="float:left; margin: 10px; font-family: Roboto; font-weight: bold; font-size: 13px;">Share this Post</span>
-           <a href="javascript:fbShare('Fb Share', 'Facebook share popup', 520, 350)" class="social-icon si-colored si-borderless si-facebook si-rounded">
-                <i class="icon-facebook"></i>
-                <i class="icon-facebook"></i>
-            </a>
-            <a class="social-icon si-colored si-borderless si-twitter si-rounded"  data-via="allladmag" onclick="javascript:window.open('http://twitter.com/share?url=<?php echo $actual_link ?>&text={{$post->title}}','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                <i class="icon-twitter"></i>
-                <i class="icon-twitter"></i>
-            </a>                                            
-
-            <a class="social-icon si-colored si-borderless si-gplus si-rounded" onclick="javascript:window.open('https://plus.google.com/share?url=<?php echo $actual_link ?>','', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-                <i class="icon-gplus"></i>
-                <i class="icon-gplus"></i>
-            </a>                                                            
-      </div>
-  </div> -->
-                      
                   <div class="singleViewWrapper">  
                       <div class="postcontent nobottommargin clearfix">
                         <div class="single-post nobottommargin">
@@ -336,357 +289,28 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             FB.XFBML.parse(mydiv);  
                           });
                           </script>
-                          
-                         <!--  <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;">
-            
-                              <div id="comment_container">
-                                @foreach($comments as $comment)
-                                    <div style="overflow:hidden;margin-bottom: 10px; margin-top: 20px;clear:both;">
-                                      <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                          <img src="@if($comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$comment->avatar}} @endif" alt="" class="pull-left">
-                                      </div>
-                                      <p class="commenterName">
-                                        {{$comment->name}} 
-                                        <span>  {{$comment->created_at}}  </span>
-                                      </p>
-                                      <p class="commentContent">
-                                        {{$comment->content}}
-                                      </p>
-                                      <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a>         
-                                      <div class="clearfix"></div>
-
-                                      <div id="comment_child{{$comment->id}}">
-                                        @foreach($comment->child_comments as $child_comment)
-                                            <div class="childCommentContainer">
-                                              <div style=" height: 50px; width: 50px; overflow: hidden; float: left; margin-right: 10px;">
-                                                <img src="@if($child_comment->avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$child_comment->avatar}} @endif" alt="" class="pull-left">
-                                              </div>
-                                              <p class="commenterName">{{$child_comment->name}}
-                                              <span>  {{$child_comment->created_at}}  </span>
-                                              </p>
-                                              <p class="commentContent">{{$child_comment->content}}</p>
-                                              <a href="#" class="reply_comment" data-id="{{$comment->id}}" style="font-size: 12px; font-weight: 700;" >reply</a> 
-                                            </div>
-                                        @endforeach
-                                      </div>
-                                      
-                                      <div id="comment_textarea{{$comment->id}}"></div> 
-                                    </div>
-                                @endforeach
-                                <div id="ajax_comment"></div>
-                              </div>
- -->
-
-                              <!-- @if(Auth::check())
-
-                                      <div class="commentPic">
-                                        <img src="@if($user_avatar == '')http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg @else {{$user_avatar}} @endif" alt="" class="pull-left">
-                                      </div>
-                                      <div class="commentTextbox">
-                                        <textarea class="top_comment" placeholder="Write comments..." ></textarea>
-                                        {{-- <input type="submit" id="top_submit" value="Post Comment" class="button pull-right" disabled="disabled"> --}}
-                                        <div class="commentPostButton">
-                                          <a class="button replyBtn top_submit"> <i class="icon-comment2" style="color:#fff;"></i> Post Comment </a>     
-                                        </div>
-                                      </div>
-                                  
-                              @else -->
-                                        
-
-                               <!--      <form class="form-horizontal">
-                                    
-                                    <h2> Leave a comment     <a href="{{url('login')}}"> <i class="icon-lock two"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}" > <i class="icon-facebook"></i> Facebook Login </a> </h2> -->
-<!-- 
-                                     <div class="loginButton">
-                                <a href="{{url('login')}}"> <i class="icon-lock"></i> Site Login</a> <span style=" font-weight: 700; color: #000; font-size: 15px;"> </span> <a href="{{url('login/facebook')}}/{{$category}}/{{$slug}}"> <i class="icon-facebook"></i> Facebook Login </a>
-                                    </div> -->
-                             
-
-                                    <!-- Text input-->
-                                   <!--  <div class="form-group">
-                                      <label class="col-md-2 control-label" for="name">Name</label>  
-                                      <div class="col-md-10">
-                                      <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
-                                        
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Text input-->
-                                   <!--  <div class="form-group">
-                                      <label class="col-md-2 control-label" for="email">Email</label>  
-                                      <div class="col-md-10">
-                                      <input id="email" name="email" type="text" placeholder="" class="form-control input-md" required="">
-                                        
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Text input-->
-                                    <!-- <div class="form-group">
-                                      <label class="col-md-2 control-label" for="website">Website</label>  
-                                      <div class="col-md-10">
-                                      <input id="website" name="website" type="text" placeholder="" class="form-control input-md">
-                                        
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Textarea -->
-                                    <!-- <div class="form-group">
-                                      <label class="col-md-2 control-label" for="comment">Comment</label>
-                                      <div class="col-md-10">                     
-                                        <textarea class="form-control" id="comment" name="comment"> </textarea>
-                                      </div>
-                                    </div>
-
-                                    <input type="submit" value="Comment" class="button pull-right" />
-
-                                    </form> -->
-                                    
-                             <!--   
-                              @endif
-
-                            </div>
-                          </div> -->
                   </div>
 
-                           </div><!-- .postcontent end -->
+                  </div><!-- .postcontent end -->
                   </div>      
 
-@include('_common.ajaxTemplate')
 <script>
 $(document).ready(function(){
-//   var google_ads='<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">';
-// google_ads+= '<';
-// google_ads+= '/script>';
-// google_ads+= '<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7471386204506681" data-ad-slot="3662886450" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});';
-// google_ads+= '<';
-// google_ads+= '/script>';
-
-  // $('.newContent p:nth-child(1)').after(google_ads);
-  // $('.newContent').find("p:first").after(google_ads);
-
-
-  $('.top_comment').on('keypress',function(){
-    if($('.top_comment').val() == '')
-    {
-      $('.top_submit').attr('disabled','disabled');
-    }
-    else
-    {
-      $('.top_submit').removeAttr('disabled');
-    }
-  });
-
 
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
         post_id = '{{$post->id}}',
         parent = 0;
-
-    $('.top_submit').on('click',function(e){
-
-        e.preventDefault();
-        $('.top_submit').attr('disabled','disabled');
-
-        var $this = $(this),
-            content = $('.top_comment').val(),
-            template_parent_comment = $.trim($("#template_parent_comment").html()),
-            add_parent = '';
-        if($('.top_comment').val() != '')
-        {
-          $.ajax({ 
-            type: 'post',
-            url: "{{url('comment/ajax_add_comment')}}",
-            data: {_token: CSRF_TOKEN,'content' : content,'post_id' : post_id, 'parent' : parent }, 
-            success: function(response)
-            {
-
-              $('.top_comment').val('');
-              
-              var parsed = JSON.parse(response);
-              var avatar = 'http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg';
-
-              $.each( parsed, function( index, obj){
-
-                if(obj.avatar != '')
-                {
-                  avatar = obj.avatar;
-                }
-
-                add_parent =  
-                  template_parent_comment.replace(/--avatar--/ig, avatar)
-                  .replace(/--name--/ig, obj.name)
-                  .replace(/--content--/ig, obj.content)
-                  .replace(/--created_at--/ig, obj.created_at)
-                  .replace(/--id--/ig, obj.id);
-
-                $('#ajax_comment').append(add_parent);
-
-              });
-
-            }
-          });
-        }
-
-    })
-    // END FOR SUBMIT
-
-    $("#comment_container").on('click','.reply_comment',function(e){
-        e.preventDefault();
-
-        var $this = $(this),
-            parent_id = $this.attr('data-id'),
-            comment_textarea = "#comment_textarea"+parent_id;
-            $(comment_textarea).html('<textarea class="commenTextarea" placeholder="" style="margin-left: 88px;margin-top: 10px;"></textarea><a class="button replyBtn" data-parent-id="'+parent_id+'" style="margin-left: 88px!important;"> Reply </a>');
-    });
-
-    $("#comment_container").on('click','.replyBtn',function(){
-
-        var parent_id = $(this).attr('data-parent-id'),
-            comment_textarea = "#comment_textarea"+parent_id,
-            content = $(comment_textarea).find('textarea').val(),
-            template_child_comment = $.trim($("#template_child_comment").html()),
-            comment_child = "#comment_child"+parent_id;
-
-          $.ajax({ 
-            type: 'post',
-            url: "{{url('comment/ajax_add_comment')}}",
-            data: {_token: CSRF_TOKEN,'content' : content,'post_id' : post_id, 'parent' : parent_id }, 
-            success: function(response)
-            {
-
-              // $('#top_comment').val('');
-              
-              var parsed = JSON.parse(response);
-              var avatar = 'http://accounts-cdn.9gag.com/media/default-avatar/1_37_100_v0.jpg';
-
-              $.each( parsed, function( index, obj){
-
-                if(obj.avatar != '')
-                {
-                  avatar = obj.avatar;
-                }
-
-                add_child =  
-                  template_child_comment.replace(/--avatar--/ig, avatar)
-                  .replace(/--name--/ig, obj.name)
-                  .replace(/--content--/ig, obj.content)
-                  .replace(/--created_at--/ig, obj.created_at)
-                  .replace(/--parent_id--/ig, parent_id);
-
-                $(comment_child).append(add_child);
-
-              });
-
-            }
-          });
-
-
-    });
-
-
-
-
-    //END reply comment on click
-
-     // $('#shareme').sharrre({
-     //    share: {
-     //      //googlePlus: true,
-     //      facebook: true,
-     //      twitter: true         
-     //    },
-     //    enableTracking: true,
-     //    buttons: {
-     //      googlePlus: {size: 'tall', annotation:'bubble'},
-     //      facebook: {layout: 'box_count'},
-     //      twitter: {count: 'vertical'}          
-     //    },
-     //    hover: function(api, options){
-     //      $(api.element).find('.buttons').show();
-     //    },
-     //    hide: function(api, options){
-     //      $(api.element).find('.buttons').hide();
-     //    }
-     //  });
-
-
 });
-		// function login() {
-		//   FB.login(function(response) {
-		//       if (response.authResponse) {
-  //       		// connected
-  //       		console.log("FB.login connected");
-  //       		window.location.reload();
-		//       } 
-  //             else {
-		//           // cancelled
-		//           console.log("FB.login cancelled");
-		//       }
-		// },
-		// fbscope);
-		// }
 
-		// window.fbAsyncInit = function() {
-		// FB.init({
-		// appId: '123456789012345',
+function fbShare(title, descr, winWidth, winHeight) {      
 
-		// // App ID
-		// channelUrl: '//staging.pdfmyurl.com/facebook.channel.html',
-
-		// // Channel File
-		// status: true,
-
-		// // check login status
-		// cookie: true,
-
-		// // enable cookies to allow the server to access the session
-		// xfbml: true // parse XFBML
-		// });
-
-		// // Additional init code here
-		// FB.getLoginStatus(function(response) {
-		// if (response.status === 'connected') {
-
-		// // connected
-		// console.log("FB.getLoginStatus connected");
-		// sendUserInfo();
-
-		// } else if (response.status === 'not_authorized') {
-
-		// // not_authorized
-		// // User logged into FB but not authorized
-		// console.log("FB.getLoginStatus not_authorized");
-
-		// } else {
-
-		// // not_logged_in
-		// // User not logged into FB
-		// console.log("FB.getLoginStatus not_logged_in");
-		// }
-		// });
-		// };
-
-		// function sendUserInfo() {
-		// FB.api('/me', function(response) {
-
-		// //console.log("my object: %o", response);
-		// var map = new OTMap();
-
-		// //map.put("username!", response.username);
-		// map.put("gender!", response.gender);
-
-		// OTLogService.sendEvent("user logged in", map);
-		// });
-		// }
-
-   function fbShare(title, descr, winWidth, winHeight) {      
-
-      var url  = window.location.href;
-      var title = $(".entry-title h2").text();
-      var image = $('#featIMG').attr('src');
-      var winTop = (screen.height / 2) - (winHeight / 2);
-      var winLeft = (screen.width / 2) - (winWidth / 2);
-      window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,scrollbars=1,status=0,width=' + winWidth + ',height=' + winHeight);
-    }
+  var url  = window.location.href;
+  var title = $(".entry-title h2").text();
+  var image = $('#featIMG').attr('src');
+  var winTop = (screen.height / 2) - (winHeight / 2);
+  var winLeft = (screen.width / 2) - (winWidth / 2);
+  window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,scrollbars=1,status=0,width=' + winWidth + ',height=' + winHeight);
+}
 </script>
 
 

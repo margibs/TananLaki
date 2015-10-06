@@ -43,8 +43,6 @@ class HomeController extends Controller {
 
         $this->data['categories'] = Categories::where('id','!=',6)->where('id','!=',4)->where('id','!=',2)->get();
 
-        // $this->data['side_bar_posts'] = Posts::where('status',1)->orderBy('id','DESC')->take(5)->get();
-
         $this->data['side_bar_posts'] = DB::table('posts')
             ->join('post_categories','post_categories.post_id','=','posts.id')
             ->join('categories','post_categories.category_id','=','categories.id')
@@ -52,14 +50,10 @@ class HomeController extends Controller {
             ->where('posts.status',1)
             ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
             ->orderBy('posts.id','DESC')
-            ->take(4)
+            ->groupBy('posts.id')
+            ->take(10)
             ->get();
         
-        // foreach ($this->data['side_bar_posts'] as $post)
-        // {
-        //     $post->categories2 = $this->customQuery->getPostCategories($post->id,false);
-        // }
-        // dd($this->data['side_bar_posts']);
         $customQuery->per_page = 16;
     }
 

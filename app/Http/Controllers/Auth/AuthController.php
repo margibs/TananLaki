@@ -43,15 +43,16 @@ class AuthController extends Controller
     {
         $data['categories'] = Categories::all();
 
-        $data['side_bar_posts'] = Posts::orderBy('id','DESC')->take(5)->get();
-
-        foreach ($data['side_bar_posts'] as $post) {
-            $post->categories2 = 
-            DB::table('post_categories')
+        $data['side_bar_posts'] = DB::table('posts')
+            ->join('post_categories','post_categories.post_id','=','posts.id')
             ->join('categories','post_categories.category_id','=','categories.id')
-            ->where('post_categories.post_id','=',$post->id)
-            ->first();
-        }
+            ->where('categories.slug','!=','lol')
+            ->where('posts.status',1)
+            ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
+            ->orderBy('posts.id','DESC')
+            ->groupBy('posts.id')
+            ->take(4)
+            ->get();
 
         return view('auth.register',$data);
     }
@@ -61,15 +62,16 @@ class AuthController extends Controller
 
         $data['categories'] = Categories::all();
 
-        $data['side_bar_posts'] = Posts::orderBy('id','DESC')->take(5)->get();
-
-        foreach ($data['side_bar_posts'] as $post) {
-            $post->categories2 = 
-            DB::table('post_categories')
+        $data['side_bar_posts'] = DB::table('posts')
+            ->join('post_categories','post_categories.post_id','=','posts.id')
             ->join('categories','post_categories.category_id','=','categories.id')
-            ->where('post_categories.post_id','=',$post->id)
-            ->first();
-        }
+            ->where('categories.slug','!=','lol')
+            ->where('posts.status',1)
+            ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
+            ->orderBy('posts.id','DESC')
+            ->groupBy('posts.id')
+            ->take(4)
+            ->get();
 
         if (view()->exists('auth.authenticate')) {
             return view('auth.authenticate');

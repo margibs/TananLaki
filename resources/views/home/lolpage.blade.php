@@ -162,7 +162,7 @@
                                @if($next_post != null)
                                 <div class="nextPost">
                                      <div class="arrow_box">                                          
-                                          <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }}</a>                                                                                                                            
+                                          <a href="{{url('')}}/{{ $next_post->cat_slug }}/{{ $next_post->slug }}"><span> Next </span> {{ $next_post->title }}</a>                              
                                     </div>
                                 </div>
                                 @endif          

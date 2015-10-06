@@ -133,6 +133,7 @@ class CustomQuery {
 			->where('posts.status','=',1)
 			->where('categories.slug','=',$category_slug)
 			->select('posts.slug','posts.title','categories.slug as cat_slug')
+			->orderBy('posts.id','DESC')
 			->first();
 	}
 
