@@ -28,8 +28,14 @@
     }
      @media screen and (max-width: 1200px){
           .initImage{
-            width: 100%;
-            height: auto;
+            width:317px;
+            height:181px;
+          }
+    }
+    @media screen and (max-width: 991px){
+          .initImage{
+            width:334px;
+            height:189px;
           }
     }
     @media screen and (max-width: 768px){

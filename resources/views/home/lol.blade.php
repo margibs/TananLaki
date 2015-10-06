@@ -1,6 +1,14 @@
 @extends('home.layout')
 @section('lol_content')
 
+<?php
+$url =  "//$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+$escaped_url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+?>
+
 <style>
   #defaultBlogView{
     display: none;
@@ -72,22 +80,21 @@
                 font-family: Roboto;
                ">  <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">{{$post->title}} </a> </h2>
 
-               <div class="social-sharing" data-permalink="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" style="padding: 10px 0 0 0;">                      
-                                <a target="_blank" href="http://www.facebook.com/sharer.php?u={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}" class="share-facebook">
-                                  <span class="icon icon-facebook" aria-hidden="true"></span>
-                                  <span class="share-title">Share</span>
-                                  
-                                </a>
+                <div class="social-sharing" data-permalink="<?php echo $actual_link ?>">
+                  <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                  <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
+                    <span class="icon icon-facebook" aria-hidden="true"></span>
+                    <span class="share-title">Share</span>
+                    <span class="share-count">0</span>
+                  </a>
 
-                                <!-- https://dev.twitter.com/docs/intents -->
-                                <a target="_blank" href="http://twitter.com/share?url={{url('')}}/{{$post->cat_slug}}/{{$post->slug}}text={{$post->title}}&text=" class="share-twitter">
-                                  <span class="icon icon-twitter" aria-hidden="true"></span>
-                                  <span class="share-title">Tweet</span>
-                                  
-                                </a>
-
-                              
-                </div>
+                  <!-- https://dev.twitter.com/docs/intents -->
+                  <a target="_blank" href="http://twitter.com/share?url=<?php echo $actual_link ?>&amp;text={{$post->title}}&amp;" class="share-twitter">
+                    <span class="icon icon-twitter" aria-hidden="true"></span>
+                    <span class="share-title">Tweet</span>
+                    <span class="share-count">0</span>
+                  </a>
+              </div>
 
       </div>
 
@@ -155,15 +162,15 @@
             font-family: Roboto;
            "><a href="{{ url('') }}/--cat_slug--/--slug--">--title--</a> </h2>
 
-           <div class="social-sharing" data-permalink="{{ url('') }}/--cat_slug--/--slug--" style="padding: 10px 0 0 0;">                      
-                            <a target="_blank" href="http://www.facebook.com/sharer.php?u={{ url('') }}/--cat_slug--/--slug--" class="share-facebook">
+           <div class="social-sharing" data-permalink="<?php echo $actual_link ?>" style="padding: 10px 0 0 0;">                      
+                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $actual_link ?>" class="share-facebook">
                               <span class="icon icon-facebook" aria-hidden="true"></span>
                               <span class="share-title">Share</span>
                               
                             </a>
 
                             <!-- https://dev.twitter.com/docs/intents -->
-                            <a target="_blank" href="http://twitter.com/share?url={{ url('') }}/--cat_slug--/--slug--text=--title--&text=" class="share-twitter">
+                            <a target="_blank" href="http://twitter.com/share?url=<?php echo $actual_link ?>&text=" class="share-twitter">
                               <span class="icon icon-twitter" aria-hidden="true"></span>
                               <span class="share-title">Tweet</span>
                               
@@ -293,6 +300,20 @@ font-weight: 700;
 
 
   });
+
+
+
+function fbShare(title, descr, winWidth, winHeight) {      
+
+  var url  = window.location.href;
+  var title = $(".entry-title h2").text();
+  var image = $('#featIMG').attr('src');
+  var winTop = (screen.height / 2) - (winHeight / 2);
+  var winLeft = (screen.width / 2) - (winWidth / 2);
+  window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,scrollbars=1,status=0,width=' + winWidth + ',height=' + winHeight);
+}
+
+
 </script>
 
 

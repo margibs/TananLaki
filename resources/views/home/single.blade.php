@@ -177,7 +177,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="entry-content notopmargin newContent">
                         
                         <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
-                        
+
                         {!! $post->content !!}
 
                         <!-- Post Single - Content End -->
