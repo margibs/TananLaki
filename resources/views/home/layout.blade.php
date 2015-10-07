@@ -218,7 +218,7 @@
                                     <div class="socials">
                                         <div class="wrappers">
                                           <h2> Like Us on facebook! </h2>
-                                          <div class="fb-page" data-href="https://www.facebook.com/AllLad-716294001804336" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">Facebook</a></blockquote></div></div>
+                                          <div class="fb-page" data-href="https://www.facebook.com/AllLad-716294001804336" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/AllLad-716294001804336"><a href="https://www.facebook.com/AllLad-716294001804336">Facebook</a></blockquote></div></div>
                                         </div>                        
 
                                         <div class="wrappers">
@@ -226,56 +226,59 @@
                                           <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                                         </div>                           
                                                         
-
-                                        <div class="sidebarHead">
+                                     <br />
+                                     <div class="sidebarHead">
                                           <h5 class="sidebarTitle"> You've Missed </h5>
+                                        </div>                          
+                                        <div style="background-color:#f7f7f7;padding-bottom: 10px;">                            
+                                          @foreach($side_bar_posts as $side_bar_post)
+                                            <div class="trendingWrapper">
+                                                  <a href="{{url('')}}/{{strtolower($side_bar_post->cat_slug)}}/{{$side_bar_post->slug}}">
+                                                      <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">              
+                                                    <p>
+                                                       {{$side_bar_post->title}}
+                                                    </p>
+                                                  </a> 
+                                            </div> 
+                                          @endforeach
                                         </div>
-                          
-                                    <div style="background-color:#f7f7f7;padding-bottom: 10px;">                            
-                                      @foreach($side_bar_posts as $side_bar_post)
-                                        <div class="trendingWrapper">
-                                              <a href="{{url('')}}/{{strtolower($side_bar_post->cat_slug)}}/{{$side_bar_post->slug}}">
-                                                  <img src="{{url('uploads')}}/{{$side_bar_post->feat_image_url}}" alt="">              
-                                                <p>
-                                                   {{$side_bar_post->title}}
-                                                </p>
-                                              </a> 
-                                        </div> 
-                                      @endforeach
-                                    </div>
+                                                                            
 
-                                    <br />
- 
-                                    <!-- This div is used to indicate the original position of the scrollable fixed div. -->
-                                    <div class="scroller_anchor"></div>
-                                     
-                                    <!-- This div will be displayed as fixed bar at the top of the page, when user scrolls -->
-                                    <div class="scroller">                                       
-                                        <div id="contentclick25571"></div>
-                                        <script type="text/javascript">
-                                            (function() {
-                                                var data =
-                                                {
-                                                    pub_id: "8270",w_id: "25571",pw: "531edb2f13f216", cbust: (new Date()).getTime()
-                                                };
-                                         if (typeof widgetCheck25571 === 'undefined')   {
-                                                var u="";
-                                                for(var key in data){u+=key+"="+data[key]+"&"}
-                                                u=u.substring(0,u.length-1);  
-                                                var a = document.createElement("script");
-                                                a.type= 'text/javascript';
-                                                a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
-                                                a.async = true;  
-                                                document.getElementById("contentclick25571").appendChild(a);
-                                         window.widgetCheck25571 = "set";
-                                         }
-                                            })();  
-                                        </script>
-                                    </div>                                    
-                        
 
-                      
-                            </div>
+                                          @if(Request::is('lol*'))                                   
+
+                                          <br />
+       
+                                          <!-- This div is used to indicate the original position of the scrollable fixed div. -->
+                                          <div class="scroller_anchor"></div>
+                                           
+                                          <!-- This div will be displayed as fixed bar at the top of the page, when user scrolls -->
+                                          <div class="scroller">                                       
+                                                        <div id="contentclick25571"></div>
+                                                        <script type="text/javascript">
+                                                            (function() {
+                                                                var data =
+                                                                {
+                                                                    pub_id: "8270",w_id: "25571",pw: "531edb2f13f216", cbust: (new Date()).getTime()
+                                                                };
+                                                         if (typeof widgetCheck25571 === 'undefined')   {
+                                                                var u="";
+                                                                for(var key in data){u+=key+"="+data[key]+"&"}
+                                                                u=u.substring(0,u.length-1);  
+                                                                var a = document.createElement("script");
+                                                                a.type= 'text/javascript';
+                                                                a.src = "https://api.contentclick.co.uk/pub_serve.php?" + u;
+                                                                a.async = true;  
+                                                                document.getElementById("contentclick25571").appendChild(a);
+                                                         window.widgetCheck25571 = "set";
+                                                         }
+                                                            })();  
+                                                        </script>
+                                                    </div>                                    
+                                       
+                                            </div>
+
+                                          @endif                       
 
                           </div>
 

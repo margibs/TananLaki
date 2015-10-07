@@ -177,11 +177,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <div class="entry-content notopmargin newContent">
                         
                         <p style="font-weight:bold!important;"> {{$post->introduction}} </p>
-                        @if(!$is_mobile)                  
-                        <script src="//go.padstm.com/?id=411724"></script>
-                        @else
-                        <script src="//go.padstm.com/?id=411724"></script>
-                        @endif
 
                         {!! $post->content !!}
 
