@@ -82,11 +82,11 @@
     <!-- -------------------- NEW POPULAR POST ------------------ -->
   <div class="popularPost">
       <a href="http://alllad.com/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"></a>
-      <img class="popularFeatBig" src="http://alllad.com/uploads/71259_ar.jpg" alt="">
-      <img class="popularFeatSmall" src="http://alllad.com/uploads/50665_ar2.jpg" alt="">
+      <img class="popularFeatBig" src="/uploads/71259_ar.jpg" alt="">
+      <img class="popularFeatSmall" src="/uploads/50665_ar2.jpg" alt="">
       <div class="details" style="border:none;">
         <span class="catergory"><a href="#"> Today's Trending </a></span>
-        <h2 class="title"> <a href="http://alllad.com/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"> Enraged Driver Challenges Motorist to A Bare Knuckle Boxing Match
+        <h2 class="title"> <a href="/banter/enraged-driver-challenges-motorist-to-a-bare-knuckle-boxing-match"> Enraged Driver Challenges Motorist to A Bare Knuckle Boxing Match
  </a> </h2>
       </div>
     </div>

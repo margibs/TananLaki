@@ -53,7 +53,7 @@
                                           @foreach($media_files as $media_file)
                       					         <div class="outer">
                                                 <div class="inner">
-                                                  <img src="{{ url('/uploads') }}/{{$media_file->image_url}}" get-this="{{$media_file->image_url}}" />
+                                                  <img src="/uploads/{{$media_file->image_url}}" get-this="{{$media_file->image_url}}" />
                                                 </div>                          
                                           </div>
                                           @endforeach

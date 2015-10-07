@@ -223,7 +223,7 @@
 <div class="outer">
 <a href="#" class="remove_image" get-id="--id--">X</a>
 <div class="inner">
-<img src="{{ url('uploads') }}/--image_url--" get-this="--image_url--" />
+<img src="/uploads/--image_url--" get-this="--image_url--" />
 </div>                          
 </div>
 </script>
