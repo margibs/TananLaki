@@ -60,7 +60,9 @@
                 <div class="panel-body" style="padding-top: 0;">
                       
                   <div id="img_here2">
+                    @if($post->yt_image != '')
                     <img src="{{url('uploads')}}/{{$post->yt_image}}" alt="">
+                    @endif
                   </div>         
                 </div>
             </div>

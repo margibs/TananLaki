@@ -63,7 +63,7 @@ class CustomQuery {
 			//Done optimized
 			return 
 				$query->where('post_categories.category_id','=',$id)
-		        ->orderBy('posts.id','DESC')
+		        ->orderBy('posts.created_at','DESC')
 		        ->take($this->per_page)
 		        ->offset($page*$this->per_page)
 		        ->get();
@@ -76,7 +76,7 @@ class CustomQuery {
 				$query->where('categories.id','!=',7)
 				->take($this->per_page)
 		        ->offset($page*$this->per_page)
-		        ->orderBy('posts.id','DESC')
+		        ->orderBy('posts.created_at','DESC')
 		        ->groupBy('posts.id')
 		        ->get();
 		}
@@ -84,7 +84,7 @@ class CustomQuery {
 		return 
 			$query->where('categories.id','!=',7)
 			->where('posts.title', 'LIKE', '%'.$q.'%')
-	        ->orderBy('posts.id','DESC')
+	        ->orderBy('posts.created_at','DESC')
 	        ->groupBy('posts.id')
 	        ->take($this->per_page)
 	        ->offset($page*$this->per_page)
