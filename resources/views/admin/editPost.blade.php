@@ -2,161 +2,181 @@
 
 @section('content')
 
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <h2 class="adminTitle" style="margin-top:130px;"> </h2> 
-    
-    
-    <div class="clearfix"></div>
+ <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-    <div class="col_three_fourth" style="padding-left: 20px;">
-  
-      <form method="POST" action="{{ url('admin/new_post') }}/{{$post->id}}" enctype="multipart/form-data">
-     
-       @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+  <!-- modal -->
+    <div class="modal">
+      <header class="modal-header">
+        <h1 class="modal-header-title left"></h1>
+        <button class="modal-header-btn modal-close" title="Close Modal"> <i class="icon-line-cross"></i> Close </button>
+        <button class="modal-header-btn uploadbtn" title="Upload"  style="float:left;"> Upload </button>
+        <button class="modal-header-btn modal-close" title="Close Modal"> Select </button>
+      </header>
+      <div class="modal-body">
+        <section class="modal-content">      
+            
+            <div id="fileuploader">Upload</div>        
+            <div id="image_list"></div>
 
-        {!! csrf_field() !!}
+        </section>
+      </div>
+    </div>
+  <!-- modal -->
+
+  <div class="submenu">
+                    
+    <div class="searchform"> 
+    <form action="">
+      <a href=""> <i class="icon-angle-right"></i> </a>
+      <input type="text" class="searchbox" />
+    </form>
+    </div>
+
+    <ul>
+      <li> <a href="{{ url('/admin/new_post') }}"> <i class="icon-line-square-plus"></i> Blog Post </a> </li>
+      <li> <a href="{{ url('/admin/lol_post') }}"> <i class="icon-line2-emoticon-smile"></i> LOL Post </a> </li>                    
+      <li> <a href="{{ url('/admin/posts') }}" class="active"> <i class="icon-paperclip"></i> All </a> </li>
+      <li> <a href="{{ url('/admin/drafts') }}"> <i class="icon-line-marquee"></i> Draft </a> </li>
+      <li> <a href="{{ url('/admin/trash') }}"> <i class="icon-trash"></i> Trash </a> </li>                    
+      <li> <a class="searchlink"> <i class="icon-line-search"></i> Search </a> </li>
+    </ul>
+    
+  </div>
+
+  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+
+    <form method="POST" action="{{ url('admin/new_post') }}/{{$post->id}}" enctype="multipart/form-data">
+       {!! csrf_field() !!}
+
         <input id="featured_image" type='hidden' name='feat_image_url' value='{{$post->feat_image_url}}'>
         <input type="hidden" id="widget_image_url" name="widget_image_url" value="{{$post->yt_image}}">
-        <input type="text" name="title" class="form-control newPost newPostBox" value="{{$post->title}}" placeholder="Enter Title Here.." />
-        <br>
+
+        @if (count($errors) > 0)
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+        @endif
+
+      <div class="panel">
+        <h6> Select a category </h6>
+        <ul class="categories">
+
+          @foreach($categories as $category)              
+              <?php $check = false; ?>
+
+              @if($category->post_id != null)
+                <?php $check = true; ?>
+              @endif
+              
+              <li>
+                <div>
+                  <!-- <input id="option1" type="checkbox" name="field1" value="option"> -->
+                    {!! Form::checkbox('category_id[]', $category->id,$check) !!}     
+                  <label for="option1"><span><span></span></span> {{ $category->name }}   </label>
+                </div>
+              </li>     
+              
+          @endforeach
+
+                     
+        </ul>
+      </div>                    
+
+      <div class="panel">
+        <h6> <a title="Upload Image" id="load_media_files" class="featImageButton featimglink modal-trigger"> <i class="icon-line-plus"></i> Featured Image  </a> </h6>         
+         <div id="img_here">
+          <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
+         </div>     
+      </div>
+
+  <!--     <div class="panel">
+        <h6> Image after video playback </h6>    
+        <a id="load_media_files2" title="Upload Image" class="featImageButton featimglink"> <i class="icon-line2-plus"></i> </a>
+         <div id="img_here2">
+          @if($post->yt_image != '')
+          <img src="{{url('uploads')}}/{{$post->yt_image}}" alt="">
+          @endif
+        </div>  
+      </div>
+ -->
+
+      <div class="panel">
+        <h6 style="margin-bottom: 15px;"> Auto Post </h6>
+          <span class="switchtitle fb"> <i class="icon-facebook-sign" style="margin-right: 9px;"></i> Facebook </span>
+          <div class="onoffswitch">
+               {!! Form::checkbox('shared_fb', 1,$shared_fb_status, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch'] ) !!}            
+              <label class="onoffswitch-label" for="myonoffswitch"></label>
+          </div>
+
+          <span class="switchtitle twitter"> <i class="icon-twitter"></i> Twitter </span>
+          <div class="onoffswitch">
+              {!! Form::checkbox('shared_twitter', 1,$shared_twitter_status, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch2'] ) !!}     
+              <label class="onoffswitch-label" for="myonoffswitch2"></label>
+          </div>
+         
+      </div>
+
+      <div class="panel">
+        <h6> Publish </h6>                    
+        <span class="switchtitle twitter"> <i class="icon-line-marquee"></i> Update </span>
+
+
+          <div class="onoffswitch">
+
+              <?php $check_publish = false; ?>
+
+                @if($post->status == 1)
+                  <?php $check_publish = true; ?>
+                @endif
+
+              {!! Form::checkbox('status', 1,$check_publish, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch3']) !!}
+
+              <label class="onoffswitch-label" for="myonoffswitch3"></label>
+          </div>
+        
+          <button id="check_post" class="button button-3d"  style="display: none;">Check Post</button>
+          <input id="check_post_submit" type="submit" value="Submit" class="submit">       
+        
+      </div>                    
+  </div>
+
+  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+
+      <div class="wysiwyg">                      
+        <input type="text" value="{{$post->title}}" name="title" class="titlebox newPost newPostBox" placeholder="Enter Title Here.."  style="margin-bottom: 20px;" />                      
+        
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
           <textarea name="content" id="editor1" rows="10" cols="80">{!! $post->content !!}</textarea>
         </div>
 
-        <h3> <i class="icon-line-flag"></i> Custom Introduction </h3>
-        <textarea name="introduction" id="" class="excerptBox" style="height: 80px;">{{$post->introduction}}</textarea>
+        <textarea name="introduction" id="" class="excerptBox" placeholder="Introduction">{{$post->introduction}}</textarea>
+        <textarea name="excerpt" id="" class="excerptBox" placeholder="Exceprt">{{$post->excerpt}}</textarea>
         
-        <h3> <i class="icon-line-flag"></i> Add Custom Excerpt </h3>
-        <textarea name="excerpt" id="" class="excerptBox">{{$post->excerpt}}</textarea>
-        
+           
+      </div>
 
-    </div>
-
-    <div class="col_one_fourth col_last" style="padding-right: 20px;">
-
-            <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-plus-sign"></i> </a>   </h2>
-                  </div>
-                  <div class="panel-body" style="padding-top: 0;">               
-                    <div id="img_here">
-                      <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
-                    </div>         
-                  </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title" style="display: block;margin: 0 0 15px 0;text-align: center;"> Image after video play <a href="#" id="load_media_files2" class="featImageButton"> <i class="icon-plus-sign"></i> </a>  </h2>
-                </div>
-                <div class="panel-body" style="padding-top: 0;">
-                      
-                  <div id="img_here2">
-                    <img src="{{url('uploads')}}/{{$post->yt_image}}" alt="">
-                  </div>         
-                </div>
-            </div>
-            
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                   <h2 class="panel-title">  Categories </h2>
-              </div>
-               <div class="panel-body">
-                    <div class="control-group">
-                      <div class="controls">
-                          
-                           @foreach($categories as $category)
-                                
-                                <?php $check = false; ?>
-
-                                @if($category->post_id != null)
-                                  <?php $check = true; ?>
-                                @endif
-
-                                {!! Form::checkbox('category_id[]', $category->id,$check) !!}                               
-                                {{ $category->name }}
-                                <br />  
-                            @endforeach
-
-                      </div>
-                    </div>
-                </div>
-            </div>
+      </form>
+  </div>
 
 
-       <div class="panel panel-default">
-          <div class="panel-heading">
-                <h2 class="panel-title"> Autopost </h2>
-            </div>
-            <div class="panel-body">
-                  <div class="controls">
-                     <label class="checkbox" for="published">
-                      {!! Form::checkbox('shared_fb', 1,$shared_fb_status) !!} <i class="icon-facebook-sign"> </i>  Post on FB <br >
-                      {!! Form::checkbox('shared_twitter', 1,$shared_twitter_status) !!} <i class="icon-twitter-sign"> </i>  Post on Twitter
-                 </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-          
-            <div class="panel-body">
-                    <div class="controls">
-
-            <label class="checkbox" for="published">
-                <?php $check_publish = false; ?>
-                @if($post->status == 1)
-                <?php $check_publish = true; ?>
-                @endif
-                {!! Form::checkbox('status', 1,$check_publish) !!}Publish
-               
-                 <span> ( Uncheck to save as draft ) </span>
-            </label>
-         
-          </div>
-              
-                <!-- <a href="#" class="button"> Publish Now </a> -->
-              <input type="submit" value="Update Post" class="button button-3d" style="display: block;margin: 0 auto 15px auto;">
-            </div>
-        </div>
-
-   
-</form>
-    </div>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('nexuspress/js/draggabilly.pkgd.js') }}"></script>
+<script src="{{ asset('nexuspress/js/modal.js') }}"></script>
+<script src="{{ asset('nexuspress/js/jquery.uploadfile.min.js') }}"></script>
+<script>
+  $('.uploadbtn').click(function(){
+    $('#fileuploader').toggle();
+  });
+  window.onload = function(e){         
+      Modal.init();
+  };
+</script>
 
 
-
-<!-- Modal -->
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-body">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Media File</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="row">
-                    <div id="fileuploader">Upload</div>
-                    <div id="image_list">
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id='save_changes_modal'> Use Image </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
   // Replace the <textarea id="editor1"> with a CKEditor

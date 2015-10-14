@@ -11426,6 +11426,8 @@ button.toast-close-button {
 	line-height: 1.8;
 	color: #A59F9F;
     font-family: Roboto;
+    position: relative;
+    z-index: 200;
 }
 
 #copyrights i.footer-icon {
@@ -12381,16 +12383,17 @@ body{
 	overflow: hidden;	
 }
 .trendingWrapper p{
-    font-size: 17px!important;
+    font-size: 14px!important;
     font-family: Oswald!important;
     font-weight: 500!Important;
-    line-height: 20px!important;
-    padding: 10px 0 20px 0;
+    line-height: 18px!important;
+    padding: 5px 0 16px 0;
     margin: 0px 10px 5px 10px!important;
     border-bottom: 2px solid #B70808;
     /* border-top: 2px solid transparent; */
     color: #000!important;
     min-height: 80px;
+    text-align: left;
 }
 .trendingWrapper p a{
 	color: #101010;
@@ -12399,7 +12402,7 @@ body{
 .trendingWrapper img{
 	float: left;
     width: 115px;
-    margin: 10px;
+    margin: 5px 10px;
 }
 /*#logo img, .sticky-header #logo img{
     height: 49px!important;

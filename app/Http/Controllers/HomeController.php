@@ -25,6 +25,7 @@ use App\Model\Links;
 use App\Model\MediaFiles;
 use App\Model\Posts;
 use App\Model\SiteSettings;
+use App\Model\IpPostsViewed;
 
 use App\CustomQuery;
 use App\CommonFunctions;
@@ -42,17 +43,27 @@ class HomeController extends Controller {
         $this->commonFunctions = $commonFunctions;
 
         $this->data['categories'] = Categories::where('id','!=',6)->where('id','!=',4)->where('id','!=',2)->get();
+        
+        // $user_ip = Location::get()->ip;
 
         $this->data['side_bar_posts'] = DB::table('posts')
             ->join('post_categories','post_categories.post_id','=','posts.id')
             ->join('categories','post_categories.category_id','=','categories.id')
             ->where('categories.slug','!=','lol')
             ->where('posts.status',1)
-            ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
-            ->orderBy('posts.id','DESC')
+            ->select('posts.slug','posts.feat_image_url','posts.thumb_feature_image','posts.title','categories.slug as cat_slug')
+            // ->orderBy('posts.id','DESC')
+            ->orderBy(DB::raw('RAND()'))
             ->groupBy('posts.id')
-            ->take(10)
+            ->take(5)
             ->get();
+
+            //             ->whereNotIn('posts.id',function($query) use ($user_ip)
+            // {
+            //     $query->select(DB::raw('posts_id'))
+            //           ->from('ip_posts_vieweds')
+            //           ->whereRaw("ip = '".$user_ip."'");
+            // })
         
         $customQuery->per_page = 16;
     }
@@ -75,19 +86,19 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
-        $image_url = 'fiu_47094_49425161_p0.png';
+        // $image_url = 'fiu_47094_49425161_p0.png';
 
-        $rest = substr($image_url, 0,4);
+        // $rest = substr($image_url, 0,4);
 
-        echo $rest == 'fiu_' ? 'watermelon' : 'dili need to resized';
+        // echo $rest == 'fiu_' ? 'watermelon' : 'dili need to resized';
         // open an image file
-        $img = Image::make('uploads/'.$image_url);
+        // $img = Image::make('uploads/'.$image_url);
 
         // now you are able to resize the instance
-        $img->resize(753, 438);
+        // $img->resize(753, 438);
 
         // finally we save the image as a new file
-        $img->save('uploads/fiu_'.$image_url);
+        // $img->save('uploads/fiu_'.$image_url);
 
         //     $post = Posts::with(array('comments'=>function($query){
         //     $query->where('parent',0);
@@ -161,18 +172,28 @@ class HomeController extends Controller {
 
         // echo 'Matched Text: '.$sites->alltextmatched;
 
-            // DB::enableQueryLog();
-            //     DB::table('comments')
-            //     ->join('users','comments.author_id','=','users.id')
-            //     ->leftJoin('posts','comments.post_id','=','posts.id')
-            //     ->join('post_categories','posts.id','=','post_categories.post_id')
-            //     ->join('categories','post_categories.category_id','=','categories.id')
-            //     ->select('users.name','comments.content','comments.created_at','comments.approved','posts.slug','posts.id','categories.slug as catslug')
-            //     ->paginate(15);
+//             DB::enableQueryLog();
+// DB::table('posts')
+//             ->join('post_categories','post_categories.post_id','=','posts.id')
+//             ->join('categories','post_categories.category_id','=','categories.id')
+//             ->where('categories.slug','!=','lol')
+//             ->where('posts.status',1)
+//             ->whereNotIn('posts.id',function($query)
+//             {
+//                 $user_ip = Location::get()->ip;
+//                 $query->select(DB::raw('posts_id'))
+//                       ->from('ip_posts_vieweds')
+//                       ->whereRaw("ip = '".$user_ip."'");
+//             })
+//             ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
+//             ->orderBy('posts.id','DESC')
+//             ->groupBy('posts.id')
+//             ->take(4)
+//             ->get();
 
-            //     $query = DB::getQueryLog();
-            //     $lastQuery = end($query);
-            //     print_r($lastQuery);
+//                 $query = DB::getQueryLog();
+//                 $lastQuery = end($query);
+//                 print_r($lastQuery);
 
         // to delete files
         // File::Delete(public_path('uploads/26028_galaxyhotel.jpg'))
@@ -221,18 +242,20 @@ class HomeController extends Controller {
             App::abort(404);
         }
 
+
         $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
 
-        $ip_country_code = Location::get()->isoCode;
+        // $user_ip = Location::get()->ip;
+        // IpPostsViewed::firstOrCreate(['ip' => $user_ip,'posts_id' => $this->data['post']->id]);
 
         // $this->data['links'] = Links::orderBy(DB::raw('RAND()'))->take(6)->get();
-        $this->data['links'] = DB::table('links_countries')
-            ->join('links','links_countries.links_id','=','links.id')
-            ->where('links_countries.country_code',$ip_country_code)
-            ->where('visible','=',1)
-            ->orderBy(DB::raw('RAND()'))
-            ->take(6)
-            ->get();
+        // $this->data['links'] = DB::table('links_countries')
+        //     ->join('links','links_countries.links_id','=','links.id')
+        //     ->where('links_countries.country_code',$ip_country_code)
+        //     ->where('visible','=',1)
+        //     ->orderBy(DB::raw('RAND()'))
+        //     ->take(6)
+        //     ->get();
             
         $this->data['related_posts'] = $this->customQuery->getRelatedPost($this->data['post']->cat_id,$this->data['post']->id,4);
 

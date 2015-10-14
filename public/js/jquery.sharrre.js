@@ -50,7 +50,7 @@
         url: '',  //if you need to personalize url button
         urlCount: false,  //if you want to use personnalize button url on global counter
         action: 'like',
-        layout: 'button',
+        layout: 'button_count',
         width: '',
         send: 'false',
         faces: 'false',
@@ -138,7 +138,7 @@
     },
     facebook : function(self){
       var sett = self.options.buttons.facebook;
-      $(self.element).find('.buttons').append('<div class="button facebook"><div id="fb-root"></div><div class="fb-like" data-href="'+(sett.url !== '' ? sett.url : self.options.url)+'" data-send="'+sett.send+'" data-layout="button" data-width="'+sett.width+'" data-show-faces="'+sett.faces+'" data-action="'+sett.action+'" data-colorscheme="'+sett.colorscheme+'" data-font="'+sett.font+'" data-via="'+sett.via+'"></div></div>');
+      $(self.element).find('.buttons').append('<div class="button facebook"><div id="fb-root"></div><div class="fb-like" data-href="'+(sett.url !== '' ? sett.url : self.options.url)+'" data-send="'+sett.send+'" data-layout="'+sett.layout+'" data-width="'+sett.width+'" data-show-faces="'+sett.faces+'" data-action="'+sett.action+'" data-colorscheme="'+sett.colorscheme+'" data-font="'+sett.font+'" data-via="'+sett.via+'"></div></div>');
       var loading = 0;
       if(typeof FB === 'undefined' && loading == 0){
         loading = 1;
@@ -156,7 +156,7 @@
     },
     twitter : function(self){
       var sett = self.options.buttons.twitter;
-      $(self.element).find('.buttons').append('<div class="button twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="'+(sett.url !== '' ? sett.url : self.options.url)+'" data-count="none" data-text="'+self.options.text+'" data-via="'+sett.via+'" data-hashtags="'+sett.hashtags+'" data-related="'+sett.related+'" data-lang="'+sett.lang+'">Tweet</a></div>');
+      $(self.element).find('.buttons').append('<div class="button twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="'+(sett.url !== '' ? sett.url : self.options.url)+'" data-count="'+sett.count+'" data-text="'+self.options.text+'" data-via="'+sett.via+'" data-hashtags="'+sett.hashtags+'" data-related="'+sett.related+'" data-lang="'+sett.lang+'">Tweet</a></div>');
       var loading = 0;
       if(typeof twttr === 'undefined' && loading == 0){
         loading = 1;
@@ -507,8 +507,11 @@
       $(this.element).html(template);
     }
     else{ //template by defaults
+      //total += Math.floor((Math.random() * 346) + 101);
+      total += (parseInt($('#demo1').attr('data-lol')) * 0.2);
       $(this.element).html(
-                            '<div class="box"><a class="count" href="#">' + total + '</a>' + 
+                            //'<div class="box"><a class="count" href="#">' + total + '</a>' + 
+                            '<div class="box"><a class="count">' +  Math.floor(total) + '</a>' + 
                             (this.options.title !== '' ? '<a class="share" href="#">' + this.options.title + '</a>' : '') +
                             '</div>'
                           );

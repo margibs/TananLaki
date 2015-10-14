@@ -122,6 +122,33 @@ class AdminController extends Controller
         return view('admin.newPost',$data);
     }
 
+    public function lolPost()
+    {
+        $_apiurl = 'http://www.copyscape.com/api/?';
+        $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=balance&f=html';
+        $curl=curl_init();
+        curl_setopt ($curl, CURLOPT_URL, $apiurl);
+        curl_setopt ($curl, CURLOPT_HEADER, 1);
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($curl, CURLOPT_TIMEOUT,60);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $response=curl_exec($curl);
+        curl_close($curl);
+        $ar = explode("\r\n\r\n", $response, 2);
+
+        //$data['copyscape_balance'] = $ar[1];
+
+        $data['categories'] = Categories::all();
+        return view('admin.lolPost',$data);
+    }
+
+    public function widgets()
+    {
+        return view('admin.widgets');
+    }
+
     public function editPost($id)
     {
         $data['post'] = Posts::find($id);
@@ -169,7 +196,8 @@ class AdminController extends Controller
             'title' => 'required',
             'content' => 'required',
             'feat_image_url' => 'required',
-            'introduction' => 'required'
+            'introduction' => 'required',
+            'category_id' => 'required'
         ]);
 
     	if ($validator->fails()) 
@@ -240,6 +268,7 @@ class AdminController extends Controller
             {
                 // open an image file
                 $img = Image::make('uploads/'.$feat_image_url);
+                $img2 = Image::make('uploads/'.$feat_image_url);
 
                 // now you are able to resize the instance
                 // $img->resize(753, 438);
@@ -248,15 +277,31 @@ class AdminController extends Controller
                     $constraint->upsize();
                 });
 
+                $img2->fit(402, 224, function ($constraint) {
+                    $constraint->upsize();
+                });
+
                 // finally we save the image as a new file
                 $img->save('uploads/fiu_'.$feat_image_url);
+                $img2->save('uploads/tmb_'.$feat_image_url);
 
                 $post->feat_image_url = 'fiu_'.$feat_image_url;
-
+                $post->thumb_feature_image = 'tmb_'.$feat_image_url;
             }
             else
             {
                 $post->feat_image_url = $feat_image_url;
+
+                if($post->thumb_feature_image == '')
+                {
+                    $old_feat_image_url = substr($feat_image_url, 4);
+                    $img2 = Image::make('uploads/'.$old_feat_image_url);
+                    $img2->fit(402, 224, function ($constraint) {
+                        $constraint->upsize();
+                    });
+                    $img2->save('uploads/tmb_'.$old_feat_image_url);
+                    $post->thumb_feature_image = 'tmb_'.$old_feat_image_url;
+                }
             }
         }
 

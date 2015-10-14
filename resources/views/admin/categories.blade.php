@@ -1,41 +1,35 @@
 @extends('admin.layout')
 
 @section('content')
-    
-    <style>
-      @media (max-width: 991px){
-          .col_three_fourth{
-              margin-top: 20px;
-          }
-      }
-    </style>
 
-    <div class="col_full">
-                     <div class="rateEntryBox">
-                        <h2 class="adminTitle"> 
-                            <i class="icon-line-layers"></i> Categories
-                        </h2> 
-             
+<style>
+  .right table tbody tr td{
+    padding-top: 20px;
+  }
+</style>
+  
+<div class="submenu">
+                  
+                  <div class="searchform"> 
+                  <form action="">
+                    <a href=""> <i class="icon-angle-right"></i> </a>
+                    <input type="text" class="searchbox" />
+                  </form>
+                  </div>
 
-                    </div>
-    
-                 
+                  <ul>
+                    <li> <a href="{{ url('admin/categories') }}"> <i class="icon-line-square-plus"></i> New Category </a> </li>
+                    <li> <a href="{{ url('admin/categories') }}"> <i class="icon-paperclip"></i> All </a> </li>                    
+                    <li> <a class="searchlink"> <i class="icon-line-search"></i> Search </a> </li>
+                  </ul>
+                </div>
 
+                <div class="row">
+                  
+                  <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                      <div class="panel">
+                        <h6> Add new category </h6>
 
-                 
-                  <!--   <form class="form-inline">
-                              <div class="form-group">
-                                    <select class="form-control">
-                                      <option> Select Action </option>
-                                      <option> Delete </option>
-                                    </select>
-                                    <input type="submit" value="Apply" class="btn"  />
-                              </div>
-                    </form>
-                         -->
-              <div class="col_one_third">
-                <div id="contentMainWrapper" style="padding: 10px 20px;">
-                        
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -44,48 +38,50 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        @endif
+                        @endif                        
 
-                        <h2 style="    
-    margin-bottom: 10px;
-    font-size: 20px;
-    margin-top: 0;;"> <i class="icon-plus-sign"></i> Add New</h2>
+                        <div class="categform">
+                          <form class="form-inline" method="POST" action="{{ url('admin/categories') }}">
+                             {!! csrf_field() !!}  
+                            <div class="form-group">                            
+                              <input type="text" name="name"  value="{{ old('name') }}">
+                            </div>
+                            <input type="submit" value="Submit">
+                          </form>
+                        </div>
 
-                        <form class="form-inline" method="POST" action="{{ url('admin/categories') }}" style="margin-bottom: 10px;">
-                           {!! csrf_field() !!}  
-                          <div class="form-group">                            
-                            <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="Add Category...">
-                          </div>
-                          <button type="submit" class="btn">Save</button>
-                        </form>
+                      </div>
+                  </div>
 
-                </div>   
-              </div>
+                  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+                      <table>
+                        <thead>
+                          <td style="width: 6%;"> <input type="checkbox"> </td>
+                          <td> Category </td>
+                          <td> Slug </td>
+                          <td> Action </td>                    
+                        </thead>
+                        <tbody>
 
-              <div class="col_two_thirdcol_last">
-                <div id="contentMainWrapper">
-                          <div class="table-responsive adminPosts">
-                              <table class="table table-striped">
-                                  <thead>                                    
-                                      <th> Category </th>                                   
-                                      <th> Slug </th> 
-                                      <!-- <td> Count </td> -->
-                                  </thead>
-                                  <tbody>
-                                     @foreach($categories as $category)
-                                          <tr>                                            
-                                              <td> <a href="#">{{$category->name}}</a> </td>                                          
-                                              <td class="subTD">{{$category->slug}}  </td>
-                                              <!-- <td class="subTD"> 10 </td> -->
-                                          </tr>
-                                      @endforeach
-                                  </tbody>
-                              </table>
-                          </div>
+                       @foreach($categories as $category)
+                            <tr>            
+                              <td> <input type="checkbox"> </td>                                
+                              <td> <a href="#">{{$category->name}}</a> </td>                                          
+                              <td class="subTD">{{$category->slug}}  </td>    
+                              <td> <a href=""> <i class="icon-line-trash"></i> </a> </td>                          
+                            </tr>
+                        @endforeach
+                      
+                        </tbody>
+                      </table>
+
+                  </div>
+
+
                 </div>
-              </div>                        
 
-    </div>
+   
+
 
 @endsection
 
