@@ -124,7 +124,7 @@
         <h6> Poll</h6>
              <span class="switchtitle"> <i class="icon-line-bar-graph-2"></i> Enable </span>
             <div class="onoffswitch">
-                  {!! Form::checkbox('poll_enable', 1,false, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch5'] ) !!}
+                  {!! Form::checkbox('poll_enable', 1,$poll_enable, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch5'] ) !!}
                   <!-- <input type="checkbox" id="myonoffswitch5" class="onoffswitch-checkbox" /> -->             
                   <label class="onoffswitch-label" for="myonoffswitch5"></label>
             </div> 
@@ -168,7 +168,7 @@
 
                 <div class="pollwrapper">
           <p class="question"> Poll Question </p>
-          <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question"> </textarea>     
+          <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question">@if($posts_poll != null){{$posts_poll->poll_question}}@endif</textarea>     
           <div class="choices">
             <ul class="pollul">
               <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
