@@ -26,6 +26,9 @@ use App\Model\MediaFiles;
 use App\Model\Posts;
 use App\Model\SiteSettings;
 use App\Model\IpPostsViewed;
+use App\Model\PostsPoll;
+use App\Model\PostsPollAnswer;
+use App\Model\PostsPollResult;
 
 use App\CustomQuery;
 use App\CommonFunctions;
@@ -242,6 +245,14 @@ class HomeController extends Controller {
             App::abort(404);
         }
 
+        $this->data['posts_poll'] = PostsPoll::where('posts_id',$this->data['post']->id)->first();
+        $this->data['posts_poll_answers2'] = 0;
+
+        if($this->data['posts_poll'] != null && $this->data['posts_poll']->poll_enable == 1)
+        {
+            $this->data['posts_poll_answers2'] = 1;
+            $this->data['posts_poll_answers'] = PostsPollAnswer::where('posts_poll_id',$this->data['posts_poll']->id)->get();
+        }
 
         $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
 

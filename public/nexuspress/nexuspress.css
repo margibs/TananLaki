@@ -652,10 +652,15 @@
     .widgetswrapper .widgetblock{
       border: 1px solid #EFEEEE;
       margin: 10px;
-    }
-    .widgetswrapper .widgetblock .widgetoption{
+    }  
+    .widgetswrapper .widgetblock .widgetoption span{
+      font-family: Roboto;
+      font-size: 13px;
+      color: #A5A3A3;
+    }  
+    .widgetswrapper .widgetblock .widgetoption .onoffswitch{
+      margin: 0 20px;
       float: right;
-      margin-right: 10px;
     }
     .widgetswrapper .widgetblock .widgetoption .switchtitle{
       margin-left: 0;

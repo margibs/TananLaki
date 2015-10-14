@@ -177,13 +177,13 @@
 
         <div class="pollwrapper">
           <p class="question"> Poll Question </p>
-          <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question"> </textarea>     
+          <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question"></textarea>     
           <div class="choices">
             <ul class="pollul">
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>   
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
             </ul>
             <!-- <a class="addchoice"> <i class="icon-line-plus"></i> Add Choice </a> -->
           </div>

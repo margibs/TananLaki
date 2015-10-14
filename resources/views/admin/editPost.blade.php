@@ -171,10 +171,21 @@
           <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question">@if($posts_poll != null){{$posts_poll->poll_question}}@endif</textarea>     
           <div class="choices">
             <ul class="pollul">
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>   
+              @if(count($posts_answer) == 0)
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              @else
+                @foreach($posts_answer as $post_answer)
+                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" value="{{$post_answer->poll_answer}}"/> </li>
+                @endforeach
+                <?php $new_value_posts_answer = count($posts_answer); ?>
+                @while ($new_value_posts_answer < 4)
+                  <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+                  <?php $new_value_posts_answer++; ?>
+                @endwhile
+              @endif   
             </ul>
             <!-- <a class="addchoice"> <i class="icon-line-plus"></i> Add Choice </a> -->
           </div>

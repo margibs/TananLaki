@@ -12,7 +12,7 @@
   </div>
 
   <ul>
-    <li> <a href="{{ url('/admin/users') }}" class="active"> <i class="icon-line-grid"></i> Widgets </a> </li>    
+    <li> <a href="{{ url('/admin/widgets') }}" class="active"> <i class="icon-line-grid"></i> Widgets </a> </li>    
     <li> <a class="searchlink"> <i class="icon-line-search"></i> Search </a> </li>
   </ul>
 
@@ -23,49 +23,27 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 			<div class="widgetblock">
-				<div class="widgetoption">
-					<p> Post Poll</p>
-						<span class="switchtitle"> Enable </span>
-				        <div class="onoffswitch">        
-				              <input type="checkbox" id="myonoffswitch4" class="onoffswitch-checkbox" checked />              
-				              <label class="onoffswitch-label" for="myonoffswitch4"></label>
-				        </div>
+				<div class="row no-gutters">					
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="icon">
+							<i class="icon-line-bar-graph-2"></i>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+						<div class="widgetoption">		
+								<div class="onoffswitch">        
+						              <input type="checkbox" id="myonoffswitch4" class="onoffswitch-checkbox" checked />              
+						              <label class="onoffswitch-label" for="myonoffswitch4"></label>
+						        </div>
+								<p> Post Poll</p>		
+								<span> Status: Enabled </span>							        
+						</div>
+					</div>
 				</div>
-				<div class="icon">
-					<i class="icon-line-bar-graph-2"></i>
-				</div>
+				
+				
 			</div>
-		</div>
-		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			<div class="widgetblock">
-				<div class="widgetoption">
-					<p> Post Poll</p>
-						<span class="switchtitle"> Enable </span>
-				        <div class="onoffswitch">        
-				              <input type="checkbox" id="myonoffswitch5" class="onoffswitch-checkbox" checked />              
-				              <label class="onoffswitch-label" for="myonoffswitch5"></label>
-				        </div>
-				</div>
-				<div class="icon">
-					<i class="icon-line-bar-graph-2"></i>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-			<div class="widgetblock">
-				<div class="widgetoption">
-					<p> Post Poll</p>
-						<span class="switchtitle"> Enable </span>
-				        <div class="onoffswitch">        
-				              <input type="checkbox" id="myonoffswitch6" class="onoffswitch-checkbox" checked />              
-				              <label class="onoffswitch-label" for="myonoffswitch6"></label>
-				        </div>
-				</div>
-				<div class="icon">
-					<i class="icon-line-bar-graph-2"></i>
-				</div>
-			</div>
-		</div>
+		</div>	
 	</div>
 	
 		
