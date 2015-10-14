@@ -8,10 +8,7 @@
 @endsection
 
 @section('content')
-<<<<<<< HEAD
 
-=======
->>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
@@ -25,7 +22,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
       background-color: #ECECEC;
     }
     .left{
-      border-right: 1px solid #ECECEC;
       padding-left: 15px;
     }
 </style>
@@ -105,7 +101,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             <div class="clearfix"></div>
 
 
-            <div class="pollwrapper">
+            <!-- <div class="pollwrapper">
               <div class="inner">
                 <span class="total"> 1,000+ VOTES SO FAR </span>
                 <h2>
@@ -126,7 +122,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 </div>
 
               </div>
-            </div>
+            </div> -->
 
                        <h4 class="relatedText" style="margin-top: 35px;"> From around the web </h4>
                         <div id="contentclick24950"></div>
@@ -174,8 +170,8 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                           </div>
                         </div>
                         
-                        <div>
-                        <script src="//go.padstm.com/?id=411724"></script>
+                        <div>                         
+                          <script src="//go.padstm.com/?id=411724"></script>
                         </div>
 
 

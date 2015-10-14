@@ -8,6 +8,7 @@
     .left{
         box-shadow: 0 0 0 0;
         background-color: transparent;
+        min-height: 700px;
     }
 </style>
 
@@ -33,7 +34,7 @@
                 <input type="password" placeholder="Password" id="login-form-password" name="password" />
                 <input type="checkbox" name="remember" checked> Remember Me
                 <a href="{{url('login/facebook')}}" class="link"> <i class="fa fa-facebook-official"></i> Login with facebook </a>
-                <input type="submit" id="login-form-submit" name="login-form-submit" value="login" />                 
+                <input type="submit" id="login-form-submit" name="login-form-submit" value="Login" />                 
                 </form>
             </div>
       </div>

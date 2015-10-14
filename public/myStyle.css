@@ -68,7 +68,7 @@
           padding: 10px 30px;
           font-family: Roboto;
           font-size: 20px;
-          margin-top: 15px;
+          margin-top: 25px;
           display: block;
       }
       .loginWrapper input[type=checkbox]{
@@ -76,7 +76,7 @@
       }
       .loginWrapper .link{
           display: block;
-          margin-top: -30px;
+          margin-top: 60px;
           text-decoration: none;
           font-family: Roboto;
           font-size: 14px;
@@ -821,9 +821,9 @@
       .singlebodycontent{
           padding-top: 5px;
       }
-      .singlebodycontent img{
+      /*.singlebodycontent p img{
         width: auto!important;
-      }
+      }*/
       .singlebodycontent p{
           font-size: 16px;
           font-family: Roboto;

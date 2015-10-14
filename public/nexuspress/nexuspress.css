@@ -659,12 +659,13 @@
     }
     .widgetswrapper .widgetblock .widgetoption .switchtitle{
       margin-left: 0;
+      font-size: 13px;
       font-family: Roboto;
       color: #B8B6B6;
     }
    
     .widgetswrapper .widgetblock .widgetoption p{
-      font-size: 21px;
+      font-size: 18px;
       font-family: Roboto;
       font-weight: 600;
       margin: 15px 0 5px 0;

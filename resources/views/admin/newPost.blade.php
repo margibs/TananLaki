@@ -130,8 +130,9 @@
      <div class="panel">
         <h6> Poll</h6>
              <span class="switchtitle"> <i class="icon-line-bar-graph-2"></i> Enable </span>
-            <div class="onoffswitch">        
-                  <input type="checkbox" id="myonoffswitch5" class="onoffswitch-checkbox" />              
+            <div class="onoffswitch">
+                  {!! Form::checkbox('poll_enable', 1,false, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch5'] ) !!}
+                  <!-- <input type="checkbox" id="myonoffswitch5" class="onoffswitch-checkbox" /> -->             
                   <label class="onoffswitch-label" for="myonoffswitch5"></label>
             </div> 
       </div>
@@ -179,10 +180,12 @@
           <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question"> </textarea>     
           <div class="choices">
             <ul class="pollul">
-              <li> <input type="text" placeholder="Type here.." /> </li>
-              <li> <input type="text" placeholder="Type here.." /> </li>      
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>   
             </ul>
-            <a class="addchoice"> <i class="icon-line-plus"></i> Add Choice </a>
+            <!-- <a class="addchoice"> <i class="icon-line-plus"></i> Add Choice </a> -->
           </div>
                
         </div>
@@ -206,9 +209,9 @@
       Modal.init();
   };
 
-
-  $('.addchoice').click(function(){    
-      $('.pollul').append('<li> <input type="text"  placeholder="Type here.." /> </li>');           
+  $(document).on('click','.addchoice',function(event){ 
+      event.preventDefault();
+      $('.pollul').append('<li> <input type="text" name="poll_choice[]" placeholder="Type here.." /> </li>');         
   });
 </script>
 
@@ -236,21 +239,12 @@
 </script>
 
 <script id="template_for_media_file" type="nexus/template">
-<<<<<<< HEAD
   <div class="outer">
     <a href="#" class="remove_image" get-id="--id--"> <i class="icon-line-cross"> </i> </a>
     <div class="inner">
       <img src="{{ url('uploads') }}/--image_url--" get-this="--image_url--" />
     </div>                          
   </div>
-=======
-<div class="outer">
-<a href="#" class="remove_image" get-id="--id--">X</a>
-<div class="inner">
-<img src="/uploads/--image_url--" get-this="--image_url--" />
-</div>                          
-</div>
->>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
 </script>
 
 <script id="template_for_copyscape" type="nexus/template">
@@ -274,8 +268,8 @@ $(document).ready(function(){
     // check_post_submit
     var content = $('iframe').contents().find("body").html();
     
-    console.log('check_post');
-    console.log(content);
+    // console.log('check_post');
+    // console.log(content);
 
     var content2 = $(content);
     $('blockquote').html('');
@@ -284,7 +278,7 @@ $(document).ready(function(){
 
     content2 = content2.replace(/(<([^>]+)>)/ig,"");
 
-    console.log(content2);
+    // console.log(content2);
 
     $('#check_post').attr('disabled','disabled');
 

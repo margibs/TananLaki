@@ -65,7 +65,6 @@
         <h6> Select a category </h6>
         <ul class="categories">
 
-<<<<<<< HEAD
           @foreach($categories as $category)              
               <?php $check = false; ?>
 
@@ -78,58 +77,6 @@
                   <!-- <input id="option1" type="checkbox" name="field1" value="option"> -->
                     {!! Form::checkbox('category_id[]', $category->id,$check) !!}     
                   <label for="option1"><span><span></span></span> {{ $category->name }}   </label>
-=======
-    <div class="col_one_fourth col_last" style="padding-right: 20px;">
-
-            <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h2 class="panel-title">  Featured Image <a href="#" id="load_media_files" class="featImageButton"> <i class="icon-plus-sign"></i> </a>   </h2>
-                  </div>
-                  <div class="panel-body" style="padding-top: 0;">               
-                    <div id="img_here">
-                      <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="">
-                    </div>         
-                  </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title" style="display: block;margin: 0 0 15px 0;text-align: center;"> Image after video play <a href="#" id="load_media_files2" class="featImageButton"> <i class="icon-plus-sign"></i> </a>  </h2>
-                </div>
-                <div class="panel-body" style="padding-top: 0;">
-                      
-                  <div id="img_here2">
-                    @if($post->yt_image != '')
-                    <img src="{{url('uploads')}}/{{$post->yt_image}}" alt="">
-                    @endif
-                  </div>         
-                </div>
-            </div>
-            
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                   <h2 class="panel-title">  Categories </h2>
-              </div>
-               <div class="panel-body">
-                    <div class="control-group">
-                      <div class="controls">
-                          
-                           @foreach($categories as $category)
-                                
-                                <?php $check = false; ?>
-
-                                @if($category->post_id != null)
-                                  <?php $check = true; ?>
-                                @endif
-
-                                {!! Form::checkbox('category_id[]', $category->id,$check) !!}                               
-                                {{ $category->name }}
-                                <br />  
-                            @endforeach
-
-                      </div>
-                    </div>
->>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
                 </div>
               </li>     
               
@@ -174,8 +121,18 @@
       </div>
 
       <div class="panel">
+        <h6> Poll</h6>
+             <span class="switchtitle"> <i class="icon-line-bar-graph-2"></i> Enable </span>
+            <div class="onoffswitch">
+                  {!! Form::checkbox('poll_enable', 1,false, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch5'] ) !!}
+                  <!-- <input type="checkbox" id="myonoffswitch5" class="onoffswitch-checkbox" /> -->             
+                  <label class="onoffswitch-label" for="myonoffswitch5"></label>
+            </div> 
+      </div>
+
+      <div class="panel">
         <h6> Publish </h6>                    
-        <span class="switchtitle twitter"> <i class="icon-line-marquee"></i> Update </span>
+        <span class="switchtitle twitter"> <i class="icon-line-marquee"></i> Publish </span>
 
 
           <div class="onoffswitch">
@@ -208,6 +165,21 @@
 
         <textarea name="introduction" id="" class="excerptBox" placeholder="Introduction">{{$post->introduction}}</textarea>
         <textarea name="excerpt" id="" class="excerptBox" placeholder="Exceprt">{{$post->excerpt}}</textarea>
+
+                <div class="pollwrapper">
+          <p class="question"> Poll Question </p>
+          <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question"> </textarea>     
+          <div class="choices">
+            <ul class="pollul">
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
+              <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>   
+            </ul>
+            <!-- <a class="addchoice"> <i class="icon-line-plus"></i> Add Choice </a> -->
+          </div>
+               
+        </div>
         
            
       </div>
@@ -261,7 +233,7 @@
 <div class="outer">
 <a href="#" class="remove_image" get-id="--id--">X</a>
 <div class="inner">
-<img src="/uploads/--image_url--" get-this="--image_url--" />
+<img src="{{ url('uploads') }}/--image_url--" get-this="--image_url--" />
 </div>                          
 </div>
 </script>
