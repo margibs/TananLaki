@@ -376,7 +376,6 @@
             }
         });
 
-
         // $('.grid').isotope({
         //   layoutMode : 'masonry'
         // })
@@ -417,10 +416,6 @@
         // $grid.imagesLoaded().progress( function() {
         //   $grid.masonry('layout');
         // });
-        
-
-      
-
       });
 
 

@@ -54,9 +54,10 @@ class CustomQuery {
 				->join('users','users.id','=','posts.author_id')
 		        ->join('post_categories','posts.id','=','post_categories.post_id')
 		        ->join('categories','categories.id','=','post_categories.category_id')
-		        ->select('users.name as user_name','users.id as user_id','posts.slug','posts.introduction','posts.content','posts.feat_image_url','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
+		        ->select('users.name as user_name','users.id as user_id','posts.slug','posts.introduction','posts.content','posts.feat_image_url','posts.thumb_feature_image','posts.title','posts.created_at','posts.excerpt','categories.name','categories.slug as cat_slug')
 		        ->where('posts.status','=',1)
-		        ->where('categories.id','!=',2);
+		        ->where('categories.id','!=',2)
+		        ->where('posts.id','!=',516);
 
 		if($id != null)
 		{

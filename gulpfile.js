@@ -13,12 +13,10 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.styles([
-    	"style.css",    	
-    	"css/dark.css",
-    	"css/animate.css",
-    	"css/magnific-popup.css",
-    	"css/responsive.css",
-    	"myStyle.css"
+    	"css/reset.min.css",
+    	"css/grid12.css",
+    	"myStyle.css",
+    	"css/social-buttons.css"    	
     ], 'public/css', 'public')
     .version("public/css/all.css");
 });

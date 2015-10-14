@@ -51,8 +51,9 @@ class HomeController extends Controller {
             ->join('categories','post_categories.category_id','=','categories.id')
             ->where('categories.slug','!=','lol')
             ->where('posts.status',1)
-            ->select('posts.slug','posts.feat_image_url','posts.title','categories.slug as cat_slug')
-            ->orderBy('posts.id','DESC')
+            ->select('posts.slug','posts.feat_image_url','posts.thumb_feature_image','posts.title','categories.slug as cat_slug')
+            // ->orderBy('posts.id','DESC')
+            ->orderBy(DB::raw('RAND()'))
             ->groupBy('posts.id')
             ->take(5)
             ->get();
@@ -85,6 +86,8 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
+
+        // return substr('fiu_34266_beni', 4);
         // $image_url = 'fiu_47094_49425161_p0.png';
 
         // $rest = substr($image_url, 0,4);
@@ -240,12 +243,11 @@ class HomeController extends Controller {
         {
             App::abort(404);
         }
-
-
+        
         $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
 
-        $user_ip = Location::get()->ip;
-        IpPostsViewed::firstOrCreate(['ip' => $user_ip,'posts_id' => $this->data['post']->id]);
+        // $user_ip = Location::get()->ip;
+        // IpPostsViewed::firstOrCreate(['ip' => $user_ip,'posts_id' => $this->data['post']->id]);
 
         // $this->data['links'] = Links::orderBy(DB::raw('RAND()'))->take(6)->get();
         // $this->data['links'] = DB::table('links_countries')
@@ -257,17 +259,6 @@ class HomeController extends Controller {
         //     ->get();
             
         $this->data['related_posts'] = $this->customQuery->getRelatedPost($this->data['post']->cat_id,$this->data['post']->id,4);
-
-        $this->data['user_avatar'] = '';
-        
-        if(Auth::check())
-        {
-           $this->data['user_avatar'] = Auth::user()->avatar; 
-        }
-
-        // COMMENTS AND CHILD COMMENT
-        $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
-        $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
 
         if($category == 'lol')
         {

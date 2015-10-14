@@ -8,9 +8,6 @@
 @endsection
 
 @section('content')
-
-
-
 <?php
 $url =  "//$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 

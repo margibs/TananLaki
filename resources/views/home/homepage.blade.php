@@ -13,9 +13,7 @@
       height:224px;
       overflow:hidden;
     }
-
     
-
     @media screen and (max-width: 1211px){
       .popularPost h2 a{
         font-size: 23px;
@@ -124,7 +122,11 @@
             <p> <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}"> {{$post->title}} </a> </p>          
           </div>
            <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
-             <img src="{{url('uploads')}}/{{$post->feat_image_url}}" alt="" class="initImage">
+             <img 
+              src="{{url('uploads')}}/@if($post->thumb_feature_image != ''){{$post->thumb_feature_image}}@else{{$post->feat_image_url}}@endif" 
+              alt="" 
+              class="initImage"
+              >
           </a>  
         </div>
       </div>
