@@ -8,7 +8,10 @@
 @endsection
 
 @section('content')
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>

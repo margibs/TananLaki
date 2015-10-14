@@ -86,8 +86,15 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
+<<<<<<< HEAD
         // $image_url = 'fiu_47094_49425161_p0.png';
 
+=======
+
+        // return substr('fiu_34266_beni', 4);
+        // $image_url = 'fiu_47094_49425161_p0.png';
+
+>>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
         // $rest = substr($image_url, 0,4);
 
         // echo $rest == 'fiu_' ? 'watermelon' : 'dili need to resized';
@@ -241,8 +248,12 @@ class HomeController extends Controller {
         {
             App::abort(404);
         }
+<<<<<<< HEAD
 
 
+=======
+        
+>>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
         $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
 
         // $user_ip = Location::get()->ip;
@@ -258,17 +269,6 @@ class HomeController extends Controller {
         //     ->get();
             
         $this->data['related_posts'] = $this->customQuery->getRelatedPost($this->data['post']->cat_id,$this->data['post']->id,4);
-
-        $this->data['user_avatar'] = '';
-        
-        if(Auth::check())
-        {
-           $this->data['user_avatar'] = Auth::user()->avatar; 
-        }
-
-        // COMMENTS AND CHILD COMMENT
-        $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
-        $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
 
         if($category == 'lol')
         {

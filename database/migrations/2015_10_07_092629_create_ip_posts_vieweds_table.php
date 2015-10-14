@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsPollsTable extends Migration
+class CreateIpPostsViewedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,10 @@ class CreatePostsPollsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts_polls', function (Blueprint $table) {
+        Schema::create('ip_posts_vieweds', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('author_id');
+            $table->string('ip');
             $table->bigInteger('posts_id');
-            $table->string('ip_add');
-            $table->string('poll_answer');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreatePostsPollsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('posts_polls');
+        Schema::drop('ip_posts_vieweds');
     }
 }

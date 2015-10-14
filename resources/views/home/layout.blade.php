@@ -224,6 +224,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <a href="#0" class="cd-top"> <i class="fa fa-angle-up"></i> </a>
   
   <script src="{{ asset('js/myJs.js') }}" async></script>
@@ -238,6 +239,101 @@
       // //offset_opacity = 1200,            
       // scroll_top_duration = 700,           
       // $back_to_top = $('.cd-top');
+=======
+    <!-- Footer Scripts
+    ============================================= -->    
+    <script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/social-buttons.js') }}"></script>
+
+    <script>
+       $(document).ready( function() {
+
+        // This function will be executed when the user scrolls the page.
+        $(window).scroll(function(e) {
+            // Get the position of the location where the scroller starts.
+            var scroller_anchor = $(".scroller_anchor").offset().top;
+            
+            // Check if the user has scrolled and the current position is after the scroller start location and if its not already fixed at the top 
+            if ($(this).scrollTop() >= scroller_anchor && $('.scroller').css('position') != 'fixed') 
+            {    // Change the CSS of the scroller to hilight it and fix it at the top of the screen.
+                $('.scroller').css({                              
+                    'position': 'fixed',
+                    'top': '0px',              
+                    'margin-top': '60px'
+                });
+                // Changing the height of the scroller anchor to that of scroller so that there is no change in the overall height of the page.
+                $('.scroller_anchor').css('height', '50px');
+            } 
+            else if ($(this).scrollTop() < scroller_anchor && $('.scroller').css('position') != 'relative') 
+            {    // If the user has scrolled back to the location above the scroller anchor place it back into the content.
+                
+                // Change the height of the scroller anchor to 0 and now we will be adding the scroller back to the content.
+                $('.scroller_anchor').css('height', '0px');
+                
+                // Change the CSS and put it back to its original position.
+                $('.scroller').css({                          
+                    'position': 'relative'
+                });
+            }
+        });
+
+        // $('.grid').isotope({
+        //   layoutMode : 'masonry'
+        // })
+
+        // $('.grid').isotope({
+        //   itemSelector: '.grid-item',
+        //   percentPosition: true,
+        //   masonry: {
+        //     // use outer width of grid-sizer for columnWidth
+        //     columnWidth: '.grid-sizer'
+        //   }
+        // })
+
+        // init Isotope
+        // var $grid = $('.grid').isotope({
+        //   itemSelector: '.grid-item',
+        //   percentPosition: true,
+        //   masonry: {
+        //     // use outer width of grid-sizer for columnWidth
+        //     columnWidth: '.grid-sizer'
+        //   }
+        // });
+        // // layout Isotope after each image loads
+        // $grid.imagesLoaded().progress( function() {
+        //   $grid.isotope('layout');
+        // });
+                
+        // var $grid = $('.grid').masonry({
+
+        //   itemSelector: '.grid-item',
+        //   columnWidth: 270
+           
+        //   // itemSelector: '.grid-item',
+        //   // columnWidth: '.grid-sizer',
+        //   // percentPosition: true
+           
+        // });
+        // $grid.imagesLoaded().progress( function() {
+        //   $grid.masonry('layout');
+        // });
+      });
+
+
+      window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+     
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+>>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
      
       // $(window).scroll(function(){
       //   ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');

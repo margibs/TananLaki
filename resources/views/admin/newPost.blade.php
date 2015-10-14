@@ -236,12 +236,21 @@
 </script>
 
 <script id="template_for_media_file" type="nexus/template">
+<<<<<<< HEAD
   <div class="outer">
     <a href="#" class="remove_image" get-id="--id--"> <i class="icon-line-cross"> </i> </a>
     <div class="inner">
       <img src="{{ url('uploads') }}/--image_url--" get-this="--image_url--" />
     </div>                          
   </div>
+=======
+<div class="outer">
+<a href="#" class="remove_image" get-id="--id--">X</a>
+<div class="inner">
+<img src="/uploads/--image_url--" get-this="--image_url--" />
+</div>                          
+</div>
+>>>>>>> f5f9d074760c104982b19a3be0627335c9b85170
 </script>
 
 <script id="template_for_copyscape" type="nexus/template">
