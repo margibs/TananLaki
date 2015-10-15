@@ -4,7 +4,7 @@
 
 <style>
   .right table tbody tr td{
-    padding-top: 20px;
+    padding-top: 13px;
   }
 </style>
   
@@ -68,7 +68,7 @@
                               <td> <input type="checkbox"> </td>                                
                               <td> <a href="#">{{$category->name}}</a> </td>                                          
                               <td class="subTD">{{$category->slug}}  </td>    
-                              <td> <a href=""> <i class="icon-line-trash"></i> </a> </td>                          
+                              <td class="del"> <a href=""> <i class="icon-line-cross"></i> </a> </td>                          
                             </tr>
                         @endforeach
                       

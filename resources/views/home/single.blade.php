@@ -23,7 +23,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     }
     .left{
       padding-left: 15px;
-    }
+    }   
 </style>
 
 
@@ -72,9 +72,70 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 
             <div style="clear:both;"></div>
+
+
             
               <p><b> {{$post->introduction}}  </b></p>
               {!! $post->content !!}
+
+               @if($posts_poll_answers2 != 0)
+                <div class="pollwrapper">
+                  <div class="inner">
+                    <span class="total"> 1,000+ VOTES SO FAR </span>
+                    <h2>
+                    @if($posts_poll != null)
+                     {{$posts_poll->poll_question}}
+                    @endif
+                    </h2>
+
+                    <!-- <div class="optionbox">
+                      <ul>
+                        @foreach($posts_poll_answers as $posts_poll_answer)
+                        <li> <a href=""> <div class="round">&nbsp;</div> {{$posts_poll_answer->poll_answer}} </a> </li>
+                        @endforeach
+                      </ul>
+                    </div> -->
+
+                    <div class="optionbox2">
+                      <ul>
+                      @foreach($posts_poll_answers as $posts_poll_answer)
+                         @if(count($posts_poll_answers) == 2)
+                            <li> <a href="" class="yes"> {{$posts_poll_answer->poll_answer}} </a> </li>
+                         @else
+                            <li> <a href=""> <div class="round">&nbsp;</div> {{$posts_poll_answer->poll_answer}} </a> </li>
+                         @endif
+                      @endforeach                                          
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+                @endif
+
+
+                <div class="pollwrapper">
+                  <div class="inner">
+                    <span class="total"> 1,000+ VOTES SO FAR </span>
+                    <h2> ISIS Leader Might Have Just Been Blown Up In An Air Strike </h2>
+       
+                    <div class="optionbox3">
+                      <p> Yes - 78% </p>
+                      <div class="votebar">
+                        <div class="votecount"></div>
+                      </div>
+                      <br />
+                      <p> No - 78% </p>
+                      <div class="votebar">
+                        <div class="votecount"></div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <div class="clearfix"></div>
 
               @if($next_post != null)
                <div class="nextPost">
@@ -100,29 +161,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             
             <div class="clearfix"></div>
 
-
-            <!-- <div class="pollwrapper">
-              <div class="inner">
-                <span class="total"> 1,000+ VOTES SO FAR </span>
-                <h2>
-                  Would you vote for the Cannabis is Safer than Alcohol party?
-                </h2>
-
-                <div class="optionbox">
-                  <ul>
-                    <li> <a href=""> <div class="round">&nbsp;</div> Option 1 </a> </li>
-                    <li> <a href=""> <div class="round">&nbsp;</div> Option 1 </a> </li>
-                    <li> <a href=""> <div class="round">&nbsp;</div> Option 1 </a> </li>
-                  </ul>
-                </div>
-
-                <div class="optionbox2">
-                  <a href="" class="yes"> Yes, Of Course </a>
-                  <a href="" class="no"> Naaah </a>
-                </div>
-
-              </div>
-            </div> -->
+           
 
                        <h4 class="relatedText" style="margin-top: 35px;"> From around the web </h4>
                         <div id="contentclick24950"></div>

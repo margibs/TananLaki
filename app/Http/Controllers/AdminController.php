@@ -452,11 +452,11 @@ class AdminController extends Controller
 	}
     //END POSTS
 
-    public function widgets()
+     public function widgets()
     {
         return view('admin.widgets');
     }
-
+    
     //CATEGORIES
 	public function categories()
 	{

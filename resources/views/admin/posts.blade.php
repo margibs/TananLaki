@@ -29,7 +29,10 @@
 
 <table>
   <thead>
-    <td> <input type="checkbox"> </td>
+    <td>
+      <input name="" type="checkbox">     
+      <label for="option1"><span><span></span></span> </label>
+    </td>
     <td>
       <select name="" id="">
           <option value=""> Title </option>
@@ -58,14 +61,23 @@
   <tbody>
   @foreach($posts as $post)
     <tr>
-      <td> <input type="checkbox"> </td>
-      <td> <a href="{{url('admin/posts')}}/{{$post->id}}"> {{$post->title}} </a> </td>
+      <td>         
+          <input name="" type="checkbox">     
+          <label for="option1"><span><span></span></span> </label>        
+      </td>
+      <td class="blogtitle"> 
+        <a href="{{url('admin/posts')}}/{{$post->id}}"> {{$post->title}} </a> 
+        <ul class="blogoptions">
+          <li> <a href="#"> <a href="#"> <i class="icon-eye-open"></i> </a> </a> </li>
+          <li> <a href="#"> <a href="#"> <i class="icon-bolt2"></i> </a> </a> </li>        
+        </ul>         
+      </td>
       <td> @foreach($post->categories as $category)
 				{{$category->name}}
 			@endforeach 
 	  </td>
       <td> {{ date( 'jS F Y', strtotime($post->created_at) ) }} </td>
-      <td> <a href="{{url('admin/posts')}}/{{$post->id}}/delete"><i class="icon-trash2 trash"></i></a> </td>
+      <td class="del" style="text-align: center;"> <a href="{{url('admin/posts')}}/{{$post->id}}/delete" style="font-size: 12px;color: #CAC8C8;"><i class="icon-line-cross"></i></a> </td>
     </tr>   
   @endforeach	
   </tbody>
@@ -85,5 +97,14 @@
   </ul>
 </div>
  -->
+
+ <script>
+  // $(".blogtitle").hover(function(){
+  //   $('.blogoptions').css('visibility','visible');
+  //   }, function(){
+  //       // change to any color that was previously used.
+  //       $('.blogoptions').css('visibility','hidden');
+  //   });
+ </script>
 
 @endsection

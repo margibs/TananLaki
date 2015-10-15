@@ -171,7 +171,7 @@
           <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question">@if($posts_poll != null){{$posts_poll->poll_question}}@endif</textarea>     
           <div class="choices">
             <ul class="pollul">
-              @if(count($posts_answer) == 0)
+              @if(count($posts_answer) == 0 || $posts_answer2 == 0)
                 <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
                 <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
                 <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>

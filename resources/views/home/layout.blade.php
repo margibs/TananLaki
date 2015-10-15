@@ -16,12 +16,12 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <!-- <link rel="stylesheet" href="{{url('')}}/{{ elixir('css/all.css') }}" type="text/css" /> -->
-    <link rel="stylesheet" href="{{ asset('css/reset.min.css') }}">
+    <link rel="stylesheet" href="{{url('')}}/{{ elixir('css/all.css') }}" type="text/css" />
+<!--     <link rel="stylesheet" href="{{ asset('css/reset.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/grid12.css') }}">
     <link rel="stylesheet" href="{{ asset('css/social-buttons.css') }}">
     <link rel="stylesheet" href="{{ asset('myStyle.css') }}">
-
+ -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -240,27 +240,27 @@
   <script src="{{ asset('js/demo1.js') }}" async></script>
 
   <script>
-      // // Back to top           
-      // var offset = 300,            
-      // //offset_opacity = 1200,            
-      // scroll_top_duration = 700,           
-      // $back_to_top = $('.cd-top');
+      // Back to top           
+      var offset = 300,            
+      //offset_opacity = 1200,            
+      scroll_top_duration = 700,           
+      $back_to_top = $('.cd-top');
 
-      // $(window).scroll(function(){
-      //   ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-      //   if( $(this).scrollTop() > offset_opacity ) { 
-      //     $back_to_top.addClass('cd-fade-out');
-      //   }
-      // });
+      $(window).scroll(function(){
+        ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+        // if( $(this).scrollTop() > offset_opacity ) { 
+        //   $back_to_top.addClass('cd-fade-out');
+        // }
+      });
 
-      // //smooth scroll to top
-      // $back_to_top.on('click', function(event){
-      //   event.preventDefault();
-      //   $('body,html').animate({
-      //     scrollTop: 0 ,
-      //     }, scroll_top_duration
-      //   );
-      // });
+      //smooth scroll to top
+      $back_to_top.on('click', function(event){
+        event.preventDefault();
+        $('body,html').animate({
+          scrollTop: 0 ,
+          }, scroll_top_duration
+        );
+      });
   </script>
 
 

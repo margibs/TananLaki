@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('nexuspress/css/modal.css') }}">    
     <link rel="stylesheet" href="{{ asset('nexuspress/nexuspress.css') }}">
     
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
 
     <!-- <link rel="stylesheet" href="{{ asset('nexuspress/css/typeahead.tagging.css') }}" type="text/css" /> -->  
