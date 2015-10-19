@@ -35,6 +35,10 @@ Route::group(['middleware' => 'UserCheck'], function()
 	Route::get('admin/new_post','AdminController@newPost');
 	Route::post('admin/new_post/{id?}','AdminController@addPost');
 
+	Route::get('admin/widgets','AdminController@widgets');	
+
+	Route::get('admin/lol_post','AdminController@lolPost');	
+
 	Route::get('admin/categories','AdminController@categories');
 	Route::post('admin/categories','AdminController@addCategory');
 
@@ -67,8 +71,8 @@ Route::post('login/auto_login','HomeController@autoLogin');
 
 
 // Registration routes...
-Route::get('register', 'Auth\AuthController@getRegister');
-Route::post('register', 'Auth\AuthController@postRegister');
+//Route::get('register', 'Auth\AuthController@getRegister');
+//Route::post('register', 'Auth\AuthController@postRegister');
 
 //HomeController
 Route::post('home/ajax_get_page','HomeController@ajaxGetPage');

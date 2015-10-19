@@ -22,7 +22,7 @@
       <div class="modal-body">
         <section class="modal-content">      
             
-            <div id="fileuploader">Upload</div>            
+            <div id="fileuploader"></div>            
 
             <div id="image_list"></div>
 
@@ -41,14 +41,13 @@
     </div>
 
     <ul>
-      <li> <a href="{{ url('/admin/new_post') }}" class="active"> <i class="icon-line-square-plus"></i> Blog Post </a> </li>
-      <li> <a href="{{ url('/admin/lol_post') }}"> <i class="icon-line2-emoticon-smile"></i> LOL Post </a> </li>                    
+      <li> <a href="{{ url('/admin/new_post') }}"> <i class="icon-line-square-plus"></i> Blog Post </a> </li>
+      <li> <a href="{{ url('/admin/lol_post') }}" class="active"> <i class="icon-line2-emoticon-smile"></i> LOL Post </a> </li>                    
       <li> <a href="{{ url('/admin/posts') }}"> <i class="icon-paperclip"></i> All </a> </li>
       <li> <a href="{{ url('/admin/drafts') }}"> <i class="icon-line-marquee"></i> Draft </a> </li>
       <li> <a href="{{ url('/admin/trash') }}"> <i class="icon-trash"></i> Trash </a> </li>                    
       <li> <a class="searchlink"> <i class="icon-line-search"></i> Search </a> </li>
     </ul>
-
     
   </div>
 
@@ -74,19 +73,13 @@
         <h6> Select a category </h6>
         <ul class="categories">
 
-         @foreach($categories as $category)
-         <li>
+          <li>
             <div>
               <!-- <input id="option1" type="checkbox" name="field1" value="option"> -->
-                {!! Form::checkbox('category_id[]', $category->id) !!}     
-              <label for="option1"><span><span></span></span> {{ $category->name }}   </label>
+              <input name="category_id[]" type="checkbox" value="7" checked>     
+              <label for="option1"><span><span></span></span> LOL </label>
             </div>
-          </li> 
-
-                                  
-                  
-        @endforeach
-
+          </li>
                      
         </ul>
       </div>                    
@@ -99,45 +92,8 @@
           @endif
         </div>   
       </div>
-<!-- 
-      <div class="panel">
-        <h6> Image after video playback </h6>    
-        <a id="load_media_files2" title="Upload Image" class="featImageButton featimglink"> <i class="icon-line2-plus"></i> </a>
-        <div id="img_here2">
-          @if(old('widget_image_url'))
-          <img src="{{url('uploads')}}/{{old('widget_image_url')}}" alt="">
-          @endif
-        </div> 
-      </div> -->
 
-      
-      <div class="panel">
-        <h6 style="margin-bottom: 15px;"> Auto Post </h6>
-          <span class="switchtitle fb"> <i class="icon-facebook-sign" style="margin-right: 9px;"></i> Facebook </span>
-          <div class="onoffswitch">
-               {!! Form::checkbox('shared_fb', 1,true, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch'] ) !!}            
-              <label class="onoffswitch-label" for="myonoffswitch"></label>
-          </div>
 
-          <span class="switchtitle twitter"> <i class="icon-twitter"></i> Twitter </span>
-          <div class="onoffswitch">
-              {!! Form::checkbox('shared_twitter', 1,true, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch2'] ) !!}     
-              <label class="onoffswitch-label" for="myonoffswitch2"></label>
-          </div>
-         
-      </div>
-
-     <div class="panel">
-        <h6> Poll</h6>
-             <span class="switchtitle"> <i class="icon-line-bar-graph-2"></i> Enable </span>
-            <div class="onoffswitch">
-                  {!! Form::checkbox('poll_enable', 1,false, ['class'=>'onoffswitch-checkbox', 'ID'=>'myonoffswitch5'] ) !!}
-                  <!-- <input type="checkbox" id="myonoffswitch5" class="onoffswitch-checkbox" /> -->             
-                  <label class="onoffswitch-label" for="myonoffswitch5"></label>
-            </div> 
-      </div>
-
-      
 
       <div class="panel">
         <h6> Publish </h6>                    
@@ -150,11 +106,7 @@
           <button id="check_post" class="button button-3d"  style="display: none;">Check Post</button>
           <input id="check_post_submit" type="submit" value="Submit" class="submit">       
         
-      </div>  
-
-    
-
-
+      </div>                    
   </div>
 
   <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
@@ -162,35 +114,13 @@
       <div class="wysiwyg">                      
         <input type="text" value="{{ old('title') }}"name="title" class="titlebox newPost newPostBox" placeholder="Enter Title Here.."  style="margin-bottom: 20px;" />                      
         
+        <textarea name="introduction" id="" class="excerptBox" placeholder="Description" style=" margin-top: -5px;margin-bottom: 10px;">{{ old('introduction') }}</textarea>         
+        <textarea name="excerpt" id="" class="excerptBox" placeholder="Exceprt" style="visibility: hidden;height: 0px;margin: 0px;padding: 0px;" value="value">{{ old('excerpt') }}</textarea>
+
         <div id="editorcontainer" style="height:500px;border:1px solid #efefef;">
           <textarea name="content" id="editor1" rows="10" cols="80">{{ old('content') }}</textarea>
-        </div>
-
-        <textarea name="introduction" id="" class="excerptBox" placeholder="Introduction">{{ old('introduction') }}</textarea>
-        <textarea name="excerpt" id="" class="excerptBox" placeholder="Excerpt">{{ old('excerpt') }}</textarea>
-        
- <!--        <div id="loadmoreajaxloader"> <div class="spinner"></div>  </div>
-        <div id="copyscape" style="margin-bottom:20px;"></div>
-        <div class="copyscape">
-         <p> {!! $copyscape_balance !!} </p>
-        </div>   -->
-
-        <div class="pollwrapper">
-          <p class="question"> Poll Question </p>
-          <textarea name="pollquestion" class="pollquestion" placeholder="Poll Question"></textarea>     
-          <div class="choices">
-            <ul class="pollul">
-                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-                <li> <input type="text" name="poll_choice[]" placeholder="Poll Answer" /> </li>
-            </ul>
-            <!-- <a class="addchoice"> <i class="icon-line-plus"></i> Add Choice </a> -->
-          </div>
-               
-        </div>
-        
-       
+        </div>            
+                
       </div>
 
       </form>
@@ -208,11 +138,6 @@
   window.onload = function(e){         
       Modal.init();
   };
-
-  $(document).on('click','.addchoice',function(event){ 
-      event.preventDefault();
-      $('.pollul').append('<li> <input type="text" name="poll_choice[]" placeholder="Type here.." /> </li>');         
-  });
 </script>
 
 <script>
@@ -240,7 +165,7 @@
 
 <script id="template_for_media_file" type="nexus/template">
   <div class="outer">
-    <a href="#" class="remove_image" get-id="--id--"> <i class="icon-line-cross"> </i> </a>
+    <a href="#" class="remove_image" get-id="--id--">X</a>
     <div class="inner">
       <img src="{{ url('uploads') }}/--image_url--" get-this="--image_url--" />
     </div>                          
@@ -268,8 +193,8 @@ $(document).ready(function(){
     // check_post_submit
     var content = $('iframe').contents().find("body").html();
     
-    // console.log('check_post');
-    // console.log(content);
+    console.log('check_post');
+    console.log(content);
 
     var content2 = $(content);
     $('blockquote').html('');
@@ -278,7 +203,7 @@ $(document).ready(function(){
 
     content2 = content2.replace(/(<([^>]+)>)/ig,"");
 
-    // console.log(content2);
+    console.log(content2);
 
     $('#check_post').attr('disabled','disabled');
 

@@ -30,6 +30,9 @@ use App\Model\Posts;
 use App\Model\SiteSettings;
 use App\Model\Comments;
 use App\Model\LinksCountry;
+use App\Model\PostsPoll;
+use App\Model\PostsPollAnswer;
+use App\Model\PostsPollResult;
 
 
 use App\CustomQuery;
@@ -122,11 +125,49 @@ class AdminController extends Controller
         return view('admin.newPost',$data);
     }
 
+    public function lolPost()
+    {
+        $_apiurl = 'http://www.copyscape.com/api/?';
+        $apiurl = $_apiurl.'u=nbbulk2014&k=0wn4xoctsdnlcnnn&o=balance&f=html';
+        $curl=curl_init();
+        curl_setopt ($curl, CURLOPT_URL, $apiurl);
+        curl_setopt ($curl, CURLOPT_HEADER, 1);
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($curl, CURLOPT_TIMEOUT,60);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $response=curl_exec($curl);
+        curl_close($curl);
+        $ar = explode("\r\n\r\n", $response, 2);
+
+        $data['copyscape_balance'] = $ar[1];
+
+        $data['categories'] = Categories::all();
+        return view('admin.lolPost',$data);
+    }
+
     public function editPost($id)
     {
         $data['post'] = Posts::find($id);
         $data['shared_fb_status'] = false;
         $data['shared_twitter_status'] = false;
+        $data['poll_enable'] = false;
+        $data['posts_answer2'] = 0;
+        $data['posts_answer'] = 0;
+
+        $data['posts_poll'] = PostsPoll::where('posts_id',$id)->first();
+
+        if($data['posts_poll'] != null && $data['posts_poll']->poll_enable == 1)
+        {
+           $data['poll_enable'] = true;
+        }
+
+        if($data['posts_poll'] != null)
+        {
+           $data['posts_answer2'] = 1;
+           $data['posts_answer'] = PostsPollAnswer::where('posts_poll_id',$data['posts_poll']->id)->get();
+        }
 
         if($data['post']->shared_fb == 1)
         {
@@ -155,6 +196,7 @@ class AdminController extends Controller
 	public function addPost(Request $request,$id = 0)
 	{
         // dd($request->all());
+
         $redirect = 'admin/new_post';  
 
         //check if new post or edit post
@@ -164,14 +206,30 @@ class AdminController extends Controller
             $redirect = 'admin/posts/'.$id;
         }
 
-        //Validate input
-		$validator = Validator::make($request->all(), [
+        $validate_rules = [];
+        if($request->input('poll_enable') == 0)
+        {
+            $validate_rules = [
             'title' => 'required',
             'content' => 'required',
             'feat_image_url' => 'required',
             'introduction' => 'required',
             'category_id' => 'required'
-        ]);
+            ];
+        }
+        else
+        {
+            $validate_rules = [
+                'title' => 'required',
+                'content' => 'required',
+                'feat_image_url' => 'required',
+                'introduction' => 'required',
+                'category_id' => 'required',
+                'pollquestion' => 'required'
+            ];
+        }
+        //Validate input
+		$validator = Validator::make($request->all(), $validate_rules );
 
     	if ($validator->fails()) 
         {
@@ -285,6 +343,50 @@ class AdminController extends Controller
 
 		$post->save();
 
+        if( $request->input('poll_enable') != 0 )
+        {
+            $posts_poll = 
+            PostsPoll::firstOrCreate(
+                [
+                    'posts_id' => $post->id,
+                ]
+            );
+
+            $posts_poll->poll_question = $request->input('pollquestion');
+            $posts_poll->poll_enable = $request->input('poll_enable');
+            $posts_poll->poll_question =  $request->input('pollquestion');
+            $posts_poll->save();
+
+            PostsPollAnswer::where('posts_poll_id',$posts_poll->id)->delete();
+
+            if( count( $request->input('poll_choice') ) != 0 )
+            {
+                $data2 = array();
+
+                for ($i=0; $i < count($request->input('poll_choice')) ; $i++) 
+                {
+                    if( $request->input('poll_choice')[$i] != '')
+                    {
+                        $data2[] = array('posts_poll_id' => $posts_poll->id,'poll_answer' => $request->input('poll_choice')[$i],'created_at' => date('Y-m-d H:i:s'), 'updated_at'=> date('Y-m-d H:i:s'));
+                    }
+
+                }
+
+                PostsPollAnswer::insert($data2);
+            }
+
+        }
+        else
+        {
+            $posts_poll2 = PostsPoll::where('posts_id',$post->id)->first();
+
+            if($posts_poll2 != null)
+            {
+                $posts_poll2->poll_enable = $request->input('poll_enable');
+                $posts_poll2->save();
+            }
+        }
+
         PostCategories::where('post_id','=',$post->id)->delete();
 
         if( count( $request->input('category_id') ) != 0 )
@@ -350,6 +452,11 @@ class AdminController extends Controller
 	}
     //END POSTS
 
+     public function widgets()
+    {
+        return view('admin.widgets');
+    }
+    
     //CATEGORIES
 	public function categories()
 	{

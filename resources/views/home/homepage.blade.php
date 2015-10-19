@@ -3,159 +3,61 @@
 
 @section('content')
 
-<style>
-    .allpost{
-      padding:15px 15px 0 0;
-      overflow:hidden;
-    }    
-    .initImage{
-      width:395px;
-      height:224px;
-      overflow:hidden;
-    }
-    
-    @media screen and (max-width: 1211px){
-      .popularPost h2 a{
-        font-size: 23px;
-        margin: 5px;
-        font-weight: 500;
-      }
-      .popularPost .catergory a{
-        margin-left: 0;
-      }
-    }
-     @media screen and (max-width: 1200px){
-          .initImage{
-            width:317px;
-            height:181px;
-          }
-    }
-    @media screen and (max-width: 991px){
-          .initImage{
-            width:334px;
-            height:189px;
-          }
-    }
-    @media screen and (max-width: 768px){
-      .popularPost h2 a {
-          font-size: 38px!important;
-          line-height: 43px;
-          width: 100%;
-      }
-      .homeViewWrapper{
-        padding: 0!important;
-      }
-      .padRight0 {
-          padding-right: auto;
-      }
-      #posts .details p a{
-        font-size: 27px;
-      }
-    }
-    @media screen and (max-width: 540px){
-      .popularPost h2 a {
-          font-size: 30px!important;
-          line-height: 40px;        
-      }
-      .popularPost h2 {  
-        margin-bottom: 15px;
-    }
-    @media screen and (max-width: 414px){
-        .popularPost h2 a {
-            font-size: 27px!important;
-            line-height: 35px;
-        }
-    }
-    @media screen and (max-width: 360px){
-        .popularPost h2 a {
-            font-size: 22px!important;
-            line-height: 30px;
-        }
-        #posts .details p a {
-            font-size: 22px;
-        }
-    }
 
-  }
-</style>
-<div class="homeViewWrapper">
+ <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 
+      <!-- LEFT START -->
+      <div class="left single">
 
-<meta name="csrf-token" content="{{ csrf_token() }}" />
+<div class="trending">
+  <a href="http://alllad.com/banter/cheeky-morrisons-epically-fail-with-their-fanny-like-pizza-design">
+    <img class="trendimgone" src="http://alllad.com/uploads/97083_pizza.jpg" alt=""></a>
+    <img class="trendimgtwo" src="http://alllad.com/uploads/24883_pizza2.jpg" alt=""></a>
+  <div class="details">
+    <span> Today's trending </span>
+    <h2><a href="http://alllad.com/banter/cheeky-morrisons-epically-fail-with-their-fanny-like-pizza-design"> Cheeky Morrisons Epically Fail With Their Fanny-Like Pizza Design </a> </h2>
+  </div>
+</div>
 
-    <!-- -------------------- NEW POPULAR POST ------------------ -->
-  <div class="popularPost">
-      <a href="http://alllad.com/news/millionaire-crashes-supercar-into-crowd-injuring-20-people">
-      <img class="popularFeatBig" src="/uploads/62988_suckydriver.jpg" alt="">
-      <img class="popularFeatSmall" src="/uploads/26420_suckydriversm.jpg" alt="">
-      </a>
-      <div class="details" style="border:none;">
-        <span class="catergory"><a href="#"> Today's Trending </a></span>
-        <h2 class="title"> <a href="http://alllad.com/news/millionaire-crashes-supercar-into-crowd-injuring-20-people"> Millionaire Crashes Supercar Into Crowd, Injuring 20 People
-
- </a> </h2>
-      </div>
-    </div>
-  
-<!--     <div class="latestPost">
-      <p> Latest Posts </p>
-    </div>
- -->
-	<!-- <div class="masonry"> -->
-
-<!--   
-	<h2 class="latestPostText"> Latest <span style="color:#ff0000;">Posts</span> </h2>
-  
- -->
-   <!-- Posts
-  ============================================= -->
-  <div id="posts" class="small-thumbs">
-<div class="allpost">
-<div class="row">
+<div class="posts">
+    <div class="row no-gutters">
 
  @foreach($posts as $post)
-    
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div style="position:relative;">
-          <div class="details">
-            <span class="categorySpan">  <a href="{{url('')}}/{{$post->cat_slug}}" style="color:#fff;">  {{$post->name}} </a></span> &nbsp; <span class="dateSpan"> </span>      
-            <p> <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}"> {{$post->title}} </a> </p>          
-          </div>
-           <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">
-             <img 
-              src="{{url('uploads')}}/@if($post->thumb_feature_image != ''){{$post->thumb_feature_image}}@else{{$post->feat_image_url}}@endif" 
-              alt="" 
-              class="initImage"
-              >
-          </a>  
-        </div>
-      </div>
-
-    @endforeach 
-    <div id="postswrapper"></div>
-</div>
-</div>
 
   
-  <div id="loadmoreajaxloader"> <div class="spinner"></div> </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="postcontent">
+          <div class="overlay">
+            <span><a href="{{url('')}}/{{$post->cat_slug}}">  {{$post->name}} </a></span>
+            <h2><a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">  {{$post->title}}  </a> </h2>
+          </div>
+          <a href="{{url('')}}/{{$post->cat_slug}}/{{$post->slug}}">  
+          <img src="{{url('uploads')}}/@if($post->thumb_feature_image != ''){{$post->thumb_feature_image}}@else{{$post->feat_image_url}}@endif" alt="" class="initImage"> </a>
+        </div>
+      </div>            
+  
+  @endforeach 
+
+   <div id="postswrapper"></div>
 
   </div>
-  <!-- #posts end -->
-
 </div>
 
+<div id="loadmoreajaxloader"> <div class="spinner"></div> </div>
+
+
 <script id="template_for_list" type="nexus/template">
-  <div class="col-md-6">
-      <div style="position:relative;">
-        <div class="details">
-          <span class="categorySpan">  <a href="{{ url('') }}/--cat_slug--" style="color:#fff;">  --name-- </a></span> &nbsp; <span class="dateSpan"> </span>      
-          <p> <a href="{{ url('') }}/--cat_slug--/--slug--"> --title-- </a> </p>          
-        </div>
-         <a href="{{ url('') }}/--cat_slug--/--slug--">
-           <img src="{{url('uploads')}}/--feat_image_url--" alt="" class="initImage">
-        </a>  
+
+ <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    <div class="postcontent">
+      <div class="overlay">
+        <span><a href="{{ url('') }}/--cat_slug--">  --name-- </a></span>
+        <h2><a href="{{ url('') }}/--cat_slug--/--slug--">  --title--  </a> </h2>
       </div>
-  </div>
+      <img src="{{url('uploads')}}/--feat_image_url--" alt="" class="initImage">
+    </div>
+  </div>  
+
 </script>
 
 <script>
@@ -194,7 +96,7 @@
                   pages =  
                     template_for_list.replace(/--cat_slug--/ig, obj.cat_slug)
                     .replace(/--slug--/ig, obj.slug)
-                    .replace(/--feat_image_url--/ig, obj.feat_image_url)
+                    .replace(/--feat_image_url--/ig, obj.thumb_feature_image)
                     .replace(/--title--/ig, obj.title)
                     .replace(/--name--/ig, obj.name)
                     .replace(/--created_at--/ig, obj.created_at)
@@ -204,7 +106,7 @@
                   // $(".grid").isotope('reloadItems');
                   // $(".grid").isotope({sortBy: null, sortAscending: true});  
         //             $(".grid").isotope('insert', pages);
-    				// $(".grid").isotope();
+            // $(".grid").isotope();
 
                 });
                   $('div#loadmoreajaxloader').hide();
@@ -228,5 +130,10 @@
 </script>
 
 
+
+
+  </div>
+
+</div> 
 
 @endsection

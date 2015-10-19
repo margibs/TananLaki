@@ -26,6 +26,9 @@ use App\Model\MediaFiles;
 use App\Model\Posts;
 use App\Model\SiteSettings;
 use App\Model\IpPostsViewed;
+use App\Model\PostsPoll;
+use App\Model\PostsPollAnswer;
+use App\Model\PostsPollResult;
 
 use App\CustomQuery;
 use App\CommonFunctions;
@@ -86,9 +89,6 @@ class HomeController extends Controller {
 
     public function copyscape()
     {
-
-        // return Posts::where('id',11)->firstOrFail();
-        // return substr('fiu_34266_beni', 4);
         // $image_url = 'fiu_47094_49425161_p0.png';
 
         // $rest = substr($image_url, 0,4);
@@ -244,7 +244,16 @@ class HomeController extends Controller {
         {
             App::abort(404);
         }
-        
+
+        $this->data['posts_poll'] = PostsPoll::where('posts_id',$this->data['post']->id)->first();
+        $this->data['posts_poll_answers2'] = 0;
+
+        if($this->data['posts_poll'] != null && $this->data['posts_poll']->poll_enable == 1)
+        {
+            $this->data['posts_poll_answers2'] = 1;
+            $this->data['posts_poll_answers'] = PostsPollAnswer::where('posts_poll_id',$this->data['posts_poll']->id)->get();
+        }
+
         $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
 
         // $user_ip = Location::get()->ip;
@@ -260,6 +269,17 @@ class HomeController extends Controller {
         //     ->get();
             
         $this->data['related_posts'] = $this->customQuery->getRelatedPost($this->data['post']->cat_id,$this->data['post']->id,4);
+
+        $this->data['user_avatar'] = '';
+        
+        if(Auth::check())
+        {
+           $this->data['user_avatar'] = Auth::user()->avatar; 
+        }
+
+        // COMMENTS AND CHILD COMMENT
+        $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
+        $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
 
         if($category == 'lol')
         {
