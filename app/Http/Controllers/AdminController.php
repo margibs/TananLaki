@@ -452,11 +452,6 @@ class AdminController extends Controller
 	}
     //END POSTS
 
-     public function widgets()
-    {
-        return view('admin.widgets');
-    }
-    
     //CATEGORIES
 	public function categories()
 	{
@@ -490,6 +485,11 @@ class AdminController extends Controller
         return  redirect('admin/categories');
 	}
     //END CATEGORIES
+
+    public function widgets()
+    {
+        return view('admin.widgets');
+    }
 
     //LINKS
     public function links()

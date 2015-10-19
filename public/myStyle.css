@@ -750,10 +750,12 @@
       }      
       .lolstream .desc{
         font-family: Roboto;
-        font-size: 15px;
+        font-size: 17px;
         line-height: 20px;
         margin-bottom: 35px;
         margin-top: 15px;
+        font-weight: 500;
+        color: #000;
       }
       .lolstreamtitle a{
         color: #000;
@@ -1239,10 +1241,16 @@
         }
         .trending .details h2, .posts .postcontent .overlay h2{
           line-height: 29px;
-          font-size: 22px;
+          font-size: 26px;
+          margin-bottom: 10px;
         }
         .trending .details {
             padding: 25px 15px 15px 15px;
+        }
+        .posts .postcontent span a{
+          margin-bottom: 15px;
+          padding: 6px 8px;
+          font-size: 17px;
         }
         .arrow_box{
           font-size: 18px;
@@ -1289,8 +1297,8 @@
           width: 100%;
         }
         .trending .details h2, .posts .postcontent .overlay h2 {
-          line-height: 25px;
-          font-size: 20px;
+          line-height: 28px;
+          font-size: 23px;
         }
 
       }
