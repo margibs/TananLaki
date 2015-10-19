@@ -111,8 +111,8 @@ class HomeController extends Controller {
         //     echo $comment->content.'<br />';
         // }
 
-        // $location = Location::get();
-        // dd($location);
+        $location = Location::get();
+        dd($location);
         // echo 'IP: '.$location->ip.'<br />';
         // echo 'ISP: '.$location->isp.'<br />';
         // echo 'Country Name: '.$location->countryName.'<br />';
@@ -247,11 +247,37 @@ class HomeController extends Controller {
 
         $this->data['posts_poll'] = PostsPoll::where('posts_id',$this->data['post']->id)->first();
         $this->data['posts_poll_answers2'] = 0;
+        $this->data['posts_poll_has_answer'] = 0;
 
         if($this->data['posts_poll'] != null && $this->data['posts_poll']->poll_enable == 1)
         {
+            $user_ip = Location::get()->ip;
+
             $this->data['posts_poll_answers2'] = 1;
             $this->data['posts_poll_answers'] = PostsPollAnswer::where('posts_poll_id',$this->data['posts_poll']->id)->get();
+            $check_user_if_answered = PostsPollResult::where('ip_address',$user_ip)->where('posts_poll_id',$this->data['posts_poll']->id)->first();
+
+            if($check_user_if_answered != null)
+            {
+                $this->data['posts_poll_results'] = 
+                DB::table('posts_poll_results')
+                ->rightJoin('posts_poll_answers','posts_poll_answers.id','=','posts_poll_results.posts_poll_answer_id')
+                ->where('posts_poll_answers.posts_poll_id',$this->data['posts_poll']->id)
+                ->select(DB::raw('posts_poll_answers.poll_answer,COUNT(posts_poll_results.posts_poll_answer_id) as poll_answer_results'))
+                ->groupBy('posts_poll_results.posts_poll_answer_id')
+                ->orderBy('posts_poll_answers.id')
+                ->get();
+
+                $this->data['posts_poll_results_sum'] = 0;
+
+                foreach($this->data['posts_poll_results'] as $posts_poll_result)
+                {
+                    $this->data['posts_poll_results_sum'] += $posts_poll_result->poll_answer_results;
+                }
+
+                $this->data['posts_poll_has_answer'] = 1;
+            }
+
         }
 
         $this->data['next_post'] = $this->customQuery->getPostNext($this->data['post']->id,$category);
@@ -278,8 +304,8 @@ class HomeController extends Controller {
         }
 
         // COMMENTS AND CHILD COMMENT
-        $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
-        $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
+        // $this->data['comments'] = $this->customQuery->getComments($this->data['post']->id);
+        // $this->data['comment_count'] = $this->customQuery->getCommentsCount($this->data['post']->id);
 
         if($category == 'lol')
         {
@@ -300,8 +326,7 @@ class HomeController extends Controller {
     //COMMENT AJAX
     public function ajax_add_comment(Request $request)
     {
-        if(Auth::check())
-        {
+
             $comment = new Comments;
             $comment->post_id = $request->input('post_id');
             $comment->author_id = Auth::user()->id;
@@ -317,8 +342,32 @@ class HomeController extends Controller {
                 ->get();
 
             return json_encode($new_parent);    
-        }
 
+    }
+
+    public function ajaxSurveyAnswer(Request $request)
+    {
+        if(Auth::check())
+        {
+            $user_ip = Location::get()->ip;
+
+            $postsPollResult = new PostsPollResult;
+            $postsPollResult->posts_poll_id = $request->input('poll_id');
+            $postsPollResult->posts_poll_answer_id = $request->input('poll_answer_id');
+            $postsPollResult->ip_address = $user_ip;
+            $postsPollResult->save();
+
+            $posts_poll_results = 
+            DB::table('posts_poll_results')
+            ->rightJoin('posts_poll_answers','posts_poll_answers.id','=','posts_poll_results.posts_poll_answer_id')
+            ->where('posts_poll_answers.posts_poll_id',$request->input('poll_id'))
+            ->select(DB::raw('posts_poll_answers.poll_answer,COUNT(posts_poll_results.posts_poll_answer_id) as poll_answer_results'))
+            ->groupBy('posts_poll_results.posts_poll_answer_id')
+            ->orderBy('posts_poll_answers.id')
+            ->get();
+
+            return json_encode($posts_poll_results);
+        }
     }
 
     public function ajaxGetPage(Request $request)
