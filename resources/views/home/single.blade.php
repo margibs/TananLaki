@@ -26,8 +26,6 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     }   
 </style>
 
-
-
  <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 
       <!-- LEFT START -->
@@ -42,7 +40,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             <h1> {{$post->title}} </h1>
             <ul class="meta">
                 <li> <a href="{{url('')}}/{{$post->cat_slug}}" class="red"> {{$post->cat_name}} </a></li>
-                <li><i class="icon-line2-clock"></i> 6th October 2015</li>     
+                <li><i class="icon-line2-clock"></i> {{ date( 'jS F Y', strtotime($post->created_at) ) }}</li>     
                 <li><i class="fa fa-comment-o"></i> <span class="fb-comments-count" data-href="<?php echo $actual_link ?>">0</span>   
                  </li>                                                       
             </ul>
@@ -81,39 +79,43 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                @if($posts_poll_answers2 != 0)
                 <div class="pollwrapper">
                   <div class="inner">
-                    <span class="total"> 1,000+ VOTES SO FAR </span>
+                    <span class="total"> </span>
                     <h2>
                     @if($posts_poll != null)
                      {{$posts_poll->poll_question}}
                     @endif
                     </h2>
-
-                    <!-- <div class="optionbox">
-                      <ul>
+                    <div id="option_boxes_answer">
+                    @if($posts_poll_has_answer == 0)
+                      <div class="optionbox2">
+                        <ul>
                         @foreach($posts_poll_answers as $posts_poll_answer)
-                        <li> <a href=""> <div class="round">&nbsp;</div> {{$posts_poll_answer->poll_answer}} </a> </li>
-                        @endforeach
-                      </ul>
-                    </div> -->
-
-                    <div class="optionbox2">
-                      <ul>
-                      @foreach($posts_poll_answers as $posts_poll_answer)
-                         @if(count($posts_poll_answers) == 2)
-                            <li> <a href="" class="yes"> {{$posts_poll_answer->poll_answer}} </a> </li>
-                         @else
-                            <li> <a href=""> <div class="round">&nbsp;</div> {{$posts_poll_answer->poll_answer}} </a> </li>
-                         @endif
-                      @endforeach                                          
-                      </ul>
+                           @if(count($posts_poll_answers) == 2)
+                              <li> <a href="#" class="yes survey_answer" data-poll-id = "{{$posts_poll_answer->posts_poll_id}}" data-poll-answer-id="{{$posts_poll_answer->id}}"> {{$posts_poll_answer->poll_answer}} </a> </li>
+                           @else
+                              <li> <a href=""> <div class="round">&nbsp;</div> {{$posts_poll_answer->poll_answer}} </a> </li>
+                           @endif
+                        @endforeach                                          
+                        </ul>
+                      </div>
+                      @else
+                        <div class="optionbox3">
+                          @foreach($posts_poll_results as $posts_poll_result)
+                            <p> {{$posts_poll_result->poll_answer}} - {{ round ($posts_poll_result->poll_answer_results / $posts_poll_results_sum * 100) }}% </p>
+                            <div class="votebar">
+                              <div class="votecount" style="width:{{ round ($posts_poll_result->poll_answer_results / $posts_poll_results_sum * 100) }}%;"></div>
+                            </div>
+                            <br />
+                          @endforeach
+                        </div>
+                      @endif
                     </div>
-
                   </div>
                 </div>
                 @endif
 
 
-                <div class="pollwrapper">
+                <!-- <div class="pollwrapper">
                   <div class="inner">
                     <span class="total"> 1,000+ VOTES SO FAR </span>
                     <h2> ISIS Leader Might Have Just Been Blown Up In An Air Strike </h2>
@@ -132,7 +134,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     </div>
 
                   </div>
-                </div>
+                </div> -->
 
 
                 <div class="clearfix"></div>
@@ -237,6 +239,41 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
           var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content'),
               post_id = '{{$post->id}}',
               parent = 0;
+
+              $('.survey_answer').on('click',function(event){
+                event.preventDefault();
+                var $this = $(this),
+                poll_id = $this.attr('data-poll-id');
+                poll_answer_id = $this.attr('data-poll-answer-id');
+
+                  $.ajax({ 
+                      type: 'post',
+                      url: "{{url('survey/ajax_answer')}}",
+                      data: {_token: CSRF_TOKEN,'poll_id' : poll_id,'poll_answer_id' : poll_answer_id }, 
+                      success: function(response)
+                      {
+                          var parsed = JSON.parse(response);
+                          var sum = 0;
+                          var option_boxes_answer = '<div class="optionbox3">';
+                        
+                            $.each( parsed, function( index, obj){
+                              sum += parseInt(obj.poll_answer_results);
+                            });
+
+                            $.each( parsed, function( index, obj){
+                              var sum_2_men = Math.round(parseInt(obj.poll_answer_results) / parseInt(sum) *  100);
+                              console.log(sum_2_men);
+                              console.log(parseInt(obj.poll_answer_results));
+                              console.log(parseInt(sum));
+                              console.log(parseInt(obj.poll_answer_results) / parseInt(sum));
+                              option_boxes_answer += '<p>' + obj.poll_answer + ' - ' + sum_2_men + '%</p><div class="votebar"><div class="votecount" style="width:'+sum_2_men+'%;"></div></div><br />'
+                            });
+                            option_boxes_answer += '</div>';
+
+                            $('#option_boxes_answer').html(option_boxes_answer);
+                      }
+                  });
+              });
 
               $('#demo1').sharrre({
                 share: {

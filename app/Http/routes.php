@@ -58,6 +58,7 @@ Route::group(['middleware' => 'UserCheck'], function()
 });
 
 Route::post('comment/ajax_add_comment','HomeController@ajax_add_comment');
+Route::post('survey/ajax_answer','HomeController@ajaxSurveyAnswer');
 
 Route::get('search','HomeController@searchBlog');
 
