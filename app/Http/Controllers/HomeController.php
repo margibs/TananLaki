@@ -87,6 +87,7 @@ class HomeController extends Controller {
     public function copyscape()
     {
 
+        // return Posts::where('id',11)->firstOrFail();
         // return substr('fiu_34266_beni', 4);
         // $image_url = 'fiu_47094_49425161_p0.png';
 
