@@ -547,17 +547,17 @@
         background: linear-gradient(to bottom,  rgb(189, 3, 3) 0%,rgb(158, 1, 1) 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b60808', endColorstr='#a50505',GradientType=0 ); /* IE6-9 */
         color: #fff;
-        font-family: Roboto;
+        font-family: Roboto;        
         text-align: center;
         text-decoration: none;
-        font-weight: 500;
-        display: block;
-        padding: 12px 17px;
-        font-size: 18px;
-        line-height: 21px;
-        width: 259px;
+        font-weight: 600;
+        display: block;                
+        /*border: 1px solid #A00707;*/
+        padding: 18px 17px;
+        font-size: 20px;
+        width: 230px;
         margin: 0 5px;
-        transition: background .2s ease;
+        transition: background 0.2s ease;
       }
       .pollwrapper .yes:hover, .pollwrapper .yes:focus, .pollwrapper .yes:active, 
       .pollwrapper .no:hover, .pollwrapper .no:focus, .pollwrapper .no:active{
@@ -1203,8 +1203,19 @@
               width: 100%!important;
               margin: 10px 0!important;          
           }
+          .optionbox2 ul li{
+              display: block!important;
+              width: 95%!important;
+              margin: 10px auto!important;
+          }
+          .optionbox3{
+            margin: 0 10px!important;
+          }
           .pollwrapper .optionbox, .pollwrapper .optionbox2, .pollwrapper .optionbox3{
             margin: 0;
+          }
+          .optionbox3 .votebar{
+            margin-right: 0;
           }
 
       }

@@ -149,7 +149,7 @@
                 <div class="scroller_anchor"></div>
                 <div class="scroller"> 
               @endif  -->   
-                  <div class="socials">
+            <!--       <div class="socials">
                     <h2> Follow us on Twitter! </h2>
                     <a class="twitter-follow-button" href="https://twitter.com/allladmag" data-size="large" data-show-count="true"> Follow @AllladMag </a>
                   </div>   
@@ -158,21 +158,25 @@
                     <h2> Like us on Facebook! </h2>
                     <div class="fb-page fbBig" data-href="https://www.facebook.com/AllLad-716294001804336" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/allladmag"><a href="https://www.facebook.com/allladmag">ALLLAD</a></blockquote></div></div>                    
                   </div>
-
-                       
-                  <div class="missed">
-                    <h2> You've Missed </h2>  
-                    <ul>
-                    @foreach($side_bar_posts as $side_bar_post)
-                      <li> 
-                        <a href="{{url('')}}/{{strtolower($side_bar_post->cat_slug)}}/{{$side_bar_post->slug}}">
-                        <img src="{{url('uploads')}}/{{$side_bar_post->thumb_feature_image}}" alt="">
-                        {{$side_bar_post->title}} </a>
-                      </li>
-                    @endforeach                      
-                    </ul>
+ -->
+                @if(!Request::is('lol*')) 
+                  <div class="scroller_anchor"></div>
+                  <div class="scroller">         
+                    <div class="missed">
+                      <h2> You've Missed </h2>  
+                      <ul>
+                      @foreach($side_bar_posts as $side_bar_post)
+                        <li> 
+                          <a href="{{url('')}}/{{strtolower($side_bar_post->cat_slug)}}/{{$side_bar_post->slug}}">
+                          <img src="{{url('uploads')}}/{{$side_bar_post->thumb_feature_image}}" alt="">
+                          {{$side_bar_post->title}} </a>
+                        </li>
+                      @endforeach                      
+                      </ul>
+                    </div>
                   </div>
-                
+                @endif
+
                 @if(Request::is('lol*')) 
                   <div class="scroller_anchor"></div>
                   <div class="scroller">                                       

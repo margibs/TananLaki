@@ -136,8 +136,13 @@
                   <label class="onoffswitch-label" for="myonoffswitch5"></label>
             </div> 
       </div>
-
       
+      <div class="panel">
+        <div class='parent'>
+          <label for='dt'>Pick a date and a time: </label>
+          <input id='dt' class='input'>         
+        </div>
+      </div>
 
       <div class="panel">
         <h6> Publish </h6>                    
@@ -201,7 +206,12 @@
 <script src="{{ asset('nexuspress/js/draggabilly.pkgd.js') }}"></script>
 <script src="{{ asset('nexuspress/js/modal.js') }}"></script>
 <script src="{{ asset('nexuspress/js/jquery.uploadfile.min.js') }}"></script>
+<script src="{{ asset('nexuspress/js/rome.min.js') }}"></script>
+<script src="{{ asset('js/example.js') }}"></script>
+
 <script>
+  rome('.input');
+
   $('.uploadbtn').click(function(){
     $('#fileuploader').toggle();
   });

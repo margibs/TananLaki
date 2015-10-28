@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('nexuspress/css/reset.min.css') }}">    
     <link rel="stylesheet" href="{{ asset('nexuspress/css/font-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('nexuspress/css/modal.css') }}">    
+    <link rel="stylesheet" href="{{ asset('nexuspress/css/rome.min.css') }}"> 
     <link rel="stylesheet" href="{{ asset('nexuspress/nexuspress.css') }}">
     
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -22,7 +23,7 @@
     <!-- <link rel="stylesheet" href="{{ asset('nexuspress/css/typeahead.tagging.css') }}" type="text/css" /> -->  
 
     <!--[if lt IE 9]>
-        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> 
     <![endif]-->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>        
@@ -72,7 +73,6 @@
       </div>
     </div>
   </div>
-
 
 <script>
   $('.searchlink').click(function(){
